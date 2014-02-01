@@ -1,0 +1,58 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias so="source $HOME/.zshrc && source $HOME/.zsh_aliases"
+alias art="php artisan"
+
+alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
+
+alias guard='guard -g default'
+alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
+
+alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
+alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
+
+function a.index(){
+	mysql -uroot -p $@ -e "select distinct table_name, index_name from information_schema.statistics where table_schema = '$@';";
+}
+
+function gn(){
+	php artisan generate:$@;
+}
+
+function gi() { curl http://www.gitignore.io/api/$@ ;}
+function cake(){
+  
+  cake="$HOME/utilities/cakephp/lib/Cake/Console/cake"
+  project_binary="`pwd`/Console/cake"
+	full_path="`pwd`/app/Console/cake"
+
+  if [ -f $project_binary ]; then
+    cake=`pwd`/Console/cake
+  fi
+
+  if [ -f $full_path ]; then
+    cake=`pwd`/app/Console/cake
+  fi
+
+  if [ ! -f $cake ]; then
+    echo "CakePHP binary not found.";
+    return;
+  fi
+
+	if [[ $@ == "s" ]]; then
+		sh $cake server --host dev --port 3000; 
+	else
+		sh $cake "$@";
+	fi 
+}
+
+function deploy(){
+
+	sudo `which apachectl` stop
+	sudo `pwd`/Console/cake server --host `myip` --port 80
+	sudo `which apachectl` start
+	
+
+}
