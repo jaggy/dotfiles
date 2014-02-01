@@ -14,7 +14,7 @@ ZSH_THEME="nanotech"
 # alias zshconfig="mate ~/.zshrc"
 #alias ohmyzsh="mate ~/.oh-my-zsh"
 source "$HOME/.zsh_aliases"
-source "$HOME/utilities/z/z.sh"
+# source "$HOME/utilities/z/z.sh"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -50,7 +50,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.bin:/Applications/Synergy.app/Contents/MacOS
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.bin
 
 # Override Native PHP
 PATH=/usr/local/php5/bin:$PATH
