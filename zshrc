@@ -56,4 +56,9 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.bin:/Appli
 PATH=/usr/local/php5/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# Removing the bindings from Ctrl-S
 stty -ixon
+
+# Set the terminal bindings to vi
+# set -o vi
+
