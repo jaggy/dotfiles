@@ -5,15 +5,14 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set nowrap
-set colorcolumn=81
-
 set autoindent
+set ruler
 
 " Coloring stuff
-highlight ColorColumn  ctermbg=237
-" highlight ColorColumn ctermbg=DarkMagenta
+" highlight ColorColumn  ctermbg=237
+highlight ColorColumn ctermbg=DarkMagenta
 " set colorcolumn=81
-" call matchadd( 'ColorColumn', '\%86v', 100 )
+call matchadd( 'ColorColumn', '\%86v', 100 )
 
 " DISABLING THE CURSOR KEEEEYS!!!
 inoremap  <Up>     <NOP>
@@ -51,3 +50,5 @@ inoremap <c-s> <Esc>:update<CR>
 " Absolute when typing
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\|Vendor'
