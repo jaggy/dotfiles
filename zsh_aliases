@@ -4,11 +4,12 @@ alias ....='cd ../../..'
 
 alias so="source $HOME/.zshrc && source $HOME/.zsh_aliases"
 alias art="php artisan"
+alias t="$HOME/utilities/todo/todo.sh"
 
 alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 
 alias guard='guard -g default'
-alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
+alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject'
 
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
