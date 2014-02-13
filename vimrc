@@ -30,7 +30,7 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-inoremap () (  )<esc>hi
+inoremap ()<space> (  )<esc>hi
 inoremap {} {  }<esc>hi
 inoremap [] [  ]<esc>hi
 inoremap "" ""<esc>i
