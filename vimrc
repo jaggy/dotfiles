@@ -31,9 +31,15 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 inoremap ()<space> (  )<esc>hi
-inoremap {} {  }<esc>hi
-inoremap [] [  ]<esc>hi
+inoremap ();<space> (  );<esc>hhi
+inoremap {} {}<esc>i
+inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
+inoremap []; [  ];<esc>hi
+inoremap []<space> [  ]<esc>hi
+inoremap ""; "";<esc>hi
+inoremap "": "":<esc>hi
 inoremap "" ""<esc>i
+inoremap ''; '';<esc>hi
 inoremap '' ''<esc>i
 inoremap <> <><esc>i
 
