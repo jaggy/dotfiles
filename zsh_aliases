@@ -7,7 +7,7 @@ alias art="php artisan"
 alias t="$HOME/utilities/todo/todo.sh"
 alias phpspec="phpspec --no-interaction"
 alias gti='git'
-alias picasso='perl ~/projects/picasso/picasso.pl'
+alias picasso='perl ~/projects/picasso.git/picasso.pl'
 
 alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 

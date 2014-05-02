@@ -1,10 +1,13 @@
 syntax enable
 
+" Setting the leader key
+let mapleader=","
+
 set relativenumber
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set nowrap
 set autoindent
 set ruler
@@ -17,6 +20,7 @@ let g:airline_powerline_fonts = 1
 " Coloring stuff
 " highlight ColorColumn  ctermbg=237
 highlight ColorColumn ctermbg=DarkMagenta
+highlight Search ctermbg=489
 " set colorcolumn=81
 call matchadd( 'ColorColumn', '\%86v', 100 )
 
@@ -30,12 +34,14 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-inoremap ()<space> ()<esc>hi
-inoremap ();<space> ();<esc>hhi
+nnoremap <leader><space> /\s<CR> :set hlsearch! hlsearch?<CR>
+
+inoremap ()<space> ()<esc>i
+inoremap ();<space> ();<esc>hi
 inoremap {} {}<esc>i
 inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
-inoremap []; [];<esc>hi
-inoremap []<space> []<esc>hi
+inoremap []; [];<esc>i
+inoremap []<space> []<esc>i
 inoremap ""; "";<esc>hi
 inoremap "": "":<esc>hi
 inoremap "" ""<esc>i
@@ -43,14 +49,16 @@ inoremap ''; '';<esc>hi
 inoremap '' ''<esc>i
 inoremap <> <><esc>i
 
-" Setting the leader key
-let mapleader=","
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
+
 
 " Pathogen infect
 execute pathogen#infect()
 
 " Runtime Shit
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = 0
 
 " Remap semi-colon to colon
 map ; :
