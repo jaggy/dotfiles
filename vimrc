@@ -77,7 +77,7 @@ autocmd FocusGained * set relativenumber
 autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\|Vendor'
+let g:ctrlp_custom_ignore = 'node_modules|DS_Store|.git|vendor|Vendor'
 
 function! InsertTabWrapper()
   let col = col( "." ) - 1
