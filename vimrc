@@ -36,6 +36,7 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 nnoremap n nzz
+nnoremap <CR> o<esc>
 
 nnoremap <leader><space> /\s<CR> :set hlsearch! hlsearch?<CR>
 
