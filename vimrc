@@ -1,3 +1,4 @@
+
 syntax enable
 
 " Setting the leader key
@@ -48,17 +49,11 @@ inoremap "" ""<esc>i
 inoremap ''; '';<esc>hi
 inoremap '' ''<esc>i
 inoremap <> <><esc>i
+inoremap 0- ->
+
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
-
-
-" Pathogen infect
-execute pathogen#infect()
-
-" Runtime Shit
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 0
 
 " Remap semi-colon to colon
 map ; :
@@ -67,17 +62,8 @@ map ; :
 noremap ;; ;
 
 " Save with Control+S to lose one keystroke
-inoremap <c-s> <Esc>:update<CR>
-
-" Relative only when in focus
-autocmd FocusLost * set number
-autocmd FocusGained * set relativenumber
-
-" Absolute when typing
-autocmd InsertEnter * set number
-autocmd InsertLeave * set relativenumber
-
-let g:ctrlp_custom_ignore = 'node_modules|DS_Store|.git|vendor|Vendor'
+inoremap <C-s> <Esc>:w<CR>
+noremap <C-s> :w<CR>
 
 function! InsertTabWrapper()
   let col = col( "." ) - 1
@@ -89,3 +75,10 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-p>
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+" nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>

@@ -9,10 +9,13 @@ alias phpspec="phpspec --no-interaction"
 alias gti='git'
 alias picasso='perl ~/projects/picasso.git/picasso.pl'
 
+alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
+
 alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 
 alias guard='guard -g default'
 alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
+#alias migrate='phinx rollback -t 0 && phinx migrate'
 
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
@@ -27,7 +30,7 @@ function gn(){
 
 function gi() { curl http://www.gitignore.io/api/$@ ;}
 function cake(){
-  
+
   cake="$HOME/utilities/cakephp/lib/Cake/Console/cake"
   project_binary="`pwd`/Console/cake"
 	full_path="`pwd`/app/Console/cake"
@@ -46,10 +49,10 @@ function cake(){
   fi
 
 	if [[ $@ == "s" ]]; then
-		sh $cake server --host dev --port 3000; 
+		sh $cake server --host dev --port 3000;
 	else
 		sh $cake "$@";
-	fi 
+	fi
 }
 
 function deploy(){
@@ -57,6 +60,6 @@ function deploy(){
 	sudo `which apachectl` stop
 	sudo `pwd`/Console/cake server --host `myip` --port 80
 	sudo `which apachectl` start
-	
+
 
 }

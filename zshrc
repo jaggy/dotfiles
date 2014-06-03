@@ -50,7 +50,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.bin:/Applications/Synergy.app/Contents/MacOS:bin:$HOME/utilities/android-sdk/platform-tools:$HOME/utilities/android-sdk/tools
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:/Applications/Synergy.app/Contents/MacOS:bin:$HOME/utilities/android-sdk/platform-tools:$HOME/utilities/android-sdk/tools:$HOME/.composer/vendor/bin/:vendor/bin/:bin/
 
 # Override Native PHP
 PATH=/usr/local/php5/bin:$PATH
