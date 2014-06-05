@@ -6,9 +6,9 @@ DEFAULT_USER='jaggyspaghetti'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="miloshadzic"
+ZSH_THEME="miloshadzic"
 #ZSH_THEME="mrtazz"
-ZSH_THEME="nanotech"
+#ZSH_THEME="nanotech"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -65,3 +65,7 @@ set -o vi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+
+# Remove the lag when using the escape in VIM mode
+export KEYTIMEOUT=1
