@@ -6,8 +6,11 @@ DEFAULT_USER='jaggyspaghetti'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="miloshadzic"
+# ZSH_THEME="robbyrussell"
+#ZSH_THEME="miloshadzic"
 #ZSH_THEME="mrtazz"
+#ZSH_THEME="agnoster"
+# ZSH_THEME="juanghurtado"
 #ZSH_THEME="nanotech"
 
 # Example aliases
@@ -60,12 +63,71 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Removing the bindings from Ctrl-S
 stty -ixon
 
+### VIM ZSH ###
+
 # Set the terminal bindings to vi
 set -o vi
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-
 # Remove the lag when using the escape in VIM mode
 export KEYTIMEOUT=1
+
+export ZSH_VI_STATUS;
+
+function zle-line-init zle-keymap-select {
+# function zsh_vi_status {
+    ZSH_VI_STATUS="${${KEYMAP/vicmd/$fg[red]normal}/(main|viins)/$fg[yellow]insert}"
+    # RPS2=$RPS1
+    zle reset-prompt
+}
+
+# zle -N zsh_vi_status
+zle -N zle-line-init
+zle -N zle-keymap-select
+#
+#
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+precmd() {
+    vcs_info
+}
+
+setopt prompt_subst
+
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+
+function get_pwd() {
+  print -D $PWD
+}
+
+function put_spacing() {
+  local git=$(git_prompt_info)
+  if [ ${#git} != 0 ]; then
+    ((git=${#git} - 10))
+  else
+    git=0
+  fi
+
+  local termwidth
+  (( termwidth = ${COLUMNS} + 3 - ${#HOST} - ${#$(get_pwd)}  - ${git} ))
+
+  local spacing=""
+  for i in {1..$termwidth}; do
+    spacing="${spacing} "
+  done
+  echo $spacing
+}
+
+function precmd() {
+print -rP '
+$fg[cyan]%m%{$reset_color%}: $fg[yellow]$(get_pwd) $(put_spacing)$(git_prompt_info)'
+}
+
+PROMPT='${ZSH_VI_STATUS} %{$reset_color%}→ '
+
+ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
+ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
+ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+"
+ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
