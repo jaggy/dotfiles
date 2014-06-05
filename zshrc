@@ -47,6 +47,7 @@ DISABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -60,5 +61,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 stty -ixon
 
 # Set the terminal bindings to vi
-# set -o vi
+set -o vi
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
