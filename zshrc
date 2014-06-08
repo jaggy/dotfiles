@@ -121,8 +121,7 @@ function put_spacing() {
 }
 
 function precmd() {
-print -rP '
-$fg[cyan]%m%{$reset_color%}: $fg[yellow]$(get_pwd) $(put_spacing)$(git_prompt_info)'
+print -rP '$fg[cyan]%m%{$reset_color%}: $fg[yellow]$(get_pwd) $(put_spacing)$(git_prompt_info)'
 }
 
 PROMPT='${ZSH_VI_STATUS} %{$reset_color%}→ '
