@@ -1,3 +1,5 @@
+syntax enable
+
 " Setting the leader key
 let mapleader=","
 
@@ -6,6 +8,9 @@ let g:airline_theme='tomorrow'
 
 let g:airline#extensions#tabline#enabled = 1
 set relativenumber
+set encoding=utf-8
+
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 " DISABLING THE CURSOR KEEEEYS!!!
 inoremap  <Up>     <NOP>
@@ -38,7 +43,6 @@ inoremap []<space> []<esc>i
 inoremap 0- ->
 inoremap -= =>
 
-
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " set list
 
@@ -48,21 +52,9 @@ map ; :
 " Just in case we need the semi-colon. Just in case
 noremap ;; ;
 
-" Save with Control+S to lose one keystroke
-inoremap <C-s> <Esc>:w<CR>
-noremap <C-s> :w<CR>
-
-function! InsertTabWrapper()
-  let col = col( "." ) - 1
-  if !col || getline( "." )[ col - 1 ] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-n>"
-endfunction
-
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-p>
-
+" Remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
 " nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+color torte
+
