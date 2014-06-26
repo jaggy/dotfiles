@@ -1,1 +1,4 @@
-Plugin 'bling/vim-airline'
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'spf13/PIV'

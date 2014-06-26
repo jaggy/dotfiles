@@ -14,8 +14,8 @@ alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
 alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2'
 
 alias guard='guard -g default'
-#alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
-alias migrate='phinx rollback -t 0 && phinx migrate'
+alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
+#alias migrate='phinx rollback -t 0 && phinx migrate'
 
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
