@@ -42,3 +42,10 @@ map ; :
 
 " Just in case we need the semi-colon. Just in case
 noremap ;; ;
+
+" Nerd Tree Toggle
+map <C-e> :NERDTreeToggle<CR>
+
+" Tagbar
+nnoremap <leader>tt :TagbarToggle<CR>
+

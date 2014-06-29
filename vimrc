@@ -11,6 +11,17 @@ Plugin 'gmarik/Vundle.vim'         " let Vundle manage Vundle, required
 
 
 
+
+
+""""""""""""""""""""""""""""""
+" Pre-configuration
+""""""""""""""""""""""""""""""
+let mapleader=","       " The leader key must be mapped before adding the keymaps
+
+
+
+
+
 """"""""""""""""""""""""""""""
 " Files
 """"""""""""""""""""""""""""""
@@ -28,14 +39,6 @@ endif
 " Load the plugin thingies
 call vundle#end()           " required
 filetype plugin indent on
-
-
-""""""""""""""""""""""""""""""
-" Pathogen
-""""""""""""""""""""""""""""""
-" execute pathogen#infect()
-
-
 
 
 """"""""""""""""""""""""""""""
@@ -57,30 +60,46 @@ let g:airline_linecolumn_prefix = '⭡'
 
 
 
+
+""""""""""""""""""""""""""""""
+" PHPQA
+""""""""""""""""""""""""""""""
+let g:phpqa_codesniffer_args  = "--standard=PSR2"
+let g:phpqa_codecoverage_file = "reports/clover.xml"
+
+
+
+
+
 """"""""""""""""""""""""""""""
 " Ctrl-P
 """"""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*
+set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*,*/reports/*
 
 
 
 
 
 
+""""""""""""""""""""""""""""""
+" NeoCache
+""""""""""""""""""""""""""""""
+let g:neocomplcache_enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 
 """"""""""""""""""""""""""""""
 " Configuration
 """"""""""""""""""""""""""""""
-let mapleader=","                                        " Leader Key
 
 syntax enable                                            " Enable Syntax Highlightin
 color torte                                              " Color scheme!
 highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
 
 
+set nowrap                                               " NO WRAPPING
 set laststatus=2                                         " Activate Powerline
 set relativenumber                                       " Relative Line numbers
 set cmdheight=1                                          " It's 2 by default
