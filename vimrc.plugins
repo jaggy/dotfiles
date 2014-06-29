@@ -1,4 +1,16 @@
+" Visual / Editor Plugins
 Bundle 'bling/vim-airline'
+Bundle 'edkolev/tmuxline.vim'
+
+" Productivity
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'airblade/vim-gitgutter'
+
+" PHP Specific Tools
 Bundle 'spf13/PIV'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'joonty/vim-phpqa'
+Bundle 'majutsushi/tagbar'
