@@ -1,70 +1,44 @@
-# Path to your oh-my-zsh configuration.
+#
+# ZSH Configuration
+# Version 3.0.0
+#
+#
+# Licensed under WTFPL
+# Copyright (c) 2014 Jaggy Gauran
+# http://twitter.com/jaggygauran
+#
+
+### ZSH Specific Configuration
+#####################################################################
 ZSH=$HOME/.oh-my-zsh
-DEFAULT_USER='jaggyspaghetti'
+ZSH_THEME="agnoster"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-#ZSH_THEME="miloshadzic"
-# ZSH_THEME="mrtazz"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="juanghurtado"
-ZSH_THEME="nanotech"
+CASE_SENSITIVE="true"     # Remove case sensitive autocorrection
+DISABLE_CORRECTION="true" # Disable autocorrection when executing commands
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-#alias ohmyzsh="mate ~/.oh-my-zsh"
-source "$HOME/.zsh_aliases"
-source "$HOME/utilities/z/z.sh"
 
-# Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+### Shell Config
+#####################################################################
 plugins=(git)
+stty -ixon          # Removing the bindings from Ctrl-S
+set -o vi           # Set the terminal bindings to vi
+export KEYTIMEOUT=1 # kill the timeout when pressing escape
 
 
+### Exports
+#####################################################################
+source $HOME/.zsh_aliases
+source $HOME/utilities/z/z.sh
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:/Applications/Synergy.app/Contents/MacOS:bin:$HOME/utilities/android-sdk/platform-tools:$HOME/utilities/android-sdk/tools:$HOME/.composer/vendor/bin/:vendor/bin/:bin/
 
-# Override Native PHP
-PATH=/usr/local/php5/bin:$PATH
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+### Environment
+###  Commands take order of precedence so if you want a native comamnd
+###  Make sure you append the $PATH
+#####################################################################
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
-# Removing the bindings from Ctrl-S
-stty -ixon
-
-### VIM ZSH ###
-
-# Set the terminal bindings to vi
-set -o vi
-export KEYTIMEOUT=1 # kill the timeout when pressing escape
+PATH=$HOME/.bin:$PATH                                        # Custom Globals
+PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin/:$PATH   # PHP Specific
+PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
+PATH=vendor/bin/:bin/:$PATH                                  # Relative Paths
