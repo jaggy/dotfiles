@@ -64,8 +64,9 @@ let g:airline_linecolumn_prefix = '⭡'
 """"""""""""""""""""""""""""""
 " PHPQA
 """"""""""""""""""""""""""""""
-let g:phpqa_codesniffer_args  = "--standard=PSR2"
-let g:phpqa_codecoverage_file = "reports/clover.xml"
+let g:phpqa_codesniffer_args     = "--standard=PSR2"
+let g:phpqa_codecoverage_file    = "reports/clover.xml"
+let g:phpqa_messdetector_autorun = 0
 
 
 
@@ -87,6 +88,8 @@ set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*,*/repo
 """"""""""""""""""""""""""""""
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
 
 
 

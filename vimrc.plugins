@@ -8,6 +8,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdcommenter'
 
 " PHP Specific Tools
 Bundle 'spf13/PIV'
