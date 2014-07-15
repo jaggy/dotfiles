@@ -7,14 +7,14 @@
 # Copyright (c) 2014 Jaggy Gauran
 # http://twitter.com/jaggygauran
 #
-
 ### ZSH Specific Configuration
 #####################################################################
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
-CASE_SENSITIVE="true"     # Remove case sensitive autocorrection
-DISABLE_CORRECTION="true" # Disable autocorrection when executing commands
+CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
+DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
+DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
 
 
 ### Shell Config
