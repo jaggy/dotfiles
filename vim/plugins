@@ -4,6 +4,8 @@ Bundle 'edkolev/tmuxline.vim'
 
 " Syntax Highlighting
 Bundle 'wavded/vim-stylus'
+Bundle 'elzr/vim-json'
+Bundle 'jelera/vim-javascript-syntax'
 
 " Productivity
 Bundle 'kien/ctrlp.vim'
