@@ -2,6 +2,9 @@
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
 
+" Syntax Highlighting
+Bundle 'wavded/vim-stylus'
+
 " Productivity
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
@@ -15,3 +18,6 @@ Bundle 'spf13/PIV'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'joonty/vim-phpqa'
 Bundle 'majutsushi/tagbar'
+
+" Font-end-centric
+Bundle 'mattn/emmet-vim'
