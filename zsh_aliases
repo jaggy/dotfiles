@@ -16,10 +16,15 @@ alias guard='guard -g default'
 alias phpspec="phpspec --no-interaction"
 
 
-###
+### Shortcuts
 #####################################################################
 alias so="source $HOME/.zshrc && source $HOME/.zsh_aliases"
 alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
+alias pg="php $HOME/projects/partner.git/server.php"
+
+
+### Actions
+#####################################################################
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
 
