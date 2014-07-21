@@ -1,0 +1,6 @@
+autocmd FileType javascript call JavascriptOptions()
+
+function JavascriptOptions()
+    set tabstop=2
+    set shiftwidth=2
+endfunction

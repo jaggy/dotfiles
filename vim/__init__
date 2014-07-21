@@ -49,8 +49,8 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""
 
 autocmd BufEnter,BufNew *.json :setf javascript
-" autocmd FileType javascript :
-
+source ~/.dotfiles/vim/syntax/php                 " PHP
+source ~/.dotfiles/vim/syntax/javascript          " Javascript
 
 
 
