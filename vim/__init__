@@ -27,13 +27,13 @@ let mapleader=","       " The leader key must be mapped before adding the keymap
 """"""""""""""""""""""""""""""
 
 " Keymaps
-if filereadable(glob('~/.vimrc.plugins'))
-    source ~/.vimrc.plugins
+if filereadable(glob('~/.dotfiles/vim/plugins'))
+    source ~/.dotfiles/vim/plugins
 endif
 
 " Keymaps
-if filereadable(glob('~/.vimrc.keymap'))
-    source ~/.vimrc.keymap
+if filereadable(glob('~/.dotfiles/vim/keymap'))
+    source ~/.dotfiles/vim/keymap
 endif
 
 " Load the plugin thingies
