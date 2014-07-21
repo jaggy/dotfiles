@@ -41,6 +41,19 @@ call vundle#end()           " required
 filetype plugin indent on
 
 
+
+
+
+""""""""""""""""""""""""""""""
+" Files
+""""""""""""""""""""""""""""""
+
+autocmd BufEnter,BufNew *.json :setf javascript
+" autocmd FileType javascript :
+
+
+
+
 """"""""""""""""""""""""""""""
 " Airlne
 """"""""""""""""""""""""""""""
