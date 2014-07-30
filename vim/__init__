@@ -26,20 +26,10 @@ let mapleader=","       " The leader key must be mapped before adding the keymap
 " Files
 """"""""""""""""""""""""""""""
 
-" Keymaps
-if filereadable(glob('~/.dotfiles/vim/plugins'))
-    source ~/.dotfiles/vim/plugins
-endif
-
-" Keymaps
-if filereadable(glob('~/.dotfiles/vim/keymap'))
-    source ~/.dotfiles/vim/keymap
-endif
-
-" Load the plugin thingies
-call vundle#end()           " required
-filetype plugin indent on
-
+source ~/.dotfiles/vim/plugins " Plugins
+source ~/.dotfiles/vim/keymap  " Keymap
+call vundle#end()              " Finish Vundle setup
+filetype plugin indent on      " Required by vundle
 
 
 
@@ -148,4 +138,8 @@ autocmd BufRead,BufNewFile *.twig set filetype=htmljinja " Use the twig syntax h
 
 
 
+let configuration = getcwd() . '/.lvimrc'
+if !empty(glob(configuration))
+    execute 'source ' . configuration
+endif
 
