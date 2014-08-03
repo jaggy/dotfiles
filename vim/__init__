@@ -12,11 +12,10 @@ Plugin 'gmarik/Vundle.vim'         " let Vundle manage Vundle, required
 
 
 
-
 """"""""""""""""""""""""""""""
 " Pre-configuration
 """"""""""""""""""""""""""""""
-let mapleader=","       " The leader key must be mapped before adding the keymaps
+let mapleader=","         " The leader key must be mapped before adding the keymaps
 
 
 
@@ -50,7 +49,7 @@ source ~/.dotfiles/vim/syntax/javascript          " Javascript
 """"""""""""""""""""""""""""""
 " Airlne
 """"""""""""""""""""""""""""""
-let g:airline_theme             = 'tomorrow'
+let g:airline_theme             = 'wombat'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 
@@ -104,7 +103,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 """"""""""""""""""""""""""""""
 
 syntax enable                                            " Enable Syntax Highlightin
-color torte                                              " Color scheme!
+color peachpuff                                          " Color scheme!
 highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
 
 
@@ -125,6 +124,11 @@ set expandtab                                            " Convert tabs into spa
 set list                                                 " Show invisiable characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Characters
 
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 
 
 
@@ -132,9 +136,10 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Charac
 """"""""""""""""""""""""""""""
 " Autocommands
 """"""""""""""""""""""""""""""
-autocmd BufWritePre * :%s/\s\+$//e " Remove excess white space
+autocmd BufWritePre * :%s/\s\+$//e                       " Remove excess white space
+autocmd BufRead * :retab                                 " Fix tabbing
 autocmd BufRead,BufNewFile *.twig set filetype=htmljinja " Use the twig syntax highlighting
-
+autocmd BufRead,BufNewFile *.blade.* set filetype=blade  " Use the blade syntax highlighting
 
 
 
