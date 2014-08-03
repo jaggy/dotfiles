@@ -5,6 +5,7 @@ Bundle 'bling/vim-airline'
 Bundle 'wavded/vim-stylus'
 Bundle 'elzr/vim-json'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'zaiste/tmux.vim'
 
 " Productivity
 Bundle 'kien/ctrlp.vim'
