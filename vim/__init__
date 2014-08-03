@@ -124,11 +124,18 @@ set expandtab                                            " Convert tabs into spa
 set list                                                 " Show invisiable characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Characters
 
+
+
+
+""""""""""""""""""""""""""""""
+" Git Gutter Highlight Fix
+""""""""""""""""""""""""""""""
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
+
 
 
 
@@ -143,6 +150,11 @@ autocmd BufRead,BufNewFile *.blade.* set filetype=blade  " Use the blade syntax 
 
 
 
+
+
+""""""""""""""""""""""""""""""
+" Load a local .lvim file if it exists
+""""""""""""""""""""""""""""""
 let configuration = getcwd() . '/.lvimrc'
 if !empty(glob(configuration))
     execute 'source ' . configuration
