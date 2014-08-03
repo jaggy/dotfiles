@@ -22,9 +22,10 @@ DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
 ### Shell Config
 #####################################################################
 plugins=(git)
-stty -ixon          # Removing the bindings from Ctrl-S
-set -o vi           # Set the terminal bindings to vi
-export KEYTIMEOUT=1 # kill the timeout when pressing escape
+stty -ixon                  # Removing the bindings from Ctrl-S
+set -o vi                   # Set the terminal bindings to vi
+export KEYTIMEOUT=1         # kill the timeout when pressing escape
+export LC_ALL="en_US.UTF-8" # Fix ZSH and Tmux issues
 
 
 ### Exports
