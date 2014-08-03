@@ -1,42 +1,46 @@
 ### Folder Manipulation
-#####################################################################
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 
-### Annoyances
-#####################################################################
+### Git Specific
 alias gti='git'
+alias g='git'
+alias ga='git add'
+alias gaa='git add -A'
+alias gb='git branch'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias gm='git merge'
+alias gp='git push'
+alias gt='git tag'
 
 
 ### Default Configuration
-#####################################################################
 alias guard='guard -g default'
+alias tmux='tmux -u'
 alias phpspec="phpspec --no-interaction"
 alias art="php artisan"
 
 
 ### Shortcuts
-#####################################################################
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
 alias pg="php $HOME/projects/partner.git/server.php"
 
 
 ### Actions
-#####################################################################
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
 
 
 ### PHP Specific
-#####################################################################
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
-#alias migrate='phinx rollback -t 0 && phinx migrate'
+# alias migrate='phinx rollback -t 0 && phinx migrate'
 alias migrate='art migrate:refresh --seed'
 
 
 ### Functions
-#####################################################################
 function gi(){ curl http://www.gitignore.io/api/$@ ;}
