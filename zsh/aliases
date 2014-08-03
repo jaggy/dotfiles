@@ -14,11 +14,12 @@ alias gti='git'
 #####################################################################
 alias guard='guard -g default'
 alias phpspec="phpspec --no-interaction"
+alias art="php artisan"
 
 
 ### Shortcuts
 #####################################################################
-alias so="source $HOME/.zshrc && source $HOME/.zsh_aliases"
+alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
 alias pg="php $HOME/projects/partner.git/server.php"
 
@@ -32,7 +33,8 @@ alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-da
 ### PHP Specific
 #####################################################################
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
-alias migrate='phinx rollback -t 0 && phinx migrate'
+#alias migrate='phinx rollback -t 0 && phinx migrate'
+alias migrate='art migrate:refresh --seed'
 
 
 ### Functions
