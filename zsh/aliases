@@ -14,6 +14,7 @@ alias gb='git branch'
 alias gc='git commit -m'
 alias gco='git checkout'
 alias gm='git merge'
+alias gs='git status'
 alias gp='git push'
 alias gt='git tag'
 
@@ -23,6 +24,7 @@ alias guard='guard -g default'
 alias tmux='tmux -u'
 alias phpspec="phpspec --no-interaction"
 alias art="php artisan"
+alias cmp="composer"
 
 
 ### Shortcuts
