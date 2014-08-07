@@ -26,7 +26,6 @@ inoremap []<space> []<esc>i
 inoremap 0- ->
 inoremap -= =>
 
-
 " Center on page immediately on using search
 nnoremap n nzz
 
@@ -34,8 +33,8 @@ nnoremap n nzz
 nnoremap <CR> o<esc>
 
 " Spliiting the windows
-nnoremap <C-w>\| <C-W>v
-nnoremap <C-w>- <C-W>s
+nnoremap <C-w>\| <C-W>vzz<C-w>l
+nnoremap <C-w>- <C-W>szz<C-w>j
 
 " Remap semi-colon to colon
 map ; :
