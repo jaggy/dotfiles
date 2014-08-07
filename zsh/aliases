@@ -46,3 +46,9 @@ alias migrate='art migrate:refresh --seed'
 
 ### Functions
 function gi(){ curl http://www.gitignore.io/api/$@ ;}
+
+function cd() {
+    builtin cd "$@";
+
+    detectOverrde;
+}

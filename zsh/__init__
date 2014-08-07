@@ -27,12 +27,25 @@ set -o vi                   # Set the terminal bindings to vi
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
 export LC_ALL="en_US.UTF-8" # Fix ZSH and Tmux issues
 
+function detectOverrde() {
+    FILE=`pwd`/.zsh.local
+
+    if [ -f $FILE ]; then
+        echo 'Detected .zsh.local file.';
+        echo 'Loading shell overrides.';
+        source $FILE
+    else
+        source $HOME/.dotfiles/zsh/aliases;
+    fi
+}
+
 
 ### Exports
 #####################################################################
-source $HOME/.dotfiles/zsh/aliases
 source $HOME/utilities/z/z.sh
 source $ZSH/oh-my-zsh.sh
+source $HOME/.dotfiles/zsh/aliases
+detectOverrde;
 
 
 ### Environment
