@@ -107,6 +107,7 @@ color peachpuff                                          " Color scheme!
 highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
 
 
+set directory=$HOME/.vim/swapfiles//
 set nowrap                                               " NO WRAPPING
 set laststatus=2                                         " Activate Powerline
 set relativenumber                                       " Relative Line numbers
@@ -147,6 +148,7 @@ autocmd BufWritePre * :%s/\s\+$//e                       " Remove excess white s
 autocmd BufRead * :retab                                 " Fix tabbing
 autocmd BufRead,BufNewFile *.twig set filetype=htmljinja " Use the twig syntax highlighting
 autocmd BufRead,BufNewFile *.blade.* set filetype=blade  " Use the blade syntax highlighting
+autocmd BufWinEnter *.php :let &foldlevel=2       " Update the fold levels for PHP files
 
 
 
@@ -159,4 +161,3 @@ let configuration = getcwd() . '/.lvimrc'
 if !empty(glob(configuration))
     execute 'source ' . configuration
 endif
-
