@@ -1,17 +1,23 @@
 " Visual / Editor Plugins
 Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+
+" Complete
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 
 " Syntax Highlighting
 Bundle 'wavded/vim-stylus'
 Bundle 'elzr/vim-json'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'zaiste/tmux.vim'
+Bundle 'burnettk/vim-angular'
+Bundle 'xsbeats/vim-blade'
 
 " Productivity
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
-Bundle 'Shougo/neocomplcache.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -23,4 +29,3 @@ Bundle 'majutsushi/tagbar'
 
 " Font-end-centric
 Bundle 'mattn/emmet-vim'
-Bundle 'xsbeats/vim-blade'

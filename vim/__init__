@@ -12,10 +12,15 @@ Plugin 'gmarik/Vundle.vim'         " let Vundle manage Vundle, required
 
 
 
+
 """"""""""""""""""""""""""""""
 " Pre-configuration
 """"""""""""""""""""""""""""""
-let mapleader=","         " The leader key must be mapped before adding the keymaps
+let mapleader=","                           " The leader key must be mapped before adding the keymaps
+let g:acp_enableAtStartup = 0               " Disable AutoComplPop.
+let g:neocomplcache_enable_at_startup = 1   " Use neocomplcache.
+let g:neocomplcache_enable_smart_case = 1   " Use smartcase.
+let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
 
 
 

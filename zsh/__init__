@@ -15,6 +15,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="miloshadzic"
 
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
+DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
 DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
 
@@ -25,7 +26,9 @@ plugins=(git)
 stty -ixon                  # Removing the bindings from Ctrl-S
 set -o vi                   # Set the terminal bindings to vi
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
-export LC_ALL="en_US.UTF-8" # Fix ZSH and Tmux issues
+export LC_ALL=en_US.UTF-8   # Fix ZSH and Tmux issues
+export LANG=en_US.UTF-8
+export EDITOR='vim'         # For tmuxinator
 
 function detectOverrde() {
     FILE=`pwd`/.zsh.local
@@ -45,6 +48,7 @@ function detectOverrde() {
 source $HOME/utilities/z/z.sh
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases
+source $HOME/.docs/tmuxinator.zsh
 detectOverrde;
 
 
