@@ -150,11 +150,12 @@ highlight GitGutterChangeDelete ctermfg=yellow
 """"""""""""""""""""""""""""""
 " Autocommands
 """"""""""""""""""""""""""""""
-autocmd BufWritePre * :%s/\s\+$//e                       " Remove excess white space
-autocmd BufRead * :retab                                 " Fix tabbing
-autocmd BufRead,BufNewFile *.twig set filetype=htmljinja " Use the twig syntax highlighting
-autocmd BufRead,BufNewFile *.blade.* set filetype=blade  " Use the blade syntax highlighting
-autocmd BufWinEnter *.php :let &foldlevel=2              " Update the fold levels for PHP files
+autocmd BufWritePre * :%s/\s\+$//e                        " Remove excess white space
+autocmd BufRead * :retab                                  " Fix tabbing
+autocmd BufRead,BufNewFile *.twig set filetype=htmljinja  " Use the twig syntax highlighting
+autocmd BufRead,BufNewFile *.blade.* set filetype=blade   " Use the blade syntax highlighting
+autocmd BufRead,BufNewFile *.snip set filetype=neosnippet " Use the neosnippet syntax highlighting
+autocmd BufWinEnter *.php :let &foldlevel=2               " Update the fold levels for PHP files
 
 
 
