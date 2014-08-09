@@ -110,6 +110,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 syntax enable                                            " Enable Syntax Highlightin
 color peachpuff                                          " Color scheme!
 highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
+highlight Pmenu ctermbg=black ctermfg=white              " Change autocomplete color
 
 
 set directory=$HOME/.vim/swapfiles//
@@ -153,7 +154,7 @@ autocmd BufWritePre * :%s/\s\+$//e                       " Remove excess white s
 autocmd BufRead * :retab                                 " Fix tabbing
 autocmd BufRead,BufNewFile *.twig set filetype=htmljinja " Use the twig syntax highlighting
 autocmd BufRead,BufNewFile *.blade.* set filetype=blade  " Use the blade syntax highlighting
-autocmd BufWinEnter *.php :let &foldlevel=2       " Update the fold levels for PHP files
+autocmd BufWinEnter *.php :let &foldlevel=2              " Update the fold levels for PHP files
 
 
 
