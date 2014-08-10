@@ -31,11 +31,15 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'         # For tmuxinator
 
 function detectOverrde() {
+    ESC_SEQ="\x1b["
+    COL_RESET=$ESC_SEQ"39;49;00m"
+    COL_RED=$ESC_SEQ"31;01m"
+    COL_YELLOW=$ESC_SEQ"33;01m"
     FILE=`pwd`/.zsh.local
 
     if [ -f $FILE ]; then
-        echo 'Detected .zsh.local file.';
-        echo 'Loading shell overrides.';
+        echo "Detected ${COL_RED}.zsh.local${COL_RESET} file.";
+        echo "${COL_YELLOW}Loading shell overrides.${COL_RESET}";
         source $FILE
     else
         source $HOME/.dotfiles/zsh/aliases;
