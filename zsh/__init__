@@ -18,6 +18,7 @@ CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
 DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
+setopt HIST_IGNORE_SPACE
 
 
 ### Shell Config
@@ -49,9 +50,9 @@ function detectOverrde() {
 
 ### Exports
 #####################################################################
-source $HOME/utilities/z/z.sh
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases
+source $HOME/scripts/z/z.sh
 source $HOME/.docs/tmuxinator.zsh
 detectOverrde;
 
@@ -66,3 +67,4 @@ PATH=$HOME/.bin:$PATH                                        # Custom Globals
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
+
