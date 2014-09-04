@@ -1,0 +1,31 @@
+[alias]
+    bl  = blame
+    br  = branch
+
+    ci  = commit
+    co  = checkout
+    cl  = clone
+
+    d   = diff
+
+    f   = fetch
+
+    gr  = remote
+
+    rst = reset
+
+    st  = status
+    sh  = stash
+
+
+    fid = flow init -d
+
+    ffs = flow feature start
+    fff = flow feature finish
+
+    fhs = flow hotfix start
+    fhf = flow hotfix finish
+
+    frs = flow release start
+    frf = flow release finish
+
