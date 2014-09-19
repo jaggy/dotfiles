@@ -87,7 +87,7 @@ let g:phpqa_messdetector_autorun = 0
 " Ctrl-P
 """"""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*,*/reports/*
+set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*,*/reports/*,*/Vendor/*
 
 
 

@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE
 
 ### Shell Config
 #####################################################################
-plugins=(git)
+plugins=(git, laravel4)
 stty -ixon                  # Removing the bindings from Ctrl-S
 set -o vi                   # Set the terminal bindings to vi
 export KEYTIMEOUT=1         # kill the timeout when pressing escape

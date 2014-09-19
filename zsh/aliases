@@ -4,6 +4,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ll='ls -lah'
+alias sl="ls"
 
 
 ### Git Specific
@@ -26,9 +27,11 @@ alias tmux='tmux -u'
 alias phpspec="phpspec --no-interaction"
 alias art="php artisan"
 alias cmp="composer"
+alias fuck='sudo $(fc -ln -1)'
 
 
 ### Shortcuts
+alias pp="phpunit"
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium-server-standalone-2.42.1.jar'
 alias pg="php $HOME/projects/partner.git/server.php"
@@ -47,7 +50,7 @@ alias migrate='art migrate:refresh --seed'
 
 
 ### Functions
-function gi(){ curl http://www.gitignore.io/api/$@ ;}
+function gi(){ curl -s https://www.gitignore.io/api/$@ ;}
 
 function cd() {
     builtin cd "$@";
