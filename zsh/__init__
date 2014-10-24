@@ -54,7 +54,16 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/scripts/z/z.sh
 source $HOME/.docs/tmuxinator.zsh
+source $HOME/.zsh-autosuggestions/autosuggestions.zsh
 detectOverrde;
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+# Bind accepting autocomplete
+bindkey '^f' vi-forward-word
 
 
 ### Environment
@@ -67,4 +76,3 @@ PATH=$HOME/.bin:$PATH                                        # Custom Globals
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
-
