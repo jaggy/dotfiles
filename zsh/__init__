@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE
 
 ### Shell Config
 #####################################################################
-plugins=(git, laravel4)
+plugins=(git, laravel4, autoenv)
 stty -ixon                  # Removing the bindings from Ctrl-S
 set -o vi                   # Set the terminal bindings to vi
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
@@ -57,22 +57,19 @@ source $HOME/.docs/tmuxinator.zsh
 source $HOME/.zsh-autosuggestions/autosuggestions.zsh
 detectOverrde;
 
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
-# Bind accepting autocomplete
-bindkey '^f' vi-forward-word
-
-
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
 ###  Make sure you append the $PATH
 #####################################################################
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+export XDEBUG_CONFIG="idekey=PHPSTORM"
 
 PATH=$HOME/.bin:$PATH                                        # Custom Globals
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
+PATH=/usr/local/Cellar/android-sdk/23.0.2/bin:$PATH          # Android
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

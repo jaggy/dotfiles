@@ -45,9 +45,9 @@ filetype plugin indent on      " Required by vundle
 autocmd BufRead,BufNewFile */.dotfiles/vim/* set filetype=vim
 autocmd BufRead,BufNewFile */.dotfiles/zsh/* set filetype=zsh
 autocmd BufRead,BufNewFile */.dotfiles/tmux/* set filetype=tmux
-autocmd BufRead,BufNewFile /private/etc/apache2/vhosts/* set filetype=apache
 
 source ~/.dotfiles/vim/syntax/php                 " PHP
+source ~/.dotfiles/vim/syntax/haml                " HAML
 source ~/.dotfiles/vim/syntax/javascript          " Javascript
 
 
@@ -110,6 +110,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 syntax enable                                            " Enable Syntax Highlightin
 color peachpuff                                          " Color scheme!
+"color torte                                              " Color scheme!
 highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
 highlight Pmenu ctermbg=black ctermfg=white              " Change autocomplete color
 
@@ -158,8 +159,8 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby  " Use the ruby syntax 
 autocmd BufRead,BufNewFile *.blade.* set filetype=blade   " Use the blade syntax highlighting
 autocmd BufRead,BufNewFile *.snip set filetype=neosnippet " Use the neosnippet syntax highlighting
 autocmd BufWinEnter *.php :let &foldlevel=2               " Update the fold levels for PHP files
-
-
+autocmd BufRead,BufNewFile *.haml.twig set filetype=haml
+autocmd BufRead,BufNewFile /private/etc/apache2/vhosts/* set filetype=apache
 
 
 
