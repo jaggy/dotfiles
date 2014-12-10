@@ -1,0 +1,36 @@
+" Closing and opening things
+inoremap jk <esc>
+inoremap jj <esc>
+inoremap ()<space> ()<esc>i
+inoremap ();<space> ();<esc>hi
+inoremap ():<space> ();<esc>hi
+inoremap {} {}<esc>i
+inoremap {}<cr> {<cr>}<esc>k$a<tab><cr>
+inoremap []; [];<esc>hi
+inoremap []: [];<esc>hi
+inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
+inoremap 0- ->
+inoremap -= =>
+
+" Center on page immediately on using search
+nnoremap n nzz
+
+" Use the enter on normal mode
+nnoremap <CR> o<esc>
+
+" Spliiting the windows
+nnoremap <C-w>\| <C-W>vzz<C-w>l
+nnoremap <C-w>- <C-W>szz<C-w>j
+
+" Remap semi-colon to colon
+nnoremap ; :
+noremap ; :
+map ; :
+
+" Just in case we need the semi-colon. Just in case
+noremap ;; :
+nnoremap ;; :
+map ;; :
+
+
+set relativenumber
