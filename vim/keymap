@@ -46,7 +46,7 @@ nnoremap <C-w>- <C-W>szz<C-w>j
 map ; :
 
 " Just in case we need the semi-colon. Just in case
-noremap ;; ;
+noremap ;; :
 
 " Nerd Tree Toggle
 map <C-e> :NERDTreeToggle<CR>
