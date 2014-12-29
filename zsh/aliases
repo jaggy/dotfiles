@@ -23,6 +23,7 @@ alias gt='git tag'
 
 ### Default Configuration
 alias guard='guard -g default'
+alias phpcs='phpcs --standard=PSR2 '
 alias tmux='tmux -u'
 alias phpspec="phpspec --no-interaction"
 alias art="php artisan"
@@ -53,7 +54,7 @@ alias migrate='art migrate:refresh --seed'
 
 
 ### Functions
-function gi(){ curl -s https://www.gitignore.io/api/$@ ;}
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 function cd() {
     builtin cd "$@";
