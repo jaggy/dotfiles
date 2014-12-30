@@ -26,6 +26,7 @@ let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
 
 
 
+
 """"""""""""""""""""""""""""""
 " Files
 """"""""""""""""""""""""""""""
@@ -55,29 +56,11 @@ source ~/.dotfiles/vim/syntax/javascript          " Javascript
 """"""""""""""""""""""""""""""
 " Airlne
 """"""""""""""""""""""""""""""
-let g:airline_theme             = 'wombat'
+"let g:airline_theme             = 'wombat'
+let g:airline_theme             = 'jaggy'
+let g:airline_powerline_fonts   = 1
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
-
-" vim-powerline symbols
-let g:airline_left_sep          = '⮀'
-let g:airline_left_alt_sep      = '⮁'
-let g:airline_right_sep         = '⮂'
-let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
-
-
-
-
-
-""""""""""""""""""""""""""""""
-" PHPQA
-""""""""""""""""""""""""""""""
-let g:phpqa_codesniffer_args     = "--standard=PSR2"
-let g:phpqa_codecoverage_file    = "reports/clover.xml"
-let g:phpqa_messdetector_autorun = 0
 
 
 
@@ -87,7 +70,7 @@ let g:phpqa_messdetector_autorun = 0
 " Ctrl-P
 """"""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*/vendor/*,*.zip,*/.sass-cache/*,*/node_modules/*,*/reports/*,*/Vendor/*
+set wildignore+=*/vendor/*,*/node_modules/*,*/storage/*
 
 
 
@@ -102,16 +85,14 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 
-
-
 """"""""""""""""""""""""""""""
 " Configuration
 """"""""""""""""""""""""""""""
 
 syntax enable                                            " Enable Syntax Highlightin
 color peachpuff                                          " Color scheme!
-"color torte                                              " Color scheme!
-highlight ColorColumn ctermbg=darkyellow                 " Change the ruler color
+"color torte                                             " Color scheme!
+highlight ColorColumn ctermbg=yellow                     " Change the ruler color
 highlight Pmenu ctermbg=black ctermfg=white              " Change autocomplete color
 
 
@@ -123,6 +104,8 @@ set cmdheight=1                                          " It's 2 by default
 set colorcolumn=80,120                                   " Margin for PSR Compliance
 set mouse=a                                              " Make the scrolling available
 
+"set term=xterm-256color
+set termencoding=utf-8
 set encoding=utf-8                                       " Always UTF-8
 set t_Co=256                                             " Set 256 color terminal
 

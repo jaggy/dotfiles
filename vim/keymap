@@ -18,6 +18,7 @@ map = <C-w>=
 inoremap jk <esc>
 inoremap ()<space> ()<esc>i
 inoremap ();<space> ();<esc>hi
+inoremap {}<space> {}<esc>i
 inoremap {} {}<esc>i
 inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
 inoremap []; [];<esc>i

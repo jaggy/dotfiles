@@ -1,7 +1,8 @@
 " Visual / Editor Plugins
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
+Bundle 'powerline/powerline'
+"Bundle 'scrooloose/nerdtree'
 
 " Complete
 Bundle 'Shougo/neocomplcache.vim'
