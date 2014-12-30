@@ -50,16 +50,23 @@ function _print {
     return;
 }
 
-
+__binary="${HOME}/.bin";
+__docs="${HOME}/.docs";
 
 _open "Configuring Filesystem";
 
     # create all the directories
-    _print 'Creating vim swap cache...'
+    _print 'Creating vim swap cache.';
     mkdir -p "${HOME}/.vim/swapfiles"; # vim swapfiles
 
-    _print 'Creating a cache directory...'
+    _print 'Creating a cache directory.';
     mkdir -p "${HOME}/.cache/ctrlp";   # control-p
+
+    _print 'Creating local docs folder.';
+    mkdir -p ${__docs};
+
+    _print 'Create a local binary folder.';
+    mkdir -p ${__binary};
 
 _close;
 
@@ -67,10 +74,70 @@ _close;
 
 
 
-# install homebrew and caskroom
-# check if `ag` is installed
+############################################################
+# Homebrew and Caskroom
+###########################################################
+#
+# Words need not be said to why this is here.
+#
+if ! function_exists 'brew'; then
+    _open 'Installing Homebrew and Caskroom';
 
-if ! function_exists "brew"; then
-    header "INSTALLING HOMEBREW";
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install caskroom/cask/brew-cask;
+
+    _close;
 fi
+
+
+_open 'Installing Applications';
+
+    ############################################################
+    # Essentials
+    ###########################################################
+    if ! function_exists 'tmuxinator'; then
+        _print 'Installing `git`';
+        brew install git wget ssh-copy-id tmux ;
+    fi
+
+
+    ############################################################
+    # ag : Silver Searcher
+    ###########################################################
+    #
+    # This is used as an alternative to the default searching of ctrlp.
+    # It makes the search significantly faster.
+    #
+    if ! function_exists 'ag'; then
+        _print 'Installing `ag`';
+        brew install ag;
+    fi
+
+
+    ############################################################
+    # tMuxinator
+    ###########################################################
+    if ! function_exists 'tmuxinator'; then
+        _print 'Installing `tmuxinator`';
+        brew install tmuxinator;
+    fi
+
+
+    ############################################################
+    # z: Directory Jumper
+    ###########################################################
+    if ! function_exists 'z'; then
+        _print 'Installing `z`';
+
+        _destination="${__binary}/z.git";
+        git clone https://github.com/rupa/z.git $_destination;
+
+        _print 'Creating a symlink';
+        ln -s "${_destination}/z.sh" "${__binary}/z";
+    fi
+_close;
+
+
+_open 'Creating symlinks';
+
+_close;
