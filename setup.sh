@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 
+declare -r __true=0;
+declare -r __false=1;
+
 set -o errexit;  # fail on function errors
 set -o nounset;  # fail on undeclared variables
-set -o xtrace;   # debugging
 set -o pipefail; # piping errors
 
-
+set -o xtrace;   # debugging
 #
 # Check if the function exists
 #
 function function_exists {
-    name=${1};
+    _name=${1};
 
-    if ! location="$(type -p "${name}")" || [ -z "${location}" ]; then
-        return 0;
+    if _path="$(type -P "${_name}")" || [ -z "${_path}" ]; then
+        return $__false;
     fi
 
-    return 1;
+    return $__true;
 }
 
 
@@ -27,6 +29,6 @@ mkdir -p "${HOME}/.cache/ctrlp";   # control-p
 # install homebrew and caskroom
 # check if `ag` is installed
 
-if function_exists "brew"; then
-    echo "function exists";
+if ! function_exists "brew"; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
