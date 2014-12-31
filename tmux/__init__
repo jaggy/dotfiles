@@ -42,8 +42,8 @@ set -g status-right "#[fg=blue] #(ifconfig en0 | grep 'inet ' | awk '{print \"en
  # Colors
  ######################################################
 
- #set -g status-bg default  # clear bar color
- set -g status-bg "#262526" # clear bar color
+ set -g status-bg default  # clear bar color
+ # set -g status-bg "#262526" # clear bar color
  set -g status-fg white     # foreground color
  #set -g pane-border-fg colour235
  #set -g pane-border-bg black
