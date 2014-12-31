@@ -1,0 +1,28 @@
+set -o vi # Set the terminal bindings to vi
+
+declare -a vimode;
+vimode='insert';
+
+function __set_theme {
+    ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}";
+    ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} ";
+    ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}⚡%{$reset_color%}";
+    ZSH_THEME_GIT_PROMPT_CLEAN="";
+
+    PROMPT="%{$fg[cyan]%}%1~%{$reset_color%}%{$fg[red]%}|%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}⇒%{$reset_color%} ";
+    RPROMPT="${vimode}";
+}
+
+function zle-line-init zle-keymap-select {
+    normal="%{$fg[green]%}NORMAL%{$reset_color%}";
+    insert="%{$fg[cyan]%}INSERT%{$reset_color%}";
+    vimode="${${KEYMAP/vicmd/$normal}/(main|viins)/$insert}"
+    __set_theme;
+
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+__set_theme;
