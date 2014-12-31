@@ -1,7 +1,8 @@
 " Visual / Editor Plugins
 Bundle 'bling/vim-airline'
+"Bundle 'powerline/powerline'
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'kien/ctrlp.vim'
-Bundle 'powerline/powerline'
 Bundle 'scrooloose/nerdtree'
 
 " Complete
