@@ -118,7 +118,7 @@ set shiftwidth=4                                         " Indentation >> and <<
 set expandtab                                            " Convert tabs into spaces
 
 set list                                                 " Show invisiable characters
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Characters
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Characters
 
 
 
