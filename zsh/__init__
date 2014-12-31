@@ -12,8 +12,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Good themes: awesomepanda, cloud, daveverwer, fwalch, miloshadzic, mrtazz, nanotech
-ZSH_THEME="miloshadzic"
-
+#ZSH_THEME="miloshadzic"
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
@@ -25,7 +24,6 @@ setopt HIST_IGNORE_SPACE
 #####################################################################
 plugins=(git, laravel4, autoenv)
 stty -ixon                  # Removing the bindings from Ctrl-S
-set -o vi                   # Set the terminal bindings to vi
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8   # Fix ZSH and Tmux issues
 export LANG=en_US.UTF-8
@@ -56,6 +54,42 @@ source $HOME/scripts/z/z.sh
 source $HOME/.docs/tmuxinator.zsh
 source $HOME/.zsh-autosuggestions/autosuggestions.zsh
 detectOverrde;
+
+### Post oh-my-zsh Config
+#####################################################################
+set -o vi                   # Set the terminal bindings to vi
+
+#VIMODE='[i]'
+#function zle-keymap-select {
+    #VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
+    #zle reset-prompt
+#}
+#zle -N zle-keymap-select
+
+declare -a vimode;
+vimode='insert';
+
+function __set_theme {
+    ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}"
+    ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+    ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}⚡%{$reset_color%}"
+    ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+    PROMPT="${vimode} %{$fg[cyan]%}%1~%{$reset_color%}%{$fg[red]%}|%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}⇒%{$reset_color%} "
+}
+
+function zle-line-init zle-keymap-select {
+    vimode="${${KEYMAP/vicmd/normal}/(main|viins)/insert}"
+    __set_theme;
+
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+__set_theme;
+
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
