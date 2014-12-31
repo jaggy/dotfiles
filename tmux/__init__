@@ -1,6 +1,8 @@
 ###########################
 #  Configuration
 ###########################
+run-shell "powerline-daemon -q"
+source-file ~/utilities/powerline/powerline/bindings/tmux/powerline.conf
 
 set -g default-terminal "screen-256color"                         # 256 terminal colors
 set -g history-limit 5000                                         # scroll back history
@@ -15,37 +17,3 @@ set-option -g default-command "reattach-to-user-namespace -l zsh" # allow using 
 setw -g monitor-activity on                                       # highlight window when it has new activity
 set -g visual-activity on                                         # highlight window when it has new activity
 source-file ~/.dotfiles/tmux/keymap                               # import keybindings
-
-######################################################
-# Status Bar
-######################################################
-
-set -g status-utf8 on         # enable UTF-8 support in status bar
-set -g status-interval 30     # set refresh interval for status bar
-set -g status-justify centre  # center the status bar
-set -g status-left-length 70  # left status length
-set -g status-right-length 60 # right status length
-
-set-option -gw window-status-format " #I|#W "
-set-option -gw window-status-current-format " #I | #W "
-set-option -gw window-status-current-bg "#0A9ADA"
-
-# host, static ip, connection, local address, tabs
-#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
-# show session name, window & pane number, date and time on right side of
-#set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
-
-set -g status-left "#[fg=green] #h : #[fg=brightblue]#(pwd | sed -e \"s|^$HOME|~|\") : #[fg=yellow]#(git branch | grep '*' | sed -e 's/\*\ //g') "
-set -g status-right "#[fg=blue] #(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') : #[fg=blue]#(date +'%A') #[fg=yellow]: %d %b %Y #[fg=green]: %l:%M %p"
-
- ######################################################
- # Colors
- ######################################################
-
- set -g status-bg default  # clear bar color
- # set -g status-bg "#262526" # clear bar color
- set -g status-fg white     # foreground color
- #set -g pane-border-fg colour235
- #set -g pane-border-bg black
- #set -g pane-active-border-fg red
- #set -g pane-active-border-bg black
