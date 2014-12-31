@@ -35,15 +35,16 @@ set-option -gw window-status-current-bg "#0A9ADA"
 # show session name, window & pane number, date and time on right side of
 #set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
 
-set -g status-left "#[fg=green] #h : #[fg=brightblue]#(pwd) : #[fg=yellow]#(git branch | grep '*' | sed -e 's/\*\ //g') "
+set -g status-left "#[fg=green] #h : #[fg=brightblue]#(pwd | sed -e \"s|^$HOME|~|\") : #[fg=yellow]#(git branch | grep '*' | sed -e 's/\*\ //g') "
 set -g status-right "#[fg=blue] #(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') : #[fg=blue]#(date +'%A') #[fg=yellow]: %d %b %Y #[fg=green]: %l:%M %p"
 
  ######################################################
  # Colors
  ######################################################
 
- set -g status-bg default  # clear bar color
- set -g status-fg white    # foreground color
+ #set -g status-bg default  # clear bar color
+ set -g status-bg "#262526" # clear bar color
+ set -g status-fg white     # foreground color
  #set -g pane-border-fg colour235
  #set -g pane-border-bg black
  #set -g pane-active-border-fg red
