@@ -2,7 +2,7 @@
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'powerline/powerline'
-"Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 
 " Complete
 Bundle 'Shougo/neocomplcache.vim'
