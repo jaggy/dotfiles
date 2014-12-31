@@ -24,17 +24,12 @@ inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
 inoremap []; [];<esc>i
 inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
 inoremap []<space> []<esc>i
-" inoremap ""; "";<esc>hi
-" inoremap "": "":<esc>hi
-" inoremap "" ""<esc>i
-" inoremap ''; '';<esc>hi
-" inoremap '' ''<esc>i
-" inoremap <> <><esc>i
 inoremap 0- ->
 inoremap -= =>
 
 " Center on page immediately on using search
 nnoremap n nzz
+nnoremap G Gzz
 
 " Use the enter on normal mode
 nnoremap <CR> o<esc>
@@ -45,9 +40,6 @@ nnoremap <C-w>- <C-W>szz<C-w>j
 
 " Remap semi-colon to colon
 map ; :
-
-" Just in case we need the semi-colon. Just in case
-noremap ;; :
 
 " Nerd Tree Toggle
 map <C-e> :NERDTreeToggle<CR>

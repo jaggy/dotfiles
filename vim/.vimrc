@@ -31,10 +31,10 @@ let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
 " Files
 """"""""""""""""""""""""""""""
 
-source ~/.dotfiles/vim/plugins " Plugins
-source ~/.dotfiles/vim/keymap  " Keymap
-call vundle#end()              " Finish Vundle setup
-filetype plugin indent on      " Required by vundle
+source ~/.dotfiles/vim/plugins.vim " Plugins
+source ~/.dotfiles/vim/keymap.vim  " Keymap
+call vundle#end()                  " Finish Vundle setup
+filetype plugin indent on          " Required by vundle
 
 
 
@@ -43,13 +43,12 @@ filetype plugin indent on      " Required by vundle
 " Files
 """"""""""""""""""""""""""""""
 
-autocmd BufRead,BufNewFile */.dotfiles/vim/* set filetype=vim
 autocmd BufRead,BufNewFile */.dotfiles/zsh/* set filetype=zsh
 autocmd BufRead,BufNewFile */.dotfiles/tmux/* set filetype=tmux
 
-source ~/.dotfiles/vim/syntax/php                 " PHP
-source ~/.dotfiles/vim/syntax/haml                " HAML
-source ~/.dotfiles/vim/syntax/javascript          " Javascript
+source ~/.dotfiles/vim/syntax/php.vim         " PHP
+source ~/.dotfiles/vim/syntax/haml.vim        " HAML
+source ~/.dotfiles/vim/syntax/javascript.vim  " Javascript
 
 
 
