@@ -55,8 +55,7 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/scripts/z/z.sh
 source $HOME/.docs/tmuxinator.zsh
 source $HOME/.zsh-autosuggestions/autosuggestions.zsh
-#source $HOME/.dotfiles/zsh/vimode
-. $HOME/utilities/powerline/powerline/bindings/zsh/powerline.zsh
+source $HOME/utilities/powerline/powerline/bindings/zsh/powerline.zsh
 detectOverrde;
 
 ### Environment
