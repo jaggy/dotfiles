@@ -22,14 +22,21 @@ source-file ~/.dotfiles/tmux/keymap                               # import keybi
 
 set -g status-utf8 on         # enable UTF-8 support in status bar
 set -g status-interval 30     # set refresh interval for status bar
-set -g status-justify left    # center the status bar
+set -g status-justify centre  # center the status bar
 set -g status-left-length 70  # left status length
 set -g status-right-length 60 # right status length
 
+set-option -gw window-status-format " #I|#W "
+set-option -gw window-status-current-format " #I | #W "
+set-option -gw window-status-current-bg "#0A9ADA"
+
 # host, static ip, connection, local address, tabs
-set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
+#set -g status-left "#[fg=green]: #h : #[fg=brightblue]#(curl icanhazip.com) #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
 # show session name, window & pane number, date and time on right side of
-set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
+#set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
+
+set -g status-left "#[fg=green] #h : #[fg=brightblue]#(pwd) : #[fg=yellow]#(git branch | grep '*' | sed -e 's/\*\ //g') "
+set -g status-right "#[fg=blue] #(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') : #[fg=blue]#(date +'%A') #[fg=yellow]: %d %b %Y #[fg=green]: %l:%M %p"
 
  ######################################################
  # Colors
