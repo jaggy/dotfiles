@@ -15,8 +15,11 @@ Plugin 'gmarik/Vundle.vim'         " let Vundle manage Vundle, required
 
 """"""""""""""""""""""""""""""
 " Pre-configuration
+"
+" This is to make sure that certain plugins are configured to use the proper
+" settings.
 """"""""""""""""""""""""""""""
-let mapleader=","                           " The leader key must be mapped before adding the keymaps
+let mapleader="," " The leader key must be mapped before adding the keymaps
 
 
 
@@ -38,7 +41,6 @@ filetype plugin indent on          " Required by vundle
 " Files
 """"""""""""""""""""""""""""""
 
-autocmd BufRead,BufNewFile */.dotfiles/zsh/* set filetype=zsh
 autocmd BufRead,BufNewFile */.dotfiles/tmux/* set filetype=tmux
 
 source ~/.dotfiles/vim/syntax/php.vim           " PHP
@@ -63,12 +65,14 @@ let g:airline_enable_syntastic  = 1
 """"""""""""""""""""""""""""""
 " Ctrl-P
 """"""""""""""""""""""""""""""
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/vendor/*,*/node_modules/*,*/storage/*
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+set runtimepath^=~/.vim/bundle/ctrlp.vim                    " Bundle path
+set wildignore+=*/vendor/*,*/node_modules/*,*/storage/*     " Things to ignore
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'             " Cahche location
+let g:ctrlp_dotfiles  = 1                                   " Show dotfiles
+
 
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'   " Use AG for caching
 endif
 
 
@@ -79,17 +83,12 @@ endif
 """"""""""""""""""""""""""""""
 " NeoCache
 """"""""""""""""""""""""""""""
-let g:acp_enableAtStartup             = 0   " Disable AutoComplPop.
-let g:neocomplcache_enable_at_startup = 1   " Use neocomplcache.
-let g:neocomplcache_enable_smart_case = 1   " Use smartcase.
-let g:DisableAutoPHPFolding           = 1
-let g:snippets_dir                    = '~/.dotfiles/vim/snippets'
-
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
-"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
-inoremap <expr>\  pumvisible() ? "\<C-n>" : "\\"
+let g:acp_enableAtStartup             = 0                       " Disable AutoComplPop
+let g:neocomplcache_enable_at_startup = 1                       " Use neocomplcache
+let g:neocomplcache_enable_smart_case = 1                       " Use smartcase.
+let g:neosnippet#enable_snipmate_compatibility = 1              " Snipmate
+let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'  " Custom snippet path
+inoremap <expr>\  pumvisible() ? "\<C-n>" : "\\"                " Navigating through the completion
 
 
 
@@ -99,7 +98,6 @@ inoremap <expr>\  pumvisible() ? "\<C-n>" : "\\"
 
 syntax enable                                            " Enable Syntax Highlightin
 color peachpuff                                          " Color scheme!
-"color torte                                             " Color scheme!
 highlight ColorColumn ctermbg=yellow                     " Change the ruler color
 highlight Pmenu ctermbg=black ctermfg=white              " Change autocomplete color
 
@@ -111,16 +109,13 @@ set relativenumber                                       " Relative Line numbers
 set cmdheight=1                                          " It's 2 by default
 set colorcolumn=80,120                                   " Margin for PSR Compliance
 set mouse=a                                              " Make the scrolling available
-
-"set term=xterm-256color
+set term=xterm-256color
 set termencoding=utf-8
 set encoding=utf-8                                       " Always UTF-8
 set t_Co=256                                             " Set 256 color terminal
-
 set tabstop=4                                            " Columns per tab
 set shiftwidth=4                                         " Indentation >> and << count
 set expandtab                                            " Convert tabs into spaces
-
 set list                                                 " Show invisiable characters
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<  " Set invisiable Characters
 

@@ -1,11 +1,11 @@
 #
 # ZSH Configuration
-# Version 3.0.0
+# Version 3.0.2
 #
 #
 # Licensed under WTFPL
 # Copyright (c) 2014 Jaggy Gauran
-# http://twitter.com/jaggygauran
+# http://jaggygauran.com
 #
 ### ZSH Specific Configuration
 #####################################################################
@@ -41,7 +41,7 @@ function detectOverrde() {
         echo "${COL_YELLOW}Loading shell overrides.${COL_RESET}";
         source $FILE
     else
-        source $HOME/.dotfiles/zsh/aliases;
+        source $HOME/.dotfiles/zsh/aliases.zsh;
     fi
 }
 
@@ -50,9 +50,9 @@ function detectOverrde() {
 #####################################################################
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/zsh/aliases
-source $HOME/scripts/z/z.sh
-source $HOME/.docs/tmuxinator.zsh
+source $HOME/.dotfiles/zsh/aliases.zsh
+source $HOME/.dotfiles/submodules/z.git/z.sh
+source $HOME/.dotfiles/completion/tmuxinator.zsh
 source $HOME/.zsh-autosuggestions/autosuggestions.zsh
 detectOverrde;
 
