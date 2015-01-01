@@ -58,3 +58,63 @@ snippet r;
 
 snippet r;r
 	Route::resource('${1:resource}');${0}
+
+
+snippet l;model
+	<?php
+	namespace ${1};
+
+	use Eloquent;
+
+	/**
+	 * $2
+	 *
+	 * @uses        \Eloquent
+	 *
+	 * @package     $1
+	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license     ${3:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
+	 * @version     Release: ${4:0.1.0}
+	 * @link        http://github.com/${6}
+	 * @since       Class available since Release ${5:0.1.0}
+	 */
+	class ${2} extends Eloquent
+	{
+
+		/**
+		 * Table name.
+		 *
+		 * @access protected
+		 * @type   table
+		 */
+		protected $table = '';
+
+		/**
+		 * Mass assignment protection.
+		 *
+		 * @access protected
+		 * @type   array
+		 */
+		protected $fillable = [];
+	}
+
+snippet l;controller
+	<?php
+	namespace ${1};
+
+	/**
+	 * $2Controller
+	 *
+	 * @uses        \App\Http\BaseController
+	 *
+	 * @package     $1
+	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license     ${3:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
+	 * @version     Release: ${4:0.1.0}
+	 * @link        http://github.com/${6}
+	 * @since       Class available since Release ${5:0.1.0}
+	 */
+	class ${2}Controller extends BaseController
+	{
+		${0}
+	}
