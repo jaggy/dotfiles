@@ -10,7 +10,7 @@ snippet docblock
 	 */
 	 ${0}
 
-snippet c:ns
+snippet c;ns
 	<?php
 	namespace ${1};
 
@@ -39,19 +39,21 @@ snippet s:c
 		$table->timestamps();
 	});
 
-snippet s:d
+snippet s;d
 	Schema::drop('${1:table}');${0}
 
-snippet v:m
+snippet v;m
 	View::make('${1:table}');${0}
 
-snippet r:group
-	Route::group([], function () {
+snippet r;g
+	Route::group([${1:parameters}], function () {
+
 		${0}
+
 	});
 
-snippet r:
-	Route::${1:get}('${2:url}', ['as' => '${3:id}', 'uses' => '${4:Controller@action}']);
+snippet r;
+	Route::${1:get}('${2:url}', ['as' => '${3:id}', 'uses' => '${4:Controller@action}']);${0}
 
-snippet r:r
-	Route::resource('${1:resource}');
+snippet r;r
+	Route::resource('${1:resource}');${0}
