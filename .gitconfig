@@ -4,6 +4,9 @@
     fff = flow feature finish
     fhs = flow hotfix start
     fhf = flow hotfix finish
+    frs = flow release start
+    frf = flow release finish
+
 
     co   = checkout
     cob  = checkout -b
@@ -13,6 +16,7 @@
     br   = branch
     r    = remote
     d    = diff
+    l    = log
     t    = tag
     tags = tag -a
     st   = status
