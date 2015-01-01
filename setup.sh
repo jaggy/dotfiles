@@ -97,7 +97,7 @@ _open 'Installing Applications';
     ###########################################################
     if ! function_exists 'tmuxinator'; then
         _print 'Installing `git`';
-        brew install git wget ssh-copy-id tmux ;
+        brew install git wget ssh-copy-id tmux;
     fi
 
 
@@ -120,20 +120,6 @@ _open 'Installing Applications';
     if ! function_exists 'tmuxinator'; then
         _print 'Installing `tmuxinator`';
         brew install tmuxinator;
-    fi
-
-
-    ############################################################
-    # z: Directory Jumper
-    ###########################################################
-    if ! function_exists 'z'; then
-        _print 'Installing `z`';
-
-        _destination="${__binary}/z.git";
-        git clone https://github.com/rupa/z.git $_destination;
-
-        _print 'Creating a symlink';
-        ln -s "${_destination}/z.sh" "${__binary}/z";
     fi
 _close;
 
