@@ -1,3 +1,25 @@
+[alias]
+    fid = flow init -d
+    ffs = flow feature start
+    fff = flow feature finish
+    fhs = flow hotfix start
+    fhf = flow hotfix finish
+
+    co   = checkout
+    cob  = checkout -b
+    undo = reset --soft
+    rst  = reset
+
+    br   = branch
+    r    = remote
+    d    = diff
+    t    = tag
+    tags = tag -a
+    st   = status
+    bl   = blame
+    ci   = commit
+
+
 [user]
     email = jaggygauran@gmail.com
     name = Jaggy Gauran
