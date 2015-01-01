@@ -46,9 +46,10 @@ filetype plugin indent on          " Required by vundle
 autocmd BufRead,BufNewFile */.dotfiles/zsh/* set filetype=zsh
 autocmd BufRead,BufNewFile */.dotfiles/tmux/* set filetype=tmux
 
-source ~/.dotfiles/vim/syntax/php.vim         " PHP
-source ~/.dotfiles/vim/syntax/haml.vim        " HAML
-source ~/.dotfiles/vim/syntax/javascript.vim  " Javascript
+source ~/.dotfiles/vim/syntax/php.vim           " PHP
+source ~/.dotfiles/vim/syntax/haml.vim          " HAML
+source ~/.dotfiles/vim/syntax/javascript.vim    " Javascript
+source ~/.dotfiles/vim/abbreviations.vim        " Abbreviations
 
 
 
