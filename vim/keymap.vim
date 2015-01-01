@@ -39,8 +39,8 @@ nnoremap <C-w>\| <C-W>vzz<C-w>l
 nnoremap <C-w>- <C-W>szz<C-w>j
 
 " Remap semi-colon to colon
-map ; :
-map ;; :
+nnoremap ; :
+nnoremap ;; :
 
 " Nerd Tree Toggle
 map <C-e> :NERDTreeToggle<CR>

@@ -1,0 +1,9 @@
+[user]
+    email = jaggygauran@gmail.com
+    name = Jaggy Gauran
+[push]
+    default = matching
+[log]
+    abbrevCommit = true
+[format]
+    pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
