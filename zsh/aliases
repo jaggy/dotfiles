@@ -19,6 +19,7 @@ alias gm='git merge'
 alias gs='git status'
 alias gp='git push'
 alias gt='git tag'
+alias gl='git log'
 
 
 ### Default Configuration
