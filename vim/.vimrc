@@ -17,16 +17,6 @@ Plugin 'gmarik/Vundle.vim'         " let Vundle manage Vundle, required
 " Pre-configuration
 """"""""""""""""""""""""""""""
 let mapleader=","                           " The leader key must be mapped before adding the keymaps
-let g:acp_enableAtStartup = 0               " Disable AutoComplPop.
-let g:neocomplcache_enable_at_startup = 1   " Use neocomplcache.
-let g:neocomplcache_enable_smart_case = 1   " Use smartcase.
-let g:snippets_dir='~/.dotfiles/vim/snippets'
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-"
-" " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 
 
@@ -89,8 +79,17 @@ endif
 """"""""""""""""""""""""""""""
 " NeoCache
 """"""""""""""""""""""""""""""
-let g:neocomplcache_enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:acp_enableAtStartup             = 0   " Disable AutoComplPop.
+let g:neocomplcache_enable_at_startup = 1   " Use neocomplcache.
+let g:neocomplcache_enable_smart_case = 1   " Use smartcase.
+let g:DisableAutoPHPFolding           = 1
+let g:snippets_dir                    = '~/.dotfiles/vim/snippets'
+
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
+"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+inoremap <expr>\  pumvisible() ? "\<C-n>" : "\\"
 
 
 

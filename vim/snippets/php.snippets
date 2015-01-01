@@ -1,3 +1,15 @@
+snippet fun
+	/**
+	 * $2
+	 *
+	 * @access $1
+	 * @return ${4:void}
+	 */
+	${1:public} function ${2:function_name}(${3})
+	{
+		${0}
+	}
+
 snippet db;c
 	/**
 	 * ${1}
@@ -10,6 +22,23 @@ snippet db;c
 	 * @since       Class available since Release ${7:0.1.0}
 	 */
 	 ${0}
+
+snippet c;b
+	<?php
+
+	/**
+	 * $1
+	 *
+	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license     ${2:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
+	 * @version     Release: ${3:0.1.0}
+	 * @link        http://github.com/${5}
+	 * @since       Class available since Release ${4:0.1.0}
+	 */
+	class ${1}
+	{
+		${0}
+	}
 
 snippet c;ns
 	<?php
@@ -118,3 +147,15 @@ snippet l;controller
 	{
 		${0}
 	}
+
+snippet aio
+	$this->assertInstanceOf('${1}', ${2});
+
+snippet aeq
+	$this->assertEquals('${1}', ${2});
+
+snippet atr
+	$this->assertTrue(${1});
+
+snippet afs
+	$this->assertFalse(${1});
