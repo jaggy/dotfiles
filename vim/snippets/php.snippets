@@ -8,23 +8,7 @@ snippet docblock
 	 * @link        http://github.com/${5}
 	 * @since       Class available since Release ${4:0.1.0}
 	 */
-	 ${6:TARGET}
-
-snippet s:c
-	Schema::create('${1:table}', function ($table)
-	{
-		$table->increments('id');
-
-		${0}
-
-		$table->timestamps();
-	});
-
-snippet s:d
-	Schema::drop('${1:table}');${0}
-
-snippet v:m
-	View::make('${1:table}');${0}
+	 ${0}
 
 snippet c:ns
 	<?php
@@ -42,5 +26,32 @@ snippet c:ns
 	 */
 	class ${2}
 	{
-		${6:TARGET}
+		${0}
 	}
+
+snippet s:c
+	Schema::create('${1:table}', function ($table)
+	{
+		$table->increments('id');
+
+		${0}
+
+		$table->timestamps();
+	});
+
+snippet s:d
+	Schema::drop('${1:table}');${0}
+
+snippet v:m
+	View::make('${1:table}');${0}
+
+snippet r:group
+	Route::group([], function () {
+		${0}
+	});
+
+snippet r:
+	Route::${1:get}('${2:url}', ['as' => '${3:id}', 'uses' => '${4:Controller@action}']);
+
+snippet r:r
+	Route::resource('${1:resource}');
