@@ -17,12 +17,12 @@ CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
 DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_SPACE      # Don't log commands prefixed with a space
 
 
 ### Shell Config
 #####################################################################
-plugins=(git, laravel4, autoenv)
+plugins=(git, laravel4)
 stty -ixon                  # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8   # Fix ZSH and Tmux issues
@@ -64,13 +64,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
-export XDEBUG_CONFIG="idekey=PHPSTORM"
 
 PATH=$HOME/.bin:$PATH                                        # Custom Globals
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
-PATH=/usr/local/Cellar/android-sdk/23.0.2/bin:$PATH          # Android
+PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
