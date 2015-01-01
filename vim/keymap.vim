@@ -47,6 +47,7 @@ map <C-e> :NERDTreeToggle<CR>
 
 " Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
 
 
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)

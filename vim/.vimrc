@@ -20,8 +20,13 @@ let mapleader=","                           " The leader key must be mapped befo
 let g:acp_enableAtStartup = 0               " Disable AutoComplPop.
 let g:neocomplcache_enable_at_startup = 1   " Use neocomplcache.
 let g:neocomplcache_enable_smart_case = 1   " Use smartcase.
-let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
+let g:snippets_dir='~/.dotfiles/vim/snippets'
 
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+"
+" " Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 
 
@@ -140,7 +145,7 @@ highlight GitGutterChangeDelete ctermfg=yellow
 " Autocommands
 """"""""""""""""""""""""""""""
 autocmd BufWritePre * :%s/\s\+$//e                        " Remove excess white space
-autocmd BufRead * :retab                                  " Fix tabbing
+"autocmd BufRead * :retab                                  " Fix tabbing
 autocmd BufRead,BufNewFile *.twig set filetype=htmljinja  " Use the twig syntax highlighting
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby  " Use the ruby syntax highlighting
 autocmd BufRead,BufNewFile *.blade.* set filetype=blade   " Use the blade syntax highlighting

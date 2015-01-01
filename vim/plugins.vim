@@ -1,7 +1,5 @@
 " Visual / Editor Plugins
 Bundle 'bling/vim-airline'
-"Bundle 'powerline/powerline'
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 
@@ -9,6 +7,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " Syntax Highlighting
 Bundle 'wavded/vim-stylus'
@@ -24,6 +26,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/vim-easymotion'
 
 " PHP Specific Tools
 Bundle 'spf13/PIV'
