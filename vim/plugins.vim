@@ -6,7 +6,7 @@ Bundle 'tobyS/vmustache'
 Bundle 'SirVer/ultisnips'
 
 " Complete
-Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle "MarcWeber/vim-addon-mw-utils"

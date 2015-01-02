@@ -88,14 +88,21 @@ nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
 """"""""""""""""""""""""""""""
 " NeoCache
 """"""""""""""""""""""""""""""
-let g:acp_enableAtStartup             = 0                       " Disable AutoComplPop
-let g:neocomplcache_enable_at_startup = 1                       " Use neocomplcache
-let g:neocomplcache_enable_smart_case = 1                       " Use smartcase.
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neosnippet#enable_snipmate_compatibility = 1              " Snipmate
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'  " Custom snippet path
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"        " Navigating through the completion
-inoremap <expr>\ pumvisible() ? "\<C-n>" : "\\"
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ neocomplete#start_manual_complete()
+
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 """"""""""""""""""""""""""""""
 " Configuration
