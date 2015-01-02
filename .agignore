@@ -1,0 +1,12 @@
+.git/
+.gitkeep
+
+vendor/
+node_modules/
+bower_components/
+.sass-cache/
+storage/
+tmp/
+*.img
+*.bin
+*.mock
