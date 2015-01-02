@@ -37,6 +37,7 @@ filetype plugin indent on          " Required by vundle
 
 
 
+
 """"""""""""""""""""""""""""""
 " Files
 """"""""""""""""""""""""""""""
@@ -67,15 +68,13 @@ let g:airline_enable_syntastic  = 1
 """"""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim                    " Bundle path
 set wildignore+=*/vendor/*,*/node_modules/*,*/storage/*     " Things to ignore
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'             " Cahche location
-let g:ctrlp_dotfiles  = 1                                   " Show dotfiles
+let g:ctrlp_cache_dir   = $HOME . '/.cache/ctrlp'           " Cahche location
+let g:ctrlp_show_hidden = 1
 
 
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'   " Use AG for caching
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'   " Use AG for caching
 endif
-
-
 
 
 """"""""""""""""""""""""""""""
@@ -94,8 +93,8 @@ let g:neocomplcache_enable_at_startup = 1                       " Use neocomplca
 let g:neocomplcache_enable_smart_case = 1                       " Use smartcase.
 let g:neosnippet#enable_snipmate_compatibility = 1              " Snipmate
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'  " Custom snippet path
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"        " Navigating through the completion
-
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"        " Navigating through the completion
+inoremap <expr>\ pumvisible() ? "\<C-n>" : "\\"
 
 
 """"""""""""""""""""""""""""""
@@ -153,7 +152,6 @@ autocmd BufRead,BufNewFile *.snip set filetype=neosnippet " Use the neosnippet s
 autocmd BufWinEnter *.php :let &foldlevel=3               " Update the fold levels for PHP files
 autocmd BufRead,BufNewFile *.haml.twig set filetype=haml
 autocmd BufRead,BufNewFile /private/etc/apache2/vhosts/* set filetype=apache
-
 
 
 """"""""""""""""""""""""""""""

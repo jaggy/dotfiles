@@ -50,6 +50,6 @@ nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
 
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
