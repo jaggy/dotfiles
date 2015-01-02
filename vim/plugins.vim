@@ -2,6 +2,8 @@
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tobyS/vmustache'
+Bundle 'SirVer/ultisnips'
 
 " Complete
 Bundle 'Shougo/neocomplcache.vim'
@@ -29,7 +31,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 
 " PHP Specific Tools
-Bundle 'spf13/PIV'
+"Bundle 'spf13/PIV'
+Bundle 'tobyS/pdv'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'majutsushi/tagbar'
 

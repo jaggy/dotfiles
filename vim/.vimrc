@@ -78,6 +78,12 @@ endif
 
 
 
+""""""""""""""""""""""""""""""
+" PDV
+""""""""""""""""""""""""""""""
+"let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+let g:pdv_template_dir = $HOME ."/.dotfiles/vim/pdv/templates"
+nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
 
 
 """"""""""""""""""""""""""""""
@@ -88,7 +94,7 @@ let g:neocomplcache_enable_at_startup = 1                       " Use neocomplca
 let g:neocomplcache_enable_smart_case = 1                       " Use smartcase.
 let g:neosnippet#enable_snipmate_compatibility = 1              " Snipmate
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'  " Custom snippet path
-inoremap <expr>\  pumvisible() ? "\<C-n>" : "\\"                " Navigating through the completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"        " Navigating through the completion
 
 
 
