@@ -48,6 +48,8 @@ source ~/.dotfiles/vim/syntax/php.vim           " PHP
 source ~/.dotfiles/vim/syntax/haml.vim          " HAML
 source ~/.dotfiles/vim/syntax/javascript.vim    " Javascript
 source ~/.dotfiles/vim/abbreviations.vim        " Abbreviations
+source ~/.dotfiles/vim/scripts/helpers.vim
+source ~/.dotfiles/vim/scripts/phpunit.vim
 
 
 
