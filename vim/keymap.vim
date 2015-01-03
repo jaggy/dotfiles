@@ -49,16 +49,9 @@ map <C-e> :NERDTreeToggle<CR>
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
 
-imap <Up>     <C-p>
-imap <Down>   <C-n>
-
-imap <C-j> <Down>
-imap <C-k> <Up>
-
-
 " comment
 nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
 
-smap <C-h> <Plug>(neosnippet_expand_or_jump)
-xmap <C-h> <Plug>(neosnippet_expand_target)
-imap <C-h> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
