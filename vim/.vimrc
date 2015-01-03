@@ -108,6 +108,7 @@ set directory=$HOME/.vim/swapfiles//
 set nowrap                                               " NO WRAPPING
 set laststatus=2                                         " Activate Powerline
 set relativenumber                                       " Relative Line numbers
+set number
 set cmdheight=1                                          " It's 2 by default
 set colorcolumn=80,120                                   " Margin for PSR Compliance
 set mouse=a                                              " Make the scrolling available
