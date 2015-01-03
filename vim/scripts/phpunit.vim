@@ -21,8 +21,9 @@ function! phpunit#create_function()
                 \ '}',
                 \ ]
 
-    call setline(current_line, function)
-    normal 9j$
+    call append(current_line, function)
+    normal 11>j
+    normal 10j$
     startinsert
 endfunction
 
