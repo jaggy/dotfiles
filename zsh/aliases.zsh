@@ -9,6 +9,7 @@ alias sl="ls"
 
 ### Git Specific
 alias gti='git'
+alias mdkir='mkdir'
 alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
