@@ -28,7 +28,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-easymotion'
 
 " PHP Specific Tools
 "Bundle 'spf13/PIV'
