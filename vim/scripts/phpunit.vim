@@ -25,6 +25,7 @@ function! phpunit#create_function()
     normal 11>j
     normal 10j$
     startinsert
+    call cursor( line('.'), col('.') + 1)
 endfunction
 
 nnoremap <leader>zc :call phpunit#create_function()<cr>
