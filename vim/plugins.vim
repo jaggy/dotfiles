@@ -16,6 +16,7 @@ Bundle "honza/vim-snippets"
 
 " Syntax Highlighting
 Bundle 'wavded/vim-stylus'
+Bundle 'veloce/vim-behat'
 Bundle 'elzr/vim-json'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'zaiste/tmux.vim'

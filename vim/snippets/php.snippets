@@ -1,11 +1,11 @@
 snippet fun
 	/**
-	 * $2
+	 * ${1:description}
 	 *
-	 * @access $1
-	 * @return ${4:void}
+	 * @access ${2:public}
+	 * @return ${5:void}
 	 */
-	${1:public} function ${2:function_name}(${3})
+	$2 function ${3:function_name}(${4})
 	{
 		${0}
 	}
@@ -39,7 +39,7 @@ snippet db;c
 	 * @license     ${3:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
 	 * @version     Release: ${4:0.1.0}
 	 * @link        http://github.com/${6}
-	 * @since       Class available since Release ${7:0.1.0}
+	 * @since       Class available since Release ${5:0.1.0}
 	 */
 	 ${0}
 
@@ -47,13 +47,13 @@ snippet c;b
 	<?php
 
 	/**
-	 * $1
+	 * ${2}
 	 *
 	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
-	 * @license     ${2:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
-	 * @version     Release: ${3:0.1.0}
+	 * @license     ${3:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
+	 * @version     Release: ${4:0.1.0}
 	 * @link        http://github.com/${5}
-	 * @since       Class available since Release ${4:0.1.0}
+	 * @since       Class available since Release ${6:0.1.0}
 	 */
 	class ${1}
 	{
@@ -65,22 +65,22 @@ snippet c;ns
 	namespace ${1};
 
 	/**
-	 * $2
+	 * ${2}
 	 *
 	 * @package     $1
 	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
-	 * @license     ${3:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
-	 * @version     Release: ${4:0.1.0}
+	 * @license     ${4:http://www.wtfpl.net/ Do What the Fuck You Want to Public License}
+	 * @version     Release: ${5:0.1.0}
 	 * @link        http://github.com/${6}
-	 * @since       Class available since Release ${5:0.1.0}
+	 * @since       Class available since Release ${7:0.1.0}
 	 */
-	class ${2}
+	class ${3}
 	{
 		${0}
 	}
 
 snippet s;c
-	Schema::create('${1:table}', function ($table)
+	Schema::create('${1:table}', function (Blueprint $table)
 	{
 		$table->increments('id');
 
