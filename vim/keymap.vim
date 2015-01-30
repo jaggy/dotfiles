@@ -48,6 +48,7 @@ map <C-e> :NERDTreeToggle<CR>
 " Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
+nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
 
 " comment
 nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
