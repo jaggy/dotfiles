@@ -43,3 +43,5 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 	required = true
+[init]
+	templatedir = ~/.git_template

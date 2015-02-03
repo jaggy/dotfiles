@@ -1,0 +1,14 @@
+#!/usr/local/php5/bin/php
+<?php
+
+$gitshots     = '/Volumes/Data/Dropbox/gitshots';
+$imagesnap    = exec('which imagesnap');
+$now          = strtotime(date('Y-m-d H:i:s'));
+$destination  = "{$gitshots}/{$now}.jpg";
+
+echo "Running gitshots! SMILE!\n";
+echo "Saving the file into {$destination}.\n";
+
+$command = "$imagesnap -q -w 3 {$destination} &> /dev/null &";
+system($command);
+
