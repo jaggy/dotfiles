@@ -30,7 +30,7 @@ alias gl='git log'
 alias guard='guard -g default'
 alias phpcs='phpcs --standard=PSR2 '
 alias tmux='tmux -u'
-alias phpspec="phpspec --no-interaction"
+alias psp="phpspec --no-interaction"
 alias art="php artisan"
 alias cmp="composer"
 alias py="python"

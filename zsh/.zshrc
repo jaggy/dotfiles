@@ -73,3 +73,4 @@ PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
