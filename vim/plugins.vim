@@ -23,6 +23,7 @@ Bundle 'zaiste/tmux.vim'
 Bundle 'burnettk/vim-angular'
 Bundle 'xsbeats/vim-blade'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
 
 " Productivity
 Bundle 'godlygeek/tabular'

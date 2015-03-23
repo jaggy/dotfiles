@@ -10,6 +10,43 @@ snippet fun
 		${0}
 	}
 
+snippet l;bt
+	/**
+	 * It belongs to '${1:class}'.
+	 *
+	 * @access public
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function ${2:function_name}()
+	{
+		return $this->belongsTo($1::class);
+	}
+
+snippet l;btm
+	/**
+	 * It has and belongs to many '${1:class}'.
+	 *
+	 * @access public
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function ${2:function_name}()
+	{
+		return $this->belongsTo($1::class);
+	}
+
+snippet l;hm
+	/**
+	 * It has many '${1:class}'.
+	 *
+	 * @access public
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ${2:function_name}()
+	{
+		return $this->hasMany($1::class);
+	}
+
+
 snippet ifun
 	/**
 	 * ${2:description}
@@ -112,12 +149,12 @@ snippet l;model
 	<?php
 	namespace ${1};
 
-	use Eloquent;
+	use Illuminate\Database\Eloquent\Model;
 
 	/**
 	 * $2
 	 *
-	 * @uses        \Eloquent
+	 * @uses        \Illuminate\Database\Eloquent\Model
 	 *
 	 * @package     $1
 	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
@@ -126,7 +163,7 @@ snippet l;model
 	 * @link        http://github.com/${6}
 	 * @since       Class available since Release ${5:0.1.0}
 	 */
-	class ${2} extends Eloquent
+	class ${2} extends Model
 	{
 
 		/**
@@ -160,9 +197,50 @@ snippet l;controller
 	 * @link        http://github.com/${6}
 	 * @since       Class available since Release ${5:0.1.0}
 	 */
-	class ${2}Controller extends BaseController
+	class ${2}Controller extends Controller
 	{
 		${0}
+	}
+
+snippet l;request
+	<?php
+	namespace ${1};
+
+	/**
+	 * ${2}
+	 *
+	 * @package     $1
+	 * @author      Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license     ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
+	 * @version     Release: ${5:0.1.0}
+	 * @link        http://github.com/${6}
+	 * @since       Class available since Release ${7:0.1.0}
+	 */
+	class ${3}Request extends Request
+	{
+
+		/**
+		 * Determine if the user is authorized to make this request.
+		 *
+		 * @access public
+		 * @return boolean
+		 */
+		public function authorize()
+		{
+			return false;
+		}
+
+
+		/**
+		 * Get the validation rules that apply to the request.
+		 *
+		 * @access public
+		 * @return array
+		 */
+		public function rules()
+		{
+			return [];
+		}
 	}
 
 snippet aio

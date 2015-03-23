@@ -59,8 +59,8 @@ source ~/.dotfiles/vim/scripts/phpunit.vim
 "let g:airline_theme             = 'wombat'
 let g:airline_theme             = 'jaggy'
 let g:airline_powerline_fonts   = 1
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 
 
@@ -150,6 +150,7 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby  " Use the ruby syntax 
 autocmd BufRead,BufNewFile *.blade.* set filetype=blade   " Use the blade syntax highlighting
 autocmd BufRead,BufNewFile *.snip set filetype=neosnippet " Use the neosnippet syntax highlighting
 autocmd BufWinEnter *.php :let &foldlevel=3               " Update the fold levels for PHP files
+autocmd BufWinEnter *.md set filetype=markdown            " Use markdown
 autocmd BufRead,BufNewFile *.haml.twig set filetype=haml
 autocmd BufRead,BufNewFile /private/etc/apache2/vhosts/* set filetype=apache
 
