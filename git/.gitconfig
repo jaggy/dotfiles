@@ -16,7 +16,7 @@
     br   = branch
     r    = remote
     d    = diff
-    l    = log
+    l    = log --oneline --color --graph --decorate
     t    = tag
     tags = tag -a
     st   = status
@@ -34,14 +34,14 @@
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
 [init]
-	templatedir = ~/.git_templates
+    templatedir = ~/.git_templates
