@@ -2,10 +2,9 @@ snippet fun
 	/**
 	 * ${1:description}
 	 *
-	 * @access ${2:public}
 	 * @return ${5:void}
 	 */
-	$2 function ${3:function_name}(${4})
+	${2:public} function ${3:function_name}(${4})
 	{
 		${0}
 	}
@@ -14,7 +13,6 @@ snippet l;bt
 	/**
 	 * It belongs to '${1:class}'.
 	 *
-	 * @access public
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
 	public function ${2:function_name}()
@@ -26,7 +24,6 @@ snippet l;btm
 	/**
 	 * It has and belongs to many '${1:class}'.
 	 *
-	 * @access public
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
 	public function ${2:function_name}()
@@ -38,7 +35,6 @@ snippet l;hm
 	/**
 	 * It has many '${1:class}'.
 	 *
-	 * @access public
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function ${2:function_name}()
@@ -51,7 +47,6 @@ snippet ifun
 	/**
 	 * ${2:description}
 	 *
-	 * @access public
 	 */
 	public function ${1:function_name}(${3});
 
@@ -59,7 +54,6 @@ snippet tfun
 	/**
 	 * $1
 	 *
-	 * @access public
 	 * @return void
 	 */
 	public function ${1:function_name}()
@@ -169,16 +163,14 @@ snippet l;model
 		/**
 		 * Table name.
 		 *
-		 * @access protected
-		 * @type   table
+		 * @type table
 		 */
 		protected $table = '';
 
 		/**
 		 * Mass assignment protection.
 		 *
-		 * @access protected
-		 * @type   array
+		 * @type array
 		 */
 		protected $fillable = [];
 	}
@@ -222,7 +214,6 @@ snippet l;request
 		/**
 		 * Determine if the user is authorized to make this request.
 		 *
-		 * @access public
 		 * @return boolean
 		 */
 		public function authorize()
@@ -234,7 +225,6 @@ snippet l;request
 		/**
 		 * Get the validation rules that apply to the request.
 		 *
-		 * @access public
 		 * @return array
 		 */
 		public function rules()

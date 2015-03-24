@@ -41,6 +41,7 @@ alias gls='gls --color=auto --group-directories-first'
 
 
 ### Shortcuts
+alias uv="perl ~/code/versioner.git/versioner.pl"
 alias pp="phpunit"
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium.jar'

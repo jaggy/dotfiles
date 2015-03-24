@@ -12,12 +12,11 @@ function! phpunit#create_function()
                 \ ' * ' . description,
                 \ ' * ',
                 \ ' * @test',
-                \ ' * @access public',
                 \ ' * @return void',
                 \ ' */',
                 \ 'public function ' . function_name . '()',
                 \ '{',
-                \ '     ',
+                \ '',
                 \ '}',
                 \ ]
 
