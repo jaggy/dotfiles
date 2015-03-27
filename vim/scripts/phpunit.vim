@@ -21,8 +21,8 @@ function! phpunit#create_function()
                 \ ]
 
     call append(current_line, function)
-    normal 11>j
-    normal 10j$
+    normal 10>j
+    normal 9j$
     startinsert
     call cursor( line('.'), col('.') + 1)
 endfunction
