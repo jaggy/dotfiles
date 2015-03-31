@@ -49,6 +49,7 @@ alias pg="php $HOME/code/remote-console.git/server.php"
 alias mspr="python $HOME/scripts/mspr.py"
 alias playlist="youtube-dl -citk --max-quality FORMAT"
 
+alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
 
 ### Actions
 alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
