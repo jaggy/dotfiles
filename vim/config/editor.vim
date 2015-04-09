@@ -4,6 +4,9 @@
 "
 
 syntax enable
+highlight ColorColumn ctermbg=yellow
+highlight Pmenu ctermbg=black ctermfg=white                     " Set the autocomplete color.
+
 set directory=$HOME/.vim/swapfiles//                            " Custom swap file location.
 set nowrap
 set relativenumber

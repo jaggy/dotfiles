@@ -16,3 +16,17 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils' " Required for vim snipmate.
 Plugin 'tomtom/tlib_vim'              " Required for neosnippets.
 Plugin 'garbas/vim-snipmate'
+
+"-----------------------------------
+" Syntax Highlighting
+"-----------------------------------
+Bundle 'wavded/vim-stylus'
+Bundle 'veloce/vim-behat'
+Bundle 'elzr/vim-json'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'zaiste/tmux.vim'
+Bundle 'burnettk/vim-angular'
+Bundle 'xsbeats/vim-blade'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+
