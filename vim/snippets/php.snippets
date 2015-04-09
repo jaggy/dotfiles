@@ -1,0 +1,221 @@
+snippet fun
+    /**
+     * ${1:description}
+     *
+     * @return ${5:void}
+     */
+    ${2:public} function ${3:function_name}(${4})
+    {
+        ${0}
+    }
+
+snippet lbt
+    /**
+     * It belongs to '${1:class}'.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function ${2:function_name}()
+    {
+        return $this->belongsTo($1::class);
+    }
+
+snippet lbtm
+    /**
+     * It has and belongs to many '${1:class}'.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function ${2:function_name}()
+    {
+        return $this->belongsTo($1::class);
+    }
+
+snippet lhm
+    /**
+     * It has many '${1:class}'.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ${2:function_name}()
+    {
+        return $this->hasMany($1::class);
+    }
+
+
+snippet ifun
+    /**
+     * ${2:description}
+     *
+     */
+    public function ${1:function_name}(${3});
+
+snippet tfun
+    /**
+     * $1
+     *
+     * @return void
+     */
+    public function ${1:function_name}()
+    {
+        ${0}
+    }
+
+snippet dbc
+    /**
+     * ${1}
+     *
+     * @package     ${2}
+     * @author      Jaggy Gauran <jaggygauran@gmail.com>
+     * @license     ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
+     * @version     Release: ${4:0.1.0}
+     * @link        http://github.com/${6}
+     * @since       Class available since Release ${5:0.1.0}
+     */
+
+snippet class
+    <?php
+    namespace ${1};
+
+    /**
+     * ${2}
+     *
+     * @package     $1
+     * @author      Jaggy Gauran <jaggygauran@gmail.com>
+     * @license     ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
+     * @version     Release: ${5:0.1.0}
+     * @link        http://github.com/${6}
+     * @since       Class available since Release ${7:0.1.0}
+     */
+    class ${3}
+    {
+        ${0}
+    }
+
+snippet sc
+    Schema::create('${1:table}', function (Blueprint $table)
+    {
+        $table->increments('id');
+
+        ${0}
+
+        $table->timestamps();
+    });
+
+snippet sd
+    Schema::drop('${1:table}');${0}
+
+snippet rg
+    $router->group([${1:parameters}], function () {
+
+        ${0}
+
+    });
+
+snippet rr
+    Route::resource('${1:resource}', '${2}Controller');${0}
+
+snippet lmodel
+    <?php
+    namespace ${1};
+
+    /**
+     * $2
+     *
+     * @protected   string  table
+     * @protected   array  fillable
+     *
+     * @package     $1
+     * @author      Jaggy Gauran <jaggygauran@gmail.com>
+     * @license     ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
+     * @version     Release: ${4:0.1.0}
+     * @link        http://github.com/${6}
+     * @since       Class available since Release ${5:0.1.0}
+     */
+    class ${2} extends Model
+    {
+
+        /**
+         * Table name.
+         *
+         * @type table
+         */
+        protected $table = '${6}';
+
+        /**
+         * Mass assignment protection.
+         *
+         * @type array
+         */
+        protected $fillable = [];
+    }
+
+snippet lcontroller
+    <?php
+    namespace ${1};
+
+    /**
+     * $2Controller
+     *
+     * @package     $1
+     * @author      Jaggy Gauran <jaggygauran@gmail.com>
+     * @license     ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
+     * @version     Release: ${4:0.1.0}
+     * @link        http://github.com/${6}
+     * @since       Class available since Release ${5:0.1.0}
+     */
+    class ${2}Controller extends Controller
+    {
+        ${0}
+    }
+
+snippet lrequest
+    <?php
+    namespace ${1};
+
+    /**
+     * ${2}
+     *
+     * @package     $1
+     * @author      Jaggy Gauran <jaggygauran@gmail.com>
+     * @license     ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
+     * @version     Release: ${5:0.1.0}
+     * @link        http://github.com/${6}
+     * @since       Class available since Release ${7:0.1.0}
+     */
+    class ${3}Request extends Request
+    {
+
+        /**
+         * Determine if the user is authorized to make this request.
+         *
+         * @return boolean
+         */
+        public function authorize()
+        {
+            return false;
+        }
+
+
+        /**
+         * Get the validation rules that apply to the request.
+         *
+         * @return array
+         */
+        public function rules()
+        {
+            return [];
+        }
+    }
+
+snippet aio
+    $this->assertInstanceOf('${1}', ${2});
+
+snippet aeq
+    $this->assertEquals('${1}', ${2});
+
+snippet atr
+    $this->assertTrue(${1});
+
+snippet afs
+    $this->assertFalse(${1});
