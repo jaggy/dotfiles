@@ -1,58 +1,27 @@
-" DISABLING THE CURSOR KEEEEYS!!!
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
-" Remap pane resizing
-map - 5<C-w><
-map + 5<C-w>>
-map = <C-w>=
-
-
-" Closing and opening things
+" Prevent using escape.
 inoremap jk <esc>
-inoremap ()<space> ()<esc>i
-inoremap ();<space> ();<esc>hi
-inoremap {}<space> {}<esc>i
-inoremap {} {}<esc>i
-inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
-inoremap []; [];<esc>i
-inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
-inoremap []<space> []<esc>i
-inoremap 0- ->
-inoremap -= =>
+nnoremap ; :
+nnoremap <cr> o<esc>
 
-" Center on page immediately on using search
-nnoremap n nzz
-nnoremap G Gzz
-
-" Use the enter on normal mode
-nnoremap <CR> o<esc>
-
-" Spliiting the windows
+" Horizontal Split
 nnoremap <C-w>\| <C-W>vzz<C-w>l
+
+" Vertical Split
 nnoremap <C-w>- <C-W>szz<C-w>j
 
-" Remap semi-colon to colon
-map ; :
-map ;; :
 
-" Nerd Tree Toggle
-map <C-e> :NERDTreeToggle<CR>
+"-----------------------------------
+" Tab Completion
+"-----------------------------------
+"
+function! s:check_back_space()
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" Tagbar
-nnoremap <leader>tt :TagbarToggle<CR>
-nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
-nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
+inoremap <expr><TAB>  pumvisible() ? "<C-n>" :
+        \ <sid>check_back_space() ? "<TAB>" :
+        \ neocomplete#start_manual_complete()
+inoremap <expr><S-Tab>  pumvisible() ? "<C-p>" :neocomplete#start_manual_complete()
 
-" comment
-nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
 
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
