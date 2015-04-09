@@ -27,8 +27,6 @@ alias gl='git log'
 
 
 ### Default Configuration
-alias vi="nvim"
-alias vim="nvim"
 alias guard='guard -g default'
 alias phpcs='phpcs --standard=PSR2 '
 alias tmux='tmux -u'
