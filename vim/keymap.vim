@@ -6,6 +6,7 @@ nnoremap <cr> o<esc>
 " Laziness overload.
 inoremap 0- ->
 inoremap -= =>
+nnoremap = <C-w>=
 
 inoremap ()<space> ()<esc>i
 inoremap ();<space> ();<esc>hi
