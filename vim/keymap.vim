@@ -1,5 +1,7 @@
 " Prevent using escape.
 inoremap jk <esc>
+
+vnoremap ; :
 nnoremap ; :
 nnoremap <cr> o<esc>
 

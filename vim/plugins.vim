@@ -7,7 +7,8 @@ Plugin 'kien/ctrlp.vim'             " Find your files.
 Plugin 'scrooloose/nerdtree'        " File tree, what else is there?
 Plugin 'airblade/vim-gitgutter'     " Show git updates on the gutter.
 Plugin 'tpope/vim-surround'         " Helper to change surrouding elements.
-Plugin 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'            " Emmet vim plugin.
+Plugin 'godlygeek/tabular'          " Allignment of elements.
 
 "-----------------------------------
 " Auto Complete.
