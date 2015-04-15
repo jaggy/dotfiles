@@ -10,6 +10,10 @@ Plugin 'tpope/vim-surround'         " Helper to change surrouding elements.
 Plugin 'mattn/emmet-vim'            " Emmet vim plugin.
 Plugin 'godlygeek/tabular'          " Allignment of elements.
 
+Plugin 'tobyS/vmustache'            " Mustache templating for vim.
+Plugin 'SirVer/ultisnips'           " Required by PDV for some reason.
+Plugin 'tobyS/pdv'                  " PHP documentation helper.
+
 "-----------------------------------
 " Auto Complete.
 "-----------------------------------
