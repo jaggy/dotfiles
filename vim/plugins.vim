@@ -32,4 +32,4 @@ Plugin 'burnettk/vim-angular'
 Plugin 'xsbeats/vim-blade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
-
+Plugin 'mxw/vim-jsx'
