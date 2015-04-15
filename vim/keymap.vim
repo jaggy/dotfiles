@@ -31,3 +31,9 @@ nnoremap <C-w>\| <C-W>vzz<C-w>l
 
 " Vertical Split
 nnoremap <C-w>- <C-W>szz<C-w>j
+
+" Make @uses annotation
+nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
+
+" Commentify
+nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
