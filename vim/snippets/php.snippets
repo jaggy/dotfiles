@@ -125,12 +125,12 @@ snippet lmodel
 	 * @protected   string  table
 	 * @protected   array  fillable
 	 *
-	 * @package	 $1
-	 * @author	  Jaggy Gauran <jaggygauran@gmail.com>
-	 * @license	 ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version	 Release: ${4:0.1.0}
+	 * @package		$1
+	 * @author		Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license		${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
+	 * @version		Release: ${4:0.1.0}
 	 * @link		http://github.com/${6}
-	 * @since	   Class available since Release ${5:0.1.0}
+	 * @since		Class available since Release ${5:0.1.0}
 	 */
 	class ${2} extends Model
 	{
@@ -157,12 +157,12 @@ snippet lcontroller
 	/**
 	 * $2Controller
 	 *
-	 * @package	 $1
-	 * @author	  Jaggy Gauran <jaggygauran@gmail.com>
-	 * @license	 ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version	 Release: ${4:0.1.0}
+	 * @package		$1
+	 * @author		Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license		${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
+	 * @version		Release: ${4:0.1.0}
 	 * @link		http://github.com/${6}
-	 * @since	   Class available since Release ${5:0.1.0}
+	 * @since		Class available since Release ${5:0.1.0}
 	 */
 	class ${2}Controller extends Controller
 	{
@@ -176,12 +176,12 @@ snippet lrequest
 	/**
 	 * ${2}
 	 *
-	 * @package	 $1
-	 * @author	  Jaggy Gauran <jaggygauran@gmail.com>
-	 * @license	 ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version	 Release: ${5:0.1.0}
+	 * @package		$1
+	 * @author		Jaggy Gauran <jaggygauran@gmail.com>
+	 * @license		${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
+	 * @version		Release: ${5:0.1.0}
 	 * @link		http://github.com/${6}
-	 * @since	   Class available since Release ${7:0.1.0}
+	 * @since		Class available since Release ${7:0.1.0}
 	 */
 	class ${3}Request extends Request
 	{
@@ -219,3 +219,5 @@ snippet atr
 
 snippet afs
 	$this->assertFalse(${1});
+snippet foreign
+	$table->foreign('${1:key}')->references('id')->on('${2:table}')->onDelete('${3:cascade}');
