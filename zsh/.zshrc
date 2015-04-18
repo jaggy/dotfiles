@@ -53,7 +53,6 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/submodules/z.git/z.sh
 source $HOME/.dotfiles/completion/tmuxinator.zsh
-source $HOME/.zsh-autosuggestions/autosuggestions.zsh
 detectOverrde;
 
 ### Environment

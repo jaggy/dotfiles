@@ -38,10 +38,10 @@ alias py="python3"
 alias fuck='sudo $(fc -ln -1)'
 alias vm='ssh vagrant@127.0.0.1 -p 2222'
 alias gls='gls --color=auto --group-directories-first'
+alias cask='brew cask'
 
 
 ### Shortcuts
-alias s.kraken="~/code/kraken.git/bin/kraken"
 alias pp="phpunit"
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium.jar'

@@ -45,3 +45,5 @@
     required = true
 [init]
     templatedir = ~/.git_templates
+[core]
+	excludesfile = /Users/jaggy/.gitignore_global
