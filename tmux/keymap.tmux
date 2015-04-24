@@ -19,6 +19,7 @@ bind-key i select-layout even-horizontal                                # resize
 bind-key o resize-pane -t 2 -x 50                                       # resize the second pane small
 bind r source-file ~/.tmux.conf \; display "Reloaded!"                  # reload the configuration file
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
+bind -n C-k send-keys -R \; clear-history                               # Clear.
 
 
 # vim based pane selection

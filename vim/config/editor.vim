@@ -3,6 +3,7 @@
 "-----------------------------------
 "
 
+color peachpuff
 syntax enable
 highlight ColorColumn ctermbg=yellow
 highlight Pmenu ctermbg=black ctermfg=white                     " Set the autocomplete color.

@@ -10,7 +10,7 @@ function! phpunit#create_function()
     let function = [
                 \ '/**',
                 \ ' * ' . description,
-                \ ' * ',
+                \ ' *',
                 \ ' * @test',
                 \ ' * @return void',
                 \ ' */',
