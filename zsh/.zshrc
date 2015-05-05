@@ -61,7 +61,7 @@ detectOverrde;
 #####################################################################
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
 PATH=$HOME/.bin:$PATH                                        # Custom Globals

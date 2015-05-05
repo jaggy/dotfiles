@@ -42,6 +42,7 @@ alias cask='brew cask'
 
 
 ### Shortcuts
+alias nn="nvim"
 alias pp="phpunit"
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium.jar'
