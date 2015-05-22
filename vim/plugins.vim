@@ -45,6 +45,7 @@ Plugin 'garbas/vim-snipmate'
 "----------------------------------------------------------------------
 " Syntax Highlighting
 "----------------------------------------------------------------------
+Plugin 'othree/yajs.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'veloce/vim-behat'
 Plugin 'elzr/vim-json'
