@@ -1,7 +1,9 @@
-#Dotfiles
+dotfiles
+========
 
+Installation
+------------
 
+All you need to do is run the set up file and you're all set.
 
-## TODO
-
-I wanna make a script that just symlinks everything to wherever they need to go because I tend to reformat... *a lot*
+    sh setup.sh
