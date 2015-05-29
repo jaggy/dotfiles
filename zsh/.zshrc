@@ -77,6 +77,7 @@ bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
 
 bindkey "^D" beginning-of-line
+bindkey "^E" end-of-line
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
