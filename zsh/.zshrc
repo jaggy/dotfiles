@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/submodules/z.git/z.sh
 source $HOME/.dotfiles/completion/tmuxinator.zsh
+source /Users/jaggy/.iterm2_shell_integration.zsh
+
 detectOverrde;
 
 ### Environment
@@ -70,8 +72,12 @@ PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 
+bindkey -v
+bindkey "^F" vi-cmd-mode
+bindkey jj vi-cmd-mode
+
+bindkey "^D" beginning-of-line
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
-
-source /Users/jaggy/.iterm2_shell_integration.zsh
