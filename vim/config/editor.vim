@@ -3,10 +3,7 @@
 "-----------------------------------
 "
 
-color peachpuff
 syntax enable
-highlight ColorColumn ctermbg=yellow
-highlight Pmenu ctermbg=black ctermfg=white                     " Set the autocomplete color.
 
 set directory=$HOME/.vim/swapfiles//                            " Custom swap file location.
 set nowrap
@@ -22,3 +19,7 @@ set colorcolumn=80,120                                          " Assign a margi
 set list
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 
+color peachpuff
+highlight ColorColumn ctermbg=yellow
+highlight Pmenu ctermbg=black ctermfg=white                     " Set the autocomplete color.
+highlight LineNr ctermfg=grey
