@@ -51,6 +51,7 @@ function detectOverrde() {
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
+source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/submodules/z.git/z.sh
 source $HOME/.dotfiles/completion/tmuxinator.zsh
 source /Users/jaggy/.iterm2_shell_integration.zsh

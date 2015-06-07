@@ -9,7 +9,7 @@ Plugin 'airblade/vim-gitgutter'     " Show git updates on the gutter.
 Plugin 'tpope/vim-surround'         " Helper to change surrouding elements.
 Plugin 'mattn/emmet-vim'            " Emmet vim plugin.
 Plugin 'godlygeek/tabular'          " Allignment of elements.
-Plugin 'rizzatti/dash.vim'          " Dash Integration.
+Plugin 'majutsushi/tagbar'          " CTags Integration.
 
 
 "----------------------------------------------------------------------
@@ -45,6 +45,7 @@ Plugin 'garbas/vim-snipmate'
 "----------------------------------------------------------------------
 " Syntax Highlighting
 "----------------------------------------------------------------------
+Plugin 'StanAngeloff/php.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'veloce/vim-behat'

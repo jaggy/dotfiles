@@ -23,3 +23,5 @@ color torte
 highlight ColorColumn ctermbg=yellow
 highlight Pmenu ctermbg=black ctermfg=white                     " Set the autocomplete color.
 highlight LineNr ctermfg=grey
+highlight Special ctermfg=4
+highlight NonText ctermfg=bg

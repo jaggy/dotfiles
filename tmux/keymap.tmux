@@ -10,17 +10,18 @@ unbind-key l
 unbind -t vi-copy Enter
 
 
-set -g prefix C-a                                                       # use CTRL-a as a prefix
-bind | split-window -h                                                  # bind | for v splits
-bind - split-window -v                                                  # bind - for h splits
-bind \ resize -Z                                                        # bind \ for full screen
-bind-key u resize-pane -t 1 -x 50                                       # resize first pane small
-bind-key i select-layout even-horizontal                                # resize equal splits
-bind-key o resize-pane -t 2 -x 50                                       # resize the second pane small
+set -g prefix C-a                           # use CTRL-a as a prefix
+set -g allow-rename off                     # Disable renaming.
+bind | split-window -h                      # bind | for v splits
+bind - split-window -v                      # bind - for h splits
+bind \ resize -Z                            # bind \ for full screen
+bind-key u resize-pane -t 1 -x 50           # resize first pane small
+bind-key i select-layout even-horizontal    # resize equal splits
+bind-key o resize-pane -t 2 -x 50           # resize the second pane small
+bind -n C-k send-keys -R \; clear-history   # Clear.
+
 bind r source-file ~/.tmux.conf \; display "Reloaded!"                  # reload the configuration file
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
-bind -n C-k send-keys -R \; clear-history                               # Clear.
-
 
 # vim based pane selection
 bind-key j select-pane -D

@@ -43,3 +43,6 @@ nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
 
 " Commentify
 nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
+
+" Tagbar
+nnoremap <leader>tt :Tagbar<CR>
