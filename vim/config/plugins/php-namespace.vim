@@ -1,4 +1,4 @@
-set tags+=./tags,./.git/tags,tags,./vendor.tags,./.git/vendor.tags,vendor.tags
+set tags+=./tags,./.git/tags,tags
 
 nnoremap <leader>ti <esc>:call PhpInsertUse()<CR>
 inoremap <leader>ti <esc>:call PhpInsertUse()<CR>a
