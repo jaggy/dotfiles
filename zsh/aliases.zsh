@@ -75,3 +75,8 @@ function cd() {
 function vulnerability_test() {
     x='() { :;}; echo "bash is vulnerable"' bash -c 'echo "Testing vulnerability..."'
 }
+
+# Generate PHP ctags.
+function phptags() {
+    find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
+}

@@ -73,9 +73,9 @@ PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
+#bindkey -v
+#bindkey "^F" vi-cmd-mode
+#bindkey jj vi-cmd-mode
 
 bindkey "^D" beginning-of-line
 bindkey "^E" end-of-line

@@ -1,15 +1,21 @@
 "----------------------------------------------------------------------
 " Editor Features
 "----------------------------------------------------------------------
-Plugin 'gmarik/Vundle.vim'          " Plugin bundle bundle~
-Plugin 'bling/vim-airline'          " Status bar guides.
-Plugin 'kien/ctrlp.vim'             " Find your files.
-Plugin 'scrooloose/nerdtree'        " File tree, what else is there?
-Plugin 'airblade/vim-gitgutter'     " Show git updates on the gutter.
-Plugin 'tpope/vim-surround'         " Helper to change surrouding elements.
-Plugin 'mattn/emmet-vim'            " Emmet vim plugin.
-Plugin 'godlygeek/tabular'          " Allignment of elements.
-Plugin 'majutsushi/tagbar'          " CTags Integration.
+Plugin 'gmarik/Vundle.vim'           " Plugin bundle bundle~
+Plugin 'bling/vim-airline'           " Status bar guides.
+Plugin 'kien/ctrlp.vim'              " Find your files.
+Plugin 'scrooloose/nerdtree'         " File tree, what else is there?
+Plugin 'airblade/vim-gitgutter'      " Show git updates on the gutter.
+Plugin 'tpope/vim-surround'          " Helper to change surrouding elements.
+Plugin 'mattn/emmet-vim'             " Emmet vim plugin.
+Plugin 'godlygeek/tabular'           " Allignment of elements.
+Plugin 'arnaud-lb/vim-php-namespace' " Namespace integration
+
+"----------------------------------------------------------------------
+" CTags
+"----------------------------------------------------------------------
+Plugin 'majutsushi/tagbar'       " Integrating ctags.
+Plugin 'soramugi/auto-ctags.vim' " Auto generate the ctags.
 
 
 "----------------------------------------------------------------------
