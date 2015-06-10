@@ -14,13 +14,15 @@ nnoremap <cr> o<esc>
 inoremap 0- ->
 inoremap -= =>
 nnoremap = <C-w>=
+inoremap [;w<cr> <esc>:w<cr>
+noremap  <C-s> <esc>:w<cr>
 
 inoremap ()<space> ()<esc>i
 inoremap ();<space> ();<esc>hi
 inoremap {}<space> {}<esc>i
 inoremap {} {}<esc>i
 inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
-inoremap []; [];<esc>i
+inoremap [];<space> [];<esc>hi
 inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
 inoremap []<space> []<esc>i
 inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
