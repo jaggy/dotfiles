@@ -5,9 +5,14 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Prevent using escape.
 inoremap jk <esc>
-
 vnoremap ; :
 nnoremap ; :
+
+" Create a split and move to that pane.
+nnoremap <C-w>\| <C-W>vzz<C-w>l
+nnoremap <C-w>- <C-W>szz<C-w>j
+
+" Map enter to still add line breaks on normal mode.
 nnoremap <cr> o<esc>
 
 " Laziness overload.
@@ -34,17 +39,11 @@ nnoremap G Gzz
 " Convert all tabs into spaces.
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
 
-" Horizontal Split
-nnoremap <C-w>\| <C-W>vzz<C-w>l
-
-" Vertical Split
-nnoremap <C-w>- <C-W>szz<C-w>j
+" Do the aligning for #, => and : in a non painful way.
+vnoremap <leader><tab> :Tab/#<cr>:Tab/=><cr>:Tab/:<cr>
 
 " Make @uses annotation
 nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
-
-" Commentify
-nnoremap <leader>c/ :call pdv#DocumentWithSnip()<CR>
 
 " Tagbar
 nnoremap <leader>tt :Tagbar<CR>
