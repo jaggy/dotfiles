@@ -14,35 +14,29 @@ snippet fun
 
 snippet lbt
 	/**
-	 * It belongs to '${1:class}'.
-	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
 	public function ${2:function_name}()
 	{
-		return $this->belongsTo($1::class);
+		return $this->belongsTo(${1}::class);
 	}
 
 snippet lbtm
 	/**
-	 * It has and belongs to many '${1:class}'.
-	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
 	public function ${2:function_name}()
 	{
-		return $this->belongsTo($1::class);
+		return $this->belongsTo(${1}::class);
 	}
 
 snippet lhm
 	/**
-	 * It has many '${1:class}'.
-	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function ${2:function_name}()
 	{
-		return $this->hasMany($1::class);
+		return $this->hasMany(${1}::class);
 	}
 
 
@@ -81,16 +75,6 @@ snippet class
 
 	namespace ${1};
 
-	/**
-	 * ${2}
-	 *
-	 * @package     $1
-	 * @author      Jaggy Gauran <poke@jag.gy>
-	 * @license     ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version     Release: ${5:0.1.0}
-	 * @link        http://github.com/${6}
-	 * @since       Class available since Release ${7:0.1.0}
-	 */
 	class ${3}
 	{
 		${0}
@@ -124,26 +108,12 @@ snippet lmodel
 
 	namespace ${1};
 
-	/**
-	 * Class $2
-	 *
-	 * @protected   string  table
-	 * @protected   array  fillable
-	 *
-	 * @package     $1
-	 * @author      Jaggy Gauran <poke@jag.gy>
-	 * @license     ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version     Release: ${4:0.1.0}
-	 * @link        http://github.com/${5}
-	 * @since       Class available since Release ${6:0.1.0}
-	 */
 	class ${2} extends Model
 	{
-
 		/**
 		 * Table name.
 		 *
-		 * @type table
+		 * @type string
 		 */
 		protected $table = '${6}';
 
@@ -160,16 +130,6 @@ snippet lcontroller
 
 	namespace ${1};
 
-	/**
-	 * Class $2Controller
-	 *
-	 * @package     $1
-	 * @author      Jaggy Gauran <poke@jag.gy>
-	 * @license     ${3:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version     Release: ${4:0.1.0}
-	 * @link        http://github.com/${5}
-	 * @since       Class available since Release ${6:0.1.0}
-	 */
 	class ${2}Controller extends Controller
 	{
 		${0}
@@ -180,19 +140,8 @@ snippet lrequest
 
 	namespace ${1};
 
-	/**
-	 * ${2}
-	 *
-	 * @package     $1
-	 * @author      Jaggy Gauran <poke@jag.gy>
-	 * @license     ${4:http://opensource.org/licenses/MIT The MIT License (MIT)}
-	 * @version     Release: ${5:0.1.0}
-	 * @link        http://github.com/${6}
-	 * @since       Class available since Release ${7:0.1.0}
-	 */
 	class ${3}Request extends Request
 	{
-
 		/**
 		 * Determine if the user is authorized to make this request.
 		 *
