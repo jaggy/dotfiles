@@ -73,11 +73,11 @@ snippet dbc
 snippet class
 	<?php
 
-	namespace ${1};
+	namespace ${1:`substitute(substitute(expand("%:h"), 'v^w+/(u)', '1', ''), '/', '\\\\', 'g')`};
 
-	class ${3}
+	class ${2:`Filename('', 'myClass')`}
 	{
-		${0}
+		${3}
 	}
 
 snippet sc
@@ -188,3 +188,6 @@ snippet dp
 	| ${2}
 	|
 	*/
+
+snippet tae
+	$this->assertEquals($expected, $actual);

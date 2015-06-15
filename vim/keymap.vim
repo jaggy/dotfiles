@@ -20,6 +20,7 @@ inoremap 0- ->
 inoremap -= =>
 nnoremap = <C-w>=
 inoremap [;w<cr> <esc>:w<cr>
+nnoremap [;w<cr> <esc>:w<cr>
 noremap  <C-s> <esc>:w<cr>
 
 inoremap ()<space> ()<esc>i

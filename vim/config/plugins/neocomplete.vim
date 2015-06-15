@@ -23,7 +23,4 @@ endfunction
 inoremap <expr><NUL> pumvisible() ? "<C-n>" : "<C-Space>"
 
 imap <expr><S-Tab> pumvisible() ? "<C-p>" :neocomplete#start_manual_complete()
-imap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "<Tab>"
-
-
-
+imap <expr><Tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "<tab>"
