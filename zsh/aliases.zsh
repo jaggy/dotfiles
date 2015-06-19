@@ -42,6 +42,7 @@ alias cask='brew cask'
 
 
 ### Shortcuts
+alias hs="homestead"
 alias nn="nvim"
 alias pp="phpunit"
 alias so="source $HOME/.zshrc"
