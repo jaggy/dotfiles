@@ -7,3 +7,6 @@
 [submodule "submodules/powerline.git"]
 	path = submodules/powerline.git
 	url = https://github.com/powerline/powerline.git
+[submodule "submodules/psutils.git"]
+	path = submodules/psutils.git
+	url = https://github.com/giampaolo/psutil.git
