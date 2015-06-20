@@ -16,7 +16,7 @@ ZSH_THEME="miloshadzic"
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
-DEFAULT_USER="jaggyspaghetti" # This is to make certain themes look prettier
+DEFAULT_USER="jaggy"          # This is to make certain themes look prettier
 setopt HIST_IGNORE_SPACE      # Don't log commands prefixed with a space
 
 
