@@ -25,9 +25,9 @@ noremap  <C-s> <esc>:w<cr>
 
 inoremap ()<space> ()<esc>i
 inoremap ();<space> ();<esc>hi
-inoremap {}<space> {}<esc>i
+inoremap {}<space> {}<esc>
 inoremap {} {}<esc>i
-inoremap {}<cr> {<cr><cr>}<esc>ki<tab>
+inoremap {}<cr> {<cr><cr>}<esc>k$a
 inoremap [];<space> [];<esc>hi
 inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
 inoremap []<space> []<esc>i
