@@ -63,6 +63,13 @@ detectOverrde;
 ###  Commands take order of precedence so if you want a native comamnd
 ###  Make sure you append the $PATH
 #####################################################################
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -73,6 +80,7 @@ PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
+PATH="$NPM_PACKAGES/bin:$PATH"
 
 #bindkey -v
 #bindkey "^F" vi-cmd-mode
