@@ -12,7 +12,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Good themes: awesomepanda, cloud, daveverwer, fwalch, miloshadzic, mrtazz, nanotech
-ZSH_THEME="miloshadzic"
+ZSH_THEME="cloud"
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands

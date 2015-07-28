@@ -177,6 +177,7 @@ snippet afs
 	$this->assertFalse(${1});
 
 snippet foreign
+	$table->integer('$1')->unsigned();
 	$table->foreign('${1:key}')->references('id')->on('${2:table}')->onDelete('${3:cascade}');
 
 snippet dp
