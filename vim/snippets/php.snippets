@@ -192,3 +192,9 @@ snippet dp
 
 snippet tae
 	$this->assertEquals($expected, $actual);
+snippet factory
+	$factory->define(${1:class}::class, function ($faker) ${2:use ($factory) }{
+		return [
+			${0}
+		];
+	});

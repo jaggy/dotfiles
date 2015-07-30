@@ -14,12 +14,20 @@ set shiftwidth=4
 set expandtab                         " Tabs suck.
 set colorcolumn=80,120                " Assign a column limit.
 set list
+set cursorline                        " Show the cu
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 
 color torte
 syntax enable
 
-highlight ColorColumn        ctermbg=grey
+" Possbile colors:
+" - Dark Teal: 23
+" - Black: 16
+" - Grey: 59
+" - Dark Grey: 238
+highlight CursorLine         ctermbg=235 cterm=NONE
+highlight CursorLineNr       ctermbg=235 ctermfg=yellow
+highlight ColorColumn        ctermbg=235
 " Autocomplete color.
 highlight Pmenu              ctermbg=black ctermfg=white
 highlight LineNr             ctermfg=grey

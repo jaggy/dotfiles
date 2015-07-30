@@ -76,6 +76,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
 PATH=$HOME/.bin:$PATH                                        # Custom Globals
+PATH=$HOME/.dotfiles/scripts:$PATH                                        # Custom Globals
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
