@@ -12,7 +12,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Good themes: awesomepanda, cloud, daveverwer, fwalch, miloshadzic, mrtazz, nanotech
-ZSH_THEME="cloud"
+# ZSH_THEME="cloud"
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
@@ -76,7 +76,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
 PATH=$HOME/.bin:$PATH                                        # Custom Globals
-PATH=$HOME/.dotfiles/scripts:$PATH                                        # Custom Globals
+PATH=$HOME/.dotfiles/scripts:$PATH                           # Load the dotfile scripts.
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
 PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
@@ -97,3 +97,5 @@ bindkey "^N" insert-last-word
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+source $HOME/.dotfiles/zsh/themes/triforce.zsh-theme
