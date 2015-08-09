@@ -18,7 +18,7 @@
     br   = branch
     r    = remote
     d    = diff
-    l    = log --oneline --color --graph --decorate
+    l    = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     t    = tag
     tags = tag -a
     st   = status
@@ -27,12 +27,13 @@
 
 
 [user]
-    email = jaggygauran@gmail.com
+    email = poke@jag.gy
     name = Jaggy Gauran
 [push]
     default = matching
 [log]
     abbrevCommit = true
+    graph = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 [difftool "sourcetree"]

@@ -25,9 +25,9 @@ syntax enable
 " - Black: 16
 " - Grey: 59
 " - Dark Grey: 238
-highlight CursorLine         ctermbg=235 cterm=NONE
-highlight CursorLineNr       ctermbg=235 ctermfg=yellow
-highlight ColorColumn        ctermbg=235
+highlight CursorLine         ctermbg=238 cterm=NONE
+highlight CursorLineNr       ctermbg=238 ctermfg=yellow
+highlight ColorColumn        ctermbg=238
 " Autocomplete color.
 highlight Pmenu              ctermbg=black ctermfg=white
 highlight LineNr             ctermfg=grey
