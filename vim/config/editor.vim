@@ -16,6 +16,7 @@ set colorcolumn=80,120                " Assign a column limit.
 set list
 set cursorline                        " Show the cu
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
+" set conceallevel=2
 
 color torte
 syntax enable

@@ -13,3 +13,5 @@ source ~/.dotfiles/vim/scripts/phpunit.vim
 source ~/.dotfiles/vim/config/editor.vim
 source ~/.dotfiles/vim/config/events.vim
 source ~/.dotfiles/vim/keymap.vim
+
+source ~/.dotfiles/vim/syntax/php.vim
