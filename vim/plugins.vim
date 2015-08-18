@@ -51,6 +51,7 @@ Plugin 'garbas/vim-snipmate'
 "----------------------------------------------------------------------
 " Syntax Highlighting
 "----------------------------------------------------------------------
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'wavded/vim-stylus'
