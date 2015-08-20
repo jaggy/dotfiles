@@ -82,6 +82,9 @@ PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 PATH="$NPM_PACKAGES/bin:$PATH"
+PATH="$HOME/Applications/blender.app/Contents/MacOS"         # Blender
+
+export CYCLES_OPENCL_TEST=all
 
 #bindkey -v
 #bindkey "^F" vi-cmd-mode
