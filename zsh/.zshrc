@@ -70,6 +70,7 @@ export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+export CYCLES_OPENCL_TEST=all
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -82,9 +83,8 @@ PATH=$HOME/.rvm/bin:$PATH                                    # Ruby
 PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 PATH="$NPM_PACKAGES/bin:$PATH"
-PATH="$HOME/Applications/blender.app/Contents/MacOS"         # Blender
+PATH="$HOME/Applications/blender.app/Contents/MacOS:$PATH"   # Blender
 
-export CYCLES_OPENCL_TEST=all
 
 #bindkey -v
 #bindkey "^F" vi-cmd-mode

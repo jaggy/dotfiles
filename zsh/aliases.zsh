@@ -28,7 +28,7 @@ alias gl='git log'
 
 ### Default Configuration
 alias guard='guard -g default'
-alias phpcs='phpcs --standard=PSR2 '
+#alias phpcs='phpcs --standard=PSR2 '
 alias tmux='tmux -u'
 alias psp="phpspec --no-interaction"
 alias codecept='codecept'
