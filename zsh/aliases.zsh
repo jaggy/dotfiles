@@ -5,6 +5,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ll='ls -lah'
 alias sl="ls"
+alias h='cd ~'
 
 alias sl2="/usr/local/Cellar/sl/5.02/bin/sl"
 alias gti2="/usr/local/Cellar/gti/1.2.0/bin/gti"
@@ -83,4 +84,12 @@ function phptags() {
     #find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
     ctags -R --PHP-kinds=+cf -f .git/tags app vendor src database tests > /dev/null 2>&1
     echo "Generated ctags!"
+}
+
+function vms() {
+    current_directory=`pwd`;
+
+    cd $HOME/code/Homestead;
+    vagrant up;
+    cd $current_directory;
 }
