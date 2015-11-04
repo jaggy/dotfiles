@@ -10,6 +10,7 @@ Plugin 'tpope/vim-surround'          " Helper to change surrouding elements.
 Plugin 'mattn/emmet-vim'             " Emmet vim plugin.
 Plugin 'godlygeek/tabular'           " Allignment of elements.
 Plugin 'arnaud-lb/vim-php-namespace' " Namespace integration
+Plugin 'jdkanani/vim-material-theme' " MATERIAL DESIGN!
 
 "----------------------------------------------------------------------
 " CTags
@@ -51,6 +52,7 @@ Plugin 'garbas/vim-snipmate'
 "----------------------------------------------------------------------
 " Syntax Highlighting
 "----------------------------------------------------------------------
+Plugin 'darthmall/vim-vue'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'othree/yajs.vim'

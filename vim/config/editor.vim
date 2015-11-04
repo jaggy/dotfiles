@@ -18,7 +18,7 @@ set cursorline                        " Show the cu
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 " set conceallevel=2
 
-color torte
+colorscheme torte
 syntax enable
 
 " Possbile colors:
