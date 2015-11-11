@@ -52,7 +52,7 @@ Plugin 'garbas/vim-snipmate'
 "----------------------------------------------------------------------
 " Syntax Highlighting
 "----------------------------------------------------------------------
-Plugin 'darthmall/vim-vue'
+Plugin 'posva/vim-vue'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'othree/yajs.vim'
