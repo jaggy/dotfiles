@@ -1,0 +1,19 @@
+snippet yield
+	@yield('${1:content}')
+
+snippet section
+	@section('${1:content}')
+		${0}
+	@endsection
+
+snippet if
+	@if(${1})
+		${0}
+	@endif
+
+snippet extend
+	@extends('${1:layouts.master}')
+
+	@section('$2:content')
+		${0}
+	@endsection
