@@ -41,7 +41,7 @@ nnoremap G Gzz
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
 
 " Do the aligning for #, => and : in a non painful way.
-vnoremap <leader><tab> :Tab/#<cr>:Tab/=><cr>:Tab/:<cr>
+vnoremap <leader><tab> :Tab/#<cr>:Tab/=><cr>:Tab/:<cr>:Tab/=<cr>
 
 " Make @uses annotation
 nnoremap <leader>z. 0i * @<esc>e<esc>as<esc>wi<tab><tab>\<esc>$x0j
