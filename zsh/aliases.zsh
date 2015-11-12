@@ -89,7 +89,7 @@ function phptags() {
 function vms() {
     current_directory=`pwd`;
 
-    cd $HOME/code/Homestead;
+    cd $HOME/utils/Homestead;
     vagrant up;
     cd $current_directory;
 }
