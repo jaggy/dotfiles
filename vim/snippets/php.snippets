@@ -4,37 +4,26 @@ snippet php
 snippet fun
 	/**
 	 * ${1:description}
-	 *
-	 * @return ${5:void}
 	 */
-	${2:public} function ${3:function_name}(${4})
+	${2:public} function ${3:function_name}(${4}) ${5}
 	{
 		${0}
 	}
 
 snippet lbt
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-	 */
-	public function ${2:function_name}()
+	public function ${2:function_name}() : \Illuminate\Database\Eloquent\Relations\BelongsTo
 	{
 		return $this->belongsTo(${1}::class);
 	}
 
 snippet lbtm
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function ${2:function_name}()
+	public function ${2:function_name}() : \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	{
-		return $this->belongsTo(${1}::class);
+		return $this->belongsToMany(${1}::class);
 	}
 
 snippet lhm
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function ${2:function_name}()
+	public function ${2:function_name}() : \Illuminate\Database\Eloquent\Relations\HasMany
 	{
 		return $this->hasMany(${1}::class);
 	}
@@ -43,17 +32,14 @@ snippet lhm
 snippet ifun
 	/**
 	 * ${2:description}
-	 *
 	 */
 	public function ${1:function_name}(${3});
 
-snippet tfun
+snippet construct
 	/**
-	 * $1
-	 *
-	 * @return void
+	 * Create a new ${1:class}.
 	 */
-	public function ${1:function_name}()
+	public function __construct(${2})
 	{
 		${0}
 	}
@@ -80,7 +66,7 @@ snippet cls
 		${3}
 	}
 
-snippet sc
+snippet stc
 	Schema::create('${1:table}', function (Blueprint $table)
 	{
 		$table->increments('id');
@@ -90,18 +76,18 @@ snippet sc
 		$table->timestamps();
 	});
 
-snippet sd
+snippet std
 	Schema::drop('${1:table}');${0}
 
 snippet rg
-	$router->group([${1:parameters}], function () {
+	$router->group([${1:parameters}], function ($router) {
 
 		${0}
 
 	});
 
 snippet rr
-	Route::resource('${1:resource}', '${2}Controller');${0}
+	$router->resource('${1:resource}', '${2}Controller');${0}
 
 snippet lmodel
 	<?php
@@ -147,7 +133,7 @@ snippet lrequest
 		 *
 		 * @return boolean
 		 */
-		public function authorize()
+		public function authorize() : bool
 		{
 			return false;
 		}
@@ -158,22 +144,22 @@ snippet lrequest
 		 *
 		 * @return array
 		 */
-		public function rules()
+		public function rules() : array
 		{
 			return [];
 		}
 	}
 
-snippet aio
+snippet taio
 	$this->assertInstanceOf('${1}', ${2});
 
-snippet aeq
+snippet tae
 	$this->assertEquals('${1}', ${2});
 
-snippet atr
+snippet tat
 	$this->assertTrue(${1});
 
-snippet afs
+snippet taf
 	$this->assertFalse(${1});
 
 snippet foreign
@@ -190,8 +176,6 @@ snippet dp
 	|
 	*/
 
-snippet tae
-	$this->assertEquals($expected, $actual);
 snippet factory
 	$factory->define(${1:class}::class, function ($faker) ${2:use ($factory) }{
 		return [
