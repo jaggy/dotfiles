@@ -14,9 +14,11 @@ set shiftwidth=4
 set expandtab                         " Tabs suck.
 set colorcolumn=80,120                " Assign a column limit.
 set list
-set cursorline                        " Show the cu
+set cursorline                        " Show the cursor.
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 set fillchars+=vert:\ ,
+set showmatch       " Show matching  [{()}]
+set lazyredraw      " Redraw only when needed.
 " set conceallevel=2
 
 colorscheme torte

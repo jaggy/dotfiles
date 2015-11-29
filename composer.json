@@ -1,5 +1,6 @@
 {
     "require": {
-        "jaggy/kraken": "^0.1.5"
+        "jaggy/kraken": "^0.1.5",
+        "laravel/installer": "^1.2"
     }
 }
