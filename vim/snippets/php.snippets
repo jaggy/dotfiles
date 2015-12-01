@@ -79,6 +79,9 @@ snippet stc
 snippet std
 	Schema::drop('${1:table}');${0}
 
+snippet f
+	$table->${1:string}('${2:field}')${3:->nullable()};
+
 snippet rg
 	$router->group([${1:parameters}], function ($router) {
 
