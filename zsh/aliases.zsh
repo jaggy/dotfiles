@@ -34,6 +34,7 @@ alias tmux='tmux -u'
 alias psp="phpspec --no-interaction"
 alias codecept='codecept'
 alias art="php artisan"
+alias mig='art make:migration'
 alias cmp="composer"
 alias py="python"
 alias fuck='sudo $(fc -ln -1)'
