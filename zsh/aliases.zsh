@@ -41,6 +41,7 @@ alias fuck='sudo $(fc -ln -1)'
 alias vm='ssh vagrant@127.0.0.1 -p 2222'
 alias gls='gls --color=auto --group-directories-first'
 alias cask='brew cask'
+alias px='phinx'
 
 
 ### Shortcuts
