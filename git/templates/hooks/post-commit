@@ -1,6 +1,18 @@
 #!/usr/bin/env php
 <?php
 
+function str_contains ($string, $needle) {
+    return (bool) strstr($string, $needle);
+}
+
+$lid_check = `ioreg -r -k AppleClamshellState -d 4 | grep AppleClamshellState  | head -1`;
+$is_closed = str_contains($lid_check, 'Yes');
+
+if ($is_closed) {
+    echo "Lid is closed, gitshot cancelled.\n";
+    return;
+}
+
 $gitshots     = '/Volumes/Data/Dropbox/gitshots';
 $imagesnap    = exec('which imagesnap');
 $now          = strtotime(date('Y-m-d H:i:s'));
