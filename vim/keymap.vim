@@ -32,6 +32,7 @@ inoremap [];<space> [];<esc>hi
 inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
 inoremap []<space> []<esc>i
 inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
+imap {{<space> {{}}<esc>i<space><space><esc>i
 
 " Center the page when traversing.
 nnoremap n nzz

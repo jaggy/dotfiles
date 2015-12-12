@@ -43,7 +43,7 @@ Plugin 'soramugi/auto-ctags.vim' " Auto generate the ctags.
 "----------------------------------------------------------------------
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
-"Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'MarcWeber/vim-addon-mw-utils' " Required for vim snipmate.
 Plugin 'tomtom/tlib_vim'              " Required for neosnippets.
