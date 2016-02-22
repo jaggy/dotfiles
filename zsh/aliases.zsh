@@ -54,7 +54,7 @@ alias pg="php $HOME/code/remote-console.git/server.php"
 alias mspr="python $HOME/scripts/mspr.py"
 alias playlist="youtube-dl -citk --max-quality FORMAT"
 alias create="composer create-project thirteen/laravel-template --prefer-dist"
-alias host='sudo vi /etc/hosts'
+alias hosts='sudo vi /etc/hosts'
 
 alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
 
