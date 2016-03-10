@@ -2,7 +2,6 @@
     "require": {
         "jaggy/kraken": "^0.1.5",
         "laravel/installer": "^1.2",
-        "laravel/envoy": "~1.0",
         "jigsaw/jigsaw": "^0.4.1"
     }
 }
