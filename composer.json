@@ -2,6 +2,8 @@
     "require": {
         "jaggy/kraken": "^0.1.5",
         "laravel/installer": "^1.2",
-        "jigsaw/jigsaw": "^0.4.1"
+        "jigsaw/jigsaw": "^0.4.1",
+        "laravel/spark-installer": "^1.0",
+        "producer/producer": "~1.0"
     }
 }
