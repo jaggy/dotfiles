@@ -4,6 +4,9 @@
         "laravel/installer": "^1.2",
         "jigsaw/jigsaw": "^0.4.1",
         "laravel/spark-installer": "^1.0",
-        "producer/producer": "~1.0"
+        "producer/producer": "~1.0",
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "^2.4",
+        "asm89/twig-lint": "@dev"
     }
 }
