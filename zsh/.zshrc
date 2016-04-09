@@ -12,7 +12,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Good themes: awesomepanda, cloud, daveverwer, fwalch, miloshadzic, mrtazz, nanotech
-# ZSH_THEME="cloud"
+ZSH_THEME="daveverwer"
 CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
@@ -55,9 +55,7 @@ source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/submodules/z.git/z.sh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
-source $HOME/.iterm2_shell_integration.zsh
-
-detectOverrde;
+# source $HOME/.iterm2_shell_integration.zsh
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
@@ -101,4 +99,4 @@ bindkey "^N" insert-last-word
 export PATH="/usr/local/heroku/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
-source $HOME/.dotfiles/zsh/themes/triforce.zsh-theme
+# source $HOME/.dotfiles/zsh/themes/triforce.zsh-theme
