@@ -21,7 +21,9 @@ set showmatch       " Show matching  [{()}]
 set lazyredraw      " Redraw only when needed.
 " set conceallevel=2
 
-colorscheme torte
+" This fits the MonaLisa iterm color well.
+colorscheme desert
+"colorscheme torte
 syntax enable
 
 " Possbile colors:
@@ -35,8 +37,8 @@ highlight ColorColumn        ctermbg=238
 " Autocomplete color.
 highlight Pmenu              ctermbg=black ctermfg=white
 highlight LineNr             ctermfg=grey
-highlight Special            ctermfg=4
-highlight NonText            ctermfg=bg
+"highlight Special            ctermfg=4
+"highlight NonText            ctermfg=bg
 highlight phpStringDelimiter ctermfg=red
 highlight phpStringSingle    ctermfg=red
 highlight phpStringDouble    ctermfg=red
