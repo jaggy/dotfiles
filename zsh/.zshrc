@@ -65,6 +65,7 @@ PATH=vendor/bin/:bin:$PATH                                   # Relative Paths
 PATH=$ANDROID_HOME/bin:$PATH                                 # Android
 PATH="$NPM_PACKAGES/bin:$PATH"
 PATH="$HOME/Applications/blender.app/Contents/MacOS:$PATH"   # Blender
+PATH="$HOME/Library/Python/2.7/bin:$PATH"                    # Python Libraries
 
 
 #bindkey -v
