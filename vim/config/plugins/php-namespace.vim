@@ -1,6 +1,6 @@
-set tags=.git/tags
+set tags=.ctags
 
-nnoremap <leader>ti <esc>:call PhpInsertUse()<CR>
-inoremap <leader>ti <esc>:call PhpInsertUse()<CR>a
-nnoremap <leader>te <esc>:call PhpExpandClass()<CR>
-inoremap <leader>te <esc>:call PhpExpandClass()<CR>a
+nnoremap <leader>ci <esc>:call PhpInsertUse()<CR>
+inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
+nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
+inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a

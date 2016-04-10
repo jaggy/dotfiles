@@ -13,9 +13,9 @@ set tabstop=4                         " Use 4 as the tab width.
 set shiftwidth=4
 set expandtab                         " Tabs suck.
 set colorcolumn=80,120                " Assign a column limit.
-set list
 set cursorline                        " Show the cursor.
-set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
+"set list
+"set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 set fillchars+=vert:\ ,
 set showmatch       " Show matching  [{()}]
 set lazyredraw      " Redraw only when needed.
