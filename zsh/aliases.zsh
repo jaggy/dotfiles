@@ -72,12 +72,6 @@ alias migrate='art migrate:refresh --seed'
 ### Functions
 function gi() { /usr/bin/curl -L -s https://www.gitignore.io/api/$@ ;}
 
-function cd() {
-    builtin cd "$@";
-
-    detectOverrde;
-}
-
 function vulnerability_test() {
     x='() { :;}; echo "bash is vulnerable"' bash -c 'echo "Testing vulnerability..."'
 }

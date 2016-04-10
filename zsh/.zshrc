@@ -38,7 +38,7 @@ source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
 source $HOME/.dotfiles/submodules/z.git/z.sh
-source $HOME/.iterm2_shell_integration.zsh
+#source $HOME/.iterm2_shell_integration.zsh
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
