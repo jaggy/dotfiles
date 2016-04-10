@@ -30,19 +30,23 @@ bind-key -n C-k send-keys -R \; clear-history # Clear the buffer.
 bind-key r source-file ~/.tmux.conf \; display "Reloaded!"                  # reload the configuration file
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
 
+# This allows an overflow for tmux buffers so the terminal scrollback is readable.
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
 #------------------------------------------
 # Mouse Toggle
 #------------------------------------------
+bind-key -T root WheelUpPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+bind-key -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
 bind m \
-  set -g mode-mouse on \;\
-  set -g mouse-resize-pane on \;\
-  set -g mouse-select-pane on \;\
-  set -g mouse-select-window on \;\
-  display 'Mouse: ON'
+    set-option -g -q mouse on \;\
+    bind -T root MouseDrag1Border resize-pane -M \;\
+    bind -T root MouseDown1Pane select-pane -t=\; send-keys -M \;\
+    display 'Mouse: ON'
 
 bind M \
-  set -g mode-mouse off \;\
-  set -g mouse-resize-pane off \;\
-  set -g mouse-select-pane off \;\
-  set -g mouse-select-window off \;\
-  display 'Mouse: OFF'
+    set-option -g -q mouse off \;\
+    unbind -T root MouseDrag1Border \;\
+    bind -T root MouseDown1Pane select-pane -t= \;\
+    display 'Mouse: OFF'
