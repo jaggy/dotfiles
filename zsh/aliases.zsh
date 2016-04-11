@@ -6,6 +6,7 @@ alias .....='cd ../../../..'
 alias ll='ls -lah'
 alias sl="ls"
 alias h='cd ~'
+alias tx='tmuxinator'
 
 alias sl2="/usr/local/Cellar/sl/5.02/bin/sl"
 alias gti2="/usr/local/Cellar/gti/1.2.0/bin/gti"
