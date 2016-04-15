@@ -13,7 +13,7 @@ if ($is_closed) {
     return;
 }
 
-$gitshots     = '/Volumes/Data/Dropbox/gitshots';
+$gitshots     = '~/Dropbox/gitshots';
 $imagesnap    = exec('which imagesnap');
 $now          = strtotime(date('Y-m-d H:i:s'));
 $destination  = "{$gitshots}/{$now}.jpg";
