@@ -48,7 +48,8 @@ alias px='phinx'
 ### Shortcuts
 alias ct="colortest"
 alias nn="nvim"
-alias pp="phpunit"
+alias php="php -dzend_extension=/usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
+alias pp="php $(which phpunit)"
 alias so="source $HOME/.zshrc"
 alias selenium='java -jar /usr/local/bin/selenium.jar'
 alias pg="php $HOME/code/remote-console.git/server.php"
