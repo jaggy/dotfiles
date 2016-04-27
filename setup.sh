@@ -21,57 +21,21 @@ function function_exists {
     return $__true;
 }
 
-function _open {
-    _string=${1};
-
-    echo '/*';
-    echo '|--------------------------------------------------------------------------';
-    echo "| ${_string}";
-    echo '|--------------------------------------------------------------------------';
-    echo '|';
-
-    return;
-}
-
-
-function _close {
-
-    echo '|';
-    echo '*/';
-
-    return;
-}
-
-function _print {
-    _string=${1};
-
-    echo "| ${_string}";
-
-    return;
-}
-
 __binary="${HOME}/.bin";
 __docs="${HOME}/.docs";
 
-_open "Configuring Filesystem";
+# create all the directories
+echo "Creating vim swap cache.";
+mkdir -p "${HOME}/.vim/swapfiles"; # vim swapfiles
 
-    # create all the directories
-    _print 'Creating vim swap cache.';
-    mkdir -p "${HOME}/.vim/swapfiles"; # vim swapfiles
+echo "Creating a cache directory.";
+mkdir -p "${HOME}/.cache/ctrlp";   # control-p
 
-    _print 'Creating a cache directory.';
-    mkdir -p "${HOME}/.cache/ctrlp";   # control-p
+echo "Creating local docs folder.";
+mkdir -p ${__docs};
 
-    _print 'Creating local docs folder.';
-    mkdir -p ${__docs};
-
-    _print 'Create a local binary folder.';
-    mkdir -p ${__binary};
-
-_close;
-
-
-
+echo "Create a local binary folder.";
+mkdir -p ${__binary};
 
 
 ############################################################
@@ -81,49 +45,37 @@ _close;
 # Words need not be said to why this is here.
 #
 if ! function_exists 'brew'; then
-    _open 'Installing Homebrew and Caskroom';
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install caskroom/cask/brew-cask;
+fi
 
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        brew install caskroom/cask/brew-cask;
+############################################################
+# Essentials
+############################################################
+#
+# git, wget, ssh-copy-id, and tmux
+#
+brew install git wget ssh-copy-id tmux;
 
-    _close;
+
+############################################################
+# ag : Silver Searcher
+############################################################
+#
+# This is used as an alternative to the default searching of ctrlp.
+# It makes the search significantly faster.
+#
+if ! function_exists 'ag'; then
+    brew install ag;
 fi
 
 
-_open 'Installing Applications';
-
-    ############################################################
-    # Essentials
-    ###########################################################
-    if ! function_exists 'tmuxinator'; then
-        _print 'Installing `git`';
-        brew install git wget ssh-copy-id tmux;
-    fi
-
-
-    ############################################################
-    # ag : Silver Searcher
-    ###########################################################
-    #
-    # This is used as an alternative to the default searching of ctrlp.
-    # It makes the search significantly faster.
-    #
-    if ! function_exists 'ag'; then
-        _print 'Installing `ag`';
-        brew install ag;
-    fi
-
-
-    ############################################################
-    # tMuxinator
-    ###########################################################
-    if ! function_exists 'tmuxinator'; then
-        _print 'Installing `tmuxinator`';
-        brew install tmuxinator;
-    fi
-_close;
-
-
-_open 'Creating symlinks';
-
-_close;
+############################################################
+# tmuxinator
+############################################################
+#
+# Let's setup that gems without the need of sudo.
+#
+if ! function_exists 'tmuxinator'; then
+    gem install tmuxinator
+fi
