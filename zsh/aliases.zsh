@@ -69,6 +69,7 @@ alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-da
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
 # alias migrate='phinx rollback -t 0 && phinx migrate'
 alias migrate='art migrate:refresh --seed'
+alias rec='ffmpeg -f qtkit -video_device_index 0 -i ""'
 
 
 ### Functions

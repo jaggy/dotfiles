@@ -4,6 +4,7 @@
         "laravel/installer": "^1.2",
         "producer/producer": "~1.0",
         "squizlabs/php_codesniffer": "*",
-        "phpmd/phpmd": "^2.4"
+        "phpmd/phpmd": "^2.4",
+        "laravel/lumen-installer": "^1.0"
     }
 }
