@@ -82,3 +82,7 @@ bindkey "^N" insert-last-word
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
