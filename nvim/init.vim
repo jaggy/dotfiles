@@ -28,26 +28,24 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'mattn/emmet-vim'             " Emmet vim plugin.
+Plug 'jdkanani/vim-material-theme' " MATERIAL DESIGN!
 
 call plug#end()
 
 colorscheme base16-tomorrow-night
 
 highlight Normal guibg=transparent
+highlight ColorColumn guibg=#333333
 highlight CursorLine guibg=#333333
 highlight CursorLineNr guibg=#333333
 highlight LineNr guibg=transparent
 
-let g:ctrlp_cache_dir   = $HOME . '/.cache/ctrlp'           " Cache location
-let g:ctrlp_show_hidden = 1
-
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'   " Use AG for caching
-endif
+let g:airline_powerline_fonts = 1
 
 noremap <F1> <esc>:source ~/.config/nvim/init.vim<CR>:echo "Reloaded neovim config."<CR>
 nnoremap ; :
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
 nnoremap Q @q
-
+nnoremap <C-p> <esc>:FZF<CR>
