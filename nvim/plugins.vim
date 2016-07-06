@@ -11,12 +11,13 @@ Plug 'mattn/emmet-vim'                                              " HTML expan
 Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'scrooloose/nerdcommenter'                                     " Comment
+Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace integration
 
 "----------------------------------------------------------------------
 " IDE-esque
 "----------------------------------------------------------------------
-Plug 'majutsushi/tagbar'        " Previewing file meta.
-Plug 'soramugi/auto-ctags.vim'  " Auto generate the ctags.
+Plug 'majutsushi/tagbar'                                              " Previewing file meta.
+Plug 'soramugi/auto-ctags.vim', { 'for': ['php', 'jinja', 'blade'] }  " Auto generate the ctags.
 
 "----------------------------------------------------------------------
 " Autocomplete &&  Snippets
@@ -36,12 +37,12 @@ Plug 'chriskempson/base16-vim'
 " Syntax Highlighting
 "----------------------------------------------------------------------
 Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
+Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
 
 call plug#end()

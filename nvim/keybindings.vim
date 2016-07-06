@@ -17,6 +17,10 @@ nnoremap G Gzz
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
 nnoremap <C-p> <esc>:FZF<CR>
+nnoremap <leader>tt :Tagbar<CR>
+inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
+nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
+inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
 
 
 "----------------------------------------------------------------------

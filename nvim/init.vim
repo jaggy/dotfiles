@@ -13,6 +13,7 @@ source ~/.dotfiles/nvim/events.vim
 "----------------------------------------------------------------------
 source ~/.dotfiles/nvim/config/nerdcommenter.vim
 source ~/.dotfiles/nvim/config/vim-airline.vim
+source ~/.dotfiles/nvim/config/autotags.vim
 
 " UltiSnips, vim-snippets, and deoplete
 source ~/.dotfiles/nvim/config/snippets.vim         
