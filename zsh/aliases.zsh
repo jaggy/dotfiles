@@ -44,6 +44,7 @@ alias vm='vagrant ssh'
 alias gls='gls --color=auto --group-directories-first'
 alias cask='brew cask'
 alias px='phinx'
+alias vi='nvim'
 
 
 ### Shortcuts
