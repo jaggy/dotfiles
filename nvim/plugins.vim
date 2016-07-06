@@ -11,6 +11,7 @@ Plug 'mattn/emmet-vim'                                              " HTML expan
 Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'soramugi/auto-ctags.vim'                                      " Auto generate the ctags.
+Plug 'scrooloose/nerdcommenter'                                " Comment
 
 "----------------------------------------------------------------------
 " Autocomplete &&  Snippets

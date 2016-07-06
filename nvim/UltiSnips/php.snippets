@@ -3,12 +3,12 @@ priority 1
 snippet cl "PHP Class"
 <?php
 
-namespace ${1:App}${2:`!p
+namespace ${1:App}`!p
 relpath = os.path.relpath(path)
 m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = '\\' +  m.group().replace('/', '\\')
-`};
+`;
 
 class `!p snip.rv=snip.basename`
 {
@@ -27,12 +27,12 @@ endsnippet
 snippet cle "Class with Parent"
 <?php
 
-namespace ${1:App}${2:`!p
+namespace ${1:App}`!p
 relpath = os.path.relpath(path)
 m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = '\\' +  m.group().replace('/', '\\')
-`};
+`;
 
 class `!p snip.rv=snip.basename` extends ${3:Animal}
 {

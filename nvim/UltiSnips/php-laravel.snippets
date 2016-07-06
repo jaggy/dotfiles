@@ -1,0 +1,25 @@
+priority 1
+
+snippet lm "Laravel Model"
+<?php
+
+namespace ${1:App}`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`;
+
+class `!p snip.rv=snip.basename` extends Model
+{
+	/**
+	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 *
+	 * @return `!p snip.rv=snip.basename`
+	 */
+	public function __construct() 
+	{
+		$0
+	}
+}
+endsnippet
