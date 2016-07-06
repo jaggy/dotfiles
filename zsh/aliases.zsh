@@ -86,7 +86,8 @@ function phptags() {
     # find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
     # ctags -R --PHP-kinds=+cf -f .git/tags app src
     # ctags -R --PHP-kinds=+cf -f .git/tags.vendor vendor
-    ctags -R --PHP-kinds=+cf -f .git/tags src app vendor
+    ctags -f .git/tags src app
+    ctags -f .git/tags.vendor vendor
     
     # find $target -name '*.php' 
 

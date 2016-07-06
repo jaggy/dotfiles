@@ -44,7 +44,7 @@ mkdir -p ${__binary};
 # Add the symlinks
 
 rm $HOME/.zshrc
-ln -s ctags $HOME/.ctagsrc
+ln -s ctags $HOME/.ctags
 ln -s npmrc $HOME/.npmrc
 ln -s vim/.vimrc $HOME/.vimrc
 ln -s nvim $HOME/.config/nvim
@@ -62,7 +62,6 @@ ln -s .agignore $HOME/.agignore
 #
 if ! function_exists 'brew'; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install caskroom/cask/brew-cask;
 fi
 
 ############################################################

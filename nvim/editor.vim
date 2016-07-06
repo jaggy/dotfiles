@@ -17,7 +17,7 @@ set lazyredraw              " Redraw only when needed. Makes everything faster.
 set visualbell t_vb=        " Disable terminal bell
 
 """ CTAGS
-set tags+=.git/tags,.git/tags.vendors " Make ctags work
+set tags+=.git/tags,.git/tags.vendor
 
 " More natural splits
 set splitbelow              " Horizontal split below current.
