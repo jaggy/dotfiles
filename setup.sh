@@ -37,6 +37,22 @@ mkdir -p ${__docs};
 echo "Create a local binary folder.";
 mkdir -p ${__binary};
 
+############################################################
+# Symlinks
+###########################################################
+#
+# Add the symlinks
+
+rm $HOME/.zshrc
+ln -s ctags $HOME/.ctagsrc
+ln -s npmrc $HOME/.npmrc
+ln -s vim/.vimrc $HOME/.vimrc
+ln -s nvim $HOME/.config/nvim
+ln -s zsh/.zshrc $HOME/.zshrc
+ln -s tmux/.tmux.conf $HOME/.tmux.conf
+ln -s git/.gitconfig $HOME/.gitconfig
+ln -s git/.gitconfig_global $HOME/.gitconfig_global
+ln -s .agignore $HOME/.agignore
 
 ############################################################
 # Homebrew and Caskroom
@@ -76,6 +92,6 @@ fi
 #
 # Let's setup that gems without the need of sudo.
 #
-if ! function_exists 'tmuxinator'; then
-    gem install tmuxinator
-fi
+# if ! function_exists 'tmuxinator'; then
+#     gem install tmuxinator
+# fi
