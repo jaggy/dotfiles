@@ -1,0 +1,49 @@
+priority 1
+
+snippet cl "PHP Class"
+<?php
+
+namespace ${1:App}${2:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`};
+
+class `!p snip.rv=snip.basename`
+{
+	/**
+	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 *
+	 * @return `!p snip.rv=snip.basename`
+	 */
+	public function __construct() 
+	{
+		$0
+	}
+}
+endsnippet
+
+snippet cle "Class with Parent"
+<?php
+
+namespace ${1:App}${2:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`};
+
+class `!p snip.rv=snip.basename` extends ${3:Animal}
+{
+	/**
+	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 *
+	 * @return `!p snip.rv=snip.basename`
+	 */
+	public function __construct() 
+	{
+		$0
+	}
+}
+endsnippet

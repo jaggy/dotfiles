@@ -13,9 +13,13 @@ Plug 'tpope/vim-surround'                                           " Helper to 
 Plug 'soramugi/auto-ctags.vim'                                      " Auto generate the ctags.
 
 "----------------------------------------------------------------------
-" Autocomplete
+" Autocomplete &&  Snippets
 "----------------------------------------------------------------------
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 "----------------------------------------------------------------------
 " Themes
