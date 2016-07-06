@@ -18,6 +18,7 @@ set lazyredraw              " Redraw only when needed. Makes everything faster.
 " More natural splits
 set splitbelow              " Horizontal split below current.
 set splitright              " Vertical split to right of current.
+set visualbell t_vb=        " Disable terminal bell
 
 " Themeing
 colorscheme base16-tomorrow-night

@@ -60,3 +60,18 @@ inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
 imap {{<space> {{}}<esc>i<space><space><esc>i
 
 nnoremap <F3> :nohlsearch<CR>
+
+"----------------------------------------------------------------------
+" PHP Testing
+"----------------------------------------------------------------------
+nnoremap <leader>tw :call phpspec#create_function()<cr>
+inoremap <leader>tw <esc>:call phpspec#create_function()<cr>
+
+"----------------------------------------------------------------------
+" Terminal
+"----------------------------------------------------------------------
+nnoremap <C-t> <esc>:terminal<CR>
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l

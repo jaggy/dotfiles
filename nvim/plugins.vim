@@ -10,8 +10,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'                                              " HTML expander
 Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
-Plug 'soramugi/auto-ctags.vim'                                      " Auto generate the ctags.
-Plug 'scrooloose/nerdcommenter'                                " Comment
+Plug 'scrooloose/nerdcommenter'                                     " Comment
+
+"----------------------------------------------------------------------
+" IDE-esque
+"----------------------------------------------------------------------
+Plug 'majutsushi/tagbar'        " Previewing file meta.
+Plug 'soramugi/auto-ctags.vim'  " Auto generate the ctags.
 
 "----------------------------------------------------------------------
 " Autocomplete &&  Snippets
@@ -31,7 +36,7 @@ Plug 'chriskempson/base16-vim'
 " Syntax Highlighting
 "----------------------------------------------------------------------
 Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'twig' }
+Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }

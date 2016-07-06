@@ -1,11 +1,19 @@
 let mapleader=","
 
+"----------------------------------------------------------------------
+" Editor 
+"----------------------------------------------------------------------
 source ~/.dotfiles/nvim/plugins.vim
 source ~/.dotfiles/nvim/editor.vim
 source ~/.dotfiles/nvim/keybindings.vim
+source ~/.dotfiles/nvim/events.vim
 
-""" Plugins
+"----------------------------------------------------------------------
+" Plugin Configuration
+"----------------------------------------------------------------------
 source ~/.dotfiles/nvim/config/nerdcommenter.vim
 source ~/.dotfiles/nvim/config/vim-airline.vim
-source ~/.dotfiles/nvim/config/snippets.vim         " UltiSnips, vim-snippets, and deoplete
+
+" UltiSnips, vim-snippets, and deoplete
+source ~/.dotfiles/nvim/config/snippets.vim         
 

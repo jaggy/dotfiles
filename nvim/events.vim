@@ -8,6 +8,9 @@ autocmd BufRead,BufNewFile *.blade.* set filetype=blade   " Use the blade syntax
 autocmd BufRead,BufNewFile *.snip set filetype=neosnippet " Use the neosnippet syntax highlighting
 autocmd BufRead,BufNewFile *.md set filetype=markdown     " Use markdown
 
+""" Add phpspec functionality only on phpfiles
+autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpspec.vim
+
 "----------------------------------------------------------------------
 " Snippets
 "----------------------------------------------------------------------
