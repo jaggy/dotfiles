@@ -1,6 +1,16 @@
 priority 1
 
-snippet cl "PHP Class"
+#----------------------------------------------------------
+# Class Definitions
+#----------------------------------------------------------
+#
+# We place all class creations here. This includes interfaces,
+# traits, abstracts and other more stuff.
+#
+# We need to find a way to refactor out functions so we can reuse
+# namespacing these classes much easily.
+#
+snippet "class|cl" "PHP Class" r
 <?php
 
 namespace ${1:App}`!p
@@ -46,4 +56,114 @@ class `!p snip.rv=snip.basename` extends ${3:Animal}
 		$0
 	}
 }
+endsnippet
+
+snippet cnn "Class without a namespace"
+<?php
+
+class `!p snip.rv=snip.basename`
+{
+	/**
+	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 *
+	 * @return `!p snip.rv=snip.basename`
+	 */
+	public function __construct() 
+	{
+		$0
+	}
+}
+endsnippet
+
+#----------------------------------------------------------
+# Functions and Methods
+#----------------------------------------------------------
+#
+# Listed here are all the snippets for creating functions and methods.
+# From private, protected, public, and even helper classes 
+# with `function_exists` validation.
+#
+snippet pbm "Public Method"
+/**
+ * ${1:Write the description first!}
+ *
+ * @return ${4:void}
+ */
+public function ${2:function_name}(${3})
+{
+	$0
+}
+endsnippet
+
+snippet prm "Protected Method"
+/**
+ * ${1:Write the description first!}
+ *
+ * @return ${4:void}
+ */
+protected function ${2:function_name}(${3})
+{
+	$0
+}
+endsnippet
+
+snippet pvm "Private Method"
+/**
+ * ${1:Write the description first!}
+ *
+ * @return ${4:void}
+ */
+private function ${2:function_name}(${3})
+{
+	$0
+}
+endsnippet
+
+snippet fun "Function Helper"
+if (function_exists('$2')) {
+	/**
+	 * ${1:Write the description first!}
+	 *
+	 * @return ${4:void}
+	 */
+	function ${2:function_name}($3) 
+	{
+		$0
+	}
+}
+endsnippet
+
+#----------------------------------------------------------
+# Loops (see definition)
+#----------------------------------------------------------
+#
+# Definition (see title)
+#
+snippet "fore|fe" "For-each loop" r
+foreach (\$${1:iterable} as \$${2:key}${3: => \$${4:value}}) {
+	${0}
+}
+endsnippet
+
+#----------------------------------------------------------
+# Control Structures
+#----------------------------------------------------------
+#
+#
+snippet if "If conditional" 
+if (${1:false}) {
+	$2
+}
+endsnippet
+
+#----------------------------------------------------------
+# Helpers
+#----------------------------------------------------------
+#
+# This is where we place all the functions to make everyhting much easier
+# for us.
+#
+
+snippet vd "Variable Dump"
+var_dump($1);$0
 endsnippet

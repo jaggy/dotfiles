@@ -15,4 +15,5 @@ autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpspec.vim
 " Snippets
 "----------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-laravel
+autocmd BufNewFile,BufRead tests/**/*.php UltiSnipsAddFiletypes php-phpunit
 
