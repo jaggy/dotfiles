@@ -14,11 +14,15 @@ set pastetoggle=<F4>        " Shortcut for toggling paste!
 set fillchars+=vert:\ ,     " Remove the characters in the split line.
 set showmatch               " Show matching pairs
 set lazyredraw              " Redraw only when needed. Makes everything faster.
+set visualbell t_vb=        " Disable terminal bell
+
+""" CTAGS
+set tags+=.git/tags,.git/tags.vendors " Make ctags work
 
 " More natural splits
 set splitbelow              " Horizontal split below current.
 set splitright              " Vertical split to right of current.
-set visualbell t_vb=        " Disable terminal bell
+
 
 " Themeing
 colorscheme base16-tomorrow-night
