@@ -83,9 +83,13 @@ function vulnerability_test() {
 
 # Generate PHP ctags.
 function phptags() {
-    #find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
-    ctags -R --PHP-kinds=+cf -f .git/tags app src
-    ctags -R --PHP-kinds=+cf -f .git/tags.vendor app vendor src
+    # find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
+    # ctags -R --PHP-kinds=+cf -f .git/tags app src
+    # ctags -R --PHP-kinds=+cf -f .git/tags.vendor vendor
+    ctags -R --PHP-kinds=+cf -f .git/tags src app vendor
+    
+    # find $target -name '*.php' 
+
     echo "Generated ctags!"
 }
 
