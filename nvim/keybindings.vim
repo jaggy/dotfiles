@@ -22,8 +22,8 @@ nnoremap <leader>tt :Tagbar<CR>
 inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
 inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
-inoremap <leader>tw :call phpspec#create_function()<cr>
-nnoremap <leader>tw :call phpspec#create_function()<cr>
+inoremap <leader>tw <esc>:call phpspec#create_function()<cr>
+nnoremap <leader>tw <esc>:call phpspec#create_function()<cr>
 nnoremap <leader>da <esc>:call phpdependency#add()<cr>
 inoremap <leader>da <esc>:call phpdependency#add()<cr>
 
