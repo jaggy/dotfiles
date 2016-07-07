@@ -21,6 +21,8 @@ nnoremap <leader>tt :Tagbar<CR>
 inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
 inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
+nnoremap <leader>tw :call phpspec#create_function()<cr>
+nnoremap <leader>sp <esc>:call AddDependency()<cr>
 
 
 "----------------------------------------------------------------------
@@ -46,8 +48,12 @@ inoremap [;w<cr> <esc>:w<cr>
 nnoremap [;w<cr> <esc>:w<cr>
 noremap  <C-s> <esc>:w<cr>
 
-" Convert all tabs into spaces.
+""" Convert all tabs into spaces.
 nnoremap <leader><tab> :set expandtab<cr>:retab<cr>
+
+""" Add a new file from the current directory
+""" Courtesy of Jeffery Way: https://gist.github.com/JeffreyWay/6753834
+nnoremap <leader>n :edit %:p:h/
 
 "----------------------------------------------------------------------
 " Bracker Pairing
@@ -64,13 +70,6 @@ inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
 imap {{<space> {{}}<esc>i<space><space><esc>i
 
 nnoremap <F3> :nohlsearch<CR>
-
-"----------------------------------------------------------------------
-" PHP Testing
-"----------------------------------------------------------------------
-nnoremap <leader>tw :call phpspec#create_function()<cr>
-inoremap <leader>tw <esc>:call phpspec#create_function()<cr>
-
 "----------------------------------------------------------------------
 " Terminal
 "----------------------------------------------------------------------
