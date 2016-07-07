@@ -45,5 +45,5 @@ function! phpdependency#add()
 
     "
     " " Remove opening comma if there is only one dependency
-    execute '%s/(, /(/g'
+    execute '%s/(, /(/ge'
 endfunction
