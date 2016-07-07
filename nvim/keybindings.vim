@@ -17,6 +17,7 @@ nnoremap G Gzz
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
 nnoremap <C-p> <esc>:FZF<CR>
+" nnoremap <C-t> <esc>:FZF --skip-vcs-ignores<CR>
 nnoremap <leader>tt :Tagbar<CR>
 inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
@@ -74,7 +75,7 @@ nnoremap <F3> :nohlsearch<CR>
 "----------------------------------------------------------------------
 " Terminal
 "----------------------------------------------------------------------
-nnoremap <C-t> <esc>:terminal<CR>
+" nnoremap <C-t> <esc>:terminal<CR>
 tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
 tnoremap <C-w>k <C-\><C-n><C-w>k
