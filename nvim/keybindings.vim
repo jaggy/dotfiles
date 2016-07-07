@@ -22,7 +22,8 @@ inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
 inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
 nnoremap <leader>tw :call phpspec#create_function()<cr>
-nnoremap <leader>sp <esc>:call AddDependency()<cr>
+nnoremap <leader>da <esc>:call phpdependency#add()<cr>
+inoremap <leader>da <esc>:call phpdependency#add()<cr>
 
 
 "----------------------------------------------------------------------
