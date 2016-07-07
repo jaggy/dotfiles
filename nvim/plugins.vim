@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 "----------------------------------------------------------------------
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }             " Tree View
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " Fuzzy Finder
-" Plug 'junegunn/fzf.vim'                                             " Vim support for FZF
 Plug 'vim-airline/vim-airline'                                      " Status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'                                              " HTML expander
