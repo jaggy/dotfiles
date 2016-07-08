@@ -23,3 +23,28 @@ class `!p snip.rv=snip.basename` extends Model
 	}
 }
 endsnippet
+
+#----------------------------------------------------------
+# Router 
+#----------------------------------------------------------
+#
+
+snippet rr "Router Resource"
+$router->resource('${1:name}', '${2:Controller}Controller');
+endsnippet
+
+snippet rrp "Router Resource with Parameters"
+$router->resource('${1:name}', '${2:Controller}Controller', ['only' => [$0]]);
+endsnippet
+
+snippet rg "Router Group"
+$router->group([${1}], function ($router) {
+	$0
+});
+endsnippet
+
+snippet rc "Router Closure"
+$router->get('${1:url}', ['as' => '${2}', function () {
+	$0
+}]);
+endsnippet
