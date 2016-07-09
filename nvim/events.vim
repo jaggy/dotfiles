@@ -12,6 +12,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown     " Use markdown
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpspec.vim
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpdependency.vim
 
+autocmd BufRead,BufNewFile *.vue set filetype=vue
+
 "----------------------------------------------------------------------
 " Snippets
 "----------------------------------------------------------------------
