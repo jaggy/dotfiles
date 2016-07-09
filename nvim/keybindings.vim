@@ -17,8 +17,8 @@ nnoremap G Gzz
 " Plugin Shortcuts
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
-nnoremap <C-p> <esc>:call fzf#run({'source': 'ag -g ""', 'sink': 'e', 'down': '40%'})<CR>
-nnoremap <C-t> <esc>:call fzf#run({'source': 'ag --skip-vcs-ignores -g ""', 'sink': 'e', 'down': '40%'})<CR>
+nnoremap <C-p> <esc>:call fzf#run({'source': 'ag -g "" --ignore-case', 'sink': 'e', 'down': '40%'})<CR>
+nnoremap <C-t> <esc>:call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
 inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
