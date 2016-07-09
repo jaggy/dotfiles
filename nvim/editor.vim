@@ -16,6 +16,11 @@ set showmatch               " Show matching pairs
 set lazyredraw              " Redraw only when needed. Makes everything faster.
 set mouse=                  " Disable the mouse for now.
 
+
+""" Display invisibles.
+set list
+set listchars=eol:¬,tab:>-,trail:·,extends:>,precedes:<
+
 """ Shhhhhhh
 set visualbell              
 set noerrorbells
@@ -37,6 +42,7 @@ highlight GitGutterAdd  guibg=transparent
 highlight ColorColumn   guibg=#333333
 highlight CursorLine    guibg=#333333
 highlight CursorLineNr  guibg=#333333
+highlight SpecialKey    guifg=#555555
 
 "----------------------------------------------------------------------
 " Enable php.vim

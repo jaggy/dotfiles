@@ -172,8 +172,8 @@ snippet rt "Return"
 return $1;$0
 endsnippet
 
-snippet afn "Anonymous Function"
-function (${1}) {
+snippet afn "Anonymous Function" i
+function (${1}) ${2:use (${3})} {
 	$0
 }
 endsnippet
