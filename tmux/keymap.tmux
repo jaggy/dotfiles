@@ -25,7 +25,7 @@ bind-key \ resize -Z                           # bind \ for full screen
 bind-key u resize-pane -t 1 -x 50              # resize first pane small
 bind-key i select-layout even-horizontal       # resize equal splits
 bind-key o resize-pane -t 2 -x 50              # resize the second pane small
-bind-key -n C-k send-keys -R \; clear-history # Clear the buffer.
+bind-key -n C-] send-keys -R \; clear-history # Clear the buffer.
 
 bind-key r source-file ~/.tmux.conf \; display "Reloaded!"                  # reload the configuration file
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
