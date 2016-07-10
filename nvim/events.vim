@@ -11,6 +11,7 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown     " Use markdown
 """ Add phpspec functionality only on phpfiles
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpspec.vim
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpdependency.vim
+autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/syntax/php.vim
 
 autocmd BufRead,BufNewFile *.vue set filetype=vue
 
