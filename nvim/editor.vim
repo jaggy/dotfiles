@@ -34,7 +34,10 @@ set splitright              " Vertical split to right of current.
 
 
 " Themeing
-colorscheme base16-tomorrow-night
+" colorscheme base16-tomorrow-night
+" colorscheme colorsbox-stbright
+" colorscheme material
+colorscheme colorsbox-stnight
 
 highlight Normal        guibg=transparent
 highlight LineNr        guibg=transparent

@@ -32,7 +32,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 "----------------------------------------------------------------------
 " Themes
 "----------------------------------------------------------------------
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
+" Plug 'roosta/srcery'
+" Plug 'scwood/vim-hybrid'
+Plug 'mkarmona/colorsbox'
+" Plug 'jscappini/material.vim'
 
 "----------------------------------------------------------------------
 " Syntax Highlighting
@@ -40,7 +44,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
