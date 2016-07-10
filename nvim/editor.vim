@@ -15,6 +15,7 @@ set fillchars+=vert:\ ,     " Remove the characters in the split line.
 set showmatch               " Show matching pairs
 set lazyredraw              " Redraw only when needed. Makes everything faster.
 set mouse=                  " Disable the mouse for now.
+set background=dark
 
 
 """ Display invisibles.
@@ -37,7 +38,13 @@ set splitright              " Vertical split to right of current.
 " colorscheme base16-tomorrow-night
 " colorscheme colorsbox-stbright
 " colorscheme material
-colorscheme colorsbox-stnight
+" colorscheme hybrid
+" colorscheme hybrid_reverse
+" colorscheme hybrid_material
+" colorscheme colorsbox-stnight
+" colorscheme colorsbox-material
+" colorscheme srcery
+colorscheme colorsbox-steighties
 
 highlight Normal        guibg=transparent
 highlight LineNr        guibg=transparent

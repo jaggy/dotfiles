@@ -36,6 +36,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 " Plug 'roosta/srcery'
 " Plug 'scwood/vim-hybrid'
 Plug 'mkarmona/colorsbox'
+" Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'jscappini/material.vim'
 
 "----------------------------------------------------------------------
@@ -44,7 +45,7 @@ Plug 'mkarmona/colorsbox'
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
