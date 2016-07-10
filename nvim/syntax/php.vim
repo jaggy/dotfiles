@@ -1,3 +1,7 @@
-highlight      link phpVarSelector Identifier
-highlight! def link phpDocTags     phpDefine
-highlight! def link phpDocParam    phpType
+source ~/.dotfiles/nvim/syntax/php-default.vim
+
+highlight link phpVarSelector phpDefine
+highlight link phpIdentifier  phpDefine
+ 
+hi! def link phpDocTags  phpDefine
+hi! def link phpDocParam phpType
