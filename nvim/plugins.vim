@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'                                       " Show git u
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'scrooloose/nerdcommenter'                                     " Comment
 Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace integration
+Plug 'jiangmiao/auto-pairs'
 
 "----------------------------------------------------------------------
 " IDE-esque

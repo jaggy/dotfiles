@@ -62,16 +62,16 @@ nnoremap <leader>n :edit %:p:h/
 "----------------------------------------------------------------------
 " Bracker Pairing
 "----------------------------------------------------------------------
-inoremap ()<space> ()<esc>i
-inoremap ();<space> ();<esc>hi
-inoremap {}<space> {}<esc>i
-inoremap @{<space> @{ }<esc>F{a<space>
-inoremap {}<cr> {<cr><cr>}<esc>k$a
-inoremap [];<space> [];<esc>hi
-inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
-inoremap []<space> []<esc>i
-inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
-inoremap {{<space> {{}}<esc>hi<space><space><esc>i
+" inoremap ()<space> ()<esc>i
+" inoremap ();<space> ();<esc>hi
+" inoremap {}<space> {}<esc>i
+" inoremap @{<space> @{ }<esc>F{a<space>
+" inoremap {}<cr> {<cr><cr>}<esc>k$a
+" inoremap [];<space> [];<esc>hi
+" inoremap [];<cr> [];<esc>hi<cr><cr><esc>ki<tab>
+" inoremap []<space> []<esc>i
+" inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
+" inoremap {{<space> {{}}<esc>hi<space><space><esc>i
 
 nnoremap <F3> :nohlsearch<CR>
 "----------------------------------------------------------------------
