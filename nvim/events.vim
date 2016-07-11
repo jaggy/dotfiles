@@ -19,5 +19,5 @@ autocmd BufRead,BufNewFile *.vue set filetype=vue
 " Snippets
 "----------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-laravel
-autocmd BufNewFile,BufRead tests/**/*.php UltiSnipsAddFiletypes php-phpunit
+autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-phpunit
 
