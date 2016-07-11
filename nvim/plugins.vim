@@ -43,9 +43,9 @@ Plug 'mkarmona/colorsbox'
 " Syntax Highlighting
 "----------------------------------------------------------------------
 Plug 'posva/vim-vue', { 'for': 'vue' }
-" Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
