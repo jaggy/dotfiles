@@ -27,7 +27,8 @@ stty -ixon                  # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8   # Fix ZSH and Tmux issues
 export LANG=en_US.UTF-8
-export EDITOR='vim'         # For tmuxinator
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
 ### Exports
 #####################################################################
