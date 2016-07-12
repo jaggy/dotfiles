@@ -46,13 +46,12 @@ mkdir -p ${__binary};
 rm $HOME/.zshrc
 ln -s ctags $HOME/.ctags
 ln -s npmrc $HOME/.npmrc
-ln -s vim/.vimrc $HOME/.vimrc
 ln -s nvim $HOME/.config/nvim
-ln -s zsh/.zshrc $HOME/.zshrc
-ln -s tmux/.tmux.conf $HOME/.tmux.conf
-ln -s git/.gitconfig $HOME/.gitconfig
-ln -s git/.gitconfig_global $HOME/.gitconfig_global
-ln -s .agignore $HOME/.agignore
+ln -s zsh/zshrc $HOME/.zshrc
+ln -s tmux/tmux.conf $HOME/.tmux.conf
+ln -s git/gitconfig $HOME/.gitconfig
+ln -s git/gitconfig_global $HOME/.gitconfig_global
+ln -s agignore $HOME/.agignore
 
 ############################################################
 # Homebrew and Caskroom
