@@ -14,6 +14,7 @@ autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpdependency.v
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/syntax/php.vim
 
 autocmd BufRead,BufNewFile *.vue set filetype=vue
+autocmd BufNewFile,BufRead *.vue UltiSnipsAddFiletypes javascript
 
 "----------------------------------------------------------------------
 " Snippets
