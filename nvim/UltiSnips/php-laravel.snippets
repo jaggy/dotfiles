@@ -72,3 +72,11 @@ $router->get('${1:url}', ['as' => '${2}', function () {
 	$0
 }]);
 endsnippet
+
+snippet fd "Model Factory"
+$factory->define(${1}::class, function (Faker\Generator $faker) {
+	return [
+		$0
+	];
+});
+endsnippet

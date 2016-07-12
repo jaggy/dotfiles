@@ -13,7 +13,8 @@ Plug 'airblade/vim-gitgutter'                                       " Show git u
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'scrooloose/nerdcommenter'                                     " Comment
 Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace integration
-Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'                                      " Alignment plugin
+Plug 'jiangmiao/auto-pairs'                                         " Auto pairing for braces. Though this fucks up the alignment on certain cases.
 
 "----------------------------------------------------------------------
 " IDE-esque

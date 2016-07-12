@@ -27,6 +27,8 @@ inoremap <leader>tw <esc>:call phpspec#create_function()<cr>
 nnoremap <leader>tw <esc>:call phpspec#create_function()<cr>
 nnoremap <leader>da <esc>:call phpdependency#add()<cr>
 inoremap <leader>da <esc>:call phpdependency#add()<cr>
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 
 "----------------------------------------------------------------------
