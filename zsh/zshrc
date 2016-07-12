@@ -38,8 +38,6 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
-source $HOME/.dotfiles/submodules/z.git/z.sh
-#source $HOME/.iterm2_shell_integration.zsh
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
@@ -68,11 +66,6 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 PATH="$HOME/Applications/blender.app/Contents/MacOS:$PATH"   # Blender
 PATH="$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.5/bin:$PATH" # Python Libraries
 
-
-#bindkey -v
-#bindkey "^F" vi-cmd-mode
-#bindkey jj vi-cmd-mode
-
 bindkey "^D" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
@@ -80,8 +73,6 @@ bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --files-with-matches --ignore-case --hidden'
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
