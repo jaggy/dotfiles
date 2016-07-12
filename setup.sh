@@ -54,10 +54,10 @@ ln -s git/gitconfig_global $HOME/.gitconfig_global
 ln -s agignore $HOME/.agignore
 
 ############################################################
-# Homebrew and Caskroom
+# Homebrew
 ###########################################################
 #
-# Words need not be said to why this is here.
+# We need this for almost everything else.
 #
 if ! function_exists 'brew'; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -69,27 +69,12 @@ fi
 #
 # git, wget, ssh-copy-id, and tmux
 #
-brew install git wget ssh-copy-id tmux;
-
-
-############################################################
-# ag : Silver Searcher
-############################################################
-#
-# This is used as an alternative to the default searching of ctrlp.
-# It makes the search significantly faster.
-#
-if ! function_exists 'ag'; then
-    brew install ag;
-fi
-
+brew install git wget ssh-copy-id tmux z ag fzf;
 
 ############################################################
-# tmuxinator
+# Neovim
 ############################################################
 #
-# Let's setup that gems without the need of sudo.
+# Our editor of choice.
 #
-# if ! function_exists 'tmuxinator'; then
-#     gem install tmuxinator
-# fi
+brew install nvim/nvim
