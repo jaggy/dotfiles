@@ -4,6 +4,7 @@ inoremap jk <esc>
 nnoremap ; :
 vnoremap ; :
 nnoremap Q @q
+inoremap ;; ::
 
 " Map enter to still add line breaks on normal mode.
 nnoremap <cr> o<esc>

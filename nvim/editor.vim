@@ -23,7 +23,7 @@ set list
 set listchars=eol:¬,tab:>-,trail:·,extends:>,precedes:<
 
 """ Shhhhhhh
-set visualbell              
+set visualbell
 set noerrorbells
 
 """ ctag reference.
