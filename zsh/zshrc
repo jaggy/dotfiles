@@ -38,6 +38,7 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
+source `brew --prefix`/etc/profile.d/z.sh
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
