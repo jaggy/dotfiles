@@ -1,4 +1,6 @@
-### Folder Manipulation
+#------------------------------------------------------------------------------
+# Overriding Defaults
+#------------------------------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -6,15 +8,11 @@ alias .....='cd ../../../..'
 alias ll='ls -lah'
 alias sl="ls"
 alias h='cd ~'
-alias tx='tmuxinator'
 
-alias sl2="/usr/local/Cellar/sl/5.02/bin/sl"
-alias gti2="/usr/local/Cellar/gti/1.2.0/bin/gti"
-
-
-### Git Specific
+#------------------------------------------------------------------------------
+# Overriding Defaults
+#------------------------------------------------------------------------------
 alias gti='git'
-alias mdkir='mkdir'
 alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
@@ -27,77 +25,73 @@ alias gp='git push'
 alias gt='git tag'
 alias gl='git log'
 
-
-### Default Configuration
-alias guard='guard -g default'
-#alias phpcs='phpcs --standard=PSR2 '
+#------------------------------------------------------------------------------
+# Overriding Defaults
+#------------------------------------------------------------------------------
 alias tmux='tmux -u'
-alias psp="phpspec --no-interaction"
-alias codecept='codecept'
 alias art="php artisan"
-alias mig='art make:migration'
 alias cmp="composer"
-alias py="python"
-alias fuck='sudo $(fc -ln -1)'
-#alias vm='ssh vagrant@127.0.0.1 -p 2222'
 alias vm='vagrant ssh'
-alias gls='gls --color=auto --group-directories-first'
-alias cask='brew cask'
-alias px='phinx'
 alias vi='nvim'
+alias vim='nvim'
+alias fuck='sudo $(fc -ln -1)'      # Run the last command with fucking sudo.
+alias mdkir='mkdir'                 # Yes because I make this mistake a lot
 
 
-### Shortcuts
+#------------------------------------------------------------------------------
+# Shortcuts
+#------------------------------------------------------------------------------
+alias tx='tmuxinator'
 alias ct="colortest"
-alias nn="nvim"
-alias php="php -dzend_extension=/usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
-alias pp="php $(which phpunit)"
 alias so="source $HOME/.zshrc"
-alias selenium='java -jar /usr/local/bin/selenium.jar'
-alias pg="php $HOME/code/remote-console.git/server.php"
-alias mspr="python $HOME/scripts/mspr.py"
-alias playlist="youtube-dl -citk --max-quality FORMAT"
-alias create="composer create-project thirteen/laravel-template --prefer-dist"
-alias hosts='sudo vi /etc/hosts'
+alias pp="php $(which phpunit)"
+alias hosts='sudo vi /etc/hosts'        # Update the hosts file.
 
 alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
+alias playlist="youtube-dl -citk --max-quality FORMAT"
+alias rec='ffmpeg -f qtkit -video_device_index 0 -i ""'
 
-### Actions
-alias hidden='/Users/jaggyspaghetti/utilities/scripts/toggle_hidden_files.sh'
+# This suppresses the `running with xdebug` enabled
+alias php="php -dzend_extension=/usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
+
+
+#------------------------------------------------------------------------------
+# MacOS Specific
+#------------------------------------------------------------------------------
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}' && killall Dock"
 
 
-### PHP Specific
-# alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
-# alias migrate='phinx rollback -t 0 && phinx migrate'
-alias migrate='art migrate:refresh --seed'
-alias rec='ffmpeg -f qtkit -video_device_index 0 -i ""'
-
-
-### Functions
+#------------------------------------------------------------------------------
+# Functions
+#------------------------------------------------------------------------------
 function gi() { /usr/bin/curl -L -s https://www.gitignore.io/api/$@ ;}
 
-function vulnerability_test() {
-    x='() { :;}; echo "bash is vulnerable"' bash -c 'echo "Testing vulnerability..."'
-}
-
-# Generate PHP ctags.
 function phptags() {
-    # find app src vendor tests database bootstrap -type f -name "*.php" | ctags --links=no -L- -R --PHP-kinds=+cf -f ./.git/tags
-    # ctags -R --PHP-kinds=+cf -f .git/tags app src
-    # ctags -R --PHP-kinds=+cf -f .git/tags.vendor vendor
     ctags -f .git/tags src app
     ctags -f .git/tags.vendor vendor
-    
-    # find $target -name '*.php' 
 
     echo "Generated ctags!"
 }
 
-function vms() {
-    current_directory=`pwd`;
+# Override CD to add a bit more functionality.
+function cd() { 
+    builtin cd "$@"; 
 
-    cd $HOME/utils/Homestead;
-    vagrant up;
-    cd $current_directory;
+    source $HOME/.zshrc
 }
+
+
+#------------------------------------------------------------------------------
+# Nostalgia 
+#------------------------------------------------------------------------------
+#
+# Here lies the commands I don' really need or use anymore but I wanna keep 
+# just to serve as a reminder on progression.
+#
+# Yeah. I know, I know, I can just look it back up on git but still, I ain't
+# comparing all the branches just for nostalgia's sake.
+#
+# alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
+# alias migrate='phinx rollback -t 0 && phinx migrate'
+# alias migrate='art migrate:refresh --seed'
+

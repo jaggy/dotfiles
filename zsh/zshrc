@@ -26,8 +26,8 @@ plugins=(git, laravel4)
 stty -ixon                  # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1         # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8   # Fix ZSH and Tmux issues
-export LANG=en_US.UTF-8
-export VISUAL=nvim
+export LANG="$LC_ALL"
+export VISUAL=nvim          # Use nvim for everything
 export EDITOR="$VISUAL"
 
 ### Exports
@@ -35,7 +35,6 @@ export EDITOR="$VISUAL"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
-source $HOME/.dotfiles/zsh/prompt.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
 source `brew --prefix`/etc/profile.d/z.sh
