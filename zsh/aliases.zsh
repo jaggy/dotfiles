@@ -45,7 +45,7 @@ alias tx='tmuxinator'
 alias ct="colortest"
 alias so="source $HOME/.zshrc"
 alias pp="php $(which phpunit)"
-alias hosts='sudo vi /etc/hosts'        # Update the hosts file.
+alias hosts='sudo nvim /etc/hosts'        # Update the hosts file.
 
 alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
 alias playlist="youtube-dl -citk --max-quality FORMAT"
@@ -74,18 +74,18 @@ function phptags() {
 }
 
 # Override CD to add a bit more functionality.
-function cd() { 
-    builtin cd "$@"; 
+function cd() {
+    builtin cd "$@";
 
     source $HOME/.zshrc
 }
 
 
 #------------------------------------------------------------------------------
-# Nostalgia 
+# Nostalgia
 #------------------------------------------------------------------------------
 #
-# Here lies the commands I don' really need or use anymore but I wanna keep 
+# Here lies the commands I don' really need or use anymore but I wanna keep
 # just to serve as a reminder on progression.
 #
 # Yeah. I know, I know, I can just look it back up on git but still, I ain't

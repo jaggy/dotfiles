@@ -1,5 +1,9 @@
 priority 1
 
+#----------------------------------------------------------
+# Class Definitions
+#----------------------------------------------------------
+#
 snippet lm "Laravel Model"
 <?php
 
@@ -13,14 +17,11 @@ if m:
 class `!p snip.rv=snip.basename` extends Model
 {
 	/**
-	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 * The attributes that are mass assignable.
 	 *
-	 * @return `!p snip.rv=snip.basename`
+	 * @var array
 	 */
-	public function __construct() 
-	{
-		$0
-	}
+	protected $fillable = [$0];
 }
 endsnippet
 
@@ -41,7 +42,7 @@ class `!p snip.rv=snip.basename` extends Controller
 	 *
 	 * @return `!p snip.rv=snip.basename`
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		$0
 	}
@@ -49,16 +50,17 @@ class `!p snip.rv=snip.basename` extends Controller
 endsnippet
 
 #----------------------------------------------------------
-# Router 
+# Router
 #----------------------------------------------------------
 #
 
 snippet rr "Router Resource"
-$router->resource('${1:name}', '${2:Controller}Controller');
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller');
+
 endsnippet
 
 snippet rrp "Router Resource with Parameters"
-$router->resource('${1:name}', '${2:Controller}Controller', ['only' => [$0]]);
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u/g}}Controller', ['only' => [$0]]);
 endsnippet
 
 snippet rg "Router Group"
@@ -73,10 +75,41 @@ $router->get('${1:url}', ['as' => '${2}', function () {
 }]);
 endsnippet
 
+#----------------------------------------------------------
+# Factory
+#----------------------------------------------------------
+#
 snippet fd "Model Factory"
 $factory->define(${1}::class, function (Faker\Generator $faker) {
 	return [
 		$0
 	];
 });
+endsnippet
+
+#----------------------------------------------------------
+# Schema
+#----------------------------------------------------------
+#
+snippet f "Create a field"
+$table->${1:string}('${2:field}')${3:->nullable()};$0
+endsnippet
+
+snippet fk "Create a foreign field"
+$table->integer('${1:foreign_key}')->unsigned();
+$table->foreign('$1')->references('id')->on('${2:${1/_id/s/g}}')->onDelete('cascade');$0
+endsnippet
+
+snippet sc "Create a table"
+Schema::create('${1}', function (Blueprint $table) {
+	$table->increments('id');
+
+	$0
+
+	$table->timestamps();
+});
+endsnippet
+
+snippet sd "Drop the table"
+Schema::drop('${1}');
 endsnippet
