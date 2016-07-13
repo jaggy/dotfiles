@@ -60,7 +60,7 @@ $router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller');
 endsnippet
 
 snippet rrp "Router Resource with Parameters"
-$router->resource('${1:name}', '${2:${1/\w+\s*/\u/g}}Controller', ['only' => [$0]]);
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', ['only' => [$0]]);
 endsnippet
 
 snippet rg "Router Group"
@@ -112,4 +112,44 @@ endsnippet
 
 snippet sd "Drop the table"
 Schema::drop('${1}');
+endsnippet
+
+#----------------------------------------------------------
+# Relations
+#----------------------------------------------------------
+#
+snippet btm "Belongs to Many"
+/**
+ * It belongs to many $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->belongsToMany(${1:model}::class$0);
+}
+endsnippet
+
+snippet bt "Belongs to"
+/**
+ * It belongs to $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->belongsTo(${1:model}::class$0);
+}
+endsnippet
+
+snippet hm "Has many"
+/**
+ * It has many $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasMany
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->hasMany(${1:model}::class$0);
+}
 endsnippet

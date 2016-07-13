@@ -10,7 +10,7 @@ priority 1
 # We need to find a way to refactor out functions so we can reuse
 # namespacing these classes much easily.
 #
-snippet "class|cl" "PHP Class" r
+snippet cl "PHP Class"
 <?php
 
 namespace ${1:App}`!p
@@ -27,7 +27,7 @@ class `!p snip.rv=snip.basename`
 	 *
 	 * @return `!p snip.rv=snip.basename`
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		$0
 	}
@@ -51,7 +51,7 @@ class `!p snip.rv=snip.basename` extends ${3:Animal}
 	 *
 	 * @return `!p snip.rv=snip.basename`
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		$0
 	}
@@ -68,7 +68,7 @@ class `!p snip.rv=snip.basename`
 	 *
 	 * @return `!p snip.rv=snip.basename`
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		$0
 	}
@@ -80,7 +80,7 @@ endsnippet
 #----------------------------------------------------------
 #
 # Listed here are all the snippets for creating functions and methods.
-# From private, protected, public, and even helper classes 
+# From private, protected, public, and even helper classes
 # with `function_exists` validation.
 #
 snippet pbm "Public Method"
@@ -126,7 +126,7 @@ if (function_exists('$2')) {
 	 *
 	 * @return ${4:void}
 	 */
-	function ${2:function_name}($3) 
+	function ${2:function_name}($3)
 	{
 		$0
 	}
@@ -150,7 +150,7 @@ endsnippet
 #----------------------------------------------------------
 #
 #
-snippet if "If conditional" 
+snippet if "If conditional"
 if (${1:false}) {
 	$2
 }
