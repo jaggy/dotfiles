@@ -54,13 +54,13 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
 PATH=$HOME/.bin:$PATH
-PATH=$HOME/.dotfiles/scripts:$PATH                           # Load the dotfile scripts.
-PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH    # PHP Specific
-PATH=vendor/bin/:$PATH                                       # Relative Paths
+PATH=$HOME/.dotfiles/scripts:$PATH                                       # Load the dotfile scripts.
+PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH                # PHP Specific
+PATH=vendor/bin/:$PATH                                                   # Relative Paths
+PATH=$HOME/.rvm/bin:$PATH                                                # Ruby
+PATH="$HOME/Library/Python/3.5/bin:$PATH"                                # Python Libraries
 PATH="$NPM_PACKAGES/bin:$PATH"
-PATH="$HOME/Library/Python/3.5/bin:$PATH" # Python Libraries
 
-# PATH=$HOME/.rvm/bin:$PATH                                              # Ruby
 # PATH="$HOME/Applications/blender.app/Contents/MacOS:$PATH"             # Blender
 # PATH="$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.5/bin:$PATH" # Python Libraries
 

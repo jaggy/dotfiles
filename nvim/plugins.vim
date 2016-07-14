@@ -21,6 +21,7 @@ Plug 'jiangmiao/auto-pairs'                                         " Auto pairi
 "----------------------------------------------------------------------
 Plug 'majutsushi/tagbar'                                              " Previewing file meta.
 Plug 'soramugi/auto-ctags.vim', { 'for': ['php', 'jinja', 'blade'] }  " Auto generate the ctags.
+Plug 'mikewest/vimroom', { 'for': ['md', 'markdown'] }
 
 "----------------------------------------------------------------------
 " Autocomplete &&  Snippets
