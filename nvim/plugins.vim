@@ -49,5 +49,6 @@ Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()
