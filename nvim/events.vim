@@ -28,3 +28,9 @@ autocmd BufRead,BufNewFile *.tmux set filetype=tmux
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-laravel
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-phpunit
 
+"----------------------------------------------------------------------
+" Override Editor Config
+"----------------------------------------------------------------------
+autocmd BufNewFile,BufRead *.php source ~/.dotfiles/nvim/editor/php.vim
+autocmd BufNewFile,BufRead *.js source ~/.dotfiles/nvim/editor/javascript.vim
+autocmd BufNewFile,BufRead *.els source ~/.dotfiles/nvim/editor/elixir.vim
