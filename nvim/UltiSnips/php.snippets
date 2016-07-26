@@ -120,7 +120,7 @@ private function ${2:function_name}(${3})
 endsnippet
 
 snippet fun "Function Helper"
-if (function_exists('$2')) {
+if (! function_exists('$2')) {
 	/**
 	 * ${1:Write the description first!}
 	 *
