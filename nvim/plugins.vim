@@ -7,7 +7,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }             " Tree View
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " Fuzzy Finder
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'                                              " HTML expander
-Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
+" Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'scrooloose/nerdcommenter'                                     " Comment
 Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace integration
