@@ -34,3 +34,11 @@ autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-phpunit
 autocmd BufNewFile,BufRead *.php source ~/.dotfiles/nvim/editor/php.vim
 autocmd BufNewFile,BufRead *.js source ~/.dotfiles/nvim/editor/javascript.vim
 autocmd BufNewFile,BufRead *.els source ~/.dotfiles/nvim/editor/elixir.vim
+
+
+"----------------------------------------------------------------------
+" Create the nested folders if it doesn't exist
+"----------------------------------------------------------------------
+"
+" mkdir -p
+autocmd BufWritePre * :silent !mkdir -p %:p:h
