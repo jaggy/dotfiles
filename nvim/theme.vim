@@ -8,6 +8,16 @@ function! OverrideColorScheme(theme)
     highlight CursorLine    guibg=#333333
     highlight CursorLineNr  guibg=#333333
     highlight SpecialKey    guifg=#555555
+
+    highlight Comment ctermfg=245 guifg=#929493 gui=italic
+    highlight phpClassExtends gui=italic
+    highlight phpClassImplements gui=italic
+    highlight phpUseClass gui=italic
+    highlight phpUseAlias gui=italic
+    highlight phpRegion gui=italic
+    highlight phpClass gui=NONE
+    highlight phpFunction gui=NONE
+    " highlight phpDocParam gui=italic ctermfg=214 guifg=#f0c674
 endfunction
 
 call OverrideColorScheme('colorsbox-steighties')

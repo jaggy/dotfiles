@@ -32,3 +32,6 @@ set tags+=.git/tags,.git/tags.vendor
 " More natural splits
 set splitbelow              " Horizontal split below current.
 set splitright              " Vertical split to right of current.
+
+set t_ZH=[3m
+set t_ZR=[23m
