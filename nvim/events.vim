@@ -27,6 +27,7 @@ autocmd BufRead,BufNewFile *.tmux set filetype=tmux
 "----------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-laravel
 autocmd BufNewFile,BufRead *.php UltiSnipsAddFiletypes php-phpunit
+autocmd BufNewFile,BufRead *.blade.php UltiSnipsAddFiletypes html
 
 "----------------------------------------------------------------------
 " Override Editor Config
