@@ -50,5 +50,6 @@ Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'dag/vim-fish', { 'for': 'fish' }
 
 call plug#end()

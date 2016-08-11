@@ -52,6 +52,7 @@ ln -s tmux/tmux.conf $HOME/.tmux.conf
 ln -s git/gitconfig $HOME/.gitconfig
 ln -s git/gitconfig_global $HOME/.gitconfig_global
 ln -s agignore $HOME/.agignore
+ln -s fish $HOME/.config/fish
 
 ############################################################
 # Homebrew
@@ -69,7 +70,7 @@ fi
 #
 # git, wget, ssh-copy-id, and tmux
 #
-brew install git wget ssh-copy-id tmux z ag fzf;
+brew install git wget ssh-copy-id tmux z ag fzf fish;
 
 ############################################################
 # Neovim
