@@ -8,5 +8,7 @@ Session.vim
 .netrwhist
 *~
 fish/fishd.*
-alias: Expected one or two arguments, got 4
-alias: Expected one or two arguments, got 4
+fish/conf.d
+fish/fishfile
+fish/functions
+fish/completions

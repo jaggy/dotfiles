@@ -79,3 +79,5 @@ brew install git wget ssh-copy-id tmux z ag fzf fish;
 # Our editor of choice.
 #
 brew install nvim/nvim
+
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
