@@ -37,6 +37,6 @@ set t_ZH=[3m
 set t_ZR=[23m
 
 """ Configure fish shell.
-if &shell =~# 'fish$'
-    set shell=sh
-endif
+" if &shell =~# 'fish$'
+"     set shell=sh
+" endif
