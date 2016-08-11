@@ -82,24 +82,3 @@ function phptags
     echo "ctags successfully generated."
 end
 
-# Override CD to add a bit more functionality.
-# function cd
-#     builtin cd $argv
-#     source $HOME/.dotfiles/fish/config.fish
-# end
-
-
-#------------------------------------------------------------------------------
-# Nostalgia
-#------------------------------------------------------------------------------
-#
-# Here lies the commands I don really need or use anymore but I wanna keep
-# just to serve as a reminder on progression.
-#
-# Yeah. I know, I know, I can just look it back up on git but still, I aint
-# comparing all the branches just for nostalgias sake.
-#
-# alias migrate rake db:migrate VERSION 0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup
-# alias migrate phinx rollback -t 0 && phinx migrate
-# alias migrate art migrate:refresh --seed
-
