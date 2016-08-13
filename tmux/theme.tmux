@@ -77,8 +77,8 @@ set -g status-bg black
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left ''
-set -g status-right '#[fg=colour233,bg=colour241,bold] %b %d, %Y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
-set -g status-right-length 50
+set -g status-right '#[fg=colour233,bg=colour245,bold] #($HOME/.npm-packages/bin/tmux-mem --format "RAM :currentBytes") #[fg=colour233,bg=colour245,bold] #($HOME/.npm-packages/bin/tmux-cpu --format "CPU :percent") #[fg=colour233,bg=colour241,bold] %b %d, %Y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right-length 100
 set -g status-left-length 20
 
 # setw -g window-status-current-fg colour81
@@ -90,6 +90,8 @@ setw -g window-status-fg colour138
 setw -g window-status-bg colour235
 setw -g window-status-attr none
 setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+
+# setw -g status-right 'rainbarf --loadavg --battery --swap --bg black --tmux'
 
 setw -g window-status-bell-attr bold
 setw -g window-status-bell-fg colour255
