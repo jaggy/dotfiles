@@ -38,9 +38,11 @@ function fish_prompt
 
     if [ $git_status -a $git_status != "nothing to commit, working directory clean" ]
         set dirty_flag '*'
-        set git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
     end
 
+    if [ $git_status ]
+        set git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
+    end
 
     # amber:dotfiles.git (master*) $
     echo -n (set_color red)$computer
