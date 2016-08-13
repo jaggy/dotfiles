@@ -26,7 +26,16 @@ set -x NVIM_TUI_ENABLE_CURSOR_SHAPE     1
 
 source $HOME/.dotfiles/fish/aliases.fish
 
-set fish_greeting ""
+# set fish_greeting ""
+
+function fish_greeting
+    set days        Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+    set reactions   ".. (╯°□°）╯︵ ┻━┻" ".. Ughhhhhh.. (￣﹃￣)" ". Midweek! ┬──┬◡ﾉ(° -°ﾉ)" "!!! ヽ(ﾟ〇ﾟ)ﾉ" "!!!└(￣-￣└))   ((┘￣ω￣)┘" "! Time for some rest! (￣^￣)ゞ" "! Work is around the corner.. |･д･)ﾉ"
+    set day_of_week $days[(date +"%u")]
+    set reaction    $reactions[(date +"%u")]
+
+    echo "It's $day_of_week$reaction"
+end
 
 function fish_prompt
     set computer (hostname | sed 's/.local//g')
