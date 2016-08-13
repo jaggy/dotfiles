@@ -48,7 +48,7 @@ alias mdkir     "mkdir"
 alias tx        "tmuxinator"
 alias ct        "colortest"
 alias so        "source $HOME/.dotfiles/fish/config.fish"
-alias pp        "php (which phpunit)"
+alias pp        "eval (which php) (which phpunit)"
 alias hosts     "sudo nvim /etc/hosts"
 
 alias ignore    "echo -n \"*\n!.gitignore\" >> .gitignore"
@@ -56,7 +56,7 @@ alias playlist  "youtube-dl -citk --max-quality FORMAT"
 alias rec       "ffmpeg -f qtkit -video_device_index 0 -i ''"
 
 # This suppresses the `running with xdebug` enabled
-alias php       "php -dzend_extension /usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
+alias php       "eval (which php) -dzend_extension /usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
 
 
 #------------------------------------------------------------------------------
