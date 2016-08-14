@@ -29,7 +29,7 @@ alias gl        "git log"
 # Shortcuts
 #------------------------------------------------------------------------------
 alias tmux      "tmux -u"
-alias art       "php artisan"
+alias art       "eval (which php) artisan"
 alias cmp       "composer"
 alias vm        "vagrant ssh"
 alias vi        "nvim"
