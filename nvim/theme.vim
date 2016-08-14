@@ -22,3 +22,5 @@ endfunction
 
 call OverrideColorScheme('colorsbox-steighties')
 autocmd BufRead,BufNewFile *.php call OverrideColorScheme('colorsbox-stnight')
+
+highlight Normal ctermbg=0
