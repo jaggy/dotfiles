@@ -20,7 +20,7 @@ set -g status-bg black
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left '#S    '
-set -g status-right '#[fg=colour233,bg=colour245,bold] #($HOME/.npm-packages/bin/tmux-mem --format "RAM :currentBytes") #[fg=colour233,bg=colour245,bold] #($HOME/.npm-packages/bin/tmux-cpu --format "CPU :percent") #[fg=colour233,bg=colour241,bold] %b %d, %Y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right ' #[fg=colour233,bg=colour241,bold] %b %d, %Y #[fg=colour233,bg=colour245,bold] %H:%M:%S '
 set -g status-right-length 100
 set -g status-left-length 20
 setw -g window-status-current-bg colour238
