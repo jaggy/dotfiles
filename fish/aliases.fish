@@ -31,7 +31,6 @@ alias gl        "git log"
 alias tmux      "tmux -u"
 alias art       "eval (which php) artisan"
 alias cmp       "composer"
-alias vm        "vagrant ssh"
 alias vi        "nvim"
 alias vim       "nvim"
 
@@ -82,3 +81,18 @@ function phptags
     echo "ctags successfully generated."
 end
 
+function vm
+    set -x TERM 'xterm-256color'
+
+    vagrant ssh
+
+    set -x TERM 'xterm-256color-italic'
+end
+
+function ssh
+    set -x TERM 'xterm-256color'
+
+    /usr/bin/ssh $argv
+
+    set -x TERM 'xterm-256color-italic'
+end
