@@ -2,6 +2,7 @@
     "require": {
         "jaggy/kraken": "^0.1.5",
         "laravel/installer": "^1.2",
-        "phpmd/phpmd": "^2.4"
+        "phpmd/phpmd": "^2.4",
+        "laravel/valet": "^1.1"
     }
 }

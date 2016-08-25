@@ -8,7 +8,7 @@
 # this single line of a mess.
 #
 set -x PATH /usr/bin    /bin /usr/sbin /sbin /usr/local/bin /usr/local/sbin
-set -x fish_user_paths  $HOME/.bin $HOME/.dotfiles/scripts $HOME/.composer/vendor/bin $HOME/.rvm/bin $NPM_PACKAGES/bin vendor/bin $HOME/Library/Python/3.5/bin $HOME/.fzf/bin $HOME/code/work/scripts.git/bin
+set -x fish_user_paths  $HOME/.bin $HOME/.dotfiles/scripts $HOME/.composer/vendor/bin $HOME/.rvm/bin $NPM_PACKAGES/bin vendor/bin $HOME/Library/Python/3.5/bin $HOME/.fzf/bin $HOME/code/work/scripts.git/bin $HOME/.npm-packages/bin
 set -x VISUAL           nvim
 set -x EDITOR           $VISUAL
 set -x DEFAULT_USER     jaggy
