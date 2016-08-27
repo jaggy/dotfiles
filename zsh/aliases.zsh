@@ -31,7 +31,6 @@ alias gl='git log'
 alias tmux='tmux -u'
 alias art="php artisan"
 alias cmp="composer"
-alias vm='vagrant ssh'
 alias vi='nvim'
 alias vim='nvim'
 alias fuck='sudo $(fc -ln -1)'      # Run the last command with fucking sudo.
@@ -80,6 +79,22 @@ function cd() {
     source $HOME/.zshrc
 }
 
+function vm() {
+    export TERM='xterm-256color';
+
+    vagrant ssh
+
+    export TERM='xterm-256color-italic';
+}
+
+function ssh() {
+    export TERM='xterm-256color';
+
+    ssh $@
+
+    export TERM='xterm-256color-italic';
+}
+
 
 #------------------------------------------------------------------------------
 # Nostalgia
@@ -94,4 +109,6 @@ function cd() {
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
 # alias migrate='phinx rollback -t 0 && phinx migrate'
 # alias migrate='art migrate:refresh --seed'
+
+
 
