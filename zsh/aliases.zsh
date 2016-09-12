@@ -30,6 +30,7 @@ alias gl='git log'
 #------------------------------------------------------------------------------
 alias tmux='tmux -u'
 alias art="php artisan"
+alias plz="php please"
 alias cmp="composer"
 alias vi='nvim'
 alias vim='nvim'
