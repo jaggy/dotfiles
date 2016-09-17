@@ -100,6 +100,11 @@ $table->integer('${1:foreign_key}')->unsigned();
 $table->foreign('$1')->references('id')->on('${2:${1/_id/s/g}}')->onDelete('cascade');$0
 endsnippet
 
+snippet fkp "Create a polymorphic relation"
+$table->integer('${1:reference}_id')->unsigned();
+$table->string('$1_type');
+endsnippet
+
 snippet sc "Create a table"
 Schema::create('${1}', function (Blueprint $table) {
 	$table->increments('id');
