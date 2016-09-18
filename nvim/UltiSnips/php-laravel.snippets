@@ -87,6 +87,10 @@ $factory->define(${1}::class, function (Faker\Generator $faker) {
 });
 endsnippet
 
+snippet fc "Create a new factory object"
+factory(${1:App\\${3:ClassName}}::class)->create(${3:[]});
+endsnippet
+
 #----------------------------------------------------------
 # Schema
 #----------------------------------------------------------
