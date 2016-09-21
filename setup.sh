@@ -43,69 +43,11 @@ mkdir -p ${__binary};
 #
 # Add the symlinks
 
-rm $HOME/.zshrc
-rm -rf $HOME/.config/fish
 ln -s ctags $HOME/.ctags
 ln -s npmrc $HOME/.npmrc
 ln -s nvim $HOME/.config/nvim
 ln -s zsh/zshrc $HOME/.zshrc
 ln -s tmux/tmux.conf $HOME/.tmux.conf
 ln -s git/gitconfig $HOME/.gitconfig
-ln -s git/gitconfig_global $HOME/.gitconfig_global
+ln -s git/gitignore_global .gitignore_global
 ln -s agignore $HOME/.agignore
-ln -s fish $HOME/.config/fish
-
-#-------------------------------------------------------------------------------
-# Homebrew
-#-------------------------------------------------------------------------------
-#
-# We need this for almost everything else.
-#
-if ! function_exists 'brew'; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-#-------------------------------------------------------------------------------
-# Essentials
-#-------------------------------------------------------------------------------
-brew install git wget ssh-copy-id tmux z ag fish;
-
-brew install reattach-to-usernamespace;
-
-# Set fish as the default shell.
-chsh -s `which fish`
-
-#-------------------------------------------------------------------------------
-# Fuzzy Finder
-#-------------------------------------------------------------------------------
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$HOME/.fzf/install.sh --all
-
-
-#-------------------------------------------------------------------------------
-# ITALICS!
-#-------------------------------------------------------------------------------
-#
-# Lets make italics work for iterm2.
-#
-tic $HOME/.dotfiles/iterm/xterm-256color-italic.terminfo
-
-#-------------------------------------------------------------------------------
-# Neovim
-#-------------------------------------------------------------------------------
-#
-# Our editor of choice.
-#
-brew install nvim/nvim
-
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
-#-------------------------------------------------------------------------------
-# tMux Status Line
-#-------------------------------------------------------------------------------
-#
-# Here are the things we need to install make the status line stuff work.
-#
-
-
-npm install -g tmux-mem tmux-cpu
