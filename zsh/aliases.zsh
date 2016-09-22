@@ -51,9 +51,6 @@ alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
 alias playlist="youtube-dl -citk --max-quality FORMAT"
 alias rec='ffmpeg -f qtkit -video_device_index 0 -i ""'
 
-# This suppresses the `running with xdebug` enabled
-alias php="php -dzend_extension=/usr/local/php5/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"
-
 # Tail Laravel logs.
 alias logs="tail -f storage/logs/*"
 
