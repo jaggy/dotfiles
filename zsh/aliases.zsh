@@ -81,19 +81,11 @@ function cd() {
 }
 
 function vm() {
-    export TERM='xterm-256color';
-
     vagrant ssh
-
-    export TERM='xterm-256color-italic';
 }
 
 function ssh() {
-    export TERM='xterm-256color';
-
     ssh $@
-
-    export TERM='xterm-256color-italic';
 }
 
 
