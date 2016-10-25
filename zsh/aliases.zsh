@@ -41,7 +41,9 @@ alias mdkir='mkdir'                 # Yes because I make this mistake a lot
 #------------------------------------------------------------------------------
 # Shortcuts
 #------------------------------------------------------------------------------
-alias tx='tmuxinator'
+# alias tx='tmuxinator'
+alias txs='tmux new -s'
+alias txt='tmux attach -t'
 alias ct="colortest"
 alias so="source $HOME/.zshrc"
 alias pp="php $(which phpunit)"
