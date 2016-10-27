@@ -15,6 +15,7 @@ source ~/.dotfiles/nvim/theme.vim
 source ~/.dotfiles/nvim/config/nerdcommenter.vim
 source ~/.dotfiles/nvim/config/lightline.vim
 source ~/.dotfiles/nvim/config/autotags.vim
+source ~/.dotfiles/nvim/config/nerdtree.vim
 
 " UltiSnips, vim-snippets, and deoplete
 source ~/.dotfiles/nvim/config/snippets.vim
