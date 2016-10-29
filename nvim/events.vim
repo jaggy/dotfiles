@@ -33,6 +33,7 @@ autocmd BufNewFile,BufRead *.blade.php UltiSnipsAddFiletypes html
 " Override Editor Config
 "----------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.php source ~/.dotfiles/nvim/editor/php.vim
+autocmd BufNewFile,BufRead *.yaml source ~/.dotfiles/nvim/editor/yaml.vim
 autocmd BufNewFile,BufRead *.js source ~/.dotfiles/nvim/editor/javascript.vim
 autocmd BufNewFile,BufRead *.els source ~/.dotfiles/nvim/editor/elixir.vim
 
