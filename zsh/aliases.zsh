@@ -76,11 +76,11 @@ function phptags() {
 }
 
 # Override CD to add a bit more functionality.
-function cd() {
-    builtin cd "$@";
-
-    source $HOME/.zshrc
-}
+# function cd() {
+#     builtin cd "$@";
+#
+#     source $HOME/.zshrc
+# }
 
 #------------------------------------------------------------------------------
 # Nostalgia
