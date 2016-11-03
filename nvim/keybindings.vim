@@ -36,8 +36,8 @@ nmap ga <Plug>(EasyAlign)
 " Panes
 "----------------------------------------------------------------------
 " Create a split and move to that pane.
-nnoremap <C-w>\| <C-W>vzz<C-w>l
-nnoremap <C-w>- <C-W>szz<C-w>j
+nnoremap <C-w>\| <C-W>vzz
+nnoremap <C-w>- <C-W>szz
 
 
 "----------------------------------------------------------------------
