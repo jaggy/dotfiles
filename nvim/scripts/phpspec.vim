@@ -9,7 +9,7 @@ function! phpspec#create_function()
 
     let function = [
                 \ '/** @test **/',
-                \ 'public function ' . function_name . '()',
+                \ 'public function it_' . function_name . '()',
                 \ '{',
                 \ "\t",
                 \ '}',

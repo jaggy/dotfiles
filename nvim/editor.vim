@@ -4,7 +4,7 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set expandtab               " I don't like tabs. Suck it Richard.
-set colorcolumn=80,120      " Add rulers
+set colorcolumn=80          " Add rulers
 set cursorline              " Highlight the current line.
 set showcmd
 set showmode
@@ -15,7 +15,6 @@ set lazyredraw              " Redraw only when needed. Makes everything faster.
 set mouse=                  " Disable the mouse for now.
 set background=dark
 color colorsbox-steighties
-
 
 """ Display invisibles.
 set list
