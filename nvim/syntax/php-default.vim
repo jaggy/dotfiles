@@ -602,9 +602,7 @@ if !exists("php_ignore_phpdoc") || !php_ignore_phpdoc
 
     syn region phpDocTags  start="{@\(example\|id\|internal\|inheritdoc\|link\|source\|toc\|tutorial\)" end="}" containedin=phpDocComment
     syn match phpDocTags "@\%(abstract\|access\|api\|author\|brief\|bug\|category\|class\|copyright\|created\|date\|deprecated\|details\|example\|exception\|file\|filesource\|final\|global\|id\|ignore\|inheritdoc\|internal\|license\|link\|magic\|method\|name\|package\|param\|property\|return\|see\|since\|source\|static\|staticvar\|struct\|subpackage\|throws\|toc\|todo\|tutorial\|type\|uses\|var\|version\|warning\)" containedin=phpDocComment nextgroup=phpDocParam,phpDocIdentifier skipwhite
-    syn match phpDocParam "\s\+\zs\%(\h\w*|\?\)\+" nextgroup=phpDocIdentifier skipwhite
-    syn match phpDocParam "\s\+.\+ " nextgroup=phpDocIdentifier skipwhite
-    syn match phpDocIdentifier "\s\+\zs$\h\w*"
+    syn match phpDocParam ".\+" nextgroup=phpDocIdentifier skipwhite
 
     syn case match
 endif
@@ -742,7 +740,7 @@ if php_folding==1
 
     syn region phpFoldIfContainer start="^\z(\s*\)if\s\+\(.*{$\)\@=" skip="^\z1}\_s*else\%[if]" end="^\z1}$" keepend extend contained contains=@phpClFunction,@phpClControl,phpFCKeyword,phpFoldHtmlInside
     syn region phpFoldIf matchgroup=phpKeyword start="^\z(\s*\)if\s\+\([^}]*$\)\@=" matchgroup=Delimiter end="\(^\z1\)\@=}\(\_s\+\%[elseif]\s\+[^}]*$\)\@="me=s-1 contained containedin=phpFoldIfContainer keepend nextgroup=phpFoldElseIf,phpFoldElse fold transparent
-    syn region phpFoldElseIf matchgroup=phpKeyword start="^\z(\s*\)\(}\s\+\)\=elseif\s\+\([^}]*$\)\@=" matchgroup=Delimiter end="\(^\z1\)\@=}\(\s*\%[elseif]\s*[^}]*$\)\@="me=s-1 contained containedin=phpFoldIfContainer keepend nextgroup=phpFoldElseIf,phpFoldElse fold transparent 
+    syn region phpFoldElseIf matchgroup=phpKeyword start="^\z(\s*\)\(}\s\+\)\=elseif\s\+\([^}]*$\)\@=" matchgroup=Delimiter end="\(^\z1\)\@=}\(\s*\%[elseif]\s*[^}]*$\)\@="me=s-1 contained containedin=phpFoldIfContainer keepend nextgroup=phpFoldElseIf,phpFoldElse fold transparent
     syn region phpFoldElse matchgroup=phpKeyword start="^\z(\s*\)\(}\s\+\)\=else\s\+\([^}]*$\)\@=" matchgroup=Delimiter end="\(^\z1\)\@=}\(\s\+\%[elseif]\s\+[^}]*$\)\@="me=s-1 contained containedin=phpFoldIfContainer keepend fold transparent
 
     syn region phpFoldSwitch matchgroup=phpKeyword start="^\z(\s*\)switch\s*\(.*{$\)\@=" matchgroup=Delimiter end="^\z1}$" keepend extend contained contains=@phpClFunction,@phpClControl,phpFCKeyword,phpFoldHtmlInside fold transparent
