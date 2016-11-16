@@ -34,9 +34,6 @@ set splitbelow              " Horizontal split below current.
 set splitright              " Vertical split to right of current.
 set inccommand=split
 
-set t_ZH=[3m
-set t_ZR=[23m
-
 """ Configure fish shell.
 " if &shell =~# 'fish$'
 "     set shell=sh
