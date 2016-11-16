@@ -1,7 +1,8 @@
 highlight Normal        guibg=transparent ctermbg=0
 highlight LineNr        guibg=transparent ctermbg=bg
 highlight CursorLine    ctermbg=492
-highlight ColorColumn   ctermbg=24
+highlight ColorColumn   ctermbg=492
+" highlight ColorColumn   ctermbg=24
 highlight EndOfBuffer   ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 highlight VertSplit     ctermbg=bg
 highlight SignColumn    ctermbg=bg
