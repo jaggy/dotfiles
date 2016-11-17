@@ -1,32 +1,27 @@
-# dotfiles
+# Dotfiles
 
-This will be my personal documentation.
+## Note
 
-## Installation
+### 2016-11-16
 
-All you need to do is run the set up file and you're all set.
+Okay, let's give **fish** another shot.
 
-    sh setup.sh
+### 2016-09-2016
 
+Remove support for italics, ligatures feel much better over than operator's italics. (at least for my preference)
 
-## Fish (Friendly Interactive Shell)
+### 2016-08-27
 
-**2016-08-25**: I'm trying to switch from zsh to fish just because _why not right?_
+Reverting back to **zsh**. For some reason, it's breaking my setup. Maybe it's conflicting to tmux or the italics stuff.
+
+### 2016-08-11
+
+Switching from **zsh** to **fish**.
 
 First impressions, I like the configuration right out of the box. Syntax highlighting, autocompletion and search on tab completion! (Not like I'll actually use them but, it's still nice.)
 
 It's hard to migrate my zsh config to fish though, it's taking quite a bit of time to adjust from a very different shell scripting paradigm.
 
-### Fish Equivalent from ZSH
+### 2016-08-04
 
-#### Exporting Variables
-
-**zsh**
-```zsh
-export PATH="$HOME/.bin:$PATH"
-```
-
-**fish**
-```fish
-set -x fish_user_paths $HOME/bin $fish_user_paths
-```
+Operator Mono! Add support for italics.
