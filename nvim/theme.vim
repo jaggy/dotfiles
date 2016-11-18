@@ -1,13 +1,8 @@
-highlight Normal        guibg=transparent ctermbg=0
-highlight LineNr        guibg=transparent ctermbg=bg
-highlight CursorLine    ctermbg=492
-highlight ColorColumn   ctermbg=492
-" highlight ColorColumn   ctermbg=24
+highlight Normal        ctermbg=0 guibg=transparent
+highlight LineNr        ctermbg=bg guibg=transparent
+highlight CursorLine    guibg=#222222
+highlight CursorLineNr  guibg=#222222
+highlight ColorColumn   guibg=#222222
 highlight EndOfBuffer   ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 highlight VertSplit     ctermbg=bg
-highlight SignColumn    ctermbg=bg
-
-highlight GitGutterAdd          ctermbg=bg ctermfg=green
-highlight GitGutterChange       ctermbg=bg ctermfg=yellow
-highlight GitGutterChangeDelete ctermbg=bg ctermfg=red
-highlight link GitGutterDelete GitGutterChangeDelete
+highlight SignColumn    ctermbg=bg guibg=transparent

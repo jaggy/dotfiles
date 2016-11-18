@@ -14,6 +14,7 @@ set showmatch               " Show matching pairs
 set lazyredraw              " Redraw only when needed. Makes everything faster.
 set mouse=                  " Disable the mouse for now.
 set background=dark
+set termguicolors
 color colorsbox-steighties
 
 """ Display invisibles.
