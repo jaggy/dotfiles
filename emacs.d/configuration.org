@@ -1,3 +1,7 @@
+#+TITLE: Emacs Configuration
+
+/Soooo/, I'm trying Evil.. This is gonna be loads of fun.
+
 #+BEGIN_SRC emacs-lisp
     (require 'package)
 
