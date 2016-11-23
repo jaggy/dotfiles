@@ -20,6 +20,6 @@
 (custom-set-variables
  '(package-selected-packages
    (quote
-    (nlinum-relative evil-surround neotree evil powerline helm))))
+    (nlinum-relative evil-surround evil-visualstar neotree evil powerline helm))))
 (custom-set-faces
  )
