@@ -36,6 +36,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias fuck='sudo $(fc -ln -1)'      # Run the last command with fucking sudo.
 alias mdkir='mkdir'                 # Yes because I make this mistake a lot
+alias emacs='emacs -q --load "$HOME/.dotfiles/emacs/init.el"'
 
 
 #------------------------------------------------------------------------------
