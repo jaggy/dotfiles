@@ -2,6 +2,10 @@
 
 /Soooo/, I'm trying Evil.. This is gonna be loads of fun.
 
+* Package Management
+
+Setting up the package management.
+
 #+BEGIN_SRC emacs-lisp
     (require 'package)
 
@@ -11,21 +15,58 @@
 
     (setq package-enable-at-startup nil)
     (package-initialize)
+#+END_SRC
+* Dependencies
 
-    (evil-mode t)
-    (powerline-default-theme)
-    (menu-bar-mode -1)
-
-    (nlinum-relative-setup-evil)                        ;; setup for evil
-    (add-hook 'prog-mode-hook 'nlinum-relative-mode)
-    (setq nlinum-relative-redisplay-delay 0)            ;; Remove the delay.
-    (setq nlinum-relative-current-symbol "")            ;; Display the current line number.
-    (setq nlinum-relative-offset 0)
-
+#+BEGIN_SRC emacs-lisp
     (custom-set-variables
      '(package-selected-packages
        (quote
-        (nlinum-relative evil-surround evil-visualstar neotree evil powerline helm))))
+        (evil evil-leader evil-surround evil-visualstar relative-line-numbers neotree projectile powerline helm)
+       )))
     (custom-set-faces
      )
+#+END_SRC
+
+* Editor Config
+
+Just the basic editor config.
+
+#+BEGIN_SRC emacs-lisp
+    (setq indent-tabs-mode nil)
+    (setq org-src-fontify-natively t)
+    (menu-bar-mode -1)
+    (global-relative-line-numbers-mode)
+#+END_SRC
+
+* Evil Mode
+
+Every Villain is Lemons
+
+#+BEGIN_SRC emacs-lisp
+    (global-evil-leader-mode)
+    (evil-mode 1)
+    (global-evil-surround-mode 1)
+
+#+END_SRC
+
+* Projectile
+
+#+BEGIN_SRC emacs-lisp
+    (projectile-global-mode)
+    (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+#+END_SRC
+
+* Keybindings
+
+#+BEGIN_SRC emacs-lisp
+    (define-key evil-insert-state-map "0-" "->")
+    (define-key evil-insert-state-map "-=" "=>")
+    ;; (global-set-key (kbd "0-") (kbd "->"))
+#+END_SRC
+
+* Extras
+
+#+BEGIN_SRC emacs-lisp
+    (powerline-default-theme)
 #+END_SRC
