@@ -1,1 +1,1 @@
-let g:NERDTreeWinPos = "right"
+" let g:NERDTreeWinPos = "right"

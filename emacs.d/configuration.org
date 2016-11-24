@@ -4,7 +4,7 @@
 
 * Package Management
 
-Setting up the package management.
+Setting up the package management. 
 
 #+BEGIN_SRC emacs-lisp
     (require 'package)
@@ -16,6 +16,7 @@ Setting up the package management.
     (setq package-enable-at-startup nil)
     (package-initialize)
 #+END_SRC
+
 * Dependencies
 
 #+BEGIN_SRC emacs-lisp
@@ -60,8 +61,8 @@ Every Villain is Lemons
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp
-    (define-key evil-insert-state-map "0-" "->")
-    (define-key evil-insert-state-map "-=" "=>")
+    ;; (define-key evil-insert-state-map "-=" "=>")
+    ;; (define-key evil-insert-state-map "0-" "->")
     ;; (global-set-key (kbd "0-") (kbd "->"))
 #+END_SRC
 
