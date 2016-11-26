@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: die and dump
+# key: dd
+# group: debugging
+# --
+dd($1);$0

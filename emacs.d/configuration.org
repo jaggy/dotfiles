@@ -23,7 +23,12 @@ Setting up the package management.
     (custom-set-variables
      '(package-selected-packages
        (quote
-        (evil evil-leader evil-surround evil-visualstar key-chord relative-line-numbers neotree projectile powerline helm)
+        (
+	    evil evil-leader evil-surround evil-visualstar
+	    helm 
+	    php-mode web-mode flycheck
+	    yasnippet key-chord neotree projectile powerline relative-line-numbers 
+	)
        )))
     (custom-set-faces
      )
@@ -59,19 +64,58 @@ Every Villain is Lemons
 #+END_SRC
 
 * [[https://github.com/joaotavora/yasnippet][yasnippet]]
-
+  
+#+BEGIN_SRC emacs-lisp
+    (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+    (yas-global-mode 1)
+#+END_SRC
+  
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+    (define-key evil-normal-state-map (kbd "C-w |") 'split-window-horizontally)
+    (define-key evil-normal-state-map (kbd "C-w -") 'split-window-vertically)
 
     (setq key-chord-two-keys-delay 0.4)
+
     (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
     (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
     (key-chord-define evil-insert-state-map (kbd "4t") (kbd "$this->"))
+
     (key-chord-mode 1)
 #+END_SRC
+  
+* Custom Functions
 
+** Fetch the Namespace
+
+#+BEGIN_SRC emacs-lisp
+    (defun find-git-repo (dir)
+	(if (string= "/" dir)
+	    nil
+	    (if (file-exists-p (expand-file-name ".git/" dir))
+		dir
+	    (find-git-repo (expand-file-name "../" dir)))))
+
+    (defun find-project-root ()
+	(interactive)
+	(if (ignore-errors (eproject-root))
+	    (eproject-root)
+	    (or (find-git-repo (buffer-file-name)) (file-name-directory (buffer-file-name)))))
+
+    (defun file-path-to-namespace ()
+	(interactive)
+	(let (
+		(root (find-project-root))
+		(base (file-name-nondirectory buffer-file-name))
+		)
+	    (substring (replace-regexp-in-string "/" "\\" (substring buffer-file-name (length root) (* -1 (length base))) t t) 0 -1)
+	    )
+	)
+
+#+END_SRC
+  
 * Extras
 
 #+BEGIN_SRC emacs-lisp
