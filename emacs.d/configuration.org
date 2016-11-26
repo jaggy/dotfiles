@@ -7,7 +7,6 @@ Kinda want to try all of this out since LISP is much more manageable than VimL T
 Using Org Mode as the config though, I learned it from [[https://www.youtube.com/watch?v=SzA2YODtgK4&t=3041s][Harry Schwart's Org Mode talk]].
 
 * Package List!
-  
 Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
 
 #+BEGIN_SRC emacs-lisp
@@ -22,7 +21,6 @@ Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/fro
 #+END_SRC
 
 * The Things We Depend On
-  
 I wish I knew how to clean this up more. I need to lookup how other people do this scheisse.
 
 #+BEGIN_SRC emacs-lisp
@@ -31,9 +29,10 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
        (quote
         (
             evil evil-leader evil-surround evil-visualstar
-            helm
+            evil-org
+            helm projectile helm-projectile
             php-mode web-mode flycheck
-            yasnippet key-chord neotree projectile powerline relative-line-numbers
+            yasnippet key-chord neotree powerline relative-line-numbers
         )
        )))
     (custom-set-faces
@@ -41,19 +40,17 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 #+END_SRC
 
 * The Basics
- 
 Everything that's about the editor's behavior.
-
 ** Use Spaces. Suck it Richard!
-   
+
 It's all the same when it runs through the compiler.
 
 #+BEGIN_SRC emacs-lisp
-    (setq indent-tabs-mode nil)
+    (setq-default indent-tabs-mode nil)
 #+END_SRC
 
 ** Syntax Highlight Org Blocks
-   
+
 Let's make everything pretty.
 
 #+BEGIN_SRC emacs-lisp
@@ -70,16 +67,43 @@ Just keep everything simple.
 #+END_SRC
 
 ** Backups Clutter the Filesystem
-  
- Just use `/tmp` for the backups and the autosaves. It's so freakin' annoying. (╯°□°）╯︵ ┻━┻
-  
+
+ Just use ~/tmp~ for the backups and the autosaves. It's so freakin' annoying. (╯°□°）╯︵ ┻━┻
+
 #+BEGIN_SRC emacs-lisp
     (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 #+END_SRC
 
+* I Feel Pretty
+** [[http://www.writeups.org/wp-content/uploads/Invisible-Boy-Mystery-Men-Kel-Mitchell-a.jpg]["Nobody Look at Me!]]
+*** Show Me Everything!
+
+#+BEGIN_SRC emacs-lisp
+    (global-whitespace-mode 1)
+#+END_SRC
+
+*** Limit Invisibles Shown
+
+Display the only ones we need to see: *Trailing Spaces*, and the dreaded *Tabs*.
+
+#+BEGIN_SRC emacs-lisp
+    (setq whitespace-style '(face tabs trailing tab-mark))
+#+END_SRC
+
+*** Prettify
+
+Update the pretty colors.
+
+#+BEGIN_SRC emacs-lisp
+    (set-face-attribute 'whitespace-space nil :background nil :foreground "green")
+#+END_SRC
+** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
+*** Powerline
+#+BEGIN_SRC emacs-lisp
+    (powerline-default-theme)
+#+END_SRC
 * Before The Evil
-  
 Pre-configure the editor before we enable evil mode.
 
 #+BEGIN_SRC emacs-lisp
@@ -87,7 +111,6 @@ Pre-configure the editor before we enable evil mode.
 #+END_SRC
 
 * Every Villain is Lemons
-  
 Everything Evil specific would be here.
 
 Let's make everything feel a bit more vim-like shall we?
@@ -104,12 +127,11 @@ Let's make everything feel a bit more vim-like shall we?
     (global-set-key (kbd "M-x") 'helm-M-x)
 #+END_SRC
 ** [[https://github.com/bbatsov/projectile][Projectile: Fuzzy Finder]]
-   
 Integrated HELM to have better fuzzy finding support and a better UI feel to it.
 
 Notes for shortcuts:
 - <kbd>control-c</kbd> + <kbd>o</kdb>
-   
+
 #+BEGIN_SRC emacs-lisp
     (projectile-global-mode)
     (helm-projectile-on)
@@ -127,7 +149,6 @@ Notes for shortcuts:
 * Keybindings
 ** Vim-esque
 *** Colon Cancer
-    
 I /really/, /really/ hate pressing shift to open up the ex menu.
 
 #+BEGIN_SRC emacs-lisp
@@ -135,14 +156,13 @@ I /really/, /really/ hate pressing shift to open up the ex menu.
 #+END_SRC
 
 *** Panel Management
-   
+
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd "C-w |") 'split-window-horizontally)
     (define-key evil-normal-state-map (kbd "C-w -") 'split-window-vertically)
 #+END_SRC
-    
+
 ** Inserting with [[https://www.emacswiki.org/emacs/KeyChord][Key Chord]]
-   
 Not sure if the delay'll be fine.
 
 #+BEGIN_SRC emacs-lisp
@@ -155,11 +175,9 @@ Not sure if the delay'll be fine.
 #+END_SRC
 
 * Custom Functions
-  
 Should this really be placed in this org file?
 
 ** PHP Namespaces
-   
 I need to detect namespaces dynamically for my PHP files and I ran across [[http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html][this article]].
 
 Don't really know how it works so I'll just paste it all here.
@@ -167,7 +185,6 @@ Don't really know how it works so I'll just paste it all here.
 I have no idea how to make eproject work, so ¯\_(ツ)_/¯.
 
 *** "Where forth art thou Git?" | Looking for Githaska
-    
 Yes, I make terrible puns. Just move up until we find the git folder.
 
 #+BEGIN_SRC emacs-lisp
@@ -180,7 +197,6 @@ Yes, I make terrible puns. Just move up until we find the git folder.
 #+END_SRC
 
 *** Project Root
-    
 Find the project root.
 
 #+BEGIN_SRC emacs-lisp
@@ -192,7 +208,6 @@ Find the project root.
 #+END_SRC
 
 *** Namsepace-ify
-    
 Create the namespace.
 
 #+BEGIN_SRC emacs-lisp
@@ -207,10 +222,4 @@ Create the namespace.
             )
         )
 
-#+END_SRC
-
-* Extras
-
-#+BEGIN_SRC emacs-lisp
-    (powerline-default-theme)
 #+END_SRC
