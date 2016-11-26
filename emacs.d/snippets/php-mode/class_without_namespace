@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: class without a namespace
+# key: clb
+# --
+<?php
+
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} 
+{
+	/**
+	 * Create a new $1 instance.
+	 *
+	 * @return $1
+	 */
+	public function __construct()
+	{
+		$0
+	}
+}
