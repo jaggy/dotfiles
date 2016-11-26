@@ -57,13 +57,13 @@ Every Villain is Lemons
     (projectile-global-mode)
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
 #+END_SRC
+  
+* [[https://github.com/joaotavora/yasnippet][yasnippet]]
 
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp
-    ;; (define-key evil-insert-state-map "-=" "=>")
-    ;; (define-key evil-insert-state-map "0-" "->")
-    ;; (global-set-key (kbd "0-") (kbd "->"))
+    (define-key evil-normal-state-map (kbd ";") 'evil-ex)
 #+END_SRC
 
 * Extras
