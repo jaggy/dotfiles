@@ -4,7 +4,7 @@
 
 * Package Management
 
-Setting up the package management. 
+Setting up the package management.
 
 #+BEGIN_SRC emacs-lisp
     (require 'package)
@@ -23,7 +23,7 @@ Setting up the package management.
     (custom-set-variables
      '(package-selected-packages
        (quote
-        (evil evil-leader evil-surround evil-visualstar relative-line-numbers neotree projectile powerline helm)
+        (evil evil-leader evil-surround evil-visualstar key-chord relative-line-numbers neotree projectile powerline helm)
        )))
     (custom-set-faces
      )
@@ -57,13 +57,19 @@ Every Villain is Lemons
     (projectile-global-mode)
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
 #+END_SRC
-  
+
 * [[https://github.com/joaotavora/yasnippet][yasnippet]]
 
 * Keybindings
 
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+
+    (setq key-chord-two-keys-delay 0.4)
+    (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
+    (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
+    (key-chord-define evil-insert-state-map (kbd "4t") (kbd "$this->"))
+    (key-chord-mode 1)
 #+END_SRC
 
 * Extras
