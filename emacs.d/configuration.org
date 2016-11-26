@@ -99,15 +99,22 @@ Let's make everything feel a bit more vim-like shall we?
 #+END_SRC
 
 * Plugin Config
+** [[https://github.com/emacs-helm/helm#introduction][Helm]]
+#+BEGIN_SRC emacs-lisp
+    (global-set-key (kbd "M-x") 'helm-M-x)
+#+END_SRC
 ** [[https://github.com/bbatsov/projectile][Projectile: Fuzzy Finder]]
    
-FZF alternative here.
+Integrated HELM to have better fuzzy finding support and a better UI feel to it.
 
-TODO: Find a wawy to enable fuzzy finding. It's annoying that it's sequential.
-
+Notes for shortcuts:
+- <kbd>control-c</kbd> + <kbd>o</kdb>
+   
 #+BEGIN_SRC emacs-lisp
     (projectile-global-mode)
-    (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+    (helm-projectile-on)
+
+    (define-key evil-normal-state-map (kbd "C-p")       'helm-projectile)
 #+END_SRC
 
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
