@@ -31,6 +31,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
             evil evil-leader evil-surround evil-visualstar
             evil-org
             magit
+            seti-theme
             helm projectile helm-projectile
             php-mode web-mode flycheck
             yasnippet key-chord neotree powerline linum-relative
@@ -106,6 +107,10 @@ Update the pretty colors.
     (set-face-attribute 'whitespace-space nil :background nil :foreground "green")
 #+END_SRC
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
+*** Theme
+#+BEGIN_SRC emacs-lisp
+    (load-theme 'seti t)
+#+END_SRC
 *** Powerline
 #+BEGIN_SRC emacs-lisp
     (powerline-default-theme)
