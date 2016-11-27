@@ -166,7 +166,18 @@ Let's make everything feel a bit more vim-like shall we?
     (evil-leader/set-leader ",")
     (require 'evil-org)
 #+END_SRC
+* Org Mode
+Let's set up the org mode config here.
 
+** Todo States
+#+BEGIN_SRC emacs-lisp
+    (setq org-todo-keywords
+        '(
+            (sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
+            (sequence "REPORT" "BUG" "KNOWNCAUSE" | "FIXED" "WONTFIX")
+        )
+    )
+#+END_SRC
 * Plugin Config
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
 #+BEGIN_SRC emacs-lisp
@@ -267,7 +278,6 @@ Not sure if the delay'll be fine.
 
     (key-chord-mode 1)
 #+END_SRC
-
 * Custom Functions
 Should this really be placed in this org file?
 
