@@ -5,7 +5,8 @@ Kinda want to try all of this out since LISP is much more manageable than VimL T
 
 Using Org Mode as the config though, I learned it from [[https://www.youtube.com/watch?v=SzA2YODtgK4&t=3041s][Harry Schwart's Org Mode talk]].
 
-* Package List!
+* The Things We Depend On
+** Installing
 Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
 
 #+BEGIN_SRC emacs-lisp
@@ -19,7 +20,7 @@ Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/fro
     (package-initialize)
 #+END_SRC
 
-* The Things We Depend On
+** Package List
 I wish I knew how to clean this up more. I need to lookup how other people do this scheisse.
 
 #+BEGIN_SRC emacs-lisp
@@ -29,6 +30,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
         (
             evil evil-leader evil-surround evil-visualstar
             evil-org
+            magit
             helm projectile helm-projectile
             php-mode web-mode flycheck
             yasnippet key-chord neotree powerline linum-relative
@@ -61,6 +63,8 @@ Let's make everything pretty.
  Just use ~/tmp~ for the backups and the autosaves. It's so freakin' annoying. (╯°□°）╯︵ ┻━┻
 
 #+BEGIN_SRC emacs-lisp
+    (setq auto-save-default nil)
+    (setq make-backup-files nil)
     (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 #+END_SRC
