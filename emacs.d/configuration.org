@@ -157,6 +157,12 @@ Notes for shortcuts:
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
 #+END_SRC
+** Magit
+Okay, I have to admit, this one is freakin' awesome.
+
+#+BEGIN_SRC emacs-lisp
+    (define-key evil-normal-state-map (kbd ", g") 'magit-status)
+#+END_SRC
 * Keybindings
 ** Vim-esque
 *** Colon Cancer
