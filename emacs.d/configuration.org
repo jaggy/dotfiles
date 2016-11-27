@@ -25,20 +25,21 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
 #+BEGIN_SRC emacs-lisp
     (custom-set-variables
-     '(package-selected-packages
-       (quote
-        (
-            evil evil-leader evil-surround evil-visualstar
-            evil-org
-            magit
-            mustard-theme
-            helm projectile helm-projectile
-            php-mode web-mode flycheck
-            yasnippet key-chord neotree powerline linum-relative
+        '(package-selected-packages
+            (quote
+                (
+                    evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer
+                    evil-org
+                    magit
+                    mustard-theme
+                    helm projectile helm-projectile
+                    php-mode web-mode flycheck
+                    yasnippet key-chord neotree powerline linum-relative
+                )
+            )
         )
-       )))
-    (custom-set-faces
-     )
+    )
+    (custom-set-faces)
 #+END_SRC
 
 * The Basics
@@ -118,6 +119,25 @@ Update the pretty colors.
 *** Powerline
 #+BEGIN_SRC emacs-lisp
     (powerline-default-theme)
+#+END_SRC
+** Override the Theme
+#+BEGIN_SRC emacs-lisp
+    (set-face-background 'linum "black")
+#+END_SRC
+** Change Cursor on States
+Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
+
+#+BEGIN_SRC emacs-lisp
+    (unless (display-graphic-p)
+         (require 'evil-terminal-cursor-changer)
+         (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+    )
+
+     (setq evil-motion-state-cursor 'box)  ; █
+     (setq evil-visual-state-cursor 'box)  ; █
+     (setq evil-normal-state-cursor 'box)  ; █
+     (setq evil-insert-state-cursor 'bar)  ; ⎸
+     (setq evil-emacs-state-cursor  'hbar) ; _
 #+END_SRC
 * Before The Evil
 Pre-configure the editor before we enable evil mode.
