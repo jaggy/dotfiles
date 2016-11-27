@@ -28,13 +28,12 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
         '(package-selected-packages
             (quote
                 (
-                    evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer
-                    evil-org
-                    magit
-                    mustard-theme
-                    helm projectile helm-projectile
-                    php-mode web-mode flycheck
-                    yasnippet key-chord neotree powerline linum-relative
+                    evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer    ;; EVIIIIIIIIIIIIIL
+                    evil-org                                                                       ;; Org
+                    mustard-theme                                                                  ;; Theming
+                    helm projectile helm-projectile                                                ;; Fuzzy Finder
+                    php-mode web-mode emmet-modde                                                  ;; Web Stuff
+                    magit yasnippet key-chord neotree powerline linum-relative flycheck            ;; Editor Specific
                 )
             )
         )
@@ -121,11 +120,16 @@ Update the pretty colors.
     (powerline-default-theme)
 #+END_SRC
 ** Override the Theme
+Let's override theme colors here.
+
 #+BEGIN_SRC emacs-lisp
     (set-face-background 'linum "black")
+    (set-face-background 'linum-relative-current-face "#222222")
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
+
+Change the cursor different states.
 
 #+BEGIN_SRC emacs-lisp
     (unless (display-graphic-p)
@@ -220,6 +224,7 @@ I /really/, /really/ hate pressing shift to open up the ex menu.
 
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+    (define-key evil-visual-state-map (kbd ";") 'evil-ex)
 #+END_SRC
 
 *** +Panel+ Window Management
