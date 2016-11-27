@@ -8,6 +8,8 @@ Using Org Mode as the config though, I learned it from [[https://www.youtube.com
 * Before The Evil
 Pre-configure the editor before we enable evil mode.
 
+Disable the jump so we can use tab to expand subtrees. [[http://stackoverflow.com/questions/22878668/emacs-org-mode-evil-mode-tab-key-not-working][Found the solution here.]]
+
 #+BEGIN_SRC emacs-lisp
     (setq evil-want-C-i-jump nil)
 #+END_SRC
@@ -159,8 +161,10 @@ Let's make everything feel a bit more vim-like shall we?
 
 #+BEGIN_SRC emacs-lisp
     (global-evil-leader-mode)
-    (evil-mode 1)
     (global-evil-surround-mode 1)
+    (evil-mode 1)
+    (evil-leader/set-leader ",")
+    (require 'evil-org)
 #+END_SRC
 
 * Plugin Config
