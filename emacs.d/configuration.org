@@ -31,7 +31,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
             evil evil-leader evil-surround evil-visualstar
             evil-org
             magit
-            seti-theme
+            mustard-theme
             helm projectile helm-projectile
             php-mode web-mode flycheck
             yasnippet key-chord neotree powerline linum-relative
@@ -51,6 +51,10 @@ It's all the same when it runs through the compiler.
     (setq-default indent-tabs-mode nil)
 #+END_SRC
 
+** No Wrapping
+#+BEGIN_SRC emacs-lisp
+    (set-default 'truncate-lines t)
+#+END_SRC
 ** Syntax Highlight Org Blocks
 
 Let's make everything pretty.
@@ -109,7 +113,7 @@ Update the pretty colors.
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
 *** Theme
 #+BEGIN_SRC emacs-lisp
-    (load-theme 'seti t)
+    (load-theme 'mustard t)
 #+END_SRC
 *** Powerline
 #+BEGIN_SRC emacs-lisp
@@ -167,6 +171,17 @@ Okay, I have to admit, this one is freakin' awesome.
 
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd ", g") 'magit-status)
+#+END_SRC
+** Web Mode
+*** Basic Configuration
+All the boilerplate stuff.
+#+BEGIN_SRC emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+    (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+#+END_SRC
+*** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
+#+BEGIN_SRC emacs-lisp
+    (setq web-mode-enable-current-element-highlight t)
 #+END_SRC
 * Keybindings
 ** Vim-esque
