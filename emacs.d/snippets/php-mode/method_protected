@@ -9,5 +9,5 @@
  */
 proteected function ${2:function_name}(${3})
 {
-	$0
+    $0
 }

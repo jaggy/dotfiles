@@ -10,6 +10,6 @@ if (! function_exists('$2')) {
     */
     function ${2:function_name}($3)
     {
-	$0
+        $0
     }
 }

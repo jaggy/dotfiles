@@ -8,13 +8,13 @@ namespace `(file-path-to-namespace)`;
 
 class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends ${2:ParentClass}
 {
-	/**
-	 * Create a new $1 instance.
-	 *
-	 * @return $1
-	 */
-	public function __construct()
-	{
-		$0
-	}
+    /**
+     * Create a new $1 instance.
+     *
+     * @return $1
+     */
+    public function __construct()
+    {
+        $0
+    }
 }

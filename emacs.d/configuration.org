@@ -1,5 +1,4 @@
 #+TITLE: Emacs Configuration
-
 I'm moving from vim after a few years 'cause I watched [[https://www.youtube.com/watch?v=JWD1Fpdd4Pc][Aaron Bieber's talk]] about using Evil mode.
 
 Kinda want to try all of this out since LISP is much more manageable than VimL TBH. ¯\_(ツ)_/¯
@@ -71,6 +70,10 @@ Let's make everything pretty.
 Just keep everything simple.
 
 #+BEGIN_SRC emacs-lisp
+    (setq tab-width 4)
+    (defvaralias 'c-basic-offset 'tab-width)
+    (defvaralias 'cperl-indent-level 'tab-width)
+    (show-paren-mode 1)
     (global-linum-mode)
     (setq linum-relative-format "%3s ")
     (linum-relative-global-mode)
@@ -146,6 +149,10 @@ Notes for shortcuts:
     (yas-global-mode 1)
 #+END_SRC
 
+** [[https://github.com/jaypei/emacs-neotree][Neotree]]
+#+BEGIN_SRC emacs-lisp
+    (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
+#+END_SRC
 * Keybindings
 ** Vim-esque
 *** Colon Cancer
