@@ -183,6 +183,16 @@ All the boilerplate stuff.
 #+BEGIN_SRC emacs-lisp
     (setq web-mode-enable-current-element-highlight t)
 #+END_SRC
+** Emmet
+#+BEGIN_SRC emacs-lisp
+    (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+    (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+    (add-hook 'web-mode-hook  'emmet-mode)
+
+    (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 4)))
+
+    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
+#+END_SRC
 * Keybindings
 ** Vim-esque
 *** Colon Cancer
