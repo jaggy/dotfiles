@@ -172,11 +172,8 @@ Let's set up the org mode config here.
 ** Todo States
 #+BEGIN_SRC emacs-lisp
     (setq org-todo-keywords
-        '(
-            (sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
-            (sequence "REPORT" "BUG" "KNOWNCAUSE" | "FIXED" "WONTFIX")
-        )
-    )
+           '((sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
+             (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED" "WONTFIX")))
 #+END_SRC
 * Plugin Config
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
