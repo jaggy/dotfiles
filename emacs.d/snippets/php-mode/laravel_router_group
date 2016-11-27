@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: laravel router group
+# key: rg
+# --
+$router->group([$1], function ($router) {
+    $0
+});

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: anonymous function
+# key: afn
+# --
+function (${1}) ${2:use (${3})} {
+    $0
+}

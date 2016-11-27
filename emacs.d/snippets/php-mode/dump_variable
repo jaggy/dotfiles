@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: die and dump
-# key: dd
+# name: var_dump
+# key: vd
 # group: debug
 # --
-dd($1);$0
+var_dump($1);$0

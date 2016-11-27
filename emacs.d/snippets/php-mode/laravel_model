@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: laravel model
+# key: lm
+# --
+<?php
+
+namespace `(file-path-to-namespace)`;
+
+class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends \Illuminate\Eloquent\Database\Model
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [$0];
+}

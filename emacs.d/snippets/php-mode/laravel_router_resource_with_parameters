@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: laravel router resource with parameters
+# key: rr
+# --
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', [
+    'only' => [$0]
+]);
