@@ -172,12 +172,20 @@ Let's make everything feel a bit more vim-like shall we?
 #+END_SRC
 * Org Mode
 Let's set up the org mode config here.
-
 ** Todo States
 #+BEGIN_SRC emacs-lisp
     (setq org-todo-keywords
            '((sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
              (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED" "WONTFIX")))
+#+END_SRC
+** Agenda Files
+Set the agenda files.
+
+#+BEGIN_SRC emacs-lisp
+    (setq org-agenda-files
+        (list "~/code/kitchen-sink/todo.org"
+              "~/code/kitchen-sink/archive.org")
+    )
 #+END_SRC
 * Plugin Config
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
@@ -226,7 +234,7 @@ All the boilerplate stuff.
     (setq web-mode-enable-current-element-highlight t)
 
     (add-hook 'web-mode-hook (
-        lambda() (interactive)
+        lambda()
             (set-face-background 'web-mode-current-element-highlight-face "#222222")
     ))
 #+END_SRC
@@ -236,9 +244,13 @@ All the boilerplate stuff.
     (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
     (add-hook 'web-mode-hook  'emmet-mode)
 
-    (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 4)))
-
     (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
+
+    (add-hook 'emmet-mode-hook (
+        lambda ()
+            (setq emmet-indentation 4)
+    ))
+
 #+END_SRC
 * Keybindings
 ** Vim-esque
