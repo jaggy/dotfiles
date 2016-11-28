@@ -39,7 +39,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer    ;; EVIIIIIIIIIIIIIL
                     evil-org                                                                       ;; Org
                     mustard-theme                                                                  ;; Theming
-                    helm projectile helm-projectile                                                ;; Fuzzy Finder
+                    helm projectile helm-projectile helm-ag                                        ;; Fuzzy Finder
                     php-mode web-mode emmet-mode                                                   ;; Web Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck smart-mode-line      ;; Editor Specific
                 )
@@ -202,7 +202,8 @@ Notes for shortcuts:
     (projectile-global-mode)
     (helm-projectile-on)
 
-    (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
+    (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
+    (evil-leader/set-key "TAB" 'helm-projectile-switch-project)
 #+END_SRC
 
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
@@ -220,7 +221,7 @@ Notes for shortcuts:
 Okay, I have to admit, this one is freakin' awesome.
 
 #+BEGIN_SRC emacs-lisp
-    (define-key evil-normal-state-map (kbd ", g") 'magit-status)
+    (evil-leader/set-key "g" 'magit-status)
 #+END_SRC
 ** Web Mode
 *** Basic Configuration
