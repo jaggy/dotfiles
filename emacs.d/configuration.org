@@ -41,7 +41,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     mustard-theme                                                                  ;; Theming
                     helm projectile helm-projectile                                                ;; Fuzzy Finder
                     php-mode web-mode emmet-mode                                                   ;; Web Stuff
-                    magit yasnippet key-chord neotree powerline linum-relative flycheck            ;; Editor Specific
+                    magit yasnippet key-chord neotree linum-relative flycheck smart-mode-line      ;; Editor Specific
                 )
             )
         )
@@ -57,6 +57,9 @@ It's all the same when it runs through the compiler.
 
 #+BEGIN_SRC emacs-lisp
     (setq-default indent-tabs-mode nil)
+    (setq tab-width 4)
+    (defvaralias 'c-basic-offset 'tab-width)
+    (defvaralias 'cperl-indent-level 'tab-width)
 #+END_SRC
 
 ** No Wrapping
@@ -87,9 +90,6 @@ Let's make everything pretty.
 Just keep everything simple.
 
 #+BEGIN_SRC emacs-lisp
-    (setq tab-width 4)
-    (defvaralias 'c-basic-offset 'tab-width)
-    (defvaralias 'cperl-indent-level 'tab-width)
     (show-paren-mode 1)
     (global-linum-mode)
     (setq linum-relative-format "%3s ")
@@ -123,14 +123,18 @@ Update the pretty colors.
 #+BEGIN_SRC emacs-lisp
     (load-theme 'mustard t)
 #+END_SRC
-*** Powerline
+*** Smart Mode Line
+This looks like a /much/ more better alternative for powerline.
+
 #+BEGIN_SRC emacs-lisp
-    (powerline-default-theme)
+    (setq sml/no-confirm-load-theme t)
+    (sml/setup)
 #+END_SRC
 ** Override the Theme
 Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
+    (set-face-background 'default "black")
     (set-face-background 'linum "black")
     (set-face-background 'linum-relative-current-face "#222222")
     (set-face-foreground 'vertical-border "black")
@@ -190,7 +194,7 @@ Notes for shortcuts:
     (projectile-global-mode)
     (helm-projectile-on)
 
-    (define-key evil-normal-state-map (kbd "C-p")       'helm-projectile)
+    (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
 #+END_SRC
 
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
@@ -220,6 +224,11 @@ All the boilerplate stuff.
 *** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
 #+BEGIN_SRC emacs-lisp
     (setq web-mode-enable-current-element-highlight t)
+
+    (add-hook 'web-mode-hook (
+        lambda() (interactive)
+            (set-face-background 'web-mode-current-element-highlight-face "#222222")
+    ))
 #+END_SRC
 ** Emmet
 #+BEGIN_SRC emacs-lisp
