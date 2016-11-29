@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: bootstrap field
+# key: field
+# --
+<div class="field">
+    <div class="row">
+        <label class="field-label col-md-12 col-lg-3" for="${1:label}">${2:Label}</label>
+
+        <div class="field-input col-md-12 col-lg-8 col-lg-offset-1">
+            <input id="$1" type="text" class="form-control" ng-model="${3:form}.$1" />
+        </div>
+    </div>
+</div>

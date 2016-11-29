@@ -36,12 +36,12 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
         '(package-selected-packages
             (quote
                 (
-                    evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer    ;; EVIIIIIIIIIIIIIL
-                    evil-org                                                                       ;; Org
-                    mustard-theme                                                                  ;; Theming
-                    helm projectile helm-projectile helm-ag                                        ;; Fuzzy Finder
-                    php-mode web-mode emmet-mode                                                   ;; Web Stuff
-                    magit yasnippet key-chord neotree linum-relative flycheck smart-mode-line      ;; Editor Specific
+                    evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer
+                    evil-org evil-vimish-fold                                                    ;; EVIIIIIIIIIIIIIL
+                    mustard-theme                                                                ;; Theming
+                    helm projectile helm-projectile helm-ag                                      ;; Fuzzy Finder
+                    php-mode web-mode emmet-mode                                                 ;; Web Stuff
+                    magit yasnippet key-chord neotree linum-relative flycheck smart-mode-line    ;; Editor Specific
                 )
             )
         )
@@ -83,6 +83,14 @@ Let's make everything pretty.
     (setq make-backup-files nil)
     (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+#+END_SRC
+** Auto Pairing
+#+BEGIN_SRC emacs-lisp
+    (electric-pair-mode)
+#+END_SRC
+** Folding
+#+BEGIN_SRC emacs-lisp
+     (evil-vimish-fold-mode 1)
 #+END_SRC
 
 * I Feel Pretty
@@ -139,6 +147,7 @@ Let's override theme colors here.
     (set-face-background 'linum-relative-current-face "#222222")
     (set-face-foreground 'vertical-border "black")
     (set-face-background 'vertical-border "black")
+    (set-face-background 'org-warning "black")  ;; Remove the highlight for the due stuff.
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -182,10 +191,8 @@ Let's set up the org mode config here.
 Set the agenda files.
 
 #+BEGIN_SRC emacs-lisp
-    (setq org-agenda-files
-        (list "~/code/kitchen-sink/todo.org"
-              "~/code/kitchen-sink/archive.org")
-    )
+    (setq org-agenda-files '("~/org"))
+    (setq org-log-done 'time)
 #+END_SRC
 * Plugin Config
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
@@ -211,6 +218,8 @@ Notes for shortcuts:
 #+BEGIN_SRC emacs-lisp
     (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
     (yas-global-mode 1)
+    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas/expand)
+    (evil-define-key 'insert emmet-mode-keymap (kbd ",e") 'yas/expand)
 #+END_SRC
 
 ** [[https://github.com/jaypei/emacs-neotree][Neotree]]
