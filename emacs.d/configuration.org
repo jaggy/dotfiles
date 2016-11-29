@@ -188,6 +188,9 @@ Let's set up the org mode config here.
            '((sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
              (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED" "WONTFIX")
              (sequence "PAY" "|" "PAID")))
+
+    (setq org-todo-keyword-faces
+        '(("PAY" . (:background "red" :foreground "black" :weight bold))))
 #+END_SRC
 ** Agenda Files
 Set the agenda files.
