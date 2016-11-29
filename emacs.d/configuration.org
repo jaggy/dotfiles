@@ -98,6 +98,7 @@ Let's make everything pretty.
 Just keep everything simple.
 
 #+BEGIN_SRC emacs-lisp
+    (tool-bar-mode -1)
     (show-paren-mode 1)
     (global-linum-mode)
     (setq linum-relative-format "%3s ")
@@ -185,7 +186,8 @@ Let's set up the org mode config here.
 #+BEGIN_SRC emacs-lisp
     (setq org-todo-keywords
            '((sequence "TODO" "WAITING" "|" "DONE" "CANCELLED")
-             (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED" "WONTFIX")))
+             (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED" "WONTFIX")
+             (sequence "PAY" "|" "PAID")))
 #+END_SRC
 ** Agenda Files
 Set the agenda files.
