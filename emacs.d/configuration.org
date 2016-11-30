@@ -199,6 +199,13 @@ Set the agenda files.
     (setq org-agenda-files '("~/org"))
     (setq org-log-done 'time)
 #+END_SRC
+** Mode Specific
+
+We'll put here everything specific for org mode.
+
+#+BEGIN_SRC emacs-lisp
+    (setq-default org-tags-column -120)
+#+END_SRC
 * Plugin Config
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
 #+BEGIN_SRC emacs-lisp
