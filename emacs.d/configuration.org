@@ -36,12 +36,21 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
         '(package-selected-packages
             (quote
                 (
+                    ;; EVIIIIIIIIIIIIIL
                     evil evil-leader evil-surround evil-visualstar evil-terminal-cursor-changer
-                    evil-org evil-vimish-fold                                                    ;; EVIIIIIIIIIIIIIL
-                    mustard-theme                                                                ;; Theming
-                    helm projectile helm-projectile helm-ag                                      ;; Fuzzy Finder
-                    php-mode web-mode emmet-mode                                                 ;; Web Stuff
-                    magit yasnippet key-chord neotree linum-relative flycheck smart-mode-line    ;; Editor Specific
+                    evil-org evil-vimish-fold
+
+                    ;; Theming
+                    mustard-theme smart-mode-line-powerline-theme smart-mode-line
+
+                    ;; Fuzzy Finder
+                    helm projectile helm-projectile helm-ag
+
+                    ;; Web Stuff
+                    php-mode web-mode emmet-mode
+
+                    ;; Editor Specific
+                    magit yasnippet key-chord neotree linum-relative flycheck
                 )
             )
         )
@@ -136,6 +145,7 @@ Update the pretty colors.
 This looks like a /much/ more better alternative for powerline.
 
 #+BEGIN_SRC emacs-lisp
+    (setq sml/theme 'powerline)
     (setq sml/no-confirm-load-theme t)
     (sml/setup)
 #+END_SRC
