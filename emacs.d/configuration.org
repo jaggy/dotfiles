@@ -49,8 +49,8 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     ;; Web Stuff
                     php-mode web-mode emmet-mode
 
-                    ;; Editor Specific
-                    magit yasnippet key-chord neotree linum-relative flycheck
+                    ;; Generic Editor
+                    magit yasnippet key-chord neotree linum-relative flycheck git-gutter
                 )
             )
         )
@@ -217,6 +217,20 @@ We'll put here everything specific for org mode.
     (setq-default org-tags-column -120)
 #+END_SRC
 * Plugin Config
+** Git Gutter
+#+BEGIN_SRC emacs-lisp
+    (global-git-gutter-mode t)
+
+    (git-gutter:linum-setup)
+    (set-face-background 'git-gutter:added "green")
+    (set-face-foreground 'git-gutter:added "green")
+
+    (set-face-background 'git-gutter:modified "yellow")
+    (set-face-foreground 'git-gutter:modified "yellow")
+
+    (set-face-background 'git-gutter:deleted "red")
+    (set-face-foreground 'git-gutter:deleted "red")
+#+END_SRC
 ** [[https://github.com/emacs-helm/helm#introduction][Helm]]
 #+BEGIN_SRC emacs-lisp
     (global-set-key (kbd "M-x") 'helm-M-x)
