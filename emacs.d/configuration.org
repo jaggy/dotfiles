@@ -22,7 +22,6 @@ Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/fro
 
     (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
     (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-    (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
     (setq package-enable-at-startup nil)
     (package-initialize)
@@ -41,7 +40,8 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil-org evil-vimish-fold
 
                     ;; Theming
-                    mustard-theme smart-mode-line-powerline-theme smart-mode-line
+                    solarized-theme
+                    smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
                     helm projectile helm-projectile helm-ag
@@ -139,7 +139,8 @@ Update the pretty colors.
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
 *** Theme
 #+BEGIN_SRC emacs-lisp
-    (load-theme 'mustard t)
+    (setq solarized-high-contrast-mode-line t)
+    (load-theme 'solarized-light t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -153,12 +154,7 @@ This looks like a /much/ more better alternative for powerline.
 Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
-    (set-face-background 'default "black")
-    (set-face-background 'linum "black")
-    (set-face-background 'linum-relative-current-face "#222222")
-    (set-face-foreground 'vertical-border "black")
-    (set-face-background 'vertical-border "black")
-    (set-face-background 'org-warning "black")  ;; Remove the highlight for the due stuff.
+    (set-face-foreground 'vertical-border "white")
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -329,6 +325,12 @@ It's called windows here!!!
             (split-window-vertically)
             (windmove-down)
     ))
+#+END_SRC
+
+**** Equalize the sizes of the windows
+
+#+BEGIN_SRC emacs-lisp
+    (define-key evil-normal-state-map (kbd "=") 'balance-windows)
 #+END_SRC
 
 ** Inserting with [[https://www.emacswiki.org/emacs/KeyChord][Key Chord]]
