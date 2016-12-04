@@ -40,7 +40,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil-org evil-vimish-fold
 
                     ;; Theming
-                    solarized-theme
+                    solarized-theme mustard-theme
                     smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
@@ -140,7 +140,10 @@ Update the pretty colors.
 *** Theme
 #+BEGIN_SRC emacs-lisp
     (setq solarized-high-contrast-mode-line t)
-    (load-theme 'solarized-light t)
+
+    (if (string= system-name "a.local")
+        (load-theme 'mustard t)
+        (load-theme 'solarized-light t))
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -154,10 +157,27 @@ This looks like a /much/ more better alternative for powerline.
 Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
-    (set-face-background 'default "white")
-    (set-face-background 'linum "white")
-    (set-face-foreground 'vertical-border "white")
-    (set-face-foreground 'org-done "#cb4b16")
+    (defun override-mustard-theme ()
+        (interactive)
+        (set-face-background 'default "black")
+        (set-face-background 'linum "black")
+        (set-face-background 'linum-relative-current-face "#222222")
+        (set-face-foreground 'vertical-border "black")
+        (set-face-background 'vertical-border "black")
+        (set-face-background 'org-warning "black")
+    )
+
+    (defun override-solarized-theme ()
+        (interactive)
+        (set-face-background 'default "white")
+        (set-face-background 'linum "white")
+        (set-face-foreground 'vertical-border "white")
+        (set-face-foreground 'org-done "#cb4b16")
+    )
+
+    (if (string= system-name "a.local")
+        (override-mustard-theme)
+        (override-solarized-theme))
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
