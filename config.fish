@@ -18,5 +18,4 @@ alias art "php artisan"
 alias plz "php please"
 alias cmp "composer"
 
-
-set -Ux EDITOR vim
+set -Ux EDITOR nvim
