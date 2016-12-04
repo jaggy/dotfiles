@@ -1,5 +1,3 @@
-alias vi "nvim"
-
 alias g 'git'
 alias ga 'git add'
 alias gaa 'git add -A'
@@ -11,7 +9,14 @@ alias gs 'git status'
 alias gp 'git push'
 alias gt 'git tag'
 alias gl 'git log'
+
+alias vi "nvim"
+alias emacs 'emacs -q --load "$HOME/.dotfiles/emacs.d/init.el"'
+alias em "emacs"
+
 alias art "php artisan"
 alias plz "php please"
 alias cmp "composer"
-alias emacs 'emacs -q --load "$HOME/.dotfiles/emacs.d/init.el"'
+
+
+set -Ux EDITOR vim
