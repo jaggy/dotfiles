@@ -154,6 +154,8 @@ This looks like a /much/ more better alternative for powerline.
 Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
+    (set-face-background 'default "white")
+    (set-face-background 'linum "white")
     (set-face-foreground 'vertical-border "white")
     (set-face-foreground 'org-done "#cb4b16")
 #+END_SRC
