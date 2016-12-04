@@ -155,6 +155,7 @@ Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
     (set-face-foreground 'vertical-border "white")
+    (set-face-foreground 'org-done "#cb4b16")
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -245,14 +246,6 @@ Notes for shortcuts:
     (evil-leader/set-key "TAB" 'helm-projectile-switch-project)
 #+END_SRC
 
-** [[https://github.com/joaotavora/yasnippet][yasnippet]]
-
-#+BEGIN_SRC emacs-lisp
-    (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-    (yas-global-mode 1)
-    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas/expand)
-#+END_SRC
-
 ** [[https://github.com/jaypei/emacs-neotree][Neotree]]
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
@@ -277,9 +270,21 @@ All the boilerplate stuff.
 
     (add-hook 'web-mode-hook (
         lambda()
-            (set-face-background 'web-mode-current-element-highlight-face "#222222")
+            (set-face-background 'web-mode-current-element-highlight-face "#dddddd")
     ))
 #+END_SRC
+** [[https://github.com/joaotavora/yasnippet][yasnippet]]
+
+#+BEGIN_SRC emacs-lisp
+    (setq yas-snippet-dirs
+        '("~/code/dotfiles/emacs.d/snippets")
+    )
+
+    (yas-global-mode 1)
+
+    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas/expand)
+#+END_SRC
+
 ** Emmet
 #+BEGIN_SRC emacs-lisp
     (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -292,10 +297,15 @@ All the boilerplate stuff.
         lambda ()
             (setq emmet-indentation 4)
     ))
-
 #+END_SRC
 * Keybindings
 ** Vim-esque
+*** COMMENT ON ALL THE THINGS!
+
+#+BEGIN_SRC emacs-lisp
+    (define-key evil-normal-state-map (kbd "C-\\") 'comment-line)
+    (define-key evil-visual-state-map (kbd "C-\\") 'comment-line)
+#+END_SRC
 *** Colon Cancer
 I /really/, /really/ hate pressing shift to open up the ex menu.
 
