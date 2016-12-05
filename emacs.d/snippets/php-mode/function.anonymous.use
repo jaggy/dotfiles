@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: anonymous function with uses
+# key: afnu
+# --
+function ($1) use (\$${2:uses}) {
+    $0
+}
