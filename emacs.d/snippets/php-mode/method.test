@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: test method
+# key: test
+# --
+/** @test **/
+function ${1:$$(replace-regexp-in-string " " "_" yas-text)}()
+{
+    $0
+}
