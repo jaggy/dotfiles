@@ -141,9 +141,10 @@ Update the pretty colors.
 #+BEGIN_SRC emacs-lisp
     (setq solarized-high-contrast-mode-line t)
 
-    (if (string= system-name "a.local")
-        (load-theme 'mustard t)
-        (load-theme 'solarized-light t))
+    ;; (if (string= system-name "a.local")
+    ;;     (load-theme 'mustard t)
+    ;;     (load-theme 'solarized-light t))
+    (load-theme 'mustard t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -175,9 +176,11 @@ Let's override theme colors here.
         (set-face-foreground 'org-done "#cb4b16")
     )
 
-    (if (string= system-name "a.local")
-        (override-mustard-theme)
-        (override-solarized-theme))
+    (override-mustard-theme)
+
+    ;; (if (string= system-name "a.local")
+    ;;     (override-mustard-theme)
+    ;;     (override-solarized-theme))
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -322,6 +325,12 @@ All the boilerplate stuff.
 #+END_SRC
 * Keybindings
 ** Vim-esque
+*** Aligning Things
+We do something vim-plug-esque
+#+BEGIN_SRC 
+    ;; (define-key evil-visual-state-map (kbd "ga") 'align-regexp)
+    ;; (key-chord-define evil-visual-state-map (kbd "ga") 'align-regexp)
+#+END_SRC
 *** COMMENT ON ALL THE THINGS!
 
 #+BEGIN_SRC emacs-lisp
