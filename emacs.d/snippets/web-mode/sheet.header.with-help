@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: sheet header with help
+# key: shh
+# --
+<div class="sheet-header">
+    <div class="flexy">
+        <div class="fill">
+            <h2>${1:title}</h2>
+            <small class="help">
+                $0
+            </small>
+        </div>
+        <div class="action">
+            <a class="btn btn-primary">${2:button}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: sheet header with help
+# key: scf
+# --
+<div class="sheet-content">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>${1:field}</h3>
+            <small class="help">
+                $2
+            </small>
+        </div>
+        <div class="col-md-8">
+             $3
+        </div>
+    </div>
+</div>
