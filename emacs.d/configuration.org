@@ -53,7 +53,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
 
                     ;; Helpers
-                    string-inflection
+                    string-inflection inflections
                 )
             )
         )
@@ -358,6 +358,7 @@ It's called windows here!!!
         lambda() (interactive)
             (split-window-horizontally)
             (windmove-right)
+            (balance-windows)
     ))
 #+END_SRC
 
@@ -368,6 +369,7 @@ It's called windows here!!!
         lambda() (interactive)
             (split-window-vertically)
             (windmove-down)
+            (balance-windows)
     ))
 #+END_SRC
 
@@ -399,15 +401,18 @@ If the key is a resource, we cam map through every preceeding parent and make th
 
 #+BEGIN_SRC emacs-lisp
     (require 'string-inflection)
+    (require 'cl)
 
-    (defun resource-to-controller (resource)
-        (setq name
-            (string-inflection-camelcase-function
-                (replace-regexp-in-string "\\." "_" resource))
-        )
+    (defun laravel-create-resource-controller (resource)
+        (setq segments  (split-string resource "\\."))
+        (setq resources (subseq segments 0 -1))
+        (setq model     (last segments))
+        (setq classes   (append (mapcar 'singularize-string resources) model))
 
-        (concat name "Controller")
+        (concat (string-inflection-camelcase-function (string-join classes "_")) "Controller")
     )
+
+    (laravel-create-resource-controller "projects.users.roles")
 #+END_SRC
 ** PHP Namespaces
 I need to detect namespaces dynamically for my PHP files and I ran across [[http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html][this article]].

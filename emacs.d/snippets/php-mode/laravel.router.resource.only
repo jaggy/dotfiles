@@ -2,6 +2,6 @@
 # name: laravel router resource with parameters
 # key: rrp
 # --
-$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', [
+$router->resource('${1:name}', '${1:$(laravel-create-resource-controller yas-text)}', [
     'only' => [$0]
 ]);
