@@ -411,8 +411,6 @@ If the key is a resource, we cam map through every preceeding parent and make th
 
         (concat (string-inflection-camelcase-function (string-join classes "_")) "Controller")
     )
-
-    (laravel-create-resource-controller "projects.users.roles")
 #+END_SRC
 ** PHP Namespaces
 I need to detect namespaces dynamically for my PHP files and I ran across [[http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html][this article]].
