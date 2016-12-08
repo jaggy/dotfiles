@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: laravel router resource only
+# name: laravel router resource except
 # key: rro
 # --
 $router->resource('${1:name}', '${1:$(laravel-create-resource-controller yas-text)}', [
-    'only' => [$0]
+    'except' => [$0]
 ]);

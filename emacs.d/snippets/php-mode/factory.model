@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: factory define
+# key: fd
+# --
+$factory->define(${1:App}\\${2:User}::class, function (Faker\Generator) {
+    return [
+        $0
+    ];
+});

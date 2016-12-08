@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: factory make state
+# key: fms
+# --
+factory(${1:App\User}::class)->state('${2:state}')->make($0);
