@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: trait
+# key: tr
+# --
+<?php
+
+namespace `(file-path-to-namespace)`;
+
+trait `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
+{
+    $0
+}

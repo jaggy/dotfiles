@@ -6,12 +6,12 @@
 
 namespace `(file-path-to-namespace)`;
 
-class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
 {
     /**
-     * Create a new $1 instance.
+     * Create a new `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` instance.
      *
-     * @return $1
+     * @return `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
      */
     public function __construct()
     {
