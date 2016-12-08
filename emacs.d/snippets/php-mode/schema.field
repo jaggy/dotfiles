@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: schema field
-# key: sf
+# key: f
 # --
 $table->${1:string}('${2:field}');

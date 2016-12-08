@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: factory create
-# key: fc
+# key: fm
 # --
 factory(${1:App\User}::class)->make($0);

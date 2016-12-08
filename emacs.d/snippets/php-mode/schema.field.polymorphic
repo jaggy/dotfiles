@@ -3,4 +3,4 @@
 # key: fkp
 # --
 $table->integer('${1:class}_id')->unsigned();
-$table->integer('$1_type')->unsigned();
+$table->string('$1_type');

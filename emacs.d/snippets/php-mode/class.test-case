@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: test case
+# key: tc
+# --
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class `(php-class-name buffer-file-name)` extends TestCase
+{
+    $0
+}

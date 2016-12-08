@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
 # name: factory define state
-# key: fd
+# key: fs
 # --
-$factory->state(${1:App}\\${2:User}::class, '${3:state}', function (Faker\Generator) {
+$factory->state(${1:App}\\${2:User}::class, '${3:state}', function (Faker\Generator $faker) {
     return [
         $0
     ];

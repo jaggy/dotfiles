@@ -2,7 +2,7 @@
 # name: factory define
 # key: fd
 # --
-$factory->define(${1:App}\\${2:User}::class, function (Faker\Generator) {
+$factory->define(${1:App}\\${2:User}::class, function (Faker\Generator $faker) {
     return [
         $0
     ];

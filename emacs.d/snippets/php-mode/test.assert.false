@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: assert false
+# key: af
+# --
+$this->assertFalse($0);
