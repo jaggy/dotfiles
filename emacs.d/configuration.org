@@ -412,6 +412,14 @@ If the key is a resource, we cam map through every preceeding parent and make th
         (concat (string-inflection-camelcase-function (string-join classes "_")) "Controller")
     )
 #+END_SRC
+** Class Name
+Just fetch the class name of the file.
+
+#+BEGIN_SRC emacs-lisp
+    (defun php-class-name (filename)
+        (file-name-nondirectory (file-name-sans-extension filename))
+    )
+#+END_SRC
 ** PHP Namespaces
 I need to detect namespaces dynamically for my PHP files and I ran across [[http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html][this article]].
 

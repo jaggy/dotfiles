@@ -6,12 +6,12 @@
 
 namespace `(file-path-to-namespace)`;
 
-class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
+class `(php-class-name buffer-file-name)`
 {
     /**
-     * Create a new `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` instance.
+     * Create a new `(php-class-name buffer-file-name)` instance.
      *
-     * @return `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`
+     * @return `(php-class-name buffer-file-name)`
      */
     public function __construct()
     {
