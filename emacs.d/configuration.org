@@ -59,6 +59,9 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
         )
     )
     (custom-set-faces)
+
+    (require 'string-inflection)
+    (require 'cl)
 #+END_SRC
 
 * The Basics
@@ -393,6 +396,14 @@ Not sure if the delay'll be fine.
 * Custom Functions
 Should this really be placed in this org file?
 
+** Table name from the field
+
+#+BEGIN_SRC emacs-lisp
+    (defun table-name-from-field (field)
+        (pluralize-string (replace-regexp-in-string "_id" "" field))
+    )
+#+END_SRC
+
 ** Convert resource into controller
 
 If the key is a resource, we cam map through every preceeding parent and make them sigular.
@@ -400,9 +411,6 @@ If the key is a resource, we cam map through every preceeding parent and make th
 ~users.roles => UserRolesControll~
 
 #+BEGIN_SRC emacs-lisp
-    (require 'string-inflection)
-    (require 'cl)
-
     (defun laravel-create-resource-controller (resource)
         (setq segments  (split-string resource "\\."))
         (setq resources (subseq segments 0 -1))

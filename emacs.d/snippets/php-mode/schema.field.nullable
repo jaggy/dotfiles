@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: nullable schema field
+# key: sfn
+# --
+$table->${1:string}('${2:field}')->nullable();

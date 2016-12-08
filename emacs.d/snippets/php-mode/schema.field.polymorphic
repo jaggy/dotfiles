@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: polymorphic foreign key
+# key: fkp
+# --
+$table->integer('${1:class}_id')->unsigned();
+$table->integer('$1_type')->unsigned();
