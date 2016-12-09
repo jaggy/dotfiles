@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: laravel blade field
+# key: bfield
+# --
+<div class="field{{ $errors->has('${1:field}') ? ' field--has-errors' : '' }}">
+    <label for="$1" class="field__label">${1:$(capitalize (replace-regexp-in-string "_" " " yas-text))}</label>
+
+    <input id="$1" class="field__input" name="$1" type="$1" value="{{ old('$1') }}">
+
+    @if ($errors->has('$1'))
+        <p class="field__error">{{ $errors->first('$1') }}</p>
+    @endif
+</div>

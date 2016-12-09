@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: laravel router resource except
-# key: rro
+# key: rre
 # --
 $router->resource('${1:name}', '${1:$(laravel-create-resource-controller yas-text)}', [
     'except' => [$0]

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: extend blade
+# key: be
+# --
+@extends('${1:layouts.app}')
+
+@section('${2:content}')
+$0
+@endsection
