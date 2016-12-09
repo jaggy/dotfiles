@@ -14,7 +14,7 @@ Disable the jump so we can use tab to expand subtrees. [[http://stackoverflow.co
     (setq evil-want-C-i-jump nil)
 #+END_SRC
 * The Things We Depend On
-** Installing
+** Sources
 Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
 
 #+BEGIN_SRC emacs-lisp
@@ -22,6 +22,7 @@ Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/fro
 
     (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
     (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+    (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages"))
 
     (setq package-enable-at-startup nil)
     (package-initialize)
@@ -49,7 +50,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     ;; Web Stuff
                     php-mode web-mode emmet-mode
 
-                    ;; Generic Editor
+                    ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
 
                     ;; Helpers
@@ -108,6 +109,11 @@ Let's make everything pretty.
      (evil-vimish-fold-mode 1)
 #+END_SRC
 
+* Hacks
+** Supressing Errors
+#+BEGIN_SRC emacs-lisp
+    (setq ad-redefinition-action 'accept) ;; ad-handle-definition: `find-tag-noselect' got redefined
+#+END_SRC
 * I Feel Pretty
 ** Minimalize
 Just keep everything simple.
@@ -427,7 +433,7 @@ If the key is a resource, we cam map through every preceeding parent and make th
         (setq model     (last segments))
         (setq classes   (append (mapcar 'singularize-string resources) model))
 
-        (concat (string-inflection-camelcase-function (string-join classes "_")) "Controller")
+        (concat (string-inflection-camelcase-function (mapconcat 'identity classes "_")) "Controller")
     )
 #+END_SRC
 ** Class Name
