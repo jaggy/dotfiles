@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: csrf field
+# key: csrf
+# --
+{{ csrf_field() }}
