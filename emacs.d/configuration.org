@@ -48,7 +48,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     helm projectile helm-projectile helm-ag
 
                     ;; Web Stuff
-                    php-mode web-mode emmet-mode
+                    php-mode web-mode emmet-mode vue-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
@@ -231,8 +231,14 @@ Let's make everything feel a bit more vim-like shall we?
 #+BEGIN_SRC emacs-lisp
     (global-evil-leader-mode)
     (global-evil-surround-mode 1)
+
     (evil-mode 1)
+
     (evil-leader/set-leader ",")
+    (evil-leader/set-key 
+        "g" 'magit-status
+        "x" 'helm-M-x)
+
     (require 'evil-org)
 #+END_SRC
 * Org Mode
@@ -297,12 +303,6 @@ Notes for shortcuts:
 ** [[https://github.com/jaypei/emacs-neotree][Neotree]]
 #+BEGIN_SRC emacs-lisp
     (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
-#+END_SRC
-** Magit
-Okay, I have to admit, this one is freakin' awesome.
-
-#+BEGIN_SRC emacs-lisp
-    (evil-leader/set-key "g" 'magit-status)
 #+END_SRC
 ** Web Mode
 *** Basic Configuration
@@ -424,7 +424,6 @@ Not sure if the delay'll be fine.
 Should this really be placed in this org file?
 
 ** Table name from the field
-
 #+BEGIN_SRC emacs-lisp
     (defun table-name-from-field (field)
         (pluralize-string (replace-regexp-in-string "_id" "" field))
@@ -432,7 +431,6 @@ Should this really be placed in this org file?
 #+END_SRC
 
 ** Convert resource into controller
-
 If the key is a resource, we cam map through every preceeding parent and make them sigular.
 
 ~users.roles => UserRolesControll~
