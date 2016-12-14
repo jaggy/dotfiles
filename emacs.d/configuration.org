@@ -138,11 +138,6 @@ Just keep everything simple.
 
     ;; Gui Emacs
     (menu-bar-mode -1)
-    (toggle-scroll-bar -1)
-    (tool-bar-mode -1) 
-    (set-face-attribute 'default nil :family "Fira Code" :height 120 :weight 'normal)
-
-
 #+END_SRC
 ** [[http://www.writeups.org/wp-content/uploads/Invisible-Boy-Mystery-Men-Kel-Mitchell-a.jpg]["Nobody Look at Me!]]
 *** Show Me Everything!
