@@ -1,0 +1,27 @@
+[
+    "unrar",
+    "wget", 
+    "youtube-dl",
+    "ssh-copy-id", 
+
+    "tmux",
+    "reattach-to-user-namespace", 
+
+    "z",
+    "ag",
+    "fzf",
+
+    "zsh",
+    "zsh-syntax-highlighting",
+
+    "git",
+    "git-flow",
+
+    "neovim/neovim",
+    "ctags",
+    "python3",
+
+    "dnsmasq",
+    "homebrew/php/php71", 
+    "mariadb"
+]
