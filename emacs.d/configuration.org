@@ -52,7 +52,9 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
-                    ggtags
+
+                    ;; PHP Stuff
+                    phpunit
 
                     ;; Helpers
                     string-inflection inflections
@@ -239,7 +241,10 @@ Let's make everything feel a bit more vim-like shall we?
     (evil-leader/set-leader ",")
     (evil-leader/set-key 
         "g" 'magit-status
-        "x" 'helm-M-x)
+        "x" 'helm-M-x
+        "tcc" 'phpunit-current-class
+        "tct" 'phpunit-current-test
+        "tcp" 'phpunit-current-project)
 
     (require 'evil-org)
 #+END_SRC
