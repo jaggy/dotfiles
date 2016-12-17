@@ -128,6 +128,13 @@ Let's make everything pretty.
     (setq ad-redefinition-action 'accept) ;; ad-handle-definition: `find-tag-noselect' got redefined
 #+END_SRC
 * I Feel Pretty
+** Display ANSI Colors
+#+BEGIN_SRC emacs-lisp
+(defun display-ansi-colors ()
+  (interactive)
+  (let ((inhibit-read-only t))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+#+END_SRC
 ** Minimalize
 Just keep everything simple.
 
