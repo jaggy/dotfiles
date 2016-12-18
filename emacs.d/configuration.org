@@ -192,6 +192,7 @@ Let's override theme colors here.
 #+BEGIN_SRC emacs-lisp
     (defun override-mustard-theme ()
         (interactive)
+        ;; (set-face-background 'mmm-default-submode-face "black")
         (set-face-background 'default "black")
         (set-face-background 'linum "black")
         (set-face-background 'linum-relative-current-face "#222222")
