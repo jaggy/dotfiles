@@ -17,7 +17,8 @@
     "git",
     "git-flow",
 
-    "neovim/neovim",
+    "emacs",
+    "neovim/neovim/neovim",
     "ctags",
     "python3",
 
