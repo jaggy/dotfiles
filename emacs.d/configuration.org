@@ -192,13 +192,32 @@ Let's override theme colors here.
 #+BEGIN_SRC emacs-lisp
     (defun override-mustard-theme ()
         (interactive)
-        ;; (set-face-background 'mmm-default-submode-face "black")
         (set-face-background 'default "black")
         (set-face-background 'linum "black")
         (set-face-background 'linum-relative-current-face "#222222")
         (set-face-foreground 'vertical-border "black")
         (set-face-background 'vertical-border "black")
         (set-face-background 'org-warning "black")
+
+         (add-hook 'web-mode-hook (
+            lambda()
+                (set-face-background 'web-mode-current-element-highlight-face "#222222")
+                (set-face-foreground 'web-mode-doctype-face                   "blue")
+                (set-face-foreground 'web-mode-html-tag-bracket-face          "blue")
+                (set-face-foreground 'web-mode-current-element-highlight-face "blue")
+                (set-face-foreground 'web-mode-html-tag-face                  "yellow")
+                (set-face-foreground 'web-mode-current-element-highlight-face "yellow")
+                (set-face-foreground 'web-mode-html-attr-name-face            "#87f48c")
+                (set-face-foreground 'web-mode-html-attr-value-face           "#ba8baf")
+
+                (set-face-foreground 'web-mode-block-control-face             "#5fd7ff")
+                (set-face-foreground 'web-mode-block-delimiter-face           "#5fd7ff")
+        ))
+
+         (add-hook 'vue-mode-hook (
+            lambda()
+                (set-face-background 'mmm-default-submode-face "black")
+        ))
     )
 
     (defun override-solarized-theme ()
@@ -330,21 +349,6 @@ All the boilerplate stuff.
 *** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
 #+BEGIN_SRC emacs-lisp
     (setq web-mode-enable-current-element-highlight 0)
-
-     (add-hook 'web-mode-hook (
-        lambda()
-            (set-face-background 'web-mode-current-element-highlight-face "#222222")
-            (set-face-foreground 'web-mode-doctype-face                   "blue")
-            (set-face-foreground 'web-mode-html-tag-bracket-face          "blue")
-            (set-face-foreground 'web-mode-current-element-highlight-face "blue")
-            (set-face-foreground 'web-mode-html-tag-face                  "yellow")
-            (set-face-foreground 'web-mode-current-element-highlight-face "yellow")
-            (set-face-foreground 'web-mode-html-attr-name-face            "#87f48c")
-            (set-face-foreground 'web-mode-html-attr-value-face           "#ba8baf")
-
-            (set-face-foreground 'web-mode-block-control-face             "#5fd7ff")
-            (set-face-foreground 'web-mode-block-delimiter-face           "#5fd7ff")
-    ))
 #+END_SRC
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
 
