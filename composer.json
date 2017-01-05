@@ -2,6 +2,6 @@
     "require": {
         "laravel/installer": "^1.2",
         "phpmd/phpmd": "^2.4",
-        "laravel/valet": "^2.0"
+        "laravel/valet": "^1.1"
     }
 }

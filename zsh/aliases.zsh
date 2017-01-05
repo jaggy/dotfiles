@@ -76,6 +76,14 @@ function phptags() {
     echo "Generated ctags!"
 }
 
+function graduation () {
+    say -v 'Good News' ba bababa na na ba babana na, ba bababa na na ba babana na.
+}
+
+function death () {
+    say -v 'Bad News' ba bababa na na ba babana na.
+}
+
 # Override CD to add a bit more functionality.
 # function cd() {
 #     builtin cd "$@";
@@ -96,6 +104,7 @@ function phptags() {
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
 # alias migrate='phinx rollback -t 0 && phinx migrate'
 # alias migrate='art migrate:refresh --seed'
+
 
 
 
