@@ -47,7 +47,7 @@ alias txs='tmux new -s'
 alias txt='tmux attach -t'
 alias ct="colortest"
 alias so="source $HOME/.zshrc"
-alias pp="php $(which phpunit)"
+alias pp="php vendor/bin/phpunit"
 alias hosts='sudo nvim /etc/hosts'        # Update the hosts file.
 
 alias ignore="echo -n \"*\n!.gitignore\" >> .gitignore"
