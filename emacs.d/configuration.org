@@ -84,12 +84,14 @@ It's all the same when it runs through the compiler.
         lambda()
 
         (setq tab-width 2)
+        (setq js-indent-level 2)
     ))
 
     (add-hook 'vue-mode-hook (
         lambda()
 
         (setq tab-width 2)
+        (setq js-indent-level 2)
     ))
 #+END_SRC
 
