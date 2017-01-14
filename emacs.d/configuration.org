@@ -389,30 +389,6 @@ All the boilerplate stuff.
             (setq emmet-indentation 4)
     ))
 #+END_SRC
-** Company Mode
-#+BEGIN_SRC emacs-lisp
-    (add-hook 'php-mode-hook
-        '(lambda ()
-            (require 'company-php)
-            (company-mode t)
-            (add-to-list 'company-backends 'company-ac-php-backend )
-        )
-    )
-#+END_SRC
-** AC-PHP
-#+BEGIN_SRC emacs-lisp
-    (add-hook 'php-mode-hook
-        '(lambda ()
-            (auto-complete-mode t)
-            (require 'ac-php)
-            (setq ac-sources  '(ac-source-php ) )
-            (yas-global-mode 1)
-            (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-            (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-        )
-    )
-
-#+END_SRC
 * Keybindings
 ** Vim-esque
 *** Aligning Things
