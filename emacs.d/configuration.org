@@ -368,7 +368,7 @@ All the boilerplate stuff.
 
 #+BEGIN_SRC emacs-lisp
     (setq yas-snippet-dirs
-        '("~/code/dotfiles/emacs.d/snippets")
+        '("~/.dotfiles/emacs.d/snippets")
     )
 
     (yas-global-mode 1)
