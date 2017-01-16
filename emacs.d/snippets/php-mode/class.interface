@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: interface
+# key: interface
+# --
+<?php
+
+namespace `(file-path-to-namespace)`;
+
+interface `(php-class-name buffer-file-name)` 
+{
+    $0
+}

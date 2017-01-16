@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: interface method
+# key: ifn
+# --
+/**
+ * ${1:Write the description first!}
+ *
+ * @return ${4:void}
+ */
+public function ${2:function_name}($3);
