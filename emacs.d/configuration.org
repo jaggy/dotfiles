@@ -156,6 +156,7 @@ Just keep everything simple.
     (global-linum-mode)
     (setq linum-relative-format "%3s ")
     (linum-relative-global-mode)
+    (setq linum-relative-current-symbol "")
 
     ;; Gui Emacs
     (menu-bar-mode -1)
