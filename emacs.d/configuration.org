@@ -158,8 +158,19 @@ Just keep everything simple.
     (linum-relative-global-mode)
     (setq linum-relative-current-symbol "")
 
-    ;; Gui Emacs
-    (menu-bar-mode -1)
+    (unless (display-graphic-p)
+        (menu-bar-mode -1)
+    )
+#+END_SRC
+** GUI
+#+BEGIN_SRC emacs-lisp
+    (when (string= window-system "ns")
+        (set-default-font "Fira Code 14")
+        (toggle-scroll-bar -1)
+        (menu-bar-mode 1)
+        (setq line-spacing 0.5) ; add 0.5 height between lines
+        (redraw-frame (selected-frame))
+    )
 #+END_SRC
 ** [[http://www.writeups.org/wp-content/uploads/Invisible-Boy-Mystery-Men-Kel-Mitchell-a.jpg]["Nobody Look at Me!]]
 *** Show Me Everything!
