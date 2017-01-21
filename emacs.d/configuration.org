@@ -165,10 +165,10 @@ Just keep everything simple.
 ** GUI
 #+BEGIN_SRC emacs-lisp
     (when (string= window-system "ns")
-        (set-default-font "Fira Code 14")
+        (set-default-font "Fira Code 15")
         (toggle-scroll-bar -1)
         (menu-bar-mode 1)
-        (setq line-spacing 0.5) ; add 0.5 height between lines
+        (setq-default line-spacing 20)
         (redraw-frame (selected-frame))
     )
 #+END_SRC
