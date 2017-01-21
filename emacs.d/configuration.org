@@ -358,6 +358,7 @@ Notes for shortcuts:
 All the boilerplate stuff.
 
 #+BEGIN_SRC emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
     (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
     (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
 #+END_SRC
