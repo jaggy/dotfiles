@@ -164,12 +164,17 @@ Just keep everything simple.
 #+END_SRC
 ** GUI
 #+BEGIN_SRC emacs-lisp
-    (when (string= window-system "ns")
-        (set-default-font "Fira Code 15")
+    (when (string= window-system "mac")
+        (set-default-font "Fira Code 14")
         (toggle-scroll-bar -1)
         (menu-bar-mode 1)
         (setq-default line-spacing 20)
         (redraw-frame (selected-frame))
+        (mac-auto-operator-composition-mode)
+
+        (add-to-list 'default-frame-alist '(height . 40))
+        (add-to-list 'default-frame-alist '(width . 120))
+
     )
 #+END_SRC
 ** [[http://www.writeups.org/wp-content/uploads/Invisible-Boy-Mystery-Men-Kel-Mitchell-a.jpg]["Nobody Look at Me!]]
@@ -254,7 +259,9 @@ Let's override theme colors here.
         (set-face-foreground 'org-done "#cb4b16")
     )
 
-    (override-mustard-theme)
+    (when (not window-system)
+        (override-mustard-theme)
+    )
 
     ;; (if (string= system-name "a.local")
     ;;     (override-mustard-theme)
