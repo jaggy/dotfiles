@@ -51,7 +51,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     php-mode web-mode emmet-mode vue-mode company
 
                     ;; Generic Editor Stuff
-                    magit yasnippet key-chord neotree linum-relative flycheck git-gutter emamux
+                    magit yasnippet key-chord neotree linum-relative flycheck git-gutter emamux ggtags
 
                     ;; PHP Stuff
                     phpunit ac-php
@@ -356,6 +356,8 @@ Notes for shortcuts:
 
     (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
     (evil-leader/set-key "TAB" 'helm-projectile-switch-project)
+
+    (add-hook 'projectile-find-dir-hook 'laravel-mode)
 #+END_SRC
 
 ** [[https://github.com/jaypei/emacs-neotree][Neotree]]
@@ -506,7 +508,7 @@ Don't really know how it works so I'll just paste it all here.
 
 I have no idea how to make eproject work, so ¯\_(ツ)_/¯.
 
-*** "Where forth art thou Git?" | Looking for Githaska
+*** Looking for Git
 Yes, I make terrible puns. Just move up until we find the git folder.
 
 #+BEGIN_SRC emacs-lisp
@@ -546,5 +548,9 @@ Create the namespace.
 
 #+END_SRC
 
-
-
+** Laravel Mode
+#+BEGIN_SRC emacs-lisp
+    (defun laravel-mode ()
+        (interactive)
+    )
+#+END_SRC
