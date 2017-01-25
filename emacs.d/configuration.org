@@ -175,6 +175,8 @@ Just keep everything simple.
         (add-to-list 'default-frame-alist '(height . 40))
         (add-to-list 'default-frame-alist '(width . 120))
 
+        (set-face-background 'linum "#191919")
+        (set-face-background 'linum-relative-current-face "#191919")
     )
 #+END_SRC
 ** [[http://www.writeups.org/wp-content/uploads/Invisible-Boy-Mystery-Men-Kel-Mitchell-a.jpg]["Nobody Look at Me!]]
