@@ -48,13 +48,13 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     helm projectile helm-projectile helm-ag
 
                     ;; Web Stuff
-                    php-mode web-mode emmet-mode vue-mode company
+                    php-mode web-mode emmet-mode vue-mode
 
                     ;; Generic Editor Stuff
-                    magit yasnippet key-chord neotree linum-relative flycheck git-gutter emamux ggtags
+                    magit yasnippet key-chord neotree linum-relative flycheck git-gutter
 
                     ;; PHP Stuff
-                    phpunit ac-php
+                    phpunit
 
                     ;; Helpers
                     string-inflection inflections
