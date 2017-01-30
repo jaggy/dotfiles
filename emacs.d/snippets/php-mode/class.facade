@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: facade
+# key: facade
+# --
+<?php
+
+namespace `(file-path-to-namespace)`;
+
+use Illuminate\Support\Facades\Facade;
+
+class `(php-class-name buffer-file-name)` extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return '$0';
+    }
+}
