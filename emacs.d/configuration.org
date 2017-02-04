@@ -48,7 +48,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     helm projectile helm-projectile helm-ag
 
                     ;; Web Stuff
-                    php-mode web-mode emmet-mode vue-mode markdown-mode
+                    php-mode web-mode emmet-mode vue-mode markdown-mode yaml-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
