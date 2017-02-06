@@ -15,7 +15,7 @@ Disable the jump so we can use tab to expand subtrees. [[http://stackoverflow.co
 #+END_SRC
 * The Things We Depend On
 ** Sources
-Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
+   Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
 
 #+BEGIN_SRC emacs-lisp
     (require 'package)
@@ -41,7 +41,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil-org evil-vimish-fold
 
                     ;; Theming
-                    solarized-theme mustard-theme
+                    solarized-theme mustard-theme flatui-theme
                     smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
@@ -126,6 +126,29 @@ Let's make everything pretty.
      (evil-vimish-fold-mode 1)
 #+END_SRC
 
+** Filetypes
+*** Basic Configuration
+All the boilerplate stuff.
+
+#+BEGIN_SRC emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.tmux\\'" . conf-mode))
+    (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+    (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+    (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+    (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+    (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+    (add-hook 'web-mode-hook  'emmet-mode)
+
+#+END_SRC
+*** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
+#+BEGIN_SRC emacs-lisp
+    (setq web-mode-enable-current-element-highlight 0)
+#+END_SRC
 * Hacks
 ** Create the directory when making files
 #+BEGIN_SRC emacs-lisp
@@ -154,7 +177,7 @@ Just keep everything simple.
     (tool-bar-mode -1)
     (show-paren-mode 1)
     (global-linum-mode)
-    (setq linum-relative-format "%3s ")
+    (setq linum-relative-format " %3s ")
     (linum-relative-global-mode)
     (setq linum-relative-current-symbol "")
 
@@ -204,33 +227,40 @@ Update the pretty colors.
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
 *** Theme
 #+BEGIN_SRC emacs-lisp
-    (setq solarized-high-contrast-mode-line t)
+    ;; (setq solarized-high-contrast-mode-line t)
+
+    ;; (color-theme-sanityinc-tomorrow-day)
 
     ;; (if (string= system-name "a.local")
     ;;     (load-theme 'mustard t)
     ;;     (load-theme 'solarized-light t))
+    ;; (require 'color-theme-sanityinc-tomorrow)
+
     (load-theme 'mustard t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
 
 #+BEGIN_SRC emacs-lisp
-    (setq sml/theme 'powerline)
+    (setq sml/theme 'respectful)
     (setq sml/no-confirm-load-theme t)
     (sml/setup)
 #+END_SRC
 ** Override the Theme
-Let's override theme colors here.
+   Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
     (defun override-mustard-theme ()
         (interactive)
         (set-face-background 'default "black")
         (set-face-background 'linum "black")
-        (set-face-background 'linum-relative-current-face "#222222")
         (set-face-foreground 'vertical-border "black")
         (set-face-background 'vertical-border "black")
         (set-face-background 'org-warning "black")
+        (set-face-background 'mode-line "#303030")
+
+        (set-face-foreground 'linum-relative-current-face "white")
+        (set-face-background 'linum-relative-current-face "black")
 
          (add-hook 'web-mode-hook (
             lambda()
@@ -255,19 +285,44 @@ Let's override theme colors here.
 
     (defun override-solarized-theme ()
         (interactive)
+
+        (set-face-attribute 'show-paren-match-face nil :foreground "orange" :underline)
+
         (set-face-background 'default "white")
+        (set-face-foreground 'default "black")
         (set-face-background 'linum "white")
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'org-done "#cb4b16")
+
+        (set-face-background 'linum-relative-current-face "#f2f0e7")
+        (set-face-foreground 'linum-relative-current-face "#b4b9be")
+
+        (set-face-foreground 'vertical-border "white")
+        (set-face-background 'vertical-border "white")
+
+        (set-face-background 'whitespace-tab "#f2f0e7")
+        (set-face-background 'mode-line "#f2f0e7")
+        (set-face-background 'region "#f2f0e7")
+        (set-face-foreground 'region "#black")
+
+        (add-hook 'php-mode-hook (
+            lambda()
+
+            (set-face-foreground 'font-lock-comment-delimiter-face "#b4b9be")
+            (set-face-foreground 'font-lock-comment-face "#b4b9be")
+
+            (set-face-foreground 'font-lock-type-face "blue")
+            (set-face-foreground 'font-lock-constant-face "blue")
+            (set-face-foreground 'font-lock-variable-name-face "blue")
+            (set-face-foreground 'php-annotations-annotation-face "red")
+            (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
+            (set-face-attribute 'font-lock-function-name-face nil :foreground "orange")
+        ))
     )
 
     (when (not window-system)
         (override-mustard-theme)
     )
-
-    ;; (if (string= system-name "a.local")
-    ;;     (override-mustard-theme)
-    ;;     (override-solarized-theme))
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -299,7 +354,7 @@ Let's make everything feel a bit more vim-like shall we?
     (evil-mode 1)
 
     (evil-leader/set-leader ",")
-    (evil-leader/set-key 
+    (evil-leader/set-key
         "g" 'magit-status
         "x" 'helm-M-x
         "tcc" 'phpunit-current-class
@@ -375,19 +430,6 @@ Notes for shortcuts:
     (setq neo-theme (if (display-graphic-p) 'arrow))
     (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
 #+END_SRC
-** Web Mode
-*** Basic Configuration
-All the boilerplate stuff.
-
-#+BEGIN_SRC emacs-lisp
-    (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
-    (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-    (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
-#+END_SRC
-*** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
-#+BEGIN_SRC emacs-lisp
-    (setq web-mode-enable-current-element-highlight 0)
-#+END_SRC
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
 
 #+BEGIN_SRC emacs-lisp
@@ -402,22 +444,12 @@ All the boilerplate stuff.
 
 ** Emmet
 #+BEGIN_SRC emacs-lisp
-    (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-    (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-    (add-hook 'web-mode-hook  'emmet-mode)
-
     (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
 
     (add-hook 'emmet-mode-hook (
         lambda ()
             (setq emmet-indentation 4)
     ))
-#+END_SRC
-** Markdown Mode
-#+BEGIN_SRC emacs-lisp
-    (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 #+END_SRC
 * Keybindings
 ** Vim-esque
