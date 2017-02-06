@@ -15,7 +15,7 @@ Disable the jump so we can use tab to expand subtrees. [[http://stackoverflow.co
 #+END_SRC
 * The Things We Depend On
 ** Sources
-Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
+   Just followed the package list from [[http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html]["From Vim to Emacs in Fourteen Days"]].
 
 #+BEGIN_SRC emacs-lisp
     (require 'package)
@@ -154,7 +154,7 @@ Just keep everything simple.
     (tool-bar-mode -1)
     (show-paren-mode 1)
     (global-linum-mode)
-    (setq linum-relative-format "%3s ")
+    (setq linum-relative-format " %3s ")
     (linum-relative-global-mode)
     (setq linum-relative-current-symbol "")
 
@@ -209,13 +209,13 @@ Update the pretty colors.
     ;; (if (string= system-name "a.local")
     ;;     (load-theme 'mustard t)
     ;;     (load-theme 'solarized-light t))
-    (load-theme 'mustard t)
+    (load-theme 'solarized-light t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
 
 #+BEGIN_SRC emacs-lisp
-    (setq sml/theme 'powerline)
+    (setq sml/theme 'respectful)
     (setq sml/no-confirm-load-theme t)
     (sml/setup)
 #+END_SRC
@@ -257,17 +257,18 @@ Let's override theme colors here.
         (interactive)
         (set-face-background 'default "white")
         (set-face-background 'linum "white")
+        (set-face-background 'linum-relative-current-face "orange")
+        (set-face-foreground 'linum-relative-current-face "white")
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'org-done "#cb4b16")
+
+        (set-face-foreground 'vertical-border "white")
+        (set-face-background 'vertical-border "white")
     )
 
     (when (not window-system)
-        (override-mustard-theme)
+        (override-solarized-theme)
     )
-
-    ;; (if (string= system-name "a.local")
-    ;;     (override-mustard-theme)
-    ;;     (override-solarized-theme))
 #+END_SRC
 ** Change Cursor on States
 Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-terminal-cursor-changer]], copy every config.
@@ -299,7 +300,7 @@ Let's make everything feel a bit more vim-like shall we?
     (evil-mode 1)
 
     (evil-leader/set-leader ",")
-    (evil-leader/set-key 
+    (evil-leader/set-key
         "g" 'magit-status
         "x" 'helm-M-x
         "tcc" 'phpunit-current-class
