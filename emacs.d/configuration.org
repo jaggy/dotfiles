@@ -135,10 +135,16 @@ All the boilerplate stuff.
     (add-to-list 'auto-mode-alist '("\\.tmux\\'" . conf-mode))
     (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
     (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+    (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
     (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
     (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+    (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+    (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+    (add-hook 'web-mode-hook  'emmet-mode)
+
 #+END_SRC
 *** [[https://github.com/fxbois/web-mode/issues/237][Highlight the matching pair.]]
 #+BEGIN_SRC emacs-lisp
@@ -234,7 +240,7 @@ Update the pretty colors.
     ;;     (load-theme 'solarized-light t))
     ;; (require 'color-theme-sanityinc-tomorrow)
 
-    (load-theme 'flatui t)
+    (load-theme 'solarized-light t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -278,28 +284,44 @@ This looks like a /much/ more better alternative for powerline.
         ))
     )
 
-    (defun override-flatui-theme ()
+    (defun override-solarized-theme ()
         (interactive)
 
         (set-face-background 'default "white")
+        (set-face-foreground 'default "black")
         (set-face-background 'linum "white")
-        (set-face-background 'linum-relative-current-face "orange")
-        (set-face-foreground 'linum-relative-current-face "white")
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'org-done "#cb4b16")
+
+        (set-face-background 'highlight-current-line-face "#f2f0e7")
+        (set-face-background 'linum-relative-current-face "#f2f0e7")
+        (set-face-foreground 'linum-relative-current-face "#b4b9be")
 
         (set-face-foreground 'vertical-border "white")
         (set-face-background 'vertical-border "white")
 
+        (set-face-background 'whitespace-tab "#f2f0e7")
         (set-face-background 'mode-line "#f2f0e7")
-        (set-face-background 'region "#dddddd")
+        (set-face-background 'region "#f2f0e7")
         (set-face-foreground 'region "#black")
 
-        (set-face-background 'highlight-current-line-face "#f2f0e7")
     )
 
+    (add-hook 'php-mode-hook (
+        lambda()
+
+        (set-face-foreground 'font-lock-comment-delimiter-face "#b4b9be")
+        (set-face-foreground 'font-lock-comment-face "#b4b9be")
+
+        (set-face-foreground 'font-lock-type-face "blue")
+        (set-face-foreground 'font-lock-constant-face "blue")
+        (set-face-foreground 'php-annotations-annotation-face "red")
+        (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
+        (set-face-attribute 'font-lock-function-name-face nil :foreground "orange")
+    ))
+
     (when (not window-system)
-        (override-flatui-theme)
+        (override-solarized-theme)
     )
 #+END_SRC
 ** Change Cursor on States
@@ -422,10 +444,6 @@ Notes for shortcuts:
 
 ** Emmet
 #+BEGIN_SRC emacs-lisp
-    (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-    (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-    (add-hook 'web-mode-hook  'emmet-mode)
-
     (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
 
     (add-hook 'emmet-mode-hook (
