@@ -41,7 +41,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil-org evil-vimish-fold
 
                     ;; Theming
-                    solarized-theme mustard-theme
+                    solarized-theme mustard-theme flatui-theme
                     smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
@@ -52,6 +52,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
+                    highlight-current-line
 
                     ;; PHP Stuff
                     phpunit
@@ -226,10 +227,14 @@ Update the pretty colors.
 #+BEGIN_SRC emacs-lisp
     (setq solarized-high-contrast-mode-line t)
 
+    ;; (color-theme-sanityinc-tomorrow-day)
+
     ;; (if (string= system-name "a.local")
     ;;     (load-theme 'mustard t)
     ;;     (load-theme 'solarized-light t))
-    (load-theme 'solarized-light t)
+    ;; (require 'color-theme-sanityinc-tomorrow)
+
+    (load-theme 'flatui t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -273,7 +278,7 @@ This looks like a /much/ more better alternative for powerline.
         ))
     )
 
-    (defun override-solarized-theme ()
+    (defun override-flatui-theme ()
         (interactive)
 
         (set-face-background 'default "white")
@@ -294,7 +299,7 @@ This looks like a /much/ more better alternative for powerline.
     )
 
     (when (not window-system)
-        (override-solarized-theme)
+        (override-flatui-theme)
     )
 #+END_SRC
 ** Change Cursor on States

@@ -20,18 +20,19 @@ set -g status-bg white
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left '#S    '
-set -g status-right ' #[fg=colour233,bg=blue] %b %d, %Y #[fg=colour233,bg=green,bold]%l:%M:%S%p '
+set -g status-right ' #[fg=black,bg=blue] %b %d, %Y #[fg=black,bg=green,bold]%l:%M:%S%p '
 set -g status-right-length 100
 set -g status-left-length 20
 setw -g window-status-current-attr bold
+set -g window-status-separator ''
 
 setw -g window-status-current-fg white
 setw -g window-status-current-bg yellow
-setw -g window-status-current-format '  #I#[fg=white]:#[fg=white]#W #[fg=white]#F  '
+setw -g window-status-current-format '  #I#[fg=white]:#[fg=white]#W #[fg=white] '
 
 setw -g window-status-fg black
 setw -g window-status-bg colour255
-setw -g window-status-format '  #I#[fg=colour237]:#[fg=black]#W #[fg=blue]#F  '
+setw -g window-status-format '  #I#[fg=colour237]:#[fg=black]#W #[fg=blue] '
 
 setw -g window-status-attr none
 setw -g window-status-bell-attr bold
