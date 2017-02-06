@@ -161,6 +161,9 @@ Just keep everything simple.
     (unless (display-graphic-p)
         (menu-bar-mode -1)
     )
+
+    (require 'highlight-current-line)
+    (highlight-current-line-on t)
 #+END_SRC
 ** GUI
 #+BEGIN_SRC emacs-lisp
@@ -220,7 +223,7 @@ This looks like a /much/ more better alternative for powerline.
     (sml/setup)
 #+END_SRC
 ** Override the Theme
-Let's override theme colors here.
+   Let's override theme colors here.
 
 #+BEGIN_SRC emacs-lisp
     (defun override-mustard-theme ()
@@ -267,8 +270,10 @@ Let's override theme colors here.
         (set-face-background 'vertical-border "white")
 
         (set-face-background 'mode-line "#f2f0e7")
-        (set-face-background 'region "#f2f0e7")
+        (set-face-background 'region "#fbfbfb")
         (set-face-foreground 'region "#b4bbce")
+
+        (set-face-background 'highlight-current-line-face "#f2f0e7")
     )
 
     (when (not window-system)
