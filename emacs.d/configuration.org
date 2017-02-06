@@ -48,7 +48,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     helm projectile helm-projectile helm-ag
 
                     ;; Web Stuff
-                    php-mode web-mode emmet-mode vue-mode
+                    php-mode web-mode emmet-mode vue-mode markdown-mode yaml-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
@@ -413,6 +413,12 @@ All the boilerplate stuff.
         lambda ()
             (setq emmet-indentation 4)
     ))
+#+END_SRC
+** Markdown Mode
+#+BEGIN_SRC emacs-lisp
+    (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+    (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 #+END_SRC
 * Keybindings
 ** Vim-esque

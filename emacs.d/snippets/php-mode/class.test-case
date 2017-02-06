@@ -4,6 +4,9 @@
 # --
 <?php
 
+namespace `(file-path-to-namespace)`;
+
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
