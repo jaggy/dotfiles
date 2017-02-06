@@ -52,7 +52,6 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
-                    highlight-current-line
 
                     ;; PHP Stuff
                     phpunit
@@ -185,9 +184,6 @@ Just keep everything simple.
     (unless (display-graphic-p)
         (menu-bar-mode -1)
     )
-
-    (require 'highlight-current-line)
-    (highlight-current-line-on t)
 #+END_SRC
 ** GUI
 #+BEGIN_SRC emacs-lisp
@@ -231,7 +227,7 @@ Update the pretty colors.
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
 *** Theme
 #+BEGIN_SRC emacs-lisp
-    (setq solarized-high-contrast-mode-line t)
+    ;; (setq solarized-high-contrast-mode-line t)
 
     ;; (color-theme-sanityinc-tomorrow-day)
 
@@ -240,7 +236,7 @@ Update the pretty colors.
     ;;     (load-theme 'solarized-light t))
     ;; (require 'color-theme-sanityinc-tomorrow)
 
-    (load-theme 'solarized-light t)
+    (load-theme 'mustard t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -258,10 +254,13 @@ This looks like a /much/ more better alternative for powerline.
         (interactive)
         (set-face-background 'default "black")
         (set-face-background 'linum "black")
-        (set-face-background 'linum-relative-current-face "#222222")
         (set-face-foreground 'vertical-border "black")
         (set-face-background 'vertical-border "black")
         (set-face-background 'org-warning "black")
+        (set-face-background 'mode-line "#303030")
+
+        (set-face-foreground 'linum-relative-current-face "white")
+        (set-face-background 'linum-relative-current-face "black")
 
          (add-hook 'web-mode-hook (
             lambda()
@@ -287,13 +286,14 @@ This looks like a /much/ more better alternative for powerline.
     (defun override-solarized-theme ()
         (interactive)
 
+        (set-face-attribute 'show-paren-match-face nil :foreground "orange" :underline)
+
         (set-face-background 'default "white")
         (set-face-foreground 'default "black")
         (set-face-background 'linum "white")
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'org-done "#cb4b16")
 
-        (set-face-background 'highlight-current-line-face "#f2f0e7")
         (set-face-background 'linum-relative-current-face "#f2f0e7")
         (set-face-foreground 'linum-relative-current-face "#b4b9be")
 
@@ -305,23 +305,23 @@ This looks like a /much/ more better alternative for powerline.
         (set-face-background 'region "#f2f0e7")
         (set-face-foreground 'region "#black")
 
+        (add-hook 'php-mode-hook (
+            lambda()
+
+            (set-face-foreground 'font-lock-comment-delimiter-face "#b4b9be")
+            (set-face-foreground 'font-lock-comment-face "#b4b9be")
+
+            (set-face-foreground 'font-lock-type-face "blue")
+            (set-face-foreground 'font-lock-constant-face "blue")
+            (set-face-foreground 'font-lock-variable-name-face "blue")
+            (set-face-foreground 'php-annotations-annotation-face "red")
+            (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
+            (set-face-attribute 'font-lock-function-name-face nil :foreground "orange")
+        ))
     )
 
-    (add-hook 'php-mode-hook (
-        lambda()
-
-        (set-face-foreground 'font-lock-comment-delimiter-face "#b4b9be")
-        (set-face-foreground 'font-lock-comment-face "#b4b9be")
-
-        (set-face-foreground 'font-lock-type-face "blue")
-        (set-face-foreground 'font-lock-constant-face "blue")
-        (set-face-foreground 'php-annotations-annotation-face "red")
-        (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
-        (set-face-attribute 'font-lock-function-name-face nil :foreground "orange")
-    ))
-
     (when (not window-system)
-        (override-solarized-theme)
+        (override-mustard-theme)
     )
 #+END_SRC
 ** Change Cursor on States
