@@ -255,6 +255,7 @@ Let's override theme colors here.
 
     (defun override-solarized-theme ()
         (interactive)
+
         (set-face-background 'default "white")
         (set-face-background 'linum "white")
         (set-face-background 'linum-relative-current-face "orange")
@@ -264,6 +265,10 @@ Let's override theme colors here.
 
         (set-face-foreground 'vertical-border "white")
         (set-face-background 'vertical-border "white")
+
+        (set-face-background 'mode-line "#f2f0e7")
+        (set-face-background 'region "#f2f0e7")
+        (set-face-foreground 'region "#b4bbce")
     )
 
     (when (not window-system)
