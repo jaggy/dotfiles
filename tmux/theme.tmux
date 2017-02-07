@@ -20,7 +20,7 @@ set -g status-bg black
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left '#S    '
-set -g status-right ' #[fg=black,bg=blue] %b %d, %Y #[fg=black,bg=green,bold]%l:%M:%S%p '
+set -g status-right ' #[fg=black,bg=blue] %b %d, %Y #[fg=black,bg=green] %l:%M:%S%p '
 set -g status-right-length 100
 set -g status-left-length 20
 setw -g window-status-current-attr bold
