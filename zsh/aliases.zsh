@@ -30,6 +30,7 @@ alias groot='cd $(git rev-parse --show-cdup)'
 # Overriding Defaults
 #------------------------------------------------------------------------------
 alias tmux='tmux -u'
+alias tx='tmuxinator'
 alias art="php artisan"
 alias plz="php please"
 alias cmp="composer"
