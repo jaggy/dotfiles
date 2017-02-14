@@ -41,7 +41,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     evil-org evil-vimish-fold
 
                     ;; Theming
-                    solarized-theme mustard-theme flatui-theme
+                    solarized-theme mustard-theme
                     smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
@@ -429,6 +429,10 @@ Notes for shortcuts:
     (require 'neotree)
     (setq neo-theme (if (display-graphic-p) 'arrow))
     (define-key evil-normal-state-map (kbd "C-e") 'neotree-toggle)
+    (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+    (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+    (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+    (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 #+END_SRC
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
 
