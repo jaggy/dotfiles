@@ -52,6 +52,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
+                    column-marker
 
                     ;; PHP Stuff
                     phpunit
@@ -342,6 +343,11 @@ Change the cursor different states.
      (setq evil-emacs-state-cursor  'hbar) ; _
 #+END_SRC
 
+** Rulers
+#+BEGIN_SRC emacs-lisp
+    (column-marker-1 80)
+    (set-face-background 'column-marker-1 "dark red")
+#+END_SRC
 * Every Villain is Lemons
 Everything Evil specific would be here.
 
