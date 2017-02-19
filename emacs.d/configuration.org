@@ -345,8 +345,12 @@ Change the cursor different states.
 
 ** Rulers
 #+BEGIN_SRC emacs-lisp
-    (column-marker-1 80)
-    (set-face-background 'column-marker-1 "dark red")
+    (add-hook 'php-mode-hook (
+        lambda()
+
+        (column-marker-1 80)
+        (set-face-background 'column-marker-1 "dark red")
+    ))
 #+END_SRC
 * Every Villain is Lemons
 Everything Evil specific would be here.
