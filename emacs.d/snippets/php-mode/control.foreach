@@ -3,5 +3,5 @@
 # key: fe
 # --
 foreach (\$${1:iterable} as \$${2:key}${3: => \$${4:value}}) {
-    ${0}
+    $0
 }
