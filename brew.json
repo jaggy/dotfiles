@@ -25,5 +25,6 @@
     "dnsmasq",
     "homebrew/php/php71",
     "homebrew/php/php71-mcrypt",
-    "mariadb"
+    "mariadb",
+    "highlight"
 ]
