@@ -49,6 +49,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Web Stuff
                     php-mode web-mode emmet-mode vue-mode markdown-mode yaml-mode
+                    rjsx-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
@@ -135,6 +136,7 @@ All the boilerplate stuff.
     (add-to-list 'auto-mode-alist '("\\.tmux\\'" . conf-mode))
     (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
     (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+    (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-jsx-mode))
     (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

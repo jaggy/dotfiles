@@ -2,6 +2,7 @@
     "require": {
         "laravel/installer": "^1.2",
         "phpmd/phpmd": "^2.4",
+        "laravel/lumen-installer": "^1.0",
         "laravel/valet": "^2.0"
     }
 }

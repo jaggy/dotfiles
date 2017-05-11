@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: class without a namespace
+# key: class
+# --
+import React from 'react';
+
+class `(php-class-name buffer-file-name)` extends React.Component {
+    render () {
+        return (
+          <div>
+            $0
+          </div>
+        );
+    }
+}
+
+export default `(php-class-name buffer-file-name)`;
