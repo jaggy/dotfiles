@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: schema timestamps
+# key: fts
+# --
+$table->timestamps();
