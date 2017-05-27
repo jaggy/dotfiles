@@ -1,0 +1,164 @@
+priority 1
+
+#----------------------------------------------------------
+# Class Definitions
+#----------------------------------------------------------
+#
+snippet lm "Laravel Model"
+<?php
+
+namespace ${1:App}`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`;
+
+class `!p snip.rv=snip.basename` extends Model
+{
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [$0];
+}
+endsnippet
+
+snippet lc "Laravel Controller"
+<?php
+
+namespace ${1:App}`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`;
+
+class `!p snip.rv=snip.basename` extends Controller
+{
+	/**
+	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
+	 *
+	 * @return `!p snip.rv=snip.basename`
+	 */
+	public function __construct()
+	{
+		$0
+	}
+}
+endsnippet
+
+#----------------------------------------------------------
+# Router
+#----------------------------------------------------------
+#
+
+snippet rr "Router Resource"
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller');
+
+endsnippet
+
+snippet rrp "Router Resource with Parameters"
+$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', ['only' => [$0]]);
+endsnippet
+
+snippet rg "Router Group"
+$router->group([${1}], function ($router) {
+	$0
+});
+endsnippet
+
+snippet rc "Router Closure"
+$router->get('${1:url}', ['as' => '${2}', function () {
+	$0
+}]);
+endsnippet
+
+#----------------------------------------------------------
+# Factory
+#----------------------------------------------------------
+#
+snippet fd "Model Factory"
+$factory->define(${1}::class, function (Faker\Generator $faker) {
+	return [
+		$0
+	];
+});
+endsnippet
+
+snippet fc "Create a new factory object"
+factory(${1:App\\${3:ClassName}}::class)->create(${3:[]});
+endsnippet
+
+#----------------------------------------------------------
+# Schema
+#----------------------------------------------------------
+#
+snippet f "Create a field"
+$table->${1:string}('${2:field}')${3:->nullable()};$0
+endsnippet
+
+snippet fk "Create a foreign field"
+$table->integer('${1:foreign_key}')->unsigned();
+$table->foreign('$1')->references('id')->on('${2:${1/_id/s/g}}')->onDelete('cascade');$0
+endsnippet
+
+snippet fkp "Create a polymorphic relation"
+$table->integer('${1:reference}_id')->unsigned();
+$table->string('$1_type');
+endsnippet
+
+snippet sc "Create a table"
+Schema::create('${1}', function (Blueprint $table) {
+	$table->increments('id');
+
+	$0
+
+	$table->timestamps();
+});
+endsnippet
+
+snippet sd "Drop the table"
+Schema::drop('${1}');
+endsnippet
+
+#----------------------------------------------------------
+# Relations
+#----------------------------------------------------------
+#
+snippet btm "Belongs to Many"
+/**
+ * It belongs to many $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->belongsToMany(${1:model}::class$0);
+}
+endsnippet
+
+snippet bt "Belongs to"
+/**
+ * It belongs to $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->belongsTo(${1:model}::class$0);
+}
+endsnippet
+
+snippet hm "Has many"
+/**
+ * It has many $2.
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasMany
+ */
+public function ${2:${1/\w+\s*/\l$0/g}s}()
+{
+	return $this->hasMany(${1:model}::class$0);
+}
+endsnippet
