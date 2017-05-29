@@ -1,7 +1,6 @@
--e
 --recurse=yes
 --tag-relative=yes
 --exclude=.git
---PHP-kinds=+cf 
+--PHP-kinds=+cf
 --regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
 
