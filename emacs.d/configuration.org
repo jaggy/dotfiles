@@ -152,6 +152,14 @@ All the boilerplate stuff.
 #+BEGIN_SRC emacs-lisp
     (setq web-mode-enable-current-element-highlight 0)
 #+END_SRC
+*** pug-mode
+#+BEGIN_SRC emacs-lisp
+    (add-hook 'pug-mode-hook (
+        lambda()
+
+        (setq tab-width 4)
+    ))
+#+END_SRC
 * Hacks
 ** Create the directory when making files
 #+BEGIN_SRC emacs-lisp
@@ -283,43 +291,6 @@ This looks like a /much/ more better alternative for powerline.
          (add-hook 'vue-mode-hook (
             lambda()
                 (set-face-background 'mmm-default-submode-face "black")
-        ))
-    )
-
-    (defun override-solarized-theme ()
-        (interactive)
-
-        (set-face-attribute 'show-paren-match-face nil :foreground "orange" :underline)
-
-        (set-face-background 'default "white")
-        (set-face-foreground 'default "black")
-        (set-face-background 'linum "white")
-        (set-face-foreground 'vertical-border "white")
-        (set-face-foreground 'org-done "#cb4b16")
-
-        (set-face-background 'linum-relative-current-face "#f2f0e7")
-        (set-face-foreground 'linum-relative-current-face "#b4b9be")
-
-        (set-face-foreground 'vertical-border "white")
-        (set-face-background 'vertical-border "white")
-
-        (set-face-background 'whitespace-tab "#f2f0e7")
-        (set-face-background 'mode-line "#f2f0e7")
-        (set-face-background 'region "#f2f0e7")
-        (set-face-foreground 'region "#black")
-
-        (add-hook 'php-mode-hook (
-            lambda()
-
-            (set-face-foreground 'font-lock-comment-delimiter-face "#b4b9be")
-            (set-face-foreground 'font-lock-comment-face "#b4b9be")
-
-            (set-face-foreground 'font-lock-type-face "blue")
-            (set-face-foreground 'font-lock-constant-face "blue")
-            (set-face-foreground 'font-lock-variable-name-face "blue")
-            (set-face-foreground 'php-annotations-annotation-face "red")
-            (set-face-attribute 'font-lock-keyword-face nil :foreground "red")
-            (set-face-attribute 'font-lock-function-name-face nil :foreground "orange")
         ))
     )
 
