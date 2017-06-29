@@ -273,6 +273,9 @@ This looks like a /much/ more better alternative for powerline.
         (set-face-foreground 'linum-relative-current-face "white")
         (set-face-background 'linum-relative-current-face "black")
 
+        (set-face-foreground 'font-lock-doc-face "#888888")
+        (set-face-foreground 'font-lock-string-face "#ffd771")
+
          (add-hook 'web-mode-hook (
             lambda()
                 (set-face-background 'web-mode-current-element-highlight-face "#222222")
