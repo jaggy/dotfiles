@@ -38,32 +38,6 @@
                         ]
                     },
                     {
-                        "description": "Change enter to control if pressed with other keys, to enter if pressed alone.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "return_or_enter",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "return_or_enter"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Exchange numbers and symbols (1234567890 and !@#$%^&*())",
                         "manipulators": [
                             {
