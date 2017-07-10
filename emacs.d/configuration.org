@@ -160,6 +160,10 @@ All the boilerplate stuff.
         (setq tab-width 4)
     ))
 #+END_SRC
+** Backspace!
+#+BEGIN_SRC emacs-lisp
+  (global-set-key [(control ?h)] 'delete-backward-char)
+#+END_SRC
 * Hacks
 ** Create the directory when making files
 #+BEGIN_SRC emacs-lisp
