@@ -162,7 +162,7 @@ All the boilerplate stuff.
 #+END_SRC
 ** Backspace!
 #+BEGIN_SRC emacs-lisp
-  (global-set-key [(control ?h)] 'delete-backward-char)
+    (global-set-key [(control ?h)] 'delete-backward-char)
 #+END_SRC
 * Hacks
 ** Create the directory when making files
@@ -404,6 +404,8 @@ Integrated HELM to have better fuzzy finding support and a better UI feel to it.
 Notes for shortcuts:
 - <kbd>control-c</kbd> + <kbd>o</kdb>
 
+Rebind the ~c-h~ into backspace.
+
 #+BEGIN_SRC emacs-lisp
     (projectile-global-mode)
     (helm-projectile-on)
@@ -412,6 +414,8 @@ Notes for shortcuts:
     (evil-leader/set-key "TAB" 'helm-projectile-switch-project)
 
     (add-hook 'projectile-find-dir-hook 'laravel-mode)
+
+    (define-key helm-map (kbd "C-h") 'delete-backward-char)
 #+END_SRC
 
 ** [[https://github.com/jaypei/emacs-neotree][Neotree]]
