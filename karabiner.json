@@ -12,6 +12,27 @@
                 },
                 "rules": [
                     {
+                        "description": "Bind control+j to return_or_enter",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Change right_control to control if pressed with other keys, to enter if pressed alone.",
                         "manipulators": [
                             {
