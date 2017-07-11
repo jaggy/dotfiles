@@ -163,6 +163,7 @@ All the boilerplate stuff.
 ** Backspace!
 #+BEGIN_SRC emacs-lisp
     (global-set-key [(control ?h)] 'delete-backward-char)
+    (global-set-key [(control ?s)] 'save-buffer)
 #+END_SRC
 * Hacks
 ** Create the directory when making files
@@ -509,6 +510,9 @@ Not sure if the delay'll be fine.
     (setq key-chord-two-keys-delay 0.4)
 
     (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
+    ;; This is when the numbers are remapped.
+    (key-chord-define evil-insert-state-map (kbd ")-") (kbd "->"))
+
     (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
 
     (key-chord-mode 1)
