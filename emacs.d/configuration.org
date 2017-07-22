@@ -450,6 +450,12 @@ Rebind the ~c-h~ into backspace.
             (setq emmet-indentation 4)
     ))
 #+END_SRC
+** PHP
+#+BEGIN_SRC emacs-lisp
+    (make-face-bold 'font-lock-type-face)
+    (make-face-bold 'font-lock-constant-face)
+    (make-face-bold 'web-mode-block-control-face)
+#+END_SRC
 * Keybindings
 ** Vim-esque
 *** Aligning Things
