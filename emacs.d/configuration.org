@@ -72,6 +72,11 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
 * The Basics
 Everything that's about the editor's behavior.
+** Configure Emacs' Defaults
+#+BEGIN_SRC emacs-lisp
+    ;; (server-start)
+    ;; (setq server-socket-dir "~/.emacs.d/server")
+#+END_SRC
 ** Use Spaces. Suck it Richard!
 
 It's all the same when it runs through the compiler.
