@@ -1,6 +1,6 @@
 # The modes {
 setw -g clock-mode-colour colour135
-setw -g mode-attr bold
+# setw -g mode-attr bold
 setw -g mode-fg colour196
 setw -g mode-bg colour238
 # }
@@ -21,25 +21,25 @@ set -g status-fg white
 set -g status-attr dim
 set -g status-left ' #S   '
 set -g status-right ''
-setw -g window-status-current-attr bold
 set -g window-status-separator ''
 
+# setw -g window-status-current-attr bold
 setw -g window-status-current-fg black
-setw -g window-status-current-bg yellow
+setw -g window-status-current-bg "#ff5f00"
 setw -g window-status-current-format '  #I#[fg=black]:#[fg=black]#W #[fg=black] '
 
-setw -g window-status-fg black
-setw -g window-status-bg colour255
-setw -g window-status-format '  #I#[fg=white]:#[fg=black]#W #[fg=blue] '
+setw -g window-status-fg "#5f8798"
+setw -g window-status-bg white
+setw -g window-status-format '  #I:#W   '
 
 setw -g window-status-attr none
-setw -g window-status-bell-attr bold
+# setw -g window-status-bell-attr bold
 setw -g window-status-bell-fg colour255
 setw -g window-status-bell-bg colour1
 # }
 
 # The messages {
-set -g message-attr bold
+# set -g message-attr bold
 set -g message-fg colour232
 set -g message-bg colour166
 set -g message-command-fg blue

@@ -252,7 +252,7 @@ Update the pretty colors.
     ;;     (load-theme 'solarized-light t))
     ;; (require 'color-theme-sanityinc-tomorrow)
 
-    (load-theme 'mustard t)
+    (load-theme 'solarized-light t)
 #+END_SRC
 *** Smart Mode Line
 This looks like a /much/ more better alternative for powerline.
@@ -302,8 +302,27 @@ This looks like a /much/ more better alternative for powerline.
         ))
     )
 
+    (defun override-solarized-light-theme ()
+        (set-face-background 'default "white")
+        (set-face-background 'linum "white")
+        (set-face-background 'linum-relative-current-face "#f2f2f2")
+
+        (set-face-foreground 'font-lock-doc-face "#abb2c9")
+        (set-face-foreground 'font-lock-type-face "#3ba5dc")
+        (set-face-foreground 'font-lock-keyword-face "#f55800")
+        (set-face-foreground 'font-lock-string-face "#85b500")
+
+        (set-face-attribute 'region nil :background "#eeeeee" :foreground "#ff5f00")
+
+        (add-hook 'php-mode-hook (
+            lambda ()
+        ))
+
+    )
+
     (when (not window-system)
-        (override-mustard-theme)
+        (override-solarized-light-theme)
+        ;; (override-mustard-theme)
     )
 #+END_SRC
 ** Change Cursor on States
@@ -330,7 +349,7 @@ Change the cursor different states.
         lambda()
 
         (column-marker-1 80)
-        (set-face-background 'column-marker-1 "dark red")
+        (set-face-background 'column-marker-1 "red")
     ))
 #+END_SRC
 * Every Villain is Lemons
