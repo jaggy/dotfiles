@@ -6,9 +6,9 @@ setw -g mode-bg colour238
 # }
 
 # The panes {
-set -g pane-border-bg black
+set -g pane-border-bg white
 set -g pane-border-fg colour238
-set -g pane-active-border-bg black
+set -g pane-active-border-bg white
 set -g pane-active-border-fg colour51
 # }
 
@@ -16,7 +16,7 @@ set -g pane-active-border-fg colour51
 set -g status-justify left
 set -g status-interval 2
 set -g status-position bottom
-set -g status-bg black
+set -g status-bg "#005f60"
 set -g status-fg colour137
 set -g status-attr dim
 set -g status-left '#S    '
