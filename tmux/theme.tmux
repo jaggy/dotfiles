@@ -17,12 +17,10 @@ set -g status-justify left
 set -g status-interval 2
 set -g status-position bottom
 set -g status-bg "#005f60"
-set -g status-fg colour137
+set -g status-fg white
 set -g status-attr dim
-set -g status-left '#S    '
-set -g status-right ' #[fg=black,bg=blue] %b %d, %Y #[fg=black,bg=green] %l:%M:%S%p '
-set -g status-right-length 100
-set -g status-left-length 20
+set -g status-left ' #S   '
+set -g status-right ''
 setw -g window-status-current-attr bold
 set -g window-status-separator ''
 
@@ -32,7 +30,7 @@ setw -g window-status-current-format '  #I#[fg=black]:#[fg=black]#W #[fg=black] 
 
 setw -g window-status-fg black
 setw -g window-status-bg colour255
-setw -g window-status-format '  #I#[fg=colour237]:#[fg=black]#W #[fg=blue] '
+setw -g window-status-format '  #I#[fg=white]:#[fg=black]#W #[fg=blue] '
 
 setw -g window-status-attr none
 setw -g window-status-bell-attr bold
