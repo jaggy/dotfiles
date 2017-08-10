@@ -262,7 +262,7 @@ Update the pretty colors.
                             ((evil-insert-state-p)  '("#5f0000" . "#ffffff"))
                             ((evil-visual-state-p)  '("#005f87" . "#ffffff"))
                             ((evil-replace-state-p) '("#000000" . "#ffffff"))
-                            ((evil-emacs-state-p)   '("#444488" . "#ffffff"))
+                            ((evil-emacs-state-p)   '("#005f5f" . "#ffffff"))
                             ((buffer-modified-p)    '("#006fa0" . "#ffffff"))
                             (t default-color))))
            (set-face-background 'header-line (car color))
