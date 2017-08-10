@@ -54,7 +54,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
                     column-marker emamux
 
                     ;; PHP Stuff
-                    phpunit
+                    flymake-easy flymake-phpcs phpunit
 
                     ;; Helpers
                     string-inflection inflections
@@ -74,6 +74,8 @@ Everything that's about the editor's behavior.
 #+BEGIN_SRC emacs-lisp
     (global-flycheck-mode)
     (global-hl-line-mode +1)
+    ;; (add-hook 'php-mode-hook 'flymake-phpcs-load)
+    (custom-set-variables '(flymake-phpcs-standard "PSR2"))
     ;; (server-start)
     ;; (setq server-socket-dir "~/.emacs.d/server")
 #+END_SRC
@@ -253,25 +255,33 @@ Update the pretty colors.
 #+END_SRC
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
+    (add-to-list 'display-buffer-alist '("^*Async Shell Command*" . (display-buffer-no-window)))
+    (defun update-tmux (color)
+        (save-window-excursion
+            (async-shell-command
+                (concat "tmux set-option -t $(tmux display-message -p '#S') status-bg \"" color "\""))))
+
     (lexical-let ((default-color (cons (face-background 'mode-line)
                                       (face-foreground 'mode-line))))
      (add-hook 'post-command-hook
        (lambda ()
-         (let ((color (cond ((minibufferp) default-color)
-                            ((evil-normal-state-p)  '("#005f5f" . "#ffffff"))
-                            ((evil-insert-state-p)  '("#5f0000" . "#ffffff"))
-                            ((evil-visual-state-p)  '("#005f87" . "#ffffff"))
-                            ((evil-replace-state-p) '("#000000" . "#ffffff"))
-                            ((evil-emacs-state-p)   '("#005f5f" . "#ffffff"))
-                            ((buffer-modified-p)    '("#006fa0" . "#ffffff"))
-                            (t default-color))))
-           ;; (set-face-background 'header-line (car color))
-           ;; (set-face-foreground 'header-line (cdr color))))))
-           (set-face-background 'mode-line (car color))
-           (set-face-foreground 'mode-line (cdr color))))))
-    ;; (setq-default mode-line-format nil)
-    (setq-default mode-line-format (list " %b  %f"))
-    ;; (setq-default header-line-format (list " %b  %f"))
+         (let ((color (cond ((evil-normal-state-p)  '("#005f5f"))
+                            ((evil-insert-state-p)  '("#5f0000"))
+                            ((evil-visual-state-p)  '("#005f87"))
+                            ((evil-replace-state-p) '("#000000"))
+                            ((evil-emacs-state-p)   '("#005f5f"))
+                            )))
+           (if (or (evil-insert-state-p)
+               (evil-normal-state-p)
+               (evil-visual-state-p)
+               (evil-replace-state-p))
+                   ;; (update-tmux (car color))
+            )))))
+
+        (setq-default mode-line-format nil)
+        (setq-default header-line-format (list " %b  %f"))
+        (set-face-foreground 'header-line "#abb2c9")
+        (set-face-background 'header-line "white")
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.
