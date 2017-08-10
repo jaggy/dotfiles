@@ -185,6 +185,7 @@ All the boilerplate stuff.
 #+BEGIN_SRC emacs-lisp
     (setq ad-redefinition-action 'accept) ;; ad-handle-definition: `find-tag-noselect' got redefined
 #+END_SRC
+** Evil Emamux
 * I Feel Pretty
 ** Display ANSI Colors
 #+BEGIN_SRC emacs-lisp
@@ -252,9 +253,21 @@ Update the pretty colors.
 #+END_SRC
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
-    (setq-default mode-line-format (list "%b  %f"))
-    (setq-default header-line-format mode-line-format)
-    (setq-default mode-line-format nil)
+    (setq-default mode-line-format (list " %b  %f"))
+    (lexical-let ((default-color (cons (face-background 'mode-line)
+                                      (face-foreground 'mode-line))))
+     (add-hook 'post-command-hook
+       (lambda ()
+         (let ((color (cond ((minibufferp) default-color)
+                            ((evil-normal-state-p)  '("#005f5f" . "#ffffff"))
+                            ((evil-insert-state-p)  '("#5f0000" . "#ffffff"))
+                            ((evil-visual-state-p)  '("#005f87" . "#ffffff"))
+                            ((evil-replace-state-p) '("#000000" . "#ffffff"))
+                            ((evil-emacs-state-p)   '("#444488" . "#ffffff"))
+                            ((buffer-modified-p)    '("#006fa0" . "#ffffff"))
+                            (t default-color))))
+           (set-face-background 'mode-line (car color))
+           (set-face-foreground 'mode-line (cdr color))))))
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.
