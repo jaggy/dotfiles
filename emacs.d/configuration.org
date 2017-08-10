@@ -49,11 +49,11 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Web Stuff
                     php-mode web-mode emmet-mode vue-mode markdown-mode yaml-mode
-                    rjsx-mode pug-mode
+                    rjsx-mode pug-mode elixir-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
-                    column-marker elixir-mode emamux kotlin-mode
+                    column-marker emamux
 
                     ;; PHP Stuff
                     phpunit
@@ -263,9 +263,41 @@ Update the pretty colors.
 This looks like a /much/ more better alternative for powerline.
 
 #+BEGIN_SRC emacs-lisp
-    (setq sml/theme 'respectful)
     (setq sml/no-confirm-load-theme t)
+
+    ;; (setq powerline-default-separator-dir '(left . right))
+    ;; (setq sml/theme 'light-powerline)
+    (setq sml/theme 'automatic)
+
+
+    (rich-minority-mode 1)
+
+    (setq sml/mode-width nil)
+    (setq sml/name-width 40)
+
+    (setq sml/line-number-format nil)
+    (setq sml/position-percentage-format nil)
+    (setq sml/size-indication-format nil)
+    (setq sml/shorten-mode-string nil)
+    (setq sml/full-mode-string nil)
+    (setq sml/show-remote nil)
+    (setq sml/mule-info nil)
+    (setq sml/outside-modified-char nil)
+
+    (setq sml/modes nil)
+    (setq sml/show-trailing-N nil)
+
+    (setf rm-blacklist "")
+
+    (setq sml/vc nil)
+    (setq sml/git nil)
+    (setq sml/git-edited nil)
+
+    (setq vc-handled-backends nil)
     (sml/setup)
+
+    (add-to-list 'sml/replacer-regexp-list '("^~/.dotfiles/" ":dotfiles:"))
+    (add-to-list 'sml/replacer-regexp-list '("^~/.code/" ":code:"))
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.
