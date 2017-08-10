@@ -1,5 +1,15 @@
 # Dotfiles
 
+## Todo
+- I wanna use emamux to change tmux's colors when I switch evil mode modes.
+  - teal   - normal
+  - red    - insert
+  - purple - visual
+  - black  - replace
+  - Worst case, let's just use the mode line but I think this is a better challenge.
+- Refactor the configuration.org into just normal elisp stuff.
+- Find a way to colorize the modeline text.
+
 ## Note
 
 ### 2016-11-16

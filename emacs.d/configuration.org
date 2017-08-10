@@ -74,7 +74,6 @@ Everything that's about the editor's behavior.
 #+BEGIN_SRC emacs-lisp
     (global-flycheck-mode)
     (global-hl-line-mode +1)
-    (setq-default cursor-type 'box)
     ;; (server-start)
     ;; (setq server-socket-dir "~/.emacs.d/server")
 #+END_SRC
@@ -329,16 +328,14 @@ Using the [[https://github.com/7696122/evil-terminal-cursor-changer][evil-termin
 Change the cursor different states.
 
 #+BEGIN_SRC emacs-lisp
-    (unless (display-graphic-p)
-         (require 'evil-terminal-cursor-changer)
-         (evil-terminal-cursor-changer-activate) ; or (etcc-on)
-    )
+    (require 'evil-terminal-cursor-changer)
+    (evil-terminal-cursor-changer-activate) ; or (etcc-on)
 
-     (setq evil-motion-state-cursor 'box)  ; █
-     (setq evil-visual-state-cursor 'box)  ; █
-     (setq evil-normal-state-cursor 'box)  ; █
-     (setq evil-insert-state-cursor 'bar)  ; ⎸
-     (setq evil-emacs-state-cursor  'hbar) ; _
+    (setq evil-motion-state-cursor 'box)  ; █
+    (setq evil-visual-state-cursor 'box)  ; █
+    (setq evil-normal-state-cursor 'box)  ; █
+    (setq evil-insert-state-cursor 'bar)  ; ⎸
+    (setq evil-emacs-state-cursor  'hbar) ; _
 #+END_SRC
 
 ** Rulers
