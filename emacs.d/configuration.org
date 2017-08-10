@@ -265,10 +265,13 @@ Update the pretty colors.
                             ((evil-emacs-state-p)   '("#005f5f" . "#ffffff"))
                             ((buffer-modified-p)    '("#006fa0" . "#ffffff"))
                             (t default-color))))
-           (set-face-background 'header-line (car color))
-           (set-face-foreground 'header-line (cdr color))))))
-    (setq-default mode-line-format nil)
-    (setq-default header-line-format (list " %b  %f"))
+           ;; (set-face-background 'header-line (car color))
+           ;; (set-face-foreground 'header-line (cdr color))))))
+           (set-face-background 'mode-line (car color))
+           (set-face-foreground 'mode-line (cdr color))))))
+    ;; (setq-default mode-line-format nil)
+    (setq-default mode-line-format (list " %b  %f"))
+    ;; (setq-default header-line-format (list " %b  %f"))
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.

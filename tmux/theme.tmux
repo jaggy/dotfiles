@@ -44,3 +44,6 @@ set -g message-bg colour166
 set -g message-command-fg blue
 set -g message-command-bg black
 # }
+
+
+set -g status off
