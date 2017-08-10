@@ -42,14 +42,12 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Theming
                     solarized-theme mustard-theme
-                    smart-mode-line-powerline-theme smart-mode-line
 
                     ;; Fuzzy Finder
                     helm projectile helm-projectile helm-ag
 
                     ;; Web Stuff
                     php-mode web-mode emmet-mode vue-mode markdown-mode yaml-mode
-                    rjsx-mode pug-mode elixir-mode
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
@@ -74,6 +72,9 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 Everything that's about the editor's behavior.
 ** Configure Emacs' Defaults
 #+BEGIN_SRC emacs-lisp
+    (global-flycheck-mode)
+    (global-hl-line-mode +1)
+    (setq-default cursor-type 'box)
     ;; (server-start)
     ;; (setq server-socket-dir "~/.emacs.d/server")
 #+END_SRC
@@ -259,45 +260,11 @@ Update the pretty colors.
 
     (load-theme 'solarized-light t)
 #+END_SRC
-*** Smart Mode Line
-This looks like a /much/ more better alternative for powerline.
-
+*** Mode Line
 #+BEGIN_SRC emacs-lisp
-    (setq sml/no-confirm-load-theme t)
-
-    ;; (setq powerline-default-separator-dir '(left . right))
-    ;; (setq sml/theme 'light-powerline)
-    (setq sml/theme 'automatic)
-
-
-    (rich-minority-mode 1)
-
-    (setq sml/mode-width nil)
-    (setq sml/name-width 40)
-
-    (setq sml/line-number-format nil)
-    (setq sml/position-percentage-format nil)
-    (setq sml/size-indication-format nil)
-    (setq sml/shorten-mode-string nil)
-    (setq sml/full-mode-string nil)
-    (setq sml/show-remote nil)
-    (setq sml/mule-info nil)
-    (setq sml/outside-modified-char nil)
-
-    (setq sml/modes nil)
-    (setq sml/show-trailing-N nil)
-
-    (setf rm-blacklist "")
-
-    (setq sml/vc nil)
-    (setq sml/git nil)
-    (setq sml/git-edited nil)
-
-    (setq vc-handled-backends nil)
-    (sml/setup)
-
-    (add-to-list 'sml/replacer-regexp-list '("^~/.dotfiles/" ":dotfiles:"))
-    (add-to-list 'sml/replacer-regexp-list '("^~/.code/" ":code:"))
+    (setq-default mode-line-format (list "%b"))
+    (setq-default header-line-format mode-line-format)
+    (setq-default mode-line-format nil)
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.
@@ -342,20 +309,22 @@ This looks like a /much/ more better alternative for powerline.
     (defun override-solarized-light-theme ()
         (set-face-background 'default "white")
         (set-face-background 'linum "white")
-        (set-face-background 'linum-relative-current-face "#f2f2f2")
+        (set-face-background 'linum-relative-current-face "white")
 
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'font-lock-doc-face "#abb2c9")
         (set-face-foreground 'font-lock-type-face "#3ba5dc")
         (set-face-foreground 'font-lock-keyword-face "#f55800")
         (set-face-foreground 'font-lock-string-face "#85b500")
+        (set-face-background 'lazy-highlight "#f2f2f2")
+        (set-face-background 'hl-line "#f2f2f2")
+        (set-face-foreground 'flycheck-error "white")
 
         (set-face-attribute 'region nil :background "#eeeeee" :foreground "#ff5f00")
 
         (add-hook 'php-mode-hook (
             lambda ()
         ))
-
     )
 
     (when (not window-system)
