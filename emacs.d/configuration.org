@@ -256,10 +256,18 @@ Update the pretty colors.
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
     (add-to-list 'display-buffer-alist '("^*Async Shell Command*" . (display-buffer-no-window)))
+
+    (setq tmux-color "#005f5f")
+
     (defun update-tmux (color)
+        (if (not (string-equal tmux-color color))
+
+        (setq tmux-color color)
+
         (save-window-excursion
-            (async-shell-command
-                (concat "tmux set-option -t $(tmux display-message -p '#S') status-bg \"" color "\""))))
+            (shell-command
+                (concat "tmux set-option -t $(tmux display-message -p '#S') status-bg \"" color "\" &"))
+     )))
 
     (lexical-let ((default-color (cons (face-background 'mode-line)
                                       (face-foreground 'mode-line))))
@@ -271,13 +279,17 @@ Update the pretty colors.
                             ((evil-replace-state-p) '("#000000"))
                             ((evil-emacs-state-p)   '("#005f5f"))
                             )))
+
            (if (or (evil-insert-state-p)
                (evil-normal-state-p)
                (evil-visual-state-p)
+               (evil-emacs-state-p)
                (evil-replace-state-p))
                    ;; (update-tmux (car color))
             )))))
 
+        (defun my-comint-init () (setq comint-process-echoes t))
+        (add-hook 'comint-mode-hook 'my-comint-init)
         (setq-default mode-line-format nil)
         (setq-default header-line-format (list " %b  %f"))
         (set-face-foreground 'header-line "#abb2c9")
