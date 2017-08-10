@@ -19,7 +19,8 @@ set -g status-position bottom
 set -g status-bg black
 set -g status-fg white
 set -g status-attr dim
-set -g status-left '  #S  '
+setw -g status-left ' #S '
+set -g status-right ''
 set -g window-status-separator ''
 
 setw -g window-status-current-attr bold
