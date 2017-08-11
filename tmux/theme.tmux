@@ -25,11 +25,11 @@ set -g status-justify left
 
 setw -g window-status-current-attr bold
 setw -g window-status-current-fg white
-setw -g window-status-current-bg blue
-setw -g window-status-current-format '  #W  '
+setw -g window-status-current-bg "#008282"
+setw -g window-status-current-format '  · #W  '
 
 setw -g window-status-fg white
-setw -g window-status-bg "#58ceff"
+setw -g window-status-bg "#005f5f"
 setw -g window-status-format '  #W  '
 
 setw -g window-status-attr none

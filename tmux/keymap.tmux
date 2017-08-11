@@ -27,7 +27,7 @@ bind-key i select-layout even-horizontal       # resize equal splits
 bind-key o resize-pane -t 2 -x 80              # resize the second pane small
 bind-key ] send-keys -R \; send-keys C-l \; clear-history
 
-bind-key r source-file ~/.tmux.conf \; display "Reloaded!"                  # reload the configuration file
+bind-key r source-file ~/.tmux.conf \; display " Reloaded!"                  # reload the configuration file
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
 
 # This allows an overflow for tmux buffers so the terminal scrollback is readable.
