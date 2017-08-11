@@ -18,10 +18,10 @@ set -g status-interval 2
 set -g status-position bottom
 set -g status-bg "#005f5f"
 set -g status-fg white
-setw -g status-left ' #S '
-set -g status-right ''
+set -g status-left ''
+setw -g status-right ' #S '
 set -g window-status-separator ''
-set -g status-justify right
+set -g status-justify left
 
 setw -g window-status-current-attr bold
 setw -g window-status-current-fg white
