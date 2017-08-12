@@ -11,8 +11,8 @@ class Tmux {
         $this->states = [
             'normal'  => new Color($background = '#005f5f', $highlight = '#008787'),
             'insert'  => new Color($background = '#5f0000', $highlight = '#a60000'),
-            'replace' => new Color($background = '#005f5f', $highlight = '#008787'),
-            'visual'  => new Color($background = '#005f5f', $highlight = '#008787'),
+            'replace' => new Color($background = '#000000', $highlight = '#333333'),
+            'visual'  => new Color($background = '#005e89', $highlight = '#0085c3'),
         ];
     }
 
