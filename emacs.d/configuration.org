@@ -69,7 +69,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 #+END_SRC
 
 * The Basics
-Everything that's about the editor's behavior.
+Everything Evil specific would be here.hing that's about the editor's behavior.
 ** Configure Emacs' Defaults
 #+BEGIN_SRC emacs-lisp
     (global-flycheck-mode)
@@ -255,41 +255,6 @@ Update the pretty colors.
 #+END_SRC
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
-    (add-to-list 'display-buffer-alist '("^*Async Shell Command*" . (display-buffer-no-window)))
-
-    (setq tmux-color "#005f5f")
-
-    (defun update-tmux (color)
-        (if (not (string-equal tmux-color color))
-
-        (setq tmux-color color)
-
-        (save-window-excursion
-            (shell-command
-                (concat "tmux set-option -t $(tmux display-message -p '#S') status-bg \"" color "\" &"))
-     )))
-
-    (lexical-let ((default-color (cons (face-background 'mode-line)
-                                      (face-foreground 'mode-line))))
-     (add-hook 'post-command-hook
-       (lambda ()
-         (let ((color (cond ((evil-normal-state-p)  '("#005f5f"))
-                            ((evil-insert-state-p)  '("#5f0000"))
-                            ((evil-visual-state-p)  '("#005f87"))
-                            ((evil-replace-state-p) '("#000000"))
-                            ((evil-emacs-state-p)   '("#005f5f"))
-                            )))
-
-           (if (or (evil-insert-state-p)
-               (evil-normal-state-p)
-               (evil-visual-state-p)
-               (evil-emacs-state-p)
-               (evil-replace-state-p))
-                   ;; (update-tmux (car color))
-            )))))
-
-        (defun my-comint-init () (setq comint-process-echoes t))
-        (add-hook 'comint-mode-hook 'my-comint-init)
         (setq-default mode-line-format nil)
         (setq-default header-line-format (list " %b  %f"))
         (set-face-foreground 'header-line "#abb2c9")
@@ -331,8 +296,7 @@ Update the pretty colors.
 
          (add-hook 'vue-mode-hook (
             lambda()
-                (set-face-background 'mmm-default-submode-face "black")
-        ))
+                (set-face-background 'mmm-default-submode-face "black")))
     )
 
     (defun override-solarized-light-theme ()
@@ -350,6 +314,10 @@ Update the pretty colors.
         (set-face-foreground 'flycheck-error "white")
 
         (set-face-attribute 'region nil :background "#eeeeee" :foreground "#ff5f00")
+
+        (add-hook 'vue-mode-hook (
+            lambda()
+                (set-face-background 'mmm-default-submode-face "white")))
 
         (add-hook 'php-mode-hook (
             lambda ()
@@ -483,7 +451,6 @@ Rebind the ~c-h~ into backspace.
     (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 #+END_SRC
 ** [[https://github.com/joaotavora/yasnippet][yasnippet]]
-
 #+BEGIN_SRC emacs-lisp
     (setq yas-snippet-dirs
         '("~/.dotfiles/emacs.d/snippets")
@@ -491,12 +458,12 @@ Rebind the ~c-h~ into backspace.
 
     (yas-global-mode 1)
 
-    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas/expand)
+    ;; (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas/expand)
 #+END_SRC
 
 ** Emmet
 #+BEGIN_SRC emacs-lisp
-    (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
+    ;; (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
 
     (add-hook 'emmet-mode-hook (
         lambda ()
