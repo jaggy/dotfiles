@@ -51,7 +51,7 @@ I wish I knew how to clean this up more. I need to lookup how other people do th
 
                     ;; Generic Editor Stuff
                     magit yasnippet key-chord neotree linum-relative flycheck git-gutter
-                    column-marker emamux auto-complete
+                    column-marker auto-complete ac-etags
 
                     ;; PHP Stuff
                     flymake-easy flymake-phpcs phpunit
@@ -199,7 +199,6 @@ All the boilerplate stuff.
 #+BEGIN_SRC emacs-lisp
     (setq ad-redefinition-action 'accept) ;; ad-handle-definition: `find-tag-noselect' got redefined
 #+END_SRC
-** Evil Emamux
 * I Feel Pretty
 ** Display ANSI Colors
 #+BEGIN_SRC emacs-lisp
@@ -407,11 +406,11 @@ Set the agenda files.
     (setq org-log-done 'time)
 #+END_SRC
 ** Mode Specific
-
 We'll put here everything specific for org mode.
 
 #+BEGIN_SRC emacs-lisp
     (setq-default org-tags-column -120)
+    (add-hook 'php-mode-hook 'ac-etags-ac-setup)
 #+END_SRC
 * Plugin Config
 ** Git Gutter
