@@ -410,7 +410,7 @@ We'll put here everything specific for org mode.
 
 #+BEGIN_SRC emacs-lisp
     (setq-default org-tags-column -120)
-    (add-hook 'php-mode-hook 'ac-etags-ac-setup)
+    ;; (add-hook 'php-mode-hook 'ac-etags-ac-setup)
 #+END_SRC
 * Plugin Config
 ** Git Gutter
