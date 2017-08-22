@@ -311,13 +311,15 @@ Update the pretty colors.
     )
 
     (defun override-solarized-light-theme ()
+        (setq blue "#1d75b3")
+
         (set-face-background 'default "white")
         (set-face-background 'linum "white")
         (set-face-background 'linum-relative-current-face "white")
 
         (set-face-foreground 'vertical-border "white")
         (set-face-foreground 'font-lock-doc-face "#abb2c9")
-        (set-face-foreground 'font-lock-type-face "#3ba5dc")
+        (set-face-foreground 'font-lock-type-face blue)
         (set-face-foreground 'font-lock-keyword-face "#f55800")
         (set-face-foreground 'font-lock-string-face "#85b500")
         (set-face-background 'lazy-highlight "#f2f2f2")
@@ -332,6 +334,9 @@ Update the pretty colors.
 
         (add-hook 'php-mode-hook (
             lambda ()
+
+            (set-face-foreground 'font-lock-type-face blue)
+            (set-face-foreground 'php-variable-sigil blue)
         ))
     )
 
