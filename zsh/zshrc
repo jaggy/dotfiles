@@ -28,7 +28,7 @@ stty -ixon                   # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1          # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8    # Fix ZSH and Tmux issues
 export LANG="$LC_ALL"
-export VISUAL="emacsclient -t" # Use nvim for everything
+export VISUAL="nvim"         # Use nvim for everything
 export EDITOR="$VISUAL"
 export TERM=screen-256color  # Font rendering and colors for the terminal
 # export TERM=xterm-256color-italic # Font rendering and colors for the terminal
