@@ -7,7 +7,7 @@ unbind-key j
 unbind-key k
 unbind-key h
 unbind-key l
-unbind -t copy-mode-vi Enter
+unbind -T copy-mode-vi Enter
 
 #------------------------------------------
 # Split Movement
@@ -28,7 +28,7 @@ bind-key o resize-pane -t 2 -x 80              # resize the second pane small
 bind-key ] send-keys -R \; send-keys C-l \; clear-history
 
 bind-key r source-file ~/.tmux.conf \; display " Reloaded!"                  # reload the configuration file
-bind-key -t copy-mode-vi Enter copy-pipe "reattach-to-user-namespace pbcopy" # copy to the pipe when hitting enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # This allows an overflow for tmux buffers so the terminal scrollback is readable.
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
