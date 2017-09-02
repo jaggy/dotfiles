@@ -6,9 +6,9 @@ setw -g mode-bg colour238
 # }
 
 # The panes {
-set -g pane-border-bg white
-set -g pane-border-fg white
-set -g pane-active-border-bg white
+set -g pane-border-bg black
+set -g pane-border-fg black
+set -g pane-active-border-bg black
 set -g pane-active-border-fg colour51
 # }
 

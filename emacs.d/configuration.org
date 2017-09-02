@@ -262,14 +262,16 @@ Update the pretty colors.
 ** [[http://i1.kym-cdn.com/photos/images/newsfeed/000/657/441/933.gif]["Feed Me and Tell Me I'm Pretty!"]]
 *** Theme
 #+BEGIN_SRC emacs-lisp
-    (load-theme 'solarized-light t)
+    (load-theme 'mustard t)
 #+END_SRC
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
         (setq-default mode-line-format nil)
         (setq-default header-line-format (list " %b  %f"))
-        (set-face-foreground 'header-line "#abb2c9")
-        (set-face-background 'header-line "white")
+        ;; (set-face-background 'header-line "white")
+        ;; (set-face-foreground 'header-line "#abb2c9")
+        (set-face-foreground 'header-line "#e6e1cf")
+        (set-face-background 'header-line "black")
 #+END_SRC
 ** Override the Theme
    Let's override theme colors here.
@@ -283,6 +285,7 @@ Update the pretty colors.
         (set-face-background 'vertical-border "black")
         (set-face-background 'org-warning "black")
         (set-face-background 'mode-line "#303030")
+        (set-face-background 'hl-line "#222222")
 
         (set-face-foreground 'linum-relative-current-face "white")
         (set-face-background 'linum-relative-current-face "black")
@@ -341,8 +344,9 @@ Update the pretty colors.
     )
 
     (when (not window-system)
-        (override-solarized-light-theme)
-        ;; (override-mustard-theme)
+        ;; (override-solarized-light-theme)
+        (override-mustard-theme)
+        (set-face-foreground 'highlight nil)
     )
 #+END_SRC
 ** Change Cursor on States
