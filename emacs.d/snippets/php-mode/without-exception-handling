@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: without exception handling
+# key: weh
+# --
+$this->withoutExceptionHandling();
