@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE      # Don't log commands prefixed with a space
 
 ### Shell Config
 #####################################################################
-plugins=(git, laravel)
+plugins=(git, laravel, zsh-iterm-touchbar)
 stty -ixon                   # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1          # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8    # Fix ZSH and Tmux issues
