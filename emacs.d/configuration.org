@@ -267,7 +267,7 @@ Update the pretty colors.
 *** Mode Line
 #+BEGIN_SRC emacs-lisp
         (setq-default mode-line-format nil)
-        (setq-default header-line-format (list " %b  %f"))
+        (setq-default header-line-format (list " %b"))
         ;; (set-face-background 'header-line "white")
         ;; (set-face-foreground 'header-line "#abb2c9")
         (set-face-foreground 'header-line "#e6e1cf")
