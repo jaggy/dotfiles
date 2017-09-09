@@ -6,15 +6,7 @@
 
 namespace `(file-path-to-namespace)`;
 
-class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends Controller
+class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` extends Controller
 {
-    /**
-     * Create a new $1 instance.
-     *
-     * @return $1
-     */
-    public function __construct()
-    {
-        $0
-    }
+    $0
 }

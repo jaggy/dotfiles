@@ -6,7 +6,7 @@
 
 namespace `(file-path-to-namespace)`;
 
-class ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends Model
+class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` extends Model
 {
     $0
 }
