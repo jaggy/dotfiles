@@ -107,6 +107,7 @@ It's all the same when it runs through the compiler.
         lambda()
 
         (setq tab-width 4)
+        (setq sgml-basic-offset 4)
         (setq js-indent-level 4)
     ))
 #+END_SRC
