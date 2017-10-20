@@ -94,6 +94,10 @@ function death () {
 #
 #     source $HOME/.zshrc
 # }
+function theme() {
+    cd site/themes
+    cd "$(ls -t1 -d */ | head -n1)"
+}
 
 #------------------------------------------------------------------------------
 # Nostalgia
