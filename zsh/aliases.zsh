@@ -74,8 +74,8 @@ alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-da
 function gi() { /usr/bin/curl -L -s https://www.gitignore.io/api/$@ ;}
 
 function phptags() {
-    ctags -e -f .git/tags src app vendor
-    # ctags -f .git/tags.vendor vendor
+    ctags -f .git/tags src app htdocs
+    ctags -f .git/tags.vendor vendor
 
     echo "Generated ctags!"
 }

@@ -14,7 +14,6 @@ Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace 
 Plug 'junegunn/vim-easy-align'                                      " Alignment plugin
 Plug 'jiangmiao/auto-pairs'                                         " Auto pairing for braces. Though this fucks up the alignment on certain cases.
 Plug 'rizzatti/dash.vim'
-Plug 'junegunn/goyo.vim'
 
 """ Status bar support
 Plug 'itchyny/lightline.vim'
@@ -51,7 +50,5 @@ Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'dag/vim-fish', { 'for': 'fish' }
 
 call plug#end()

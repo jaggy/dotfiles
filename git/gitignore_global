@@ -1,2 +1,4 @@
 .ctags
 .DS_Store
+tags
+tags.vendor
