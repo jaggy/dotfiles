@@ -47,7 +47,7 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
-Plug 'xsbeats/vim-blade', { 'for': 'blade' }
+Plug 'jwalton512/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
 
