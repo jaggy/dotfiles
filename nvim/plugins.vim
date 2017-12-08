@@ -50,5 +50,6 @@ Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'jwalton512/vim-blade', { 'for': 'blade' }
 Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
+Plug 'StanAngeloff/php.vim', { 'for': ['php'] }
 
 call plug#end()
