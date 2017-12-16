@@ -16,12 +16,7 @@ if m:
 
 class `!p snip.rv=snip.basename` extends Model
 {
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [$0];
+	$0
 }
 endsnippet
 
@@ -37,11 +32,6 @@ if m:
 
 class `!p snip.rv=snip.basename` extends Controller
 {
-	/**
-	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
-	 *
-	 * @return `!p snip.rv=snip.basename`
-	 */
 	public function __construct()
 	{
 		$0
@@ -140,11 +130,6 @@ public function ${2:${1/\w+\s*/\l$0/g}s}()
 endsnippet
 
 snippet bt "Belongs to"
-/**
- * It belongs to $2.
- *
- * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
- */
 public function ${2:${1/\w+\s*/\l$0/g}s}()
 {
 	return $this->belongsTo(${1:model}::class$0);
@@ -152,11 +137,6 @@ public function ${2:${1/\w+\s*/\l$0/g}s}()
 endsnippet
 
 snippet hm "Has many"
-/**
- * It has many $2.
- *
- * @return \Illuminate\Database\Eloquent\Relations\HasMany
- */
 public function ${2:${1/\w+\s*/\l$0/g}s}()
 {
 	return $this->hasMany(${1:model}::class$0);
