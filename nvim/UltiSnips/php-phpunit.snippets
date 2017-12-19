@@ -25,17 +25,20 @@ endsnippet
 snippet tc "Base Test"
 <?php
 
-class `!p snip.rv=snip.basename` extends $1TestCase
-{
-	$2
-}
-endsnippet
+namespace Test`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = '\\' +  m.group().replace('/', '\\')
+`;
 
-snippet ftc "Functional Test"
-<?php
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class `!p snip.rv=snip.basename` extends FunctionalTestCase
+class `!p snip.rv=snip.basename` extends TestCase
 {
+	use RefreshDatabase;
+
 	$2
 }
 endsnippet
