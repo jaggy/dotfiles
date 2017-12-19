@@ -102,6 +102,8 @@ function theme() {
 function phpv() {
     brew unlink php$(php -v | head -n1 | grep -o -E '\d\.\d' | tr -d '.')
     brew link php$1
+
+    valet restart
 }
 
 #------------------------------------------------------------------------------
