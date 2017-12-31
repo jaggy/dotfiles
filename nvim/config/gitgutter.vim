@@ -5,10 +5,10 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified = '·'
 let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_modified_removed = '·-'
+let g:gitgutter_sign_modified_removed = '·'
 
-highlight GitGutterAdd          ctermbg=bg ctermfg=green
-highlight GitGutterChange       ctermbg=bg ctermfg=yellow
-highlight GitGutterChangeDelete ctermbg=bg ctermfg=red
+highlight GitGutterAdd          ctermbg=green       ctermfg=green
+highlight GitGutterChange       ctermbg=lightyellow ctermfg=lightyellow
+highlight GitGutterChangeDelete ctermbg=red         ctermfg=red
 highlight link GitGutterDelete GitGutterChangeDelete
 
