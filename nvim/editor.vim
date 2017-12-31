@@ -1,5 +1,6 @@
-set number                  " Add line numbers
 set relativenumber          " Add relative numbers second to make the current line the line number.
+set norelativenumber
+set norelativenumber!
 set nowrap
 set tabstop=4
 set shiftwidth=4
