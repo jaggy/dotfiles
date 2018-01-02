@@ -24,8 +24,8 @@ Plug 'tpope/vim-fugitive'
 "----------------------------------------------------------------------
 " IDE-esque
 "----------------------------------------------------------------------
-Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }                                              " Previewing file meta.
-Plug 'soramugi/auto-ctags.vim', { 'for': ['php', 'jinja', 'blade'] }  " Auto generate the ctags.
+Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }                " Previewing file meta.
+Plug 'soramugi/auto-ctags.vim', { 'for': ['php'] }          " Auto generate the ctags.
 Plug 'mikewest/vimroom', { 'for': ['md', 'markdown'] }
 
 "----------------------------------------------------------------------
@@ -50,7 +50,6 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'jwalton512/vim-blade', { 'for': 'blade' }
-Plug 'Glench/Vim-Jinja2-Syntax', { 'for': 'jinja' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
 Plug 'StanAngeloff/php.vim', { 'for': ['php'] }
 
