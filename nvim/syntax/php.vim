@@ -1,0 +1,2 @@
+highlight link phpVarSelector phpDefine
+highlight link phpIdentifier phpDefine

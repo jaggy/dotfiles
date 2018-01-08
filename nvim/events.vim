@@ -14,6 +14,7 @@ autocmd BufWritePre * :%s/\s\+$//e                        " Remove trailing spac
 """ Add phpspec functionality only on phpfiles
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpspec.vim
 autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/scripts/phpdependency.vim
+autocmd BufRead,BufNewFile *.php source ~/.dotfiles/nvim/syntax/php.vim
 
 autocmd BufNewFile,BufRead *.js UltiSnipsAddFiletypes javascript-chai
 
