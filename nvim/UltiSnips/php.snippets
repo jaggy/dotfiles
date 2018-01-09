@@ -22,11 +22,6 @@ if m:
 
 class `!p snip.rv=snip.basename`
 {
-	/**
-	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
-	 *
-	 * @return `!p snip.rv=snip.basename`
-	 */
 	public function __construct()
 	{
 		$0
@@ -46,11 +41,6 @@ if m:
 
 class `!p snip.rv=snip.basename` extends ${3:Animal}
 {
-	/**
-	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
-	 *
-	 * @return `!p snip.rv=snip.basename`
-	 */
 	public function __construct()
 	{
 		$0
@@ -63,11 +53,6 @@ snippet cnn "Class without a namespace"
 
 class `!p snip.rv=snip.basename`
 {
-	/**
-	 * Create a new `!p snip.rv=re.sub('([a-z])([A-Z])', '\g<1> \g<2>', snip.basename).lower()`.
-	 *
-	 * @return `!p snip.rv=snip.basename`
-	 */
 	public function __construct()
 	{
 		$0
@@ -84,49 +69,29 @@ endsnippet
 # with `function_exists` validation.
 #
 snippet pbm "Public Method"
-/**
- * ${1:Write the description first!}
- *
- * @return ${4:void}
- */
-public function ${2:function_name}(${3})
+public function ${1:function_name}($23})
 {
 	$0
 }
 endsnippet
 
 snippet prm "Protected Method"
-/**
- * ${1:Write the description first!}
- *
- * @return ${4:void}
- */
-protected function ${2:function_name}(${3})
+protected function ${1:function_name}(${2})
 {
 	$0
 }
 endsnippet
 
 snippet pvm "Private Method"
-/**
- * ${1:Write the description first!}
- *
- * @return ${4:void}
- */
-private function ${2:function_name}(${3})
+private function ${1:function_name}(${2})
 {
 	$0
 }
 endsnippet
 
 snippet fun "Function Helper"
-if (! function_exists('$2')) {
-	/**
-	 * ${1:Write the description first!}
-	 *
-	 * @return ${4:void}
-	 */
-	function ${2:function_name}($3)
+if (! function_exists('$1')) {
+	function ${1:function_name}($2)
 	{
 		$0
 	}
@@ -176,6 +141,10 @@ snippet afn "Anonymous Function" i
 function (${1}) ${2:use (${3})} {
 	$0
 }
+endsnippet
+
+snippet t. "This" i
+$this->
 endsnippet
 
 snippet /- "Pretty Comment"
