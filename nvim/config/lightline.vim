@@ -2,7 +2,8 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'fugitive' ] ],
+      \   'right': [ [  ], [ 'filename' ] ],
       \ },
       \ 'component_function': {
       \     'fugitive': 'LightLineFugitive'
@@ -17,8 +18,8 @@ let g:lightline = {
       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
-      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ 'separator': { 'left': " ", 'right': "" },
+      \ 'subseparator': { 'left': " ", 'right': "" }
       \ }
 
 function! LightLineFugitive()
