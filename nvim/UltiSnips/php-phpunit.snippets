@@ -43,14 +43,10 @@ class `!p snip.rv=snip.basename` extends TestCase
 }
 endsnippet
 
-snippet wt "Test Function"
-/**
- * ${1:test description}.
- *
- * @test
- */
-function ${1/ /_/g}()
+snippet test "Test Function"
+/** @test **/
+function ${1/ ./_/g}()
 {
-	$0
+	${1:test description}$0
 }
 endsnippet

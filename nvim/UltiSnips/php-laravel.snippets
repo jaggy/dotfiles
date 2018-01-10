@@ -45,22 +45,23 @@ endsnippet
 #
 
 snippet rr "Router Resource"
-$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller');
-
+Route::resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller');
 endsnippet
 
 snippet rrp "Router Resource with Parameters"
-$router->resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', ['only' => [$0]]);
+Route::resource('${1:name}', '${2:${1/\w+\s*/\u$0/g}}Controller', [
+	'only' => [$0]
+]);
 endsnippet
 
 snippet rg "Router Group"
-$router->group([${1}], function ($router) {
+Route::group(function ($router) {
 	$0
 });
 endsnippet
 
 snippet rc "Router Closure"
-$router->get('${1:url}', ['as' => '${2}', function () {
+Route::get('${1:url}', ['as' => '${2}', function () {
 	$0
 }]);
 endsnippet
@@ -94,11 +95,6 @@ $table->integer('${1:foreign_key}')->unsigned();
 $table->foreign('$1')->references('id')->on('${2:${1/_id/s/g}}')->onDelete('cascade');$0
 endsnippet
 
-snippet fkp "Create a polymorphic relation"
-$table->integer('${1:reference}_id')->unsigned();
-$table->string('$1_type');
-endsnippet
-
 snippet sc "Create a table"
 Schema::create('${1}', function (Blueprint $table) {
 	$table->increments('id');
@@ -118,11 +114,6 @@ endsnippet
 #----------------------------------------------------------
 #
 snippet btm "Belongs to Many"
-/**
- * It belongs to many $2.
- *
- * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
- */
 public function ${2:${1/\w+\s*/\l$0/g}s}()
 {
 	return $this->belongsToMany(${1:model}::class$0);
