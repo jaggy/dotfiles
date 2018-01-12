@@ -10,6 +10,12 @@ set showmatch               " Show matching pairs
 set lazyredraw              " Redraw only when needed. Makes everything faster.
 set mouse=                  " Disable the mouse for now.
 set background=dark
+set incsearch
+set ignorecase
+set smartcase
+set scrolloff=3
+set sidescrolloff=5
+
 " set termguicolors           " TRUUUUUUUUUUUUEEEEEEEEEEE COLOOOOOOOOOOOORS!! 🎵
 color colorsbox-steighties
 
