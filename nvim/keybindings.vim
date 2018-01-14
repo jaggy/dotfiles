@@ -1,5 +1,4 @@
-nnoremap <F1> <esc>:source ~/.config/nvim/init.vim<CR>:echo "Reloaded neovim config."<CR>
-inoremap <F1> <esc>:source ~/.config/nvim/init.vim<CR>:echo "Reloaded neovim config."<CR>
+nnoremap <leader>r <esc>:source ~/.config/nvim/init.vim<CR>:echo "Reloaded neovim config."<CR>
 inoremap jk <esc>
 nnoremap ; :
 vnoremap ; :
@@ -13,13 +12,14 @@ nnoremap <cr> o<esc>
 nnoremap n nzz
 nnoremap G Gzz
 
+inoremap <C-g> <esc>
 
 "----------------------------------------------------------------------
 " Plugin Shortcuts
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
-nnoremap <C-p> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
-nnoremap <C-t> <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
+nnoremap <leader><space> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
+nnoremap <leader>t <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
 inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
@@ -76,7 +76,7 @@ nnoremap <leader>n :edit %:p:h/
 " inoremap [[<tab> {!!<space>Form::<space>!!}<esc>bhi
 " inoremap {{<space> {{}}<esc>hi<space><space><esc>i
 
-nnoremap <F3> :nohlsearch<CR>
+nnoremap <leader>3 :nohlsearch<CR>
 "----------------------------------------------------------------------
 " Terminal
 "----------------------------------------------------------------------

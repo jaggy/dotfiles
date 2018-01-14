@@ -15,7 +15,7 @@ Plug 'junegunn/vim-easy-align'                                      " Alignment 
 Plug 'jiangmiao/auto-pairs'                                         " Auto pairing for braces. Though this fucks up the alignment on certain cases.
 Plug 'rizzatti/dash.vim'
 Plug 'danro/rename.vim'
-Plug 'junegunn/goyo.vim'
+Plug 'jreybert/vimagit'
 
 """ Status bar support
 Plug 'itchyny/lightline.vim'
@@ -26,7 +26,6 @@ Plug 'tpope/vim-fugitive'
 "----------------------------------------------------------------------
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }                " Previewing file meta.
 Plug 'soramugi/auto-ctags.vim', { 'for': ['php'] }          " Auto generate the ctags.
-Plug 'mikewest/vimroom', { 'for': ['md', 'markdown'] }
 
 "----------------------------------------------------------------------
 " Autocomplete &&  Snippets
