@@ -12,6 +12,7 @@ source ~/.dotfiles/nvim/theme.vim
 "----------------------------------------------------------------------
 " Plugin Configuration
 "----------------------------------------------------------------------
+source ~/.dotfiles/nvim/config/fzf.vim
 source ~/.dotfiles/nvim/config/nerdcommenter.vim
 source ~/.dotfiles/nvim/config/lightline.vim
 source ~/.dotfiles/nvim/config/autotags.vim

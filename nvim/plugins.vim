@@ -4,8 +4,6 @@ call plug#begin('~/.vim/plugged')
 " Editor Features
 "----------------------------------------------------------------------
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }             " Tree View
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " Fuzzy Finder
-Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'                                              " HTML expander
 Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
@@ -16,6 +14,10 @@ Plug 'jiangmiao/auto-pairs'                                         " Auto pairi
 Plug 'rizzatti/dash.vim'
 Plug 'danro/rename.vim'
 Plug 'jreybert/vimagit'
+
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 """ Status bar support
 Plug 'itchyny/lightline.vim'
