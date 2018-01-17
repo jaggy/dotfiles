@@ -18,6 +18,7 @@ inoremap <C-g> <esc>
 " Plugin Shortcuts
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
+nnoremap <leader>r <esc>:NERDTreeFind<CR>
 nnoremap <leader><space> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>t <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
