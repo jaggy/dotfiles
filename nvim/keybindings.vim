@@ -18,7 +18,7 @@ inoremap <C-g> <esc>
 " Plugin Shortcuts
 "----------------------------------------------------------------------
 nnoremap <C-e> <esc>:NERDTreeToggle<CR>
-nnoremap <leader>r <esc>:NERDTreeFind<CR>
+nnoremap <leader>e <esc>:NERDTreeFind<CR>
 nnoremap <leader><space> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>t <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
@@ -37,8 +37,8 @@ nmap ga <Plug>(EasyAlign)
 " Panes
 "----------------------------------------------------------------------
 " Create a split and move to that pane.
-nnoremap <C-w>\| <C-W>vzz
-nnoremap <C-w>- <C-W>szz
+nnoremap <C-w>\| <Nop>
+nnoremap <C-w>- <Nop>
 nnoremap <leader>k <C-W>vzz
 nnoremap <leader>j <C-W>szz
 
