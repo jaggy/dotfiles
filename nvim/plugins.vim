@@ -14,6 +14,7 @@ Plug 'jiangmiao/auto-pairs'                                         " Auto pairi
 Plug 'rizzatti/dash.vim'
 Plug 'danro/rename.vim'
 Plug 'jreybert/vimagit'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
