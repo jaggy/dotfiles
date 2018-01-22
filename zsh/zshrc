@@ -18,7 +18,7 @@ CASE_SENSITIVE="true"         # Remove case sensitive autocorrection
 DISABLE_AUTO_TITLE=true
 DISABLE_CORRECTION="true"     # Disable autocorrection when executing commands
 DEFAULT_USER="jaggy"          # This is to make certain themes look prettier
-setopt HIST_IGNORE_SPACE      # Don't log commands prefixed with a space
+setopt HIST_IGNORE_SPACE      # Do not log commands prefixed with a space
 
 
 ### Shell Config
@@ -81,3 +81,17 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Tiny Care Terminal Twitter API
+# https://github.com/notwaldorf/tiny-care-terminal
+if [ -f ./tiny-care-terminal.zsh ]; then
+    source tiny-care-terminal.zsh
+fi
+
+export TTC_REPOS_DEPTH=2
+export TTC_GITBOT='gitlog'
+export TTC_WEATHER='Manila'
+export TTC_CELSIUS=true
+export TTC_APIKEYS=true
+export TTC_UPDATE_INTERVAL=20
+export TTC_TERMINAL_TITLE=false
