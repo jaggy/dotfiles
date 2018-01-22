@@ -19,9 +19,9 @@ bind-key l select-pane -R
 
 set -g prefix C-a                              # use CTRL-a as a prefix
 set -g allow-rename off                        # Disable renaming.
-bind-key | split-window -h                     # bind | for v splits
+bind-key \ split-window -h                     # bind | for v splits
 bind-key - split-window -v                     # bind - for h splits
-bind-key \ resize -Z                           # bind \ for full screen
+bind-key = resize -Z                           # bind \ for full screen
 bind-key u resize-pane -t 1 -x 80              # resize first pane small
 bind-key i select-layout even-horizontal       # resize equal splits
 bind-key o resize-pane -t 2 -x 80              # resize the second pane small
