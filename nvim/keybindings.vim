@@ -22,13 +22,13 @@ nnoremap <leader>e <esc>:NERDTreeFind<CR>
 nnoremap <leader><space> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>t <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
-inoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
+nnoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
-inoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
-inoremap <leader>tw <esc>:call phpspec#create_function()<cr>
+nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>a
+nnoremap <leader>tw <esc>:call phpspec#create_function()<cr>
 nnoremap <leader>tw <esc>:call phpspec#create_function()<cr>
 nnoremap <leader>da <esc>:call phpdependency#add()<cr>
-inoremap <leader>da <esc>:call phpdependency#add()<cr>
+nnoremap <leader>da <esc>:call phpdependency#add()<cr>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
