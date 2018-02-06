@@ -54,5 +54,6 @@ Plug 'zaiste/tmux.vim', { 'for': 'tmux' }
 Plug 'jwalton512/vim-blade', { 'for': 'blade' }
 Plug 'plasticboy/vim-markdown', { 'for': 'md' }
 Plug 'StanAngeloff/php.vim', { 'for': ['php'] }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()

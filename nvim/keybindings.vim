@@ -22,6 +22,7 @@ nnoremap <leader>e <esc>:NERDTreeFind<CR>
 nnoremap <leader><space> <esc>:silent call fzf#run({'source': 'ag -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>t <esc>:silent call fzf#run({'source': 'ag --skip-vcs-ignores -g "" --ignore-case --hidden', 'sink': 'e', 'down': '40%'})<CR>
 nnoremap <leader>tt :Tagbar<CR>
+nnoremap <leader>ci <Nop>
 nnoremap <leader>ci <esc>:call PhpInsertUse()<CR>a
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>
 nnoremap <leader>ce <esc>:call PhpExpandClass()<CR>a

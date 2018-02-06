@@ -84,8 +84,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Tiny Care Terminal Twitter API
 # https://github.com/notwaldorf/tiny-care-terminal
-if [ -f ./tiny-care-terminal.zsh ]; then
-    source tiny-care-terminal.zsh
+if [ -f ~/.dotfiles/zsh/tiny-care-terminal.zsh ]; then
+    source ~/.dotfiles/zsh/tiny-care-terminal.zsh
 fi
 
 export TTC_REPOS_DEPTH=2
