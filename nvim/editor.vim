@@ -16,8 +16,9 @@ set smartcase
 set scrolloff=3
 set sidescrolloff=5
 
-" set termguicolors           " TRUUUUUUUUUUUUEEEEEEEEEEE COLOOOOOOOOOOOORS!! 🎵
-color colorsbox-steighties
+set termguicolors
+color colorsbox-stnight
+" color colorsbox-steighties
 
 """ Shhhhhhh
 set visualbell
