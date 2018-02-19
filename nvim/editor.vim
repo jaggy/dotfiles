@@ -17,8 +17,12 @@ set scrolloff=3
 set sidescrolloff=5
 
 set termguicolors
+
+" AYU: mirage, light, dark
+let ayucolor="dark"
+colorscheme ayu
 " color old-hope
-color colorsbox-stnight
+" color colorsbox-stnight
 " color colorsbox-steighties
 
 """ Shhhhhhh

@@ -44,6 +44,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 "----------------------------------------------------------------------
 Plug 'mkarmona/colorsbox'
 Plug 'j-tom/vim-old-hope'
+Plug 'ayu-theme/ayu-vim'
 
 "----------------------------------------------------------------------
 " Syntax Highlighting
