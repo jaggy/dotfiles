@@ -17,6 +17,7 @@ set scrolloff=3
 set sidescrolloff=5
 
 set termguicolors
+" color old-hope
 color colorsbox-stnight
 " color colorsbox-steighties
 
