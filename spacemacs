@@ -10,14 +10,14 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs-base
+   dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
    ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
    ;; lazy install any layer that support lazy installation even the layers
    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
-   ;; installation feature and yo u have to explicitly list a layer in the
+   ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
@@ -33,13 +33,13 @@ values."
    '(
      javascript
      php
+     helm
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ivy
-     ;; auto-completion
+     auto-completion
      better-defaults
      emacs-lisp
      git
@@ -305,16 +305,27 @@ before packages are loaded. If you are unsure, you should try in setting them in
   )
 
 (defun dotspacemacs/user-config ()
-  (setq yas-snippet-dirs '("~/.dotfiles/emacs.d/snippets"))
-
   (setq-default line-spacing 0.25)
+
+  (setq yas-snippet-dirs (append yas-snippet-dirs
+                                 '("~/.dotfiles/emacs.d/snippets")))
 
   ;; Ayu Theme
   (load-file "~/.dotfiles/emacs.d/themes/ayu-theme.el")
   (load-theme 'ayu)
 
-  ;; Disable line highlighting
+  (add-to-list 'auto-mode-alist '("\\.blade\\'" . web-mode))
+
   (global-hl-line-mode -1)
+  (global-vi-tilde-fringe-mode -1)
+  (fringe-mode 0)
+
+  (set-face-foreground 'font-lock-function-name-face "#ffae57")
+  (set-face-background 'font-lock-function-name-face "#212733")
+  (set-face-background 'font-lock-comment-face "#212733")
+
+  (add-hook 'js-mode-hook #'(lambda () (set-face-background 'mmm-default-submode-face "#212733")))
+  (add-hook 'php-mode-hook #'(lambda () (set-face-forground 'font-lock-doc-face "#5c6773")))
 
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
@@ -324,8 +335,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
 
   (key-chord-mode t)
-
-
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -335,18 +344,16 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(custom-safe-themes
    (quote
-    ("54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+    ("54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode web-mode vue-mode edit-indirect ssass-mode vue-html-mode string-inflection inflections key-chord phpunit f phpcbf php-extras php-auto-yasnippets yasnippet drupal-mode php-mode unfill smeargle orgit org-projectile org-category-capture org-present org-plus-contrib org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc s markdown-mode magit-gitflow htmlize gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup git-commit ghub let-alist with-editor dash which-key wgrep use-package smex pcre2el macrostep ivy-hydra hydra helm-make helm helm-core popup flx exec-path-from-shell evil-visualstar evil-escape evil goto-chg undo-tree elisp-slime-nav diminish counsel-projectile projectile pkg-info epl counsel swiper ivy bind-map bind-key auto-compile packed async ace-window avy))))
+    (helm-company helm-c-yasnippet fuzzy company-tern dash-functional tern company-statistics company auto-yasnippet ac-ispell auto-complete edit-indirect ssass-mode vue-html-mode org-category-capture alert log4e gntp mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat yasnippet multiple-cursors js2-mode helm-gitignore magit magit-popup git-commit ghub with-editor php-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link ace-jump-helm-line which-key wgrep web-mode web-beautify vue-mode use-package unfill string-inflection smex smeargle phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download mwim markdown-toc magit-gitflow macrostep livid-mode key-chord json-mode js2-refactor js-doc ivy-hydra inflections htmlize helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx exec-path-from-shell evil-visualstar evil-magit evil-escape elisp-slime-nav drupal-mode diminish counsel-projectile coffee-mode bind-map auto-compile ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#D9D7CE" :background "#212733")))))
+ )
