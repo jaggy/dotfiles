@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.dotfiles/spacemacs/layers/")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -324,8 +324,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-face-background 'font-lock-function-name-face "#212733")
   (set-face-background 'font-lock-comment-face "#212733")
 
-  (add-hook 'js-mode-hook #'(lambda () (set-face-background 'mmm-default-submode-face "#212733")))
-
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
 
@@ -335,7 +333,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (key-chord-mode t)
 
-  (load-file "~/.dotfiles/emacs.d/lisp/init-php.el")
+  ;; (autoload 'init-php "~/.dotfiles/emacs.d/lisp/init-php.el")
+  ;; (autoload 'init-js "~/.dotfiles/emacs.d/lisp/init-js.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
