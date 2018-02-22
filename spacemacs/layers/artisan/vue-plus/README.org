@@ -1,7 +1,7 @@
-#+TITLE: php layer
+#+TITLE: artisan/vue-plus layer
 
 # The maximum height of the logo should be 200 pixels.
-[[img/php.png]]
+[[img/artisan/vue-plus.png]]
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
@@ -15,7 +15,7 @@ This layer does wonderful things:
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =php= to the existing =dotspacemacs-configuration-layers= list in this
+add =artisan/vue-plus= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
 * Key bindings
@@ -28,4 +28,3 @@ file.
 # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
 # [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
 # If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
-

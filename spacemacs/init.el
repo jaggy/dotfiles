@@ -331,6 +331,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (key-chord-define evil-insert-state-map (kbd ")-") (kbd "->"))
   (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
 
+  (add-hook 'js-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#212733")))
+
   (key-chord-mode t)
 
   ;; (autoload 'init-php "~/.dotfiles/emacs.d/lisp/init-php.el")
