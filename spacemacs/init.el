@@ -45,6 +45,7 @@ values."
      git
      markdown
      org
+     html
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -56,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(key-chord string-inflection inflections web-mode vue-mode)
+   dotspacemacs-additional-packages '(key-chord string-inflection inflections web-mode vue-mode all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -309,6 +310,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   
   ;; (setq yas-snippet-dirs (append yas-snippet-dirs
   ;;                                '("~/.dotfiles/emacs.d/snippets")))
+  (setq neo-theme 'icons)
 
   ;; Ayu Theme
   (load-file "~/.dotfiles/emacs.d/themes/ayu-theme.el")
@@ -352,7 +354,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet fuzzy company-tern dash-functional tern company-statistics company auto-yasnippet ac-ispell auto-complete edit-indirect ssass-mode vue-html-mode org-category-capture alert log4e gntp mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat yasnippet multiple-cursors js2-mode helm-gitignore magit magit-popup git-commit ghub with-editor php-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link ace-jump-helm-line which-key wgrep web-mode web-beautify vue-mode use-package unfill string-inflection smex smeargle phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download mwim markdown-toc magit-gitflow macrostep livid-mode key-chord json-mode js2-refactor js-doc ivy-hydra inflections htmlize helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx exec-path-from-shell evil-visualstar evil-magit evil-escape elisp-slime-nav drupal-mode diminish counsel-projectile coffee-mode bind-map auto-compile ace-window))))
+    (all-the-icons memoize tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet fuzzy company-tern dash-functional tern company-statistics company auto-yasnippet ac-ispell auto-complete edit-indirect ssass-mode vue-html-mode org-category-capture alert log4e gntp mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat yasnippet multiple-cursors js2-mode helm-gitignore magit magit-popup git-commit ghub with-editor php-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link ace-jump-helm-line which-key wgrep web-mode web-beautify vue-mode use-package unfill string-inflection smex smeargle phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download mwim markdown-toc magit-gitflow macrostep livid-mode key-chord json-mode js2-refactor js-doc ivy-hydra inflections htmlize helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx exec-path-from-shell evil-visualstar evil-magit evil-escape elisp-slime-nav drupal-mode diminish counsel-projectile coffee-mode bind-map auto-compile ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
