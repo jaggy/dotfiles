@@ -4,12 +4,12 @@
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class `(php-class-name buffer-file-name)` extends TestCase
+class `(laravel/class-name buffer-file-name)` extends TestCase
 {
     use RefreshDatabase;
 

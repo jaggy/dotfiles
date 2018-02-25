@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.dotfiles/spacemacs/layers/")
+   dotspacemacs-configuration-layer-path nil
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -40,13 +40,17 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+
      javascript
-     php
+
      helm
      git
      markdown
      html
      org
+
+     php
+     laravel
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -137,7 +141,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Inconsolata"
-                               :size 12
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -224,7 +228,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -306,48 +310,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
-(defun table-name-from-field (field)
-  "Guess the table name from the id."
-  (pluralize-string (replace-regexp-in-string "_id" "" field))
-  )
-
-(defun laravel-create-resource-controller (resource)
-  (setq segments  (split-string resource "\\."))
-  (setq resources (subseq segments 0 -1))
-  (setq model     (last segments))
-  (setq classes   (append (mapcar 'singularize-string resources) model))
-
-  (concat (string-inflection-camelcase-function (mapconcat 'identity classes "_")) "Controller")
-  )
-
-(defun php-class-name (filename)
-  (file-name-nondirectory (file-name-sans-extension filename))
-  )
-
-(defun find-git-repo (dir)
-  (if (string= "/" dir)
-      nil
-    (if (file-exists-p (expand-file-name ".git/" dir))
-        dir
-      (find-git-repo (expand-file-name "../" dir)))))
-
-(defun find-project-root ()
-  (interactive)
-  (if (ignore-errors (eproject-root))
-      (eproject-root)
-    (or (find-git-repo (buffer-file-name)) (file-name-directory (buffer-file-name)))))
-
-(defun file-path-to-namespace ()
-  (interactive)
-  (let (
-        (root (find-project-root))
-        (base (file-name-nondirectory buffer-file-name))
-        )
-    (capitalize (substring (replace-regexp-in-string "/" "\\" (substring buffer-file-name (length root) (* -1 (length base))) t t) 0 -1))
-    )
-  )
-
 (defun dotspacemacs/user-config ()
+  ;; 5CCFE6
+
   (setq create-lockfiles nil)
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
@@ -355,22 +320,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (put 'kill-ring 'history-length 25)
   (setq-default line-spacing 0.25)
 
-  (setq yas-snippet-dirs (append yas-snippet-dirs
-                                 '("~/.dotfiles/emacs.d/snippets")))
-
   (setq neo-theme 'icons)
 
   ;; Ayu Theme
-  (load-file "~/.dotfiles/emacs.d/themes/ayu-theme.el")
+  (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
   (load-theme 'ayu)
 
   (global-hl-line-mode -1)
   (global-vi-tilde-fringe-mode -1)
-
-  (set-face-foreground 'font-lock-function-name-face "#ffae57")
-  (set-face-background 'font-lock-function-name-face "#091a21")
-  (set-face-background 'fringe "#091a21")
-  (set-face-background 'font-lock-comment-face "#091a21")
 
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
   (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -405,15 +362,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
+   '("3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   (quote
-    (focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
+   '(edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#D9D7CE" :background "#091a21" :family "Inconsolata" :foundry "nil" :slant normal :weight normal :height 120 :width normal)))))
+ )
