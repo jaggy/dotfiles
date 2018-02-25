@@ -31,9 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
-     php
-     helm
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -42,10 +40,13 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+     javascript
+     php
+     helm
      git
      markdown
-     org
      html
+     org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -57,7 +58,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(key-chord string-inflection inflections web-mode vue-mode all-the-icons)
+   dotspacemacs-additional-packages '(key-chord string-inflection inflections web-mode vue-mode focus all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -279,7 +280,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -305,35 +306,90 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
+(defun table-name-from-field (field)
+  "Guess the table name from the id."
+  (pluralize-string (replace-regexp-in-string "_id" "" field))
+  )
+
+(defun laravel-create-resource-controller (resource)
+  (setq segments  (split-string resource "\\."))
+  (setq resources (subseq segments 0 -1))
+  (setq model     (last segments))
+  (setq classes   (append (mapcar 'singularize-string resources) model))
+
+  (concat (string-inflection-camelcase-function (mapconcat 'identity classes "_")) "Controller")
+  )
+
+(defun php-class-name (filename)
+  (file-name-nondirectory (file-name-sans-extension filename))
+  )
+
+(defun find-git-repo (dir)
+  (if (string= "/" dir)
+      nil
+    (if (file-exists-p (expand-file-name ".git/" dir))
+        dir
+      (find-git-repo (expand-file-name "../" dir)))))
+
+(defun find-project-root ()
+  (interactive)
+  (if (ignore-errors (eproject-root))
+      (eproject-root)
+    (or (find-git-repo (buffer-file-name)) (file-name-directory (buffer-file-name)))))
+
+(defun file-path-to-namespace ()
+  (interactive)
+  (let (
+        (root (find-project-root))
+        (base (file-name-nondirectory buffer-file-name))
+        )
+    (capitalize (substring (replace-regexp-in-string "/" "\\" (substring buffer-file-name (length root) (* -1 (length base))) t t) 0 -1))
+    )
+  )
+
 (defun dotspacemacs/user-config ()
+  (setq create-lockfiles nil)
+  (setq history-length 100)
+  (put 'minibuffer-history 'history-length 50)
+  (put 'evil-ex-history 'history-length 50)
+  (put 'kill-ring 'history-length 25)
   (setq-default line-spacing 0.25)
-  
-  ;; (setq yas-snippet-dirs (append yas-snippet-dirs
-  ;;                                '("~/.dotfiles/emacs.d/snippets")))
+
+  (setq yas-snippet-dirs (append yas-snippet-dirs
+                                 '("~/.dotfiles/emacs.d/snippets")))
+
   (setq neo-theme 'icons)
 
   ;; Ayu Theme
   (load-file "~/.dotfiles/emacs.d/themes/ayu-theme.el")
   (load-theme 'ayu)
 
-  (add-to-list 'auto-mode-alist '("\\.blade\\'" . web-mode))
-
   (global-hl-line-mode -1)
   (global-vi-tilde-fringe-mode -1)
-  (fringe-mode 0)
 
   (set-face-foreground 'font-lock-function-name-face "#ffae57")
-  (set-face-background 'font-lock-function-name-face "#212733")
-  (set-face-background 'font-lock-comment-face "#212733")
+  (set-face-background 'font-lock-function-name-face "#091a21")
+  (set-face-background 'fringe "#091a21")
+  (set-face-background 'font-lock-comment-face "#091a21")
+
+  (define-key yas-minor-mode-map (kbd "<tab>") nil)
+  (define-key yas-minor-mode-map (kbd "TAB") nil)
+  (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas-expand)
+  ;; #091A21
+
+  (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
 
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
 
+  (key-chord-define evil-insert-state-map (kbd "$$") (kbd "$this->"))
   (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
   (key-chord-define evil-insert-state-map (kbd ")-") (kbd "->"))
   (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
 
-  (add-hook 'js-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#212733")))
+  (add-hook 'mmm-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#091a21")))
+  (add-hook 'php-mode-hook (lambda() (set-face-foreground 'font-lock-doc-face "#5c6773")))
 
   (key-chord-mode t)
 
@@ -350,14 +406,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" default)))
+    ("ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (all-the-icons memoize tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet fuzzy company-tern dash-functional tern company-statistics company auto-yasnippet ac-ispell auto-complete edit-indirect ssass-mode vue-html-mode org-category-capture alert log4e gntp mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat yasnippet multiple-cursors js2-mode helm-gitignore magit magit-popup git-commit ghub with-editor php-mode ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link ace-jump-helm-line which-key wgrep web-mode web-beautify vue-mode use-package unfill string-inflection smex smeargle phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit org-projectile org-present org-pomodoro org-mime org-download mwim markdown-toc magit-gitflow macrostep livid-mode key-chord json-mode js2-refactor js-doc ivy-hydra inflections htmlize helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx exec-path-from-shell evil-visualstar evil-magit evil-escape elisp-slime-nav drupal-mode diminish counsel-projectile coffee-mode bind-map auto-compile ace-window))))
+    (focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:foreground "#D9D7CE" :background "#091a21" :family "Inconsolata" :foundry "nil" :slant normal :weight normal :height 120 :width normal)))))
