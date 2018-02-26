@@ -1,4 +1,4 @@
-;;; packages.el --- artisan/php-plus layer packages file for Spacemacs.
+;;; packages.el --- php-plus/php-plus layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `artisan/php-plus-packages'. Then, for each package PACKAGE:
+;; added to `php-plus/php-plus-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `artisan/php-plus/init-PACKAGE' to load and initialize the package.
+;;   function `php-plus/php-plus/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `artisan/php-plus/pre-init-PACKAGE' and/or
-;;   `artisan/php-plus/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `php-plus/php-plus/pre-init-PACKAGE' and/or
+;;   `php-plus/php-plus/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst artisan/php-plus-packages
+(defconst php-plus/php-plus-packages
   '(php-mode)
-  "The list of Lisp packages required by the artisan/php-plus layer.
+  "The list of Lisp packages required by the php-plus/php-plus layer.
 
 Each entry is either:
 
@@ -59,7 +59,7 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-(defun artisan/init-php-mode ()
+(defun php-plus/init-php-mode ()
   (use-package php-mode
     :defer t
     :config

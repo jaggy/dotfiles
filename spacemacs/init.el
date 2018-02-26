@@ -257,7 +257,7 @@ values."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-inactive-transparency 60
    ;; If non nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
@@ -350,7 +350,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; (add-hook 'mmm-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#091a21")))
   ;; (add-hook 'php-mode-hook (lambda() (set-face-foreground 'font-lock-doc-face "#5c6773")))
--
+
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
 
