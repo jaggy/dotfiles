@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: constructor methid
+# key: construct
+# --
+public function __construct($1)
+{
+$0
+}

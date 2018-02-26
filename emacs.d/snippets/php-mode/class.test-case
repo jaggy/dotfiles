@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: test case
-# key: tc
+# key: testcase
 # --
 <?php
 

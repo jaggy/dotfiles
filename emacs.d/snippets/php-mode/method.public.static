@@ -2,11 +2,6 @@
 # name: public static method
 # key: pbsm
 # --
-/**
- * ${1:Write the description first!}
- *
- * @return ${4:void}
- */
 public static function ${2:function_name}($3)
 {
     $0

@@ -4,11 +4,11 @@
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
 use Illuminate\Support\Facades\Facade;
 
-class `(php-class-name buffer-file-name)` extends Facade
+class `(laravel/class-name buffer-file-name)` extends Facade
 {
     protected static function getFacadeAccessor()
     {

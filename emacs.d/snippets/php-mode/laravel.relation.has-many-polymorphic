@@ -2,11 +2,6 @@
 # name: has many polymorphic
 # key: hmp
 # --
-/**
- * It has many ${1:$(pluralize-string (string-inflection-underscore-function yas-text))}.
- *
- * @return \Illuminate\Database\Eloquent\Relations\MorphMany
- */
 public function ${1:$(pluralize-string (string-inflection-underscore-function yas-text))}()
 {
     return $this->morphMany(${1:User}::class, '${1:$(string-inflection-underscore-function yas-text)}able');

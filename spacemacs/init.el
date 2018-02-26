@@ -37,7 +37,11 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-tab-key-behavior nil
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-private-snippets-directory "~/.dotfiles/emacs.d/snippets")
      better-defaults
      emacs-lisp
 
@@ -50,6 +54,7 @@ values."
      org
 
      php
+     ;; php-plus
      laravel
      (shell :variables
             shell-default-height 30
@@ -62,7 +67,16 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(key-chord string-inflection inflections web-mode vue-mode focus all-the-icons)
+   dotspacemacs-additional-packages
+   '(
+     key-chord
+     string-inflection
+     inflections
+     web-mode
+     vue-mode
+     focus
+     all-the-icons
+     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -98,7 +112,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -125,8 +139,8 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((projects . 7)
+                                (recents . 5))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -140,8 +154,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
-                               :size 14
+   dotspacemacs-default-font '("InconsolataG"
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -195,7 +209,7 @@ values."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location nil
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
@@ -298,7 +312,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup "trailing"
    ))
 
 (defun dotspacemacs/user-init ()
@@ -313,7 +327,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
 (defun dotspacemacs/user-config ()
   ;; 5CCFE6
 
-  (setq create-lockfiles nil)
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
   (put 'evil-ex-history 'history-length 50)
@@ -329,29 +342,25 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (global-hl-line-mode -1)
   (global-vi-tilde-fringe-mode -1)
 
-  (define-key yas-minor-mode-map (kbd "<tab>") nil)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'yas-expand)
-  ;; #091A21
+  (global-set-key (kbd "TAB") 'hippie-expand)
+  ;; (global-set-key (kbd "TAB") 'indent-for-tab-command)
 
   (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
 
+  ;; (add-hook 'mmm-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#091a21")))
+  ;; (add-hook 'php-mode-hook (lambda() (set-face-foreground 'font-lock-doc-face "#5c6773")))
+-
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
+
 
   (key-chord-define evil-insert-state-map (kbd "$$") (kbd "$this->"))
   (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
   (key-chord-define evil-insert-state-map (kbd ")-") (kbd "->"))
   (key-chord-define evil-insert-state-map (kbd "-=") (kbd "=>"))
 
-  (add-hook 'mmm-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#091a21")))
-  (add-hook 'php-mode-hook (lambda() (set-face-foreground 'font-lock-doc-face "#5c6773")))
-
   (key-chord-mode t)
-
-  ;; (autoload 'init-php "~/.dotfiles/emacs.d/lisp/init-php.el")
-  ;; (autoload 'init-js "~/.dotfiles/emacs.d/lisp/init-js.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

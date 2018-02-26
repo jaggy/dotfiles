@@ -1,18 +1,13 @@
 # -*- mode: snippet -*-
-# name: class
-# key: cl
+# name: class with a namespace
+# key: class
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
-class `(php-class-name buffer-file-name)`
+class `(laravel/class-name buffer-file-name)`
 {
-    /**
-     * Create a new `(php-class-name buffer-file-name)` instance.
-     *
-     * @return `(php-class-name buffer-file-name)`
-     */
     public function __construct()
     {
         $0

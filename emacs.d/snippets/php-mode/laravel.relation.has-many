@@ -2,11 +2,6 @@
 # name: has many
 # key: hm
 # --
-/**
- * It has many ${1:$(pluralize-string (string-inflection-underscore-function yas-text))}.
- *
- * @return \Illuminate\Database\Eloquent\Relations\HasMany
- */
 public function ${1:$(pluralize-string (string-inflection-underscore-function yas-text))}()
 {
     return $this->hasMany(${1:User}::class);

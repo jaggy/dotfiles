@@ -4,7 +4,7 @@
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
 class `(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))` extends Controller
 {

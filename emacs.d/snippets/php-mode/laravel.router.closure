@@ -2,6 +2,6 @@
 # name: laravel router with closure
 # key: rc
 # --
-$router->${1:get}('${2:url}', function ($3) {
+Route::get{1:get}('${2:url}', function ($3) {
     $0
 });

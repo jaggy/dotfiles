@@ -2,11 +2,6 @@
 # name: belongs to
 # key: bt
 # --
-/**
- * It belongs to a ${1:$(string-inflection-underscore-function yas-text)}.
- *
- * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
- */
 public function ${1:$(string-inflection-underscore-function yas-text)}()
 {
     return $this->belongsTo(${1:User}::class);

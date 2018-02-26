@@ -3,11 +3,6 @@
 # key: fun
 # --
 if (! function_exists('$2')) {
-    /**
-    * ${1:Write the description first!}
-    *
-    * @return ${4:void}
-    */
     function ${2:function_name}($3)
     {
         $0

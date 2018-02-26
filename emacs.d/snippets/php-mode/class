@@ -4,13 +4,8 @@
 # --
 <?php
 
-class `(php-class-name buffer-file-name)`
+class `(laravel/class-name buffer-file-name)`
 {
-    /**
-     * Create a new `(php-class-name buffer-file-name)` instance.
-     *
-     * @return `(php-class-name buffer-file-name)`
-     */
     public function __construct()
     {
         $0

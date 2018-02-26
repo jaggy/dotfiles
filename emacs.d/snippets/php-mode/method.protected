@@ -2,12 +2,7 @@
 # name: protected method
 # key: prm
 # --
-/**
- * ${1:Write the description first!}
- *
- * @return ${4:void}
- */
-proteected function ${2:function_name}($3)
+protected function ${2:function_name}($3)
 {
     $0
 }

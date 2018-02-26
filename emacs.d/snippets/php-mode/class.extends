@@ -1,18 +1,13 @@
 # -*- mode: snippet -*-
-# name: extended class
+# name: class extends
 # key: cle
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
-class `(php-class-name buffer-file-name)` extends ${1:ParentClass}
+class `(laravel/class-name buffer-file-name)` extends ${1:ParentClass}
 {
-    /**
-     * Create a new `(php-class-name buffer-file-name)` instance.
-     *
-     * @return `(php-class-name buffer-file-name)`
-     */
     public function __construct()
     {
         $0

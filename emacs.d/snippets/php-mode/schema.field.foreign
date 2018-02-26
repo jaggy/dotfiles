@@ -3,4 +3,4 @@
 # key: fk
 # --
 $table->integer('${1:foreign_key}')->unsigned();
-$table->foreign('$1')->references('id')->on('${1:$(table-name-from-field yas-text)}')->onDelete('cascade');$0
+$table->foreign('$1')->references('id')->on('${1:$(laravel/table-from-field yas-text)}')->onDelete('cascade');$0

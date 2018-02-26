@@ -2,5 +2,4 @@
 # name: polymorphic foreign key
 # key: fkp
 # --
-$table->integer('${1:class}_id')->unsigned();
-$table->string('$1_type');
+$table->morphs('$1');

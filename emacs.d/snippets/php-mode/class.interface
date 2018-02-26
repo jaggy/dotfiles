@@ -4,9 +4,9 @@
 # --
 <?php
 
-namespace `(file-path-to-namespace)`;
+namespace `(laravel/namespace)`;
 
-interface `(php-class-name buffer-file-name)` 
+interface `(laravel/class-name buffer-file-name)` 
 {
     $0
 }
