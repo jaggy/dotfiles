@@ -31,7 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -54,6 +53,7 @@ values."
      org
 
      php
+     yaml
      ;; php-plus
      laravel
      (shell :variables
@@ -331,7 +331,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (put 'minibuffer-history 'history-length 50)
   (put 'evil-ex-history 'history-length 50)
   (put 'kill-ring 'history-length 25)
-  (setq-default line-spacing 0.25)
 
   (setq neo-theme 'icons)
 
@@ -343,17 +342,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (global-vi-tilde-fringe-mode -1)
 
   (global-set-key (kbd "TAB") 'hippie-expand)
-  ;; (global-set-key (kbd "TAB") 'indent-for-tab-command)
 
   (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
   ;; (add-hook 'mmm-mode-hook (lambda() (set-face-background 'mmm-default-submode-face "#091a21")))
   ;; (add-hook 'php-mode-hook (lambda() (set-face-foreground 'font-lock-doc-face "#5c6773")))
 
   ;; Keychords!
   (setq key-chord-two-keys-delay 0.4)
-
 
   (key-chord-define evil-insert-state-map (kbd "$$") (kbd "$this->"))
   (key-chord-define evil-insert-state-map (kbd "0-") (kbd "->"))
