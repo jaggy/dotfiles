@@ -32,7 +32,6 @@
 (defconst laravel-packages
   '())
 
-
 (defun laravel/guess-table-from-field (field)
   "Guess the table name from the foreign key."
   (pluralize-string (replace-regexp-in-string "_id" "" field)))

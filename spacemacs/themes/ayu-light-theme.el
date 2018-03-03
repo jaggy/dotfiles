@@ -13,7 +13,21 @@
 ;;; Code:
 
 (deftheme ayu-light
-  "ayu-light-theme - Created by tmtheme-to-deftheme - 2018-03-03 21:48:45 +0800")
+  "Ayu Light Theme")
+
+(defvar ayu-light-colors
+  '(:black         "#6f7a86"
+    :white         "#fbfbfb"
+    :grey          "#b5bbc1"
+    :grey-dark     "#7f8488"
+    :red           "#ff676c"
+    :green         "#97bd01"
+    :orange        "#ff7f00"
+    :orange-dark   "#fb8f5c"
+    :blue          "#4eb5e1"
+    :blue-dark     "#27b6d8"
+    )
+  "All colors for Ayu Light are defined here.")
 
 (custom-theme-set-variables
  'ayu-light
@@ -23,30 +37,30 @@
  'ayu-light
  ;; basic theming.
 
- '(default ((t (:foreground "#61676C" :background "#FAFAFA" ))))
+ '(default ((t (:foreground "#6f7a86" :background "#fbfbfb" ))))
  '(region  ((t (:background "#E9F2F8"))))
- '(cursor  ((t (:background "#FF8F40"))))
+ '(cursor  ((t (:background "#ff7f00"))))
 
  ;; Temporary defaults
- '(linum                               ((t (:foreground "#c0c3c6"  :background "#fafafa" ))))
- '(fringe                              ((t (                       :background "#fafafa" ))))
+ '(linum                               ((t (:foreground "#c0c3c6"  :background "#fbfbfb" ))))
+ '(fringe                              ((t (                       :background "#fbfbfb" ))))
 
- '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight bold                                  ))))
- '(escape-glyph                        ((t (:foreground "orange"   :background nil                                                     ))))
- '(highlight                           ((t (:foreground "orange"   :background nil                                                     ))))
+ '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight regular                                  ))))
+ '(escape-glyph                        ((t (:foreground "#ff7f00"  :background nil                                                     ))))
+ '(highlight                           ((t (:foreground "#ff7f00"  :background nil                                                     ))))
  '(shadow                              ((t (:foreground "#777777"  :background nil                                                     ))))
 
- '(trailing-whitespace                 ((t (:foreground "#FFFFFF"  :background "#C74000"                                               ))))
+ '(trailing-whitespace                 ((t (:foreground "#fbfbfb"  :background "#C74000"                                               ))))
  '(link                                ((t (:foreground "#00b7f0"  :background nil       :underline t                                  ))))
  '(link-visited                        ((t (:foreground "#4488cc"                        :underline t :inherit (link)                  ))))
- '(button                              ((t (:foreground "#FFFFFF"  :background "#444444" :underline t :inherit (link)                  ))))
+ '(button                              ((t (:foreground "#fbfbfb"  :background "#444444" :underline t :inherit (link)                  ))))
  '(next-error                          ((t (                                             :inherit (region)                             ))))
  '(query-replace                       ((t (                                             :inherit (isearch)                            ))))
  '(header-line                         ((t (:foreground "#EEEEEE"  :background "#444444" :box nil :inherit (mode-line)                 ))))
 
  '(mode-line-highlight                 ((t (                                             :box nil                                      ))))
- '(mode-line-emphasis                  ((t (                                             :weight bold                                  ))))
- '(mode-line-buffer-id                 ((t (                                             :box nil :weight bold                         ))))
+ '(mode-line-emphasis                  ((t (                                             :weight regular                                  ))))
+ '(mode-line-buffer-id                 ((t (                                             :box nil :weight regular                         ))))
 
  '(mode-line-inactive                  ((t (:foreground "#61676c"  :background "#e1e1e1" :box nil :weight light :inherit (mode-line)   ))))
  '(mode-line                           ((t (:foreground "#61676c"  :background "#c8c8c8" :box nil ))))
@@ -54,12 +68,12 @@
  '(isearch                             ((t (:foreground "#99ccee"  :background "#444444"                                               ))))
  '(isearch-fail                        ((t (                       :background "#ffaaaa"                                               ))))
  '(lazy-highlight                      ((t (                       :background "#77bbdd"                                               ))))
- '(match                               ((t (                       :background "#3388cc"                                               ))))
+ '(match                               ((t (                       :background "#4eb5e1"                                               ))))
 
  '(tooltip                             ((t (:foreground "black"    :background "LightYellow" :inherit (variable-pitch)                 ))))
 
  '(js3-function-param-face             ((t (:foreground "#BFC3A9"                                                                      ))))
- '(js3-external-variable-face          ((t (:foreground "#F0B090"  :bold t                                                             ))))
+ '(js3-external-variable-face          ((t (:foreground "#F0B090"  :regular t                                                             ))))
 
  '(secondary-selection                 ((t (                       :background "#342858"                                               ))))
  '(cua-rectangle                       ((t (:foreground "#E0E4CC"  :background "#342858" ))))
@@ -68,57 +82,58 @@
  '(magit-item-highlight                ((t (:foreground "white" :background "#1278A8" :inherit nil ))))
 
  ;; flyspell-mode
- '(flyspell-incorrect                  ((t (:underline "#AA0000" :background nil :inherit nil ))))
- '(flyspell-duplicate                  ((t (:underline "#009945" :background nil :inherit nil ))))
+ '(flyspell-incorrect                  ((t (:underline "#ff676c" :background nil :inherit nil ))))
+ '(flyspell-duplicate                  ((t (:underline "#97bd01" :background nil :inherit nil ))))
 
  ;; flymake-mode
- '(flymake-errline                     ((t (:underline "#AA0000" :background nil :inherit nil ))))
- '(flymake-warnline                    ((t (:underline "#009945" :background nil :inherit nil ))))
+ '(flymake-errline                     ((t (:underline "#ff676c" :background nil :inherit nil ))))
+ '(flymake-warnline                    ((t (:underline "#97bd01" :background nil :inherit nil ))))
 
  ;;git-gutter
- '(git-gutter:added                    ((t (:foreground "#609f60" :bold t))))
- '(git-gutter:modified                 ((t (:foreground "#3388cc" :bold t))))
- '(git-gutter:deleted                  ((t (:foreground "#cc3333" :bold t))))
+ '(git-gutter:added                    ((t (:foreground "#97bd01" :regular t))))
+ '(git-gutter:modified                 ((t (:foreground "#4eb5e1" :regular t))))
+ '(git-gutter:deleted                  ((t (:foreground "#ff676c" :regular t))))
 
  '(diff-added                          ((t (:background "#305030"))))
  '(diff-removed                        ((t (:background "#903010"))))
  '(diff-file-header                    ((t (:background "#362145"))))
  '(diff-context                        ((t (:foreground "#E0E4CC"))))
- '(diff-changed                        ((t (:foreground "#3388cc"))))
+ '(diff-changed                        ((t (:foreground "#4eb5e1"))))
  '(diff-hunk-header                    ((t (:background "#242130"))))
 
 
- '(font-lock-comment-face ((t (:foreground "#ABB0B6" :background "#fafafa"  :italic t))))
- '(font-lock-variable-name-face ((t (:foreground "#61676C"  ))))
- '(font-lock-string-face ((t (:foreground "#86B300"  ))))
- '(font-lock-builtin-face ((t (:foreground "#FF8F40"  ))))
- '(font-lock-function-name-face ((t (:foreground "#F29718"  ))))
- '(js3-function-param-face ((t (:foreground "#FF8F40"  ))))
- '(js2-function-param ((t (:foreground "#FF8F40"  ))))
- '(font-lock-warning-face ((t (:foreground "#FFFFFF" :background "#FA6E32" ))))
- '(diff-added ((t (:foreground "#86B300"  ))))
- '(diff-changed ((t (:foreground "#55B4D4"  ))))
- '(diff-removed ((t (:foreground "#F07171"  ))))
- '(git-gutter:added ((t (:foreground "#86B300"  ))))
- '(git-gutter:modified ((t (:foreground "#55B4D4"  ))))
- '(git-gutter:deleted ((t (:foreground "#F51818"  ))))
- '(git-gutter:untracked ((t (:foreground "#DEE0E1"  ))))
- '(font-lock-comment-delimiter-face ((t (:foreground "#ABB0B6"  :italic t))))
+ '(font-lock-doc-face               ((t (:foreground "#b5bbc1"))))
+ '(font-lock-comment-face           ((t (:foreground "#b5bbc1" :background "#fbfbfb"  :italic t))))
+ '(font-lock-variable-name-face     ((t (:foreground "#61676C"))))
+ '(font-lock-string-face            ((t (:foreground "#86B300"))))
+ '(font-lock-builtin-face           ((t (:foreground "#ff7f00"))))
+ '(font-lock-function-name-face     ((t (:foreground "#fb8f5c"))))
+ '(js3-function-param-face          ((t (:foreground "#ff7f00"))))
+ '(js2-function-param               ((t (:foreground "#ff7f00"))))
+ '(font-lock-warning-face           ((t (:foreground "#fbfbfb" :background "#FA6E32"))))
+ '(diff-added                       ((t (:foreground "#86B300"))))
+ '(diff-changed                     ((t (:foreground "#55B4D4"))))
+ '(diff-removed                     ((t (:foreground "#F07171"))))
+ '(git-gutter:added                 ((t (:foreground "#86B300"))))
+ '(git-gutter:modified              ((t (:foreground "#55B4D4"))))
+ '(git-gutter:deleted               ((t (:foreground "#F51818"))))
+ '(git-gutter:untracked             ((t (:foreground "#DEE0E1"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#b5bbc1" :italic t))))
 
 ;; Rainbow delimiters
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#ac1111"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#bd1313"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#ce1514"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#df1716"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#e9201f"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#eb3130"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#ec4242"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#ee5353"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "#f06464"))))
+ '(rainbow-delimiters-depth-1-face   ((t (:foreground "#ac1111"))))
+ '(rainbow-delimiters-depth-2-face   ((t (:foreground "#bd1313"))))
+ '(rainbow-delimiters-depth-3-face   ((t (:foreground "#ce1514"))))
+ '(rainbow-delimiters-depth-4-face   ((t (:foreground "#df1716"))))
+ '(rainbow-delimiters-depth-5-face   ((t (:foreground "#e9201f"))))
+ '(rainbow-delimiters-depth-6-face   ((t (:foreground "#eb3130"))))
+ '(rainbow-delimiters-depth-7-face   ((t (:foreground "#ec4242"))))
+ '(rainbow-delimiters-depth-8-face   ((t (:foreground "#ee5353"))))
+ '(rainbow-delimiters-depth-9-face   ((t (:foreground "#f06464"))))
  '(rainbow-delimiters-unmatched-face ((t (:foreground "#FF0000"))))
 ) ;; End face definitions
 
-;;;###autoload
+;;;### autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))

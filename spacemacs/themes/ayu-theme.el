@@ -32,8 +32,8 @@
  '(fringe                              ((t (                       :background "#091A21" ))))
 
  '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight bold                                  ))))
- '(escape-glyph                        ((t (:foreground "#95E6CB"   :background nil                                                     ))))
- '(highlight                           ((t (:foreground "#D4BFFF"   :background nil                                                     ))))
+ '(escape-glyph                        ((t (:foreground "#95E6CB"  :background nil                                                     ))))
+ '(highlight                           ((t (:foreground "#D4BFFF"  :background nil                                                     ))))
  '(shadow                              ((t (:foreground "#777777"  :background nil                                                     ))))
 
  '(trailing-whitespace                 ((t (:foreground "#FFFFFF"  :background "#C74000"                                               ))))
