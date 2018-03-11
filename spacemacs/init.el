@@ -352,7 +352,19 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
 
-  
+  (spaceline-toggle-buffer-size-off)
+  (spaceline-toggle-buffer-modified-off)
+  (spaceline-toggle-buffer-encoding-abbrev-off)
+  (spaceline-toggle-buffer-position-off)
+  (spaceline-toggle-point-position-off)
+  (spaceline-toggle-line-column-off)
+  (spaceline-toggle-major-mode-off)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-hud-off)
+  (spaceline-toggle-version-control-off)
+  (spaceline-toggle-selection-info-off)
+
+
   (add-hook 'js2-mode-hook (lambda ()
     (set-face-foreground 'js2-object-property-access "#4eb5e1")
     (set-face-foreground 'error "#ff676c")
@@ -375,6 +387,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (set-face-foreground 'sp-show-pair-match-face "#6f7a86")
     (set-face-foreground 'font-lock-negation-char-face "#ff676c")
     (set-face-foreground 'php-keyword "#ff6310")
+  ))
+
+  (add-hook 'web-mode-hook (lambda ()
+    (set-face-foreground 'web-mode-html-tag-face "#4eb5e1")
+    (set-face-foreground 'web-mode-html-tag-bracket-face "#4eb5e1")
+    (set-face-foreground 'web-mode-html-attr-name-face "#ff7f00")
+    (set-face-foreground 'web-mode-block-delimiter-face "#ff676c")
+    (set-face-foreground 'web-mode-block-control-face "#ff676c")
   ))
 
 
