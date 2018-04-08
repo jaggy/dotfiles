@@ -27,7 +27,7 @@
 
 
 [user]
-    email = i.am@jag.gy
+    email = jaggy@artisan.studio
     name = Jaggy Gauran
 [push]
     default = matching
@@ -36,12 +36,6 @@
     graph = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [filter "media"]
     clean = git media clean %f
     smudge = git media smudge %f
