@@ -332,7 +332,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun dotspacemacs/user-config ()
   (set-face-font 'font-lock-doc-face "Operator Mono")
+  (set-face-font 'font-lock-comment-face "Operator Mono")
   (make-face-italic 'font-lock-doc-face)
+  (make-face-italic 'font-lock-comment-face)
   ;; Disable bold fonts.
   ;; (set-face-bold-p 'bold nil)
 
@@ -385,7 +387,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (set-face-foreground 'js2-object-property-access "#4eb5e1")
     (set-face-foreground 'error "#ff676c")
     (set-face-foreground 'js2-external-variable "#ff676c")
-    (set-face-foreground 'font-lock-keyword-face "#ff7f00")
+    (set-face-foreground 'font-lock-keyword-face "#41c2e9")
     (set-face-foreground 'js2-function-call "#ff7f00")
   ))
 
