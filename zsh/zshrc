@@ -89,9 +89,10 @@ if [ -f ~/.dotfiles/zsh/tiny-care-terminal.zsh ]; then
     source ~/.dotfiles/zsh/tiny-care-terminal.zsh
 fi
 
-export TTC_REPOS_DEPTH=2
-export TTC_GITBOT='gitlog'
-export TTC_WEATHER='Manila'
+export TTC_REPOS="/Users/jaggy/code"
+export TTC_REPOS_DEPTH=1
+export TTC_GITBOT="gitlog"
+export TTC_WEATHER="Manila"
 export TTC_CELSIUS=true
 export TTC_APIKEYS=true
 export TTC_UPDATE_INTERVAL=20
