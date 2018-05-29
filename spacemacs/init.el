@@ -153,8 +153,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -350,9 +350,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq neo-theme 'icons)
 
   ;; Ayu Theme
-  ;; (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
+  (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
   (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
-  (load-theme 'ayu)
+  (load-theme 'ayu-light)
 
   ;; (rainbow-delimiters-mode -1)
   (global-hl-line-mode -1)
@@ -379,9 +379,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (spaceline-toggle-selection-info-off)
 
   (add-hook 'mmm-mode-hook (lambda ()
-    (set-face-background 'mmm-default-submode-face "#0f1419")
-    (set-face-foreground 'font-lock-function-name-face "#41c2e9")
+    ;; Dark Mode
+    ;; (set-face-background 'mmm-default-submode-face "#0f1419")
+    ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
   ))
+
+  ;; Light Mode
+  (set-face-background 'font-lock-function-name-face "#fbfbfb")
 
   (add-hook 'js2-mode-hook (lambda ()
     (set-face-foreground 'js2-object-property-access "#4eb5e1")
