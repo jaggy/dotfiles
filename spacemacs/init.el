@@ -382,6 +382,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;; Dark Mode
     ;; (set-face-background 'mmm-default-submode-face "#0f1419")
     ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
+
+    ;; Light
+    (set-face-background 'mmm-default-submode-face "#fbfbfb")
+    ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
   ))
 
   ;; Light Mode
