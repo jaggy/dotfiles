@@ -153,8 +153,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
-                         spacemacs-dark)
+   dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -254,7 +254,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -331,11 +331,18 @@ before packages are loaded. If you are unsure, you should try in setting them in
   )
 
 (defun dotspacemacs/user-config ()
-  (set-face-font 'font-lock-doc-face "Operator Mono")
-  (set-face-font 'font-lock-comment-face "Operator Mono")
+  ;; (set-face-font 'font-lock-doc-face "Operator Mono")
+  ;; (set-face-font 'font-lock-comment-face "Operator Mono")
   (make-face-italic 'font-lock-doc-face)
   (make-face-italic 'font-lock-comment-face)
-  ;; Disable bold fonts.
+
+
+  ;; Powerline Stuff
+  (setq ns-use-srgb-colorspace nil)
+  ;; (setq powerline-default-separator 'utf-8)
+  ;; (set-face-foreground 'modeline "#41c2e9")
+  ;; (setq powerline-default-separator 'nil)
+
   ;; (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
@@ -352,7 +359,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Ayu Theme
   (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
   (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
-  (load-theme 'ayu-light)
+  (load-theme 'ayu)
+
+  ;; Dark Mode Stuff
+  (set-face-attribute 'vertical-border nil :foreground "#434748")
 
   ;; (rainbow-delimiters-mode -1)
   (global-hl-line-mode -1)
@@ -380,16 +390,16 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (add-hook 'mmm-mode-hook (lambda ()
     ;; Dark Mode
-    ;; (set-face-background 'mmm-default-submode-face "#0f1419")
-    ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
+    (set-face-background 'mmm-default-submode-face "#0f1419")
+    (set-face-foreground 'font-lock-function-name-face "#41c2e9")
 
     ;; Light
-    (set-face-background 'mmm-default-submode-face "#fbfbfb")
+    ;; (set-face-background 'mmm-default-submode-face "#fbfbfb")
     ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
   ))
 
   ;; Light Mode
-  (set-face-background 'font-lock-function-name-face "#fbfbfb")
+  ;; (set-face-background 'font-lock-function-name-face "#fbfbfb")
 
   (add-hook 'js2-mode-hook (lambda ()
     (set-face-foreground 'js2-object-property-access "#4eb5e1")
