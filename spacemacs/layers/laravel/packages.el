@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst laravel-packages
-  '())
+  '(string-inflection))
 
 (defun laravel/guess-table-from-field (field)
   "Guess the table name from the foreign key."

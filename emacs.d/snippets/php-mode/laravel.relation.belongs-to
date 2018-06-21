@@ -2,7 +2,7 @@
 # name: belongs to
 # key: bt
 # --
-public function ${1:$(string-inflection-underscore-function yas-text)}()
+public function ${1:$(singularize-string (string-inflection-lower-camelcase-function yas-text))}()
 {
     return $this->belongsTo(${1:User}::class);
 }

@@ -56,7 +56,6 @@ values."
      php
      yaml
      ;; php-plus
-     laravel
      (shell :variables
             shell-default-term-shell "/bin/zsh"
             shell-default-height 30
@@ -247,14 +246,14 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -346,7 +345,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 4)
+  (setq-default line-spacing 10)
 
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
@@ -355,6 +354,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (setq js2-strict-missing-semi-warning nil)
   (setq neo-theme 'icons)
+
+  (load-file "~/.dotfiles/spacemacs/layers/laravel/packages.el")
 
   ;; Ayu Theme
   (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")

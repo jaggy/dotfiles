@@ -2,7 +2,7 @@
 # name: has many
 # key: hm
 # --
-public function ${1:$(pluralize-string (string-inflection-underscore-function yas-text))}()
+public function ${1:$(pluralize-string (string-inflection-lower-camelcase-function yas-text))}()
 {
     return $this->hasMany(${1:User}::class);
 }
