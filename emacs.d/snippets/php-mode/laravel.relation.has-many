@@ -4,5 +4,5 @@
 # --
 public function ${1:$(pluralize-string (string-inflection-lower-camelcase-function yas-text))}()
 {
-    return $this->hasMany(${1:User}::class);
+    return $this->belongsTo(${1:User}::class);
 }

@@ -55,6 +55,7 @@ values."
 
      php
      yaml
+     laravel
      ;; php-plus
      (shell :variables
             shell-default-term-shell "/bin/zsh"
@@ -72,10 +73,9 @@ values."
    '(
      helm
      key-chord
-     string-inflection
-     inflections
      web-mode
      vue-mode
+     pretty-mode
      focus
      all-the-icons
      (stylus-mode :location (recipe :fetcher github :repo "vladh/stylus-mode"))
@@ -158,8 +158,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
-                               :size 14
+   dotspacemacs-default-font '("Operator Mono"
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -326,15 +326,13 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   )
 
 (defun dotspacemacs/user-config ()
-  ;; (set-face-font 'font-lock-doc-face "Operator Mono")
-  ;; (set-face-font 'font-lock-comment-face "Operator Mono")
   (make-face-italic 'font-lock-doc-face)
   (make-face-italic 'font-lock-comment-face)
-
 
   ;; Powerline Stuff
   (setq ns-use-srgb-colorspace nil)
@@ -353,6 +351,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (put 'kill-ring 'history-length 25)
 
   (setq js2-strict-missing-semi-warning nil)
+  (setq js-indent-level 4)
   (setq neo-theme 'icons)
 
   (load-file "~/.dotfiles/spacemacs/layers/laravel/packages.el")
@@ -455,13 +454,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default))
+   (quote
+    ("8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell)))
+   (quote
+    (pretty-mode stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:foreground "#D9D7CE" :background "#0f1419")))))
