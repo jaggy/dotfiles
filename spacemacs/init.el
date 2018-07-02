@@ -158,8 +158,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Operator Mono"
-                               :size 13
+   dotspacemacs-default-font '("Inconsolata"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -343,7 +343,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 10)
+  (setq-default line-spacing 8)
 
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
@@ -455,7 +455,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
+    ("22c01ac6b8e42978c58bd2ab2d308e64a03000bf77d7b0f939db431e14a092f1" "8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
@@ -465,4 +465,4 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#D9D7CE" :background "#0f1419")))))
+ )
