@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
-source `brew --prefix`/etc/profile.d/z.sh
+# source `brew --prefix`/etc/profile.d/z.sh
 
 ### Environment
 ###  Commands take order of precedence so if you want a native comamnd
@@ -78,7 +78,7 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Tiny Care Terminal Twitter API
 # https://github.com/notwaldorf/tiny-care-terminal
@@ -94,3 +94,5 @@ export TTC_CELSIUS=true
 export TTC_APIKEYS=true
 export TTC_UPDATE_INTERVAL=20
 export TTC_TERMINAL_TITLE=false
+
+source ~/.bin/z/z.sh
