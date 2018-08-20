@@ -8,6 +8,7 @@ alias .....='cd ../../../..'
 alias ll='ls -lah'
 alias sl="ls"
 alias h='cd ~'
+alias open='xdg-open'
 
 #------------------------------------------------------------------------------
 # Git stuff
