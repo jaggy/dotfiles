@@ -62,6 +62,15 @@ alias rec='ffmpeg -f qtkit -video_device_index 0 -i ""'
 # Tail Laravel logs.
 alias logs="tail -f storage/logs/*"
 
+#------------------------------------------------------------------------------
+# Docker Shortcuts
+#------------------------------------------------------------------------------
+alias dpp="docker-compose run app php vendor/bin/phpunit"
+
+function dssh() {
+    docker exec -it $(docker ps --filter "name="$1 -q) bash
+}
+
 
 #------------------------------------------------------------------------------
 # MacOS Specific
@@ -120,7 +129,3 @@ function phpv() {
 # alias migrate='rake db:migrate VERSION=0 && rake db:migrate && ./Console/cake filling.inject && ./Console/cake setup'
 # alias migrate='phinx rollback -t 0 && phinx migrate'
 # alias migrate='art migrate:refresh --seed'
-
-
-
-
