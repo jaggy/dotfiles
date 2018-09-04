@@ -375,6 +375,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; (rainbow-delimiters-mode -1)
   (global-hl-line-mode -1)
   (global-vi-tilde-fringe-mode -1)
+  (spacemacs/toggle-vi-tilde-fringe-off)
 
   (global-set-key (kbd "TAB") 'hippie-expand)
 
