@@ -94,3 +94,4 @@ export TTC_CELSIUS=true
 export TTC_APIKEYS=true
 export TTC_UPDATE_INTERVAL=20
 export TTC_TERMINAL_TITLE=false
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
