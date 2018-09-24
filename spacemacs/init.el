@@ -164,7 +164,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("IBM Plex Mono"
+   dotspacemacs-default-font '("Inconsolata"
                                :size 14
                                :weight normal
                                :width normal
@@ -351,8 +351,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 4)
+  (setq-default line-spacing 14)
 
+  (add-hook 'after-init-hook #'global-emojify-mode)
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
   (put 'evil-ex-history 'history-length 50)
@@ -384,7 +385,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
   (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
 
-  ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
 
   (spaceline-toggle-buffer-size-off)
@@ -474,7 +475,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (ob-elixir flycheck-mix flycheck-credo flycheck alchemist elixir-mode flymake-phpcs sql-indent nginx-mode let-alist rjsx-mode yasnippet-snippets pretty-mode stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
+    (emojify ob-elixir flycheck-mix flycheck-credo flycheck alchemist elixir-mode flymake-phpcs sql-indent nginx-mode let-alist rjsx-mode yasnippet-snippets pretty-mode stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
