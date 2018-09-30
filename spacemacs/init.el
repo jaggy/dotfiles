@@ -164,7 +164,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
+   dotspacemacs-default-font '("IBM Plex Mono"
                                :size 14
                                :weight normal
                                :width normal
@@ -354,7 +354,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 12)
+  (setq-default line-spacing 10)
 
   (setq history-length 100)
   (put 'minibuffer-history 'history-length 50)
@@ -427,6 +427,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ))
 
   (add-hook 'php-mode-hook (lambda ()
+    (set-face-attribute 'php-function-name nil :weight 'bold)
+    (set-face-attribute 'php-method-call nil :weight 'bold)
+
     (make-face-italic 'font-lock-doc-face)
     (set-face-foreground 'font-lock-doc-face "#5c6773")
     (set-face-foreground 'font-lock-type-face "#4eb5e1")
