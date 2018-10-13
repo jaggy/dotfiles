@@ -23,13 +23,13 @@
  'ayu
  ;; basic theming.
 
- '(default ((t (:foreground "#D9D7CE" :background "#0F1419" ))))
+ '(default ((t (:foreground "#D9D7CE" :background "#000000" ))))
  '(region  ((t (:background "#343F4C"))))
  '(cursor  ((t (:background "#FFCC66"))))
 
  ;; Temporary defaults
  '(linum                               ((t (:foreground "#444444"  :background "#333942" ))))
- '(fringe                              ((t (                       :background "#0F1419" ))))
+ '(fringe                              ((t (                       :background "#000000" ))))
 
  '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight bold                                  ))))
  '(escape-glyph                        ((t (:foreground "#95E6CB"  :background nil                                                     ))))
@@ -88,12 +88,12 @@
  '(diff-hunk-header                    ((t (:background "#242130"))))
 
 
- '(font-lock-comment-face ((t (:foreground "#5C6773" :background "#0F1419"  :italic t))))
+ '(font-lock-comment-face ((t (:foreground "#5C6773" :background "#000000"  :italic t))))
  '(font-lock-variable-name-face ((t (:foreground "#D9D7CE"  ))))
  '(font-lock-keyword-face ((t (:foreground "#FFAE57"  ))))
  '(font-lock-constant-face ((t (:foreground "#FFAE57"  ))))
  '(git-gutter:deleted ((t (:foreground "#5CCFE6"  ))))
- '(font-lock-function-name-face ((t (:foreground "#FFAE57" :background "#0F1419"  ))))
+ '(font-lock-function-name-face ((t (:foreground "#FFAE57" :background "#000000"  ))))
  '(font-lock-builtin-face ((t (:foreground "#D4BFFF"  ))))
  '(font-lock-string-face ((t (:foreground "#BAE67E"  :normal t))))
  '(font-lock-type-face ((t (:foreground "#5CCFE6"  ))))
