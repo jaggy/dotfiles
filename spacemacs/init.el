@@ -164,8 +164,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("IBM Plex Mono"
-                               :size 14
+   dotspacemacs-default-font '("Inconsolata"
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -252,10 +252,10 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native nil
+   dotspacemacs-fullscreen-use-non-native t
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
@@ -351,7 +351,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 8)
+  (setq-default line-spacing 16)
 
   (add-hook 'after-init-hook #'global-emojify-mode)
   (setq history-length 100)
