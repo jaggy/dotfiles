@@ -16,8 +16,8 @@
   "Ayu Light Theme")
 
 (defvar ayu-light-colors
-  '(:black         "#6f7a86"
-    :white         "#fbfbfb"
+  '(:black         "#6c7680"
+    :white         "#fafafa"
     :grey          "#b5bbc1"
     :grey-dark     "#7f8488"
     :red           "#ff676c"
@@ -37,23 +37,23 @@
  'ayu-light
  ;; basic theming.
 
- '(default ((t (:foreground "#6f7a86" :background "#fbfbfb" ))))
+ '(default ((t (:foreground "#6c7680" :background "#fafafa" ))))
  '(region  ((t (:background "#E9F2F8"))))
  '(cursor  ((t (:background "#ff7f00"))))
 
  ;; Temporary defaults
- '(linum                               ((t (:foreground "#c0c3c6"  :background "#fbfbfb" ))))
- '(fringe                              ((t (                       :background "#fbfbfb" ))))
+ '(linum                               ((t (:foreground "#c0c3c6"  :background "#fafafa" ))))
+ '(fringe                              ((t (                       :background "#fafafa" ))))
 
  '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight regular                                  ))))
  '(escape-glyph                        ((t (:foreground "#ff7f00"  :background nil                                                     ))))
  '(highlight                           ((t (:foreground "#ff7f00"  :background nil                                                     ))))
  '(shadow                              ((t (:foreground "#777777"  :background nil                                                     ))))
 
- '(trailing-whitespace                 ((t (:foreground "#fbfbfb"  :background "#C74000"                                               ))))
+ '(trailing-whitespace                 ((t (:foreground "#fafafa"  :background "#C74000"                                               ))))
  '(link                                ((t (:foreground "#00b7f0"  :background nil       :underline t                                  ))))
  '(link-visited                        ((t (:foreground "#4488cc"                        :underline t :inherit (link)                  ))))
- '(button                              ((t (:foreground "#fbfbfb"  :background "#444444" :underline t :inherit (link)                  ))))
+ '(button                              ((t (:foreground "#fafafa"  :background "#444444" :underline t :inherit (link)                  ))))
  '(next-error                          ((t (                                             :inherit (region)                             ))))
  '(query-replace                       ((t (                                             :inherit (isearch)                            ))))
  '(header-line                         ((t (:foreground "#EEEEEE"  :background "#444444" :box nil :inherit (mode-line)                 ))))
@@ -103,14 +103,14 @@
 
 
  '(font-lock-doc-face               ((t (:foreground "#b5bbc1"))))
- '(font-lock-comment-face           ((t (:foreground "#b5bbc1" :background "#fbfbfb"  :italic t))))
+ '(font-lock-comment-face           ((t (:foreground "#b5bbc1" :background "#fafafa"  :italic t))))
  '(font-lock-variable-name-face     ((t (:foreground "#61676C"))))
  '(font-lock-string-face            ((t (:foreground "#86B300"))))
  '(font-lock-builtin-face           ((t (:foreground "#ff7f00"))))
- '(font-lock-function-name-face     ((t (:foreground "#fb8f5c"))))
+ '(font-lock-function-name-face     ((t (:foreground "#fb8f5c" :background "#fafafa"))))
  '(js3-function-param-face          ((t (:foreground "#ff7f00"))))
  '(js2-function-param               ((t (:foreground "#ff7f00"))))
- '(font-lock-warning-face           ((t (:foreground "#fbfbfb" :background "#FA6E32"))))
+ '(font-lock-warning-face           ((t (:foreground "#fafafa" :background "#FA6E32"))))
  '(diff-added                       ((t (:foreground "#86B300"))))
  '(diff-changed                     ((t (:foreground "#55B4D4"))))
  '(diff-removed                     ((t (:foreground "#F07171"))))
@@ -119,6 +119,9 @@
  '(git-gutter:deleted               ((t (:foreground "#F51818"))))
  '(git-gutter:untracked             ((t (:foreground "#DEE0E1"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#b5bbc1" :italic t))))
+
+;; MMM Mode
+ '(mmm-default-submode-face         ((t (:background "fafafa"))))
 
 ;; Rainbow delimiters
  '(rainbow-delimiters-depth-1-face   ((t (:foreground "#ac1111"))))

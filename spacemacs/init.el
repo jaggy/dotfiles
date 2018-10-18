@@ -158,8 +158,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -368,7 +368,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Ayu Theme
   (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
   (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
-  (load-theme 'ayu)
+  (load-theme 'ayu-light)
 
   ;; Dark Mode Stuff
   (set-face-attribute 'vertical-border nil :foreground "#434748")
@@ -406,16 +406,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (add-hook 'mmm-mode-hook (lambda ()
     ;; Dark Mode
-    (set-face-background 'mmm-default-submode-face "#0f1419")
-    (set-face-foreground 'font-lock-function-name-face "#41c2e9")
-
-    ;; Light
-    ;; (set-face-background 'mmm-default-submode-face "#fbfbfb")
+    ;; (set-face-background 'mmm-default-submode-face "#0f1419")
     ;; (set-face-foreground 'font-lock-function-name-face "#41c2e9")
   ))
-
-  ;; Light Mode
-  ;; (set-face-background 'font-lock-function-name-face "#fbfbfb")
 
   (add-hook 'js2-mode-hook (lambda ()
     (set-face-foreground 'js2-object-property-access "#4eb5e1")
@@ -471,7 +464,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c05285c2376926290d145e65c8e4ef8e0b1b2dc40d22846f30ec6e008dca0304" "78b434b1be93ee54eb3e9ce2f45de08b34a49fa13f047e5b190a3e1f383030e8" "75f9698e46c1cad4db703205c8aa415fcb72fc90f7760f68a4453cba3928cba6" "b74c55aa0869e8ae1236bf3b3a0ef252565ba76e0e73c224014a34634297a978" "22c01ac6b8e42978c58bd2ab2d308e64a03000bf77d7b0f939db431e14a092f1" "8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
+    ("8fecd286c13548e76f49a73a3ce7a8b743964c1764282ad205a79b98123c363a" "03051a2f5ba1a3d738b538741c77fc091ab23d4d98ec99d3d4bbf6fa88f99074" "c05285c2376926290d145e65c8e4ef8e0b1b2dc40d22846f30ec6e008dca0304" "78b434b1be93ee54eb3e9ce2f45de08b34a49fa13f047e5b190a3e1f383030e8" "75f9698e46c1cad4db703205c8aa415fcb72fc90f7760f68a4453cba3928cba6" "b74c55aa0869e8ae1236bf3b3a0ef252565ba76e0e73c224014a34634297a978" "22c01ac6b8e42978c58bd2ab2d308e64a03000bf77d7b0f939db431e14a092f1" "8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
