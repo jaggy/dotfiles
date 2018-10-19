@@ -41,4 +41,4 @@
     smudge = git media smudge %f
     required = true
 [core]
-	excludesfile = /Users/jaggy/.dotfiles/git/gitignore_global
+	excludesfile = /home/jaggy/.dotfiles/git/gitignore_global
