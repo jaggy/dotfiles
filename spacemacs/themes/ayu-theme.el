@@ -1,5 +1,5 @@
 ;;; ayu-theme.el --- an Emacs 24 theme based on ayu (tmTheme)
-;;
+
 ;;; Author: Auto Converted to Emacs 24 by tmtheme-to-deftheme (tm2deftheme)
 ;;; Version: 1484521107
 ;;; Original author: Ike Ku
@@ -23,13 +23,13 @@
  'ayu
  ;; basic theming.
 
- '(default ((t (:foreground "#D9D7CE" :background "#000000" ))))
+ '(default ((t (:foreground "#D9D7CE" :background "#0d131a" ))))
  '(region  ((t (:background "#343F4C"))))
  '(cursor  ((t (:background "#FFCC66"))))
 
  ;; Temporary defaults
  '(linum                               ((t (:foreground "#444444"  :background "#333942" ))))
- '(fringe                              ((t (                       :background "#000000" ))))
+ '(fringe                              ((t (                       :background "#0d131a" ))))
 
  '(minibuffer-prompt                   ((t (:foreground "#1278A8"  :background nil       :weight bold                                  ))))
  '(escape-glyph                        ((t (:foreground "#95E6CB"  :background nil                                                     ))))
@@ -88,12 +88,12 @@
  '(diff-hunk-header                    ((t (:background "#242130"))))
 
 
- '(font-lock-comment-face ((t (:foreground "#5C6773" :background "#000000"  :italic t))))
+ '(font-lock-comment-face ((t (:foreground "#5C6773" :background "#0d131a"  :italic t))))
  '(font-lock-variable-name-face ((t (:foreground "#D9D7CE"  ))))
  '(font-lock-keyword-face ((t (:foreground "#FFAE57"  ))))
  '(font-lock-constant-face ((t (:foreground "#FFAE57"  ))))
  '(git-gutter:deleted ((t (:foreground "#5CCFE6"  ))))
- '(font-lock-function-name-face ((t (:foreground "#FFAE57" :background "#000000"  ))))
+ '(font-lock-function-name-face ((t (:foreground "#FFAE57" :background "#0d131a"  ))))
  '(font-lock-builtin-face ((t (:foreground "#D4BFFF"  ))))
  '(font-lock-string-face ((t (:foreground "#BAE67E"  :normal t))))
  '(font-lock-type-face ((t (:foreground "#5CCFE6"  ))))
@@ -106,6 +106,13 @@
  '(markdown-link-title-face ((t (:foreground "#FFC44C"  :underline t))))
  '(git-gutter:untracked ((t (:foreground "#5C6773"  ))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#5C6773"  :italic t))))
+
+ ;; Multi Mode
+ '(mmm-default-submode-face   ((t (:background "#0d131a"))))
+ '(js2-object-property-access ((t (:foreground "#4eb5e1"))))
+ '(js2-external-variable      ((t (:foreground "#ff676c"))))
+ '(js2-function-call          ((t (:foreground "#ff7f00"))))
+
 
 ;; Rainbow delimiters
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#4192a1"))))
