@@ -32,7 +32,7 @@
 [push]
     default = matching
 [log]
-    abbrevCommit = true
+    abbrevCommit = false
     graph = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
