@@ -25,7 +25,7 @@ alias gs='git status'
 alias gp='git push'
 alias gt='git tag'
 alias gl='git log'
-alias groot='cd $(git rev-parse --show-cdup)'
+# alias groot='cd $(git rev-parse --show-cdup)'
 alias nah="git reset --hard;git clean -df;"
 
 #------------------------------------------------------------------------------
