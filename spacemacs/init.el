@@ -84,6 +84,8 @@ values."
      all-the-icons
      yasnippet-snippets
      string-inflection
+     string-inflection
+     color-theme-sanityinc-tomorrow
      (stylus-mode :location (recipe :fetcher github :repo "vladh/stylus-mode"))
      stylus-mode
      rjsx-mode
@@ -160,13 +162,14 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
+                         sanityinc-tomorrow-day
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("IBM Plex Mono"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.25)
@@ -350,7 +353,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; (set-face-bold-p 'bold nil)
 
   ;; 5CCFE6
-  (setq-default line-spacing 12)
+  (setq-default line-spacing 16)
 
   (add-hook 'after-init-hook #'global-emojify-mode)
   (setq history-length 100)
@@ -365,9 +368,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (load-file "~/.dotfiles/spacemacs/layers/laravel/packages.el")
 
   ;; Ayu Theme
-  (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
-  (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
-  (load-theme 'ayu)
+  ;; (load-file "~/.dotfiles/spacemacs/themes/ayu-light-theme.el")
+  ;; (load-file "~/.dotfiles/spacemacs/themes/ayu-theme.el")
+  (load-file "~/.dotfiles/spacemacs/themes/ayu-mirage-theme.el")
+  (load-theme 'ayu-mirage)
 
   ;; Dark Mode Stuff
   (set-face-attribute 'vertical-border nil :foreground "#434748")
@@ -447,13 +451,44 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#d6d6d6" "#c82829" "#718c00" "#eab700" "#4271ae" "#8959a8" "#3e999f" "#4d4d4c"))
+ '(beacon-color "#c82829")
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(custom-safe-themes
    (quote
-    ("002d7c6384790dc1e3fce92150a11be1a48971eeb72d1efea564f7a2ff50e452" "6151f9c865d6b1eb0115997dd10a92dc84d38e32d1be3d654e853307321ae566" "4488d0c72c56bcbea8f74338a5e2b87bff8e2432bea85130edbe38bafc567385" "edf100d9307d7eb7c1f906ce5eae94e05b25cf2239111c8781cd7e5fe717c37c" "8f29fb708f98f43a21194685ad5ee6f0776aa7eae7a284eb0bb91a5bd4f3679c" "21299fd39a021d5fcba3614b72dcc7f7287e742c8de6e9fc11ff5a7c08516462" "8fecd286c13548e76f49a73a3ce7a8b743964c1764282ad205a79b98123c363a" "03051a2f5ba1a3d738b538741c77fc091ab23d4d98ec99d3d4bbf6fa88f99074" "c05285c2376926290d145e65c8e4ef8e0b1b2dc40d22846f30ec6e008dca0304" "78b434b1be93ee54eb3e9ce2f45de08b34a49fa13f047e5b190a3e1f383030e8" "75f9698e46c1cad4db703205c8aa415fcb72fc90f7760f68a4453cba3928cba6" "b74c55aa0869e8ae1236bf3b3a0ef252565ba76e0e73c224014a34634297a978" "22c01ac6b8e42978c58bd2ab2d308e64a03000bf77d7b0f939db431e14a092f1" "8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
+    ("af8a0c186fd4eb58b3295180336f9e26ce367aff61ff683d0d609ad1e7ce962f" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "002d7c6384790dc1e3fce92150a11be1a48971eeb72d1efea564f7a2ff50e452" "6151f9c865d6b1eb0115997dd10a92dc84d38e32d1be3d654e853307321ae566" "4488d0c72c56bcbea8f74338a5e2b87bff8e2432bea85130edbe38bafc567385" "edf100d9307d7eb7c1f906ce5eae94e05b25cf2239111c8781cd7e5fe717c37c" "8f29fb708f98f43a21194685ad5ee6f0776aa7eae7a284eb0bb91a5bd4f3679c" "21299fd39a021d5fcba3614b72dcc7f7287e742c8de6e9fc11ff5a7c08516462" "8fecd286c13548e76f49a73a3ce7a8b743964c1764282ad205a79b98123c363a" "03051a2f5ba1a3d738b538741c77fc091ab23d4d98ec99d3d4bbf6fa88f99074" "c05285c2376926290d145e65c8e4ef8e0b1b2dc40d22846f30ec6e008dca0304" "78b434b1be93ee54eb3e9ce2f45de08b34a49fa13f047e5b190a3e1f383030e8" "75f9698e46c1cad4db703205c8aa415fcb72fc90f7760f68a4453cba3928cba6" "b74c55aa0869e8ae1236bf3b3a0ef252565ba76e0e73c224014a34634297a978" "22c01ac6b8e42978c58bd2ab2d308e64a03000bf77d7b0f939db431e14a092f1" "8cc9bab1b52577a11c3d6c9ed5f5222d332150b11e81863a9f6caaee48b5883b" "1547ff02da48d9377953bc8c56894ae17cbcc8eff1fc4fb1b03687e87de23fd4" "8c668dcb7423625d4cfa967c3062250233505905517b59c554856246508c0042" "7903c11f1df38f867f73a24539a673f7b06bcf561353bffa22fe8e873d17d7cd" "13a7b156489c62dde32ecbb6f11a9838744c770ea716cd4adaab69607a279b88" "12876c8ad64847c6d9473e7b43afa9a7c2292ff0241a52317ab828ebc0ac0af5" "b21554df2112e66f87a5eb12465b2ee45117e7f98b1da6e4449e0c4581912fab" "2c4840db3438ac9e08d51ef6ee1660afb2feed1a88be6e0a48f92af3b56a7483" "8bfb9147aa8f88b6bac944b31c2224a774a36d886c9f80aa76b373689793ff63" "0a5ca0e90f2bb580af6f7a6a600f060062b2677d34c8ed92706dfc5b47cbe34b" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "f446475d7dc4e382387edc7cedb8aa231797bcec7f328ffc6914551c6870087a" "3d7701efd75ff45be968bdbfe23ec41df6b8d4fcb0389618717989d991dfe1f0" "54472f6db535c18d72ca876a97ec4a575b5b51d7a3c1b384293b28f1708f961a" "ddc9775fbdcf65b035f27ab865b11c9124fc876d0a9156d9ed78591762db2b09" default)))
  '(evil-want-Y-yank-to-eol nil)
+ '(fci-rule-color "#d6d6d6" t)
+ '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(frame-background-mode (quote light))
  '(package-selected-packages
    (quote
-    (vimrc-mode dactyl-mode emojify ob-elixir flycheck-mix flycheck-credo flycheck alchemist elixir-mode flymake-phpcs sql-indent nginx-mode let-alist rjsx-mode yasnippet-snippets pretty-mode stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell))))
+    (color-theme-sanityinc-tomorrow vimrc-mode dactyl-mode emojify ob-elixir flycheck-mix flycheck-credo flycheck alchemist elixir-mode flymake-phpcs sql-indent nginx-mode let-alist rjsx-mode yasnippet-snippets pretty-mode stylus-mode base16-theme csv-mode edit-indirect ssass-mode vue-html-mode org-plus-contrib mmm-mode markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode projectile pkg-info epl request haml-mode gitignore-mode flx magit magit-popup git-commit ghub with-editor evil goto-chg undo-tree f php-mode web-completion-data s dash-functional tern dash company bind-key yasnippet packed memoize helm avy helm-core async auto-complete popup focus yaml-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs rainbow-delimiters popwin persp-mode paradox spinner org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-link xterm-color which-key web-mode web-beautify vue-mode use-package unfill tagedit string-inflection smeargle slim-mode shell-pop scss-mode sass-mode pug-mode phpunit phpcbf php-extras php-auto-yasnippets pcre2el orgit mwim multi-term markdown-toc magit-gitflow macrostep livid-mode less-css-mode key-chord json-mode js2-refactor js-doc inflections hydra helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy exec-path-from-shell evil-visualstar evil-magit evil-escape eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav drupal-mode diminish company-web company-tern company-statistics coffee-mode bind-map auto-yasnippet auto-compile all-the-icons ace-window ace-jump-helm-line ac-ispell)))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#c82829")
+     (40 . "#f5871f")
+     (60 . "#eab700")
+     (80 . "#718c00")
+     (100 . "#3e999f")
+     (120 . "#4271ae")
+     (140 . "#8959a8")
+     (160 . "#c82829")
+     (180 . "#f5871f")
+     (200 . "#eab700")
+     (220 . "#718c00")
+     (240 . "#3e999f")
+     (260 . "#4271ae")
+     (280 . "#8959a8")
+     (300 . "#c82829")
+     (320 . "#f5871f")
+     (340 . "#eab700")
+     (360 . "#718c00"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
