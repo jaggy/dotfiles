@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE      # Do not log commands prefixed with a space
 
 ### Shell Config
 #####################################################################
-plugins=(git, laravel, zsh-iterm-touchbar)
+plugins=(git laravel)
 stty -ixon                   # Removing the bindings from Ctrl-S
 export KEYTIMEOUT=1          # kill the timeout when pressing escape
 export LC_ALL=en_US.UTF-8    # Fix ZSH and Tmux issues
@@ -54,6 +54,7 @@ export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 # export CYCLES_OPENCL_TEST=all
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 
+PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 PATH=$HOME/.bin:$PATH
 PATH=$HOME/.dotfiles/scripts:$PATH                                       # Load the dotfile scripts.
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH                # PHP Specific
