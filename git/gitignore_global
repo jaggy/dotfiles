@@ -3,3 +3,6 @@
 tags
 tags.vendor
 .ac-php-conf.json
+.idea/
+_ide_helper.php
+.phpstorm.meta.php
