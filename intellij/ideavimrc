@@ -1,2 +1,33 @@
-imap 0- ->
-imap -= =>
+set commentary
+set surround
+set NERDTree
+
+imap jk ->
+imap kl =>
+imap <C-9> (
+imap <C-0> )
+imap <C-j> _
+imap <C-k> =
+nmap ; :
+
+let mapleader=" "
+
+" Navigation
+map <Leader>x <Action>(SearchEverywhere)
+map <Leader>pf <Action>(GotoFile)
+map <Leader>pc <Action>(GotoClass)
+map <Leader>pt <Action>(ActivateTerminalToolWindow)
+map <C-s> :w<Return>
+
+" NerdTree
+map <Leader>e :NERDTreeToggle<Return>
+
+" Splits
+map <Leader>sv :vsplit<Return>
+map <Leader>sh :split<Return>
+map <Leader>l <Action>(NextSplitter)
+map <Leader>h <Action>(PrevSplitter)
+map <Leader>b :e#<Return>
+
+" Create
+:map <Leader>cc <Action>(PhpNewClass)
