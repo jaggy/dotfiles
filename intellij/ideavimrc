@@ -1,6 +1,7 @@
 set commentary
 set surround
 set NERDTree
+set ignorecase
 
 imap jk ->
 imap kl =>
@@ -27,6 +28,7 @@ map <Leader>sv :vsplit<Return>
 map <Leader>sh :split<Return>
 map <Leader>l <Action>(NextSplitter)
 map <Leader>h <Action>(PrevSplitter)
+map <Leader>re <Action>(RenameElement)
 map <Leader>b :e#<Return>
 
 " Create

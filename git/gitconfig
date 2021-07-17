@@ -27,7 +27,7 @@
 
 
 [user]
-    email = jaggy@artisan.studio
+    email = jaggy@humans.ph
     name = Jaggy Gauran
 [push]
     default = matching
@@ -42,3 +42,5 @@
     required = true
 [core]
 	excludesfile = /Users/jaggy/.dotfiles/git/gitignore_global
+[init]
+	defaultBranch = main

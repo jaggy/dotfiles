@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 "----------------------------------------------------------------------
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }             " Tree View
 Plug 'mattn/emmet-vim'                                              " HTML expander
-Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
+" Plug 'airblade/vim-gitgutter'                                       " Show git updates on the gutter.
 Plug 'tpope/vim-surround'                                           " Helper to change surrouding elements.
 Plug 'scrooloose/nerdcommenter'                                     " Comment
 Plug 'arnaud-lb/vim-php-namespace'                                  " Namespace integration
@@ -13,7 +13,7 @@ Plug 'junegunn/vim-easy-align'                                      " Alignment 
 Plug 'jiangmiao/auto-pairs'                                         " Auto pairing for braces. Though this fucks up the alignment on certain cases.
 Plug 'rizzatti/dash.vim'
 Plug 'danro/rename.vim'
-Plug 'jreybert/vimagit'
+" Plug 'jreybert/vimagit'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Fuzzy Finder
