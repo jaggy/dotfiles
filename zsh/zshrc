@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion/tmuxinator.zsh
 source $HOME/.dotfiles/zsh/completion/ssh.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
 source `brew --prefix`/etc/profile.d/z.sh
 
 ### Environment
@@ -79,7 +80,7 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Tiny Care Terminal Twitter API
 # https://github.com/notwaldorf/tiny-care-terminal
