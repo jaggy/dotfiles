@@ -79,7 +79,7 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Tiny Care Terminal Twitter API
 # https://github.com/notwaldorf/tiny-care-terminal

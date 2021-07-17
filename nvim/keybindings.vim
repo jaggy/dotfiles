@@ -1,5 +1,4 @@
 nnoremap <leader>r <esc>:source ~/.config/nvim/init.vim<CR>:echo "Reloaded neovim config."<CR>
-inoremap jk <esc>
 nnoremap ; :
 vnoremap ; :
 nnoremap Q @q
@@ -41,6 +40,7 @@ nmap ga <Plug>(EasyAlign)
 " Create a split and move to that pane.
 nnoremap <C-w>\| <Nop>
 nnoremap <C-w>- <Nop>
+nnoremap <C-w>- <Nop>
 nnoremap <leader>k <C-W>vzz
 nnoremap <leader>j <C-W>szz
 
@@ -51,6 +51,8 @@ nnoremap <leader>j <C-W>szz
 """ Fat and thin arrows.
 inoremap 0- ->
 inoremap -= =>
+inoremap jk ->
+inoremap kl =>
 
 """ Equalize the pane widths.
 nnoremap = <C-w>=
