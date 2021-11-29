@@ -1,7 +1,5 @@
 .ctags
 .DS_Store
-tags
-tags.vendor
 .ac-php-conf.json
 .idea/
 _ide_helper.php

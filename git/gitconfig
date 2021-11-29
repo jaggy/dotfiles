@@ -28,7 +28,7 @@
 
 [user]
     email = jaggy@humans.ph
-    name = Jaggy Gauran
+	name = Jaggy
 [push]
     default = matching
 [log]
@@ -44,3 +44,8 @@
 	excludesfile = /Users/jaggy/.dotfiles/git/gitignore_global
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

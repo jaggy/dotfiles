@@ -1,3 +1,7 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+#### END FIG ENV VARIABLES ####
 #
 # ZSH Configuration
 # Version 3.0.2
@@ -96,8 +100,11 @@ export TTC_CELSIUS=true
 export TTC_APIKEYS=true
 export TTC_UPDATE_INTERVAL=20
 export TTC_TERMINAL_TITLE=false
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/opt/mysql@5.7/bin:$PATH"
 
 if [ -f "$HOME/.zsh_private" ]; then
     source $HOME/.zsh_private
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
