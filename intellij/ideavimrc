@@ -28,6 +28,8 @@ map <Leader>sv :vsplit<Return>
 map <Leader>sh :split<Return>
 map <Leader>l <Action>(NextSplitter)
 map <Leader>h <Action>(PrevSplitter)
+map <Leader>[ <Action>(NextSplitter)
+map <Leader>] <Action>(PrevSplitter)
 map <Leader>re <Action>(RenameElement)
 map <Leader>b :e#<Return>
 map <Leader>rr <Action>(RunClass)
@@ -35,7 +37,7 @@ map <Leader>ra <Action>(ChooseRunConfiguration)
 map <Leader>st <Action>(SurroundWithEmmet)
 
 " Thing
-:map <Leader>ff <Action>(CopyPathFromRepositoryRootProvider)
+:map <Leader>ff <Action>(CopyContentRootPath)
 
 " Create
 :map <Leader>cc <Action>(PhpNewClass)

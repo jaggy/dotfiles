@@ -1,0 +1,32 @@
+title: Hyper
+rules:
+  - description: left_control -> hyper
+    from: left_control
+    to: hyper
+  - description: right_control -> hyper
+    from: right_control
+    to: hyper
+  - description: hyper+k -> up_arrow
+    from: hyper+k
+    to: up_arrow
+  - description: hyper+j -> down_arrow
+    from: hyper+j
+    to: down_arrow
+  - description: hyper+h -> left_arrow
+    from: hyper+h
+    to: left_arrow
+  - description: hyper+l -> right_arrow
+    from: hyper+l
+    to: right_arrow
+  - description: hyper+a -> play_or_pause
+    from: hyper+a
+    to: play_or_pause
+  - description: hyper+d -> volume_increment
+    from: hyper+d
+    to: volume_increment
+  - description: hyper+s -> volume_decrement
+    from: hyper+s
+    to: volume_decrement
+  - description: hyper+f -> mute
+    from: hyper+f
+    to: mute

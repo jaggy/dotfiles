@@ -1,3 +1,4 @@
+unsetopt BEEP
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
@@ -64,8 +65,9 @@ PATH=$HOME/.bin:$PATH
 PATH=$HOME/.dotfiles/scripts:$PATH                                       # Load the dotfile scripts.
 PATH=/usr/local/php5/bin:$HOME/.composer/vendor/bin:$PATH                # PHP Specific
 PATH=vendor/bin/:$PATH                                                   # Relative Paths
+PATH=node_modules/.bin/:$PATH                                            # Relative Paths
 PATH=$HOME/.rvm/bin:$PATH                                                # Ruby
-PATH="/usr/local/Cellar/python3/3.5.2_1/bin:$PATH"                                # Python Libraries
+PATH="/usr/local/Cellar/python3/3.5.2_1/bin:$PATH"                       # Python Libraries
 PATH="$NPM_PACKAGES/bin:$PATH"
 
 # PATH="$HOME/Applications/blender.app/Contents/MacOS:$PATH"             # Blender
@@ -107,4 +109,5 @@ if [ -f "$HOME/.zsh_private" ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export GPG_TTY=$(tty)
 
