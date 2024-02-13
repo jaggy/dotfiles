@@ -2,6 +2,7 @@ set commentary
 set surround
 set NERDTree
 set ignorecase
+set sneak
 
 imap jk ->
 imap kl =>
@@ -10,6 +11,10 @@ imap <C-0> )
 imap <C-j> _
 imap <C-k> =
 nmap ; :
+imap <C-u> _
+imap <C-i> (
+imap <C-o> )
+imap <C-a> =
 
 let mapleader=" "
 
@@ -35,10 +40,13 @@ map <Leader>b :e#<Return>
 map <Leader>rr <Action>(RunClass)
 map <Leader>ra <Action>(ChooseRunConfiguration)
 map <Leader>st <Action>(SurroundWithEmmet)
+map <Leader>wr <Action>(EditorToggleUseSoftWraps)
+map <Leader>j <Action>(ShowNavBar)
 
 " Thing
 :map <Leader>ff <Action>(CopyContentRootPath)
 
 " Create
 :map <Leader>cc <Action>(PhpNewClass)
-:map <Leader>ca <Action>(SvelteCreateComponentAction)
+:map <Leader>cs <Action>(SvelteCreateComponentAction)
+:map <Leader>cv <Action>(CreateVueSingleFileComp)
