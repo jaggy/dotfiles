@@ -16,6 +16,16 @@ return {
             Folded = { bg = "NONE", fg = "#d0d7de" },
             FoldColumn = { fg = "#d0d7de" },
           },
+          github_dark_default = {
+            Normal = { bg = "#000000" },
+            NormalFloat = { bg = "#000000" },
+            SignColumn = { bg = "#000000" },
+            LineNr = { bg = "#000000" },
+            CursorLineNr = { bg = "#000000" },
+            GitSignsAdd = { bg = "#000000" },
+            GitSignsChange = { bg = "#000000" },
+            GitSignsDelete = { bg = "#000000" },
+          },
         },
       })
     end,
@@ -29,6 +39,22 @@ return {
         mirage = false,
         terminal = true,
         overrides = {},
+      })
+    end,
+  },
+  {
+    "f-person/auto-dark-mode.nvim",
+    config = function()
+      require("auto-dark-mode").setup({
+        update_interval = 1000,
+        set_dark_mode = function()
+          vim.api.nvim_set_option_value("background", "dark", {})
+          vim.cmd.colorscheme("github_dark_default")
+        end,
+        set_light_mode = function()
+          vim.api.nvim_set_option_value("background", "light", {})
+          vim.cmd.colorscheme("github_light_default")
+        end,
       })
     end,
   },
