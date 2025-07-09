@@ -71,6 +71,32 @@ return {
     end,
   },
 
+  -- Emmet support for HTML, CSS, and Vue
+  {
+    "mattn/emmet-vim",
+    ft = { "html", "css", "vue", "javascript", "typescript" },
+    config = function()
+      vim.g.user_emmet_leader_key = '<C-y>'
+      vim.g.user_emmet_settings = {
+        vue = {
+          extends = 'html',
+        },
+        javascript = {
+          extends = 'jsx',
+        },
+        typescript = {
+          extends = 'tsx',
+        },
+      }
+      
+      -- Map Tab to expand Emmet in insert mode
+      vim.keymap.set('i', '<Tab>', '<plug>(emmet-expand-abbr)', { 
+        buffer = true, 
+        silent = true 
+      })
+    end,
+  },
+
   -- Vue.js specific plugins
   {
     "posva/vim-vue",
