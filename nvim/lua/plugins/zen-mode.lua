@@ -1,7 +1,7 @@
 return {
   {
     "folke/zen-mode.nvim",
-    cmd = "ZenMode",
+    event = "VimEnter",
     opts = {
       window = {
         backdrop = 1,
@@ -36,5 +36,21 @@ return {
     keys = {
       { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" },
     },
+    config = function(_, opts)
+      require("zen-mode").setup(opts)
+      
+      local zen_enabled = false
+      
+      vim.api.nvim_create_autocmd({"BufEnter", "VimEnter"}, {
+        callback = function()
+          vim.defer_fn(function()
+            if not zen_enabled and vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+              zen_enabled = true
+              vim.cmd("ZenMode")
+            end
+          end, 50)
+        end,
+      })
+    end,
   },
 }
