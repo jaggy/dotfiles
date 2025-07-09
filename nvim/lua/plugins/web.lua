@@ -62,6 +62,15 @@ return {
     },
   },
 
+  -- PHP folding configuration
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      opts.fold = { enable = true }
+      return opts
+    end,
+  },
+
   -- Vue.js specific plugins
   {
     "posva/vim-vue",
