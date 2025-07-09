@@ -13,7 +13,8 @@ return {
         groups = {
           all = {
             WinSeparator = { bg = "NONE", fg = "#ffffff" },
-            Folded = { bg = "NONE" },
+            Folded = { bg = "NONE", fg = "#d0d7de" },
+            FoldColumn = { fg = "#d0d7de" },
           },
         },
       })
