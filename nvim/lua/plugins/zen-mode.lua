@@ -14,11 +14,16 @@ return {
     config = function(_, opts)
       require("no-neck-pain").setup(opts)
 
-      vim.api.nvim_create_autocmd("VimEnter", {
+      local nnp_enabled = false
+      
+      vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter" }, {
         callback = function()
           vim.defer_fn(function()
-            vim.cmd("NoNeckPain")
-          end, 500)
+            if not nnp_enabled and vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+              nnp_enabled = true
+              vim.cmd("NoNeckPain")
+            end
+          end, 100)
         end,
       })
     end,
