@@ -7,9 +7,15 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
-        phpactor = {
-          cmd = { "phpactor", "language-server" },
+        intelephense = {
           filetypes = { "php" },
+          settings = {
+            intelephense = {
+              files = {
+                maxSize = 5000000,
+              },
+            },
+          },
         },
       },
     },
