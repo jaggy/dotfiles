@@ -3,7 +3,7 @@ return {
     "shortcuts/no-neck-pain.nvim",
     event = "VimEnter",
     opts = {
-      width = 120,
+      width = 140,
       autocmds = {
         enableOnVimEnter = false,
       },
@@ -24,7 +24,7 @@ return {
       require("no-neck-pain").setup(opts)
 
       local nnp_enabled = false
-      
+
       vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter" }, {
         callback = function()
           vim.defer_fn(function()

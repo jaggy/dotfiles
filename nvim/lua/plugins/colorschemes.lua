@@ -5,31 +5,38 @@ return {
     config = function()
       require("github-theme").setup({
         options = {
+          transparent = true,
           styles = {
+            sidebars = "transparent",
+            floats = "transparent",
             comments = "italic",
             types = "italic,bold",
           },
         },
         groups = {
-          all = {
+          github_light_default = {
             WinSeparator = { bg = "NONE", fg = "#ffffff" },
             Folded = { bg = "NONE", fg = "#d0d7de" },
             FoldColumn = { fg = "#d0d7de" },
           },
-          github_dark_default = {
-            Normal = { bg = "#000000" },
-            NormalFloat = { bg = "#000000" },
-            SignColumn = { bg = "#000000" },
-            LineNr = { bg = "#000000" },
-            CursorLineNr = { bg = "#000000" },
-            GitSignsAdd = { bg = "#000000" },
-            GitSignsChange = { bg = "#000000" },
-            GitSignsDelete = { bg = "#000000" },
+          github_dark_high_contrast = {
+            WinSeparator = { bg = "NONE", fg = "#0A0C10" },
+            Folded = { bg = "NONE", fg = "#d0d7de" },
+            FoldColumn = { fg = "#080808" },
+            Normal = { bg = "#0A0C10" },
+            NormalFloat = { bg = "#0A0C10" },
+            SignColumn = { bg = "#0A0C10" },
+            LineNr = { bg = "#0A0C10" },
+            CursorLineNr = { bg = "#0A0C10" },
+            GitSignsAdd = { bg = "#0A0C10" },
+            GitSignsChange = { bg = "#0A0C10" },
+            GitSignsDelete = { bg = "#0A0C10" },
           },
         },
       })
     end,
   },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
   {
     "Shatur/neovim-ayu",
     lazy = false,
@@ -49,7 +56,7 @@ return {
         update_interval = 1000,
         set_dark_mode = function()
           vim.api.nvim_set_option_value("background", "dark", {})
-          vim.cmd.colorscheme("github_dark_default")
+          vim.cmd.colorscheme("github_dark_high_contrast")
         end,
         set_light_mode = function()
           vim.api.nvim_set_option_value("background", "light", {})
