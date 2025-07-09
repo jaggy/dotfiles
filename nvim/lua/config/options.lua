@@ -10,4 +10,4 @@ vim.opt.relativenumber = false
 vim.opt.smoothscroll = false
 vim.opt.wildignore:append({ "*/node_modules/*", "*/vendors/*", "*/.git/*" })
 
-vim.g.lazyvim_php_lsp = "intelephense"
+vim.g.lazyvim_php_lsp = "phpactor"

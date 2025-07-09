@@ -7,6 +7,16 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
+        phpactor = {
+          filetypes = { "php" },
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("composer.json", ".git")(fname)
+          end,
+          init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+          },
+        },
         intelephense = {
           filetypes = { "php" },
           settings = {
