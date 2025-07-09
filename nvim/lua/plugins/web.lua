@@ -107,7 +107,7 @@ return {
       linters = {
         phpcs = {
           args = {
-            "--standard=PSR12",
+            "--standard=PSR2",
             "--report=json",
             "-q",
             "-",
