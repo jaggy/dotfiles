@@ -7,6 +7,15 @@ return {
       autocmds = {
         enableOnVimEnter = false,
       },
+      buffers = {
+        colors = {
+          background = "NONE",
+        },
+        wo = {
+          fillchars = "eob: ",
+          winbar = "",
+        },
+      },
     },
     keys = {
       { "<leader>z", "<cmd>NoNeckPain<cr>", desc = "Toggle Centered Layout" },
