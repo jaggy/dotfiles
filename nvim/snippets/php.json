@@ -2,7 +2,7 @@
   "pest it": {
     "prefix": "it",
     "body": [
-      "it('$1', function () {",
+      "it(\"$1\", function () {",
       "\t$0",
       "});"
     ],
