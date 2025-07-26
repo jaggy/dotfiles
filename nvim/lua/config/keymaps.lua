@@ -66,12 +66,12 @@ namespace Tests\Feature\%s;
 
 use Tests\Fixtures\ActingAs;
 
-uses(ActingAs\Jaggy::class);
+uses(ActingAs\Humans\Jaggy::class);
 
 it('has a valid factory', function () {
 });
 
-function factory(array $attributes = [])
+function factory(Workspace $workspace, array $attributes = [])
 {
     return test()->post(route(''), [
         ...$attributes,

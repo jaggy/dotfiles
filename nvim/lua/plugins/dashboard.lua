@@ -27,9 +27,34 @@ return {
           },
           { type = 'spacer' },
           {
-            text = "Welcome to Neovim!",
+            text = "Projects",
             hl = 'StartledSecondary',
             center = true
+          },
+          { type = 'spacer' },
+          {
+            text = "a - medley-api",
+            hl = 'StartledMuted',
+            center = true,
+            keymap = {
+              key = "a",
+              action = function()
+                vim.cmd("cd /Users/jaggy/Code/Medley/medley/apps/api")
+                vim.cmd("Telescope find_files")
+              end
+            }
+          },
+          {
+            text = "w - medley-web",
+            hl = 'StartledMuted',
+            center = true,
+            keymap = {
+              key = "w",
+              action = function()
+                vim.cmd("cd /Users/jaggy/Code/Medley/medley/apps/web")
+                vim.cmd("Telescope find_files")
+              end
+            }
           },
           { type = 'spacer' },
           {
