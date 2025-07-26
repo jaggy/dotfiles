@@ -88,3 +88,26 @@ function factory(Workspace $workspace, array $attributes = [])
     vim.notify("Created test file: " .. test_file)
   end)
 end, { desc = "Create Feature Test" })
+
+vim.keymap.set("n", "<leader>cN", function()
+  local current_dir = vim.fn.expand("%:p:h")
+  local root = require("lazyvim.util").root.get()
+  local relative_dir = vim.fn.fnamemodify(current_dir, ":." .. root)
+  local default_path = relative_dir .. "/"
+  
+  vim.ui.input({ prompt = "New file path: ", default = default_path }, function(filepath)
+    if not filepath or filepath == "" then
+      return
+    end
+    
+    local full_path = root .. "/" .. filepath
+    local dir = vim.fn.fnamemodify(full_path, ":h")
+    
+    -- Create directory if it doesn't exist
+    vim.fn.mkdir(dir, "p")
+    
+    -- Open the new file
+    vim.cmd("edit " .. full_path)
+    vim.notify("Created new file: " .. full_path)
+  end)
+end, { desc = "Create new file relative to current buffer" })
