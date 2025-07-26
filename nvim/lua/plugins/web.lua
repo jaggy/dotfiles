@@ -92,23 +92,23 @@ return {
     "mattn/emmet-vim",
     ft = { "html", "css", "vue", "javascript", "typescript" },
     config = function()
-      vim.g.user_emmet_leader_key = '<C-y>'
+      vim.g.user_emmet_leader_key = "<C-y>"
       vim.g.user_emmet_settings = {
         vue = {
-          extends = 'html',
+          extends = "html",
         },
         javascript = {
-          extends = 'jsx',
+          extends = "jsx",
         },
         typescript = {
-          extends = 'tsx',
+          extends = "tsx",
         },
       }
-      
+
       -- Map Tab to expand Emmet in insert mode
-      vim.keymap.set('i', '<Tab>', '<plug>(emmet-expand-abbr)', { 
-        buffer = true, 
-        silent = true 
+      vim.keymap.set("i", "<Tab>", "<plug>(emmet-expand-abbr)", {
+        buffer = true,
+        silent = true,
       })
     end,
   },
@@ -149,7 +149,7 @@ return {
       linters = {
         phpcs = {
           args = {
-            "--standard=PSR2",
+            "--standard=PSR12",
             "--report=json",
             "-q",
             "-",

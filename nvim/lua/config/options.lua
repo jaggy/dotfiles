@@ -8,6 +8,5 @@ vim.g.indent_blankline_enabled = false
 vim.opt.number = false
 vim.opt.relativenumber = false
 vim.opt.smoothscroll = false
-vim.opt.wildignore:append({ "*/node_modules/*", "*/vendors/*", "*/.git/*" })
 
-vim.g.lazyvim_php_lsp = "phpactor"
+vim.g.lazyvim_php_lsp = "intelephense"
