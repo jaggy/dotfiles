@@ -23,7 +23,22 @@ vim.keymap.set("n", "<leader>tF", function()
 
   local filename_without_ext = string.gsub(current_file, "%.php$", "")
 
-  vim.ui.input({ prompt = "Test name: " }, function(test_name)
+  local function get_word_under_cursor()
+    local word = vim.fn.expand("<cword>")
+    local valid_methods = { "__invoke", "index", "show", "create", "store", "edit", "update", "delete" }
+
+    for _, method in ipairs(valid_methods) do
+      if word == method then
+        return string.upper(string.sub(word, 1, 1)) .. string.sub(word, 2)
+      end
+    end
+
+    return ""
+  end
+
+  local default_name = get_word_under_cursor()
+
+  vim.ui.input({ prompt = "Test name: ", default = default_name }, function(test_name)
     if not test_name or test_name == "" then
       return
     end
