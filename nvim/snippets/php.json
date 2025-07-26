@@ -1,0 +1,20 @@
+{
+  "pest it": {
+    "prefix": "it",
+    "body": [
+      "it('$1', function () {",
+      "\t$0",
+      "});"
+    ],
+    "description": "PestPHP it block"
+  },
+  "assertJson": {
+    "prefix": "assertJson",
+    "body": [
+      "->assertJson(fn (AssertableJson \\$json) =>",
+      "\t\\$json->$0->etc()",
+      ");"
+    ],
+    "description": "Laravel assertJson with AssertableJson"
+  }
+}
