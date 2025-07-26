@@ -5,6 +5,7 @@
 --
 vim.keymap.set("i", "jk", "->", { desc = "Insert arrow" })
 vim.keymap.set("i", "kl", "=>", { desc = "Insert fat arrow" })
+vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
 
 vim.keymap.set("n", "<leader>cp", function()
   local root = require("lazyvim.util").root.get()
@@ -64,6 +65,7 @@ vim.keymap.set("n", "<leader>tF", function()
 
 namespace Tests\Feature\%s;
 
+use App\Models\Workspace;
 use Tests\Fixtures\ActingAs;
 
 uses(ActingAs\Humans\Jaggy::class);
