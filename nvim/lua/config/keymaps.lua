@@ -68,7 +68,7 @@ namespace Tests\Feature\%s;
 use App\Models\Workspace;
 use Tests\Fixtures\ActingAs;
 
-uses(ActingAs\Humans\Jaggy::class);
+uses(ActingAs\Humans\]] .. (math.random() < 0.5 and "Jaggy" or "Jazel") .. [[::class);
 
 it('has a valid factory', function () {
 });
@@ -111,3 +111,8 @@ vim.keymap.set("n", "<leader>cN", function()
     vim.notify("Created new file: " .. full_path)
   end)
 end, { desc = "Create new file relative to current buffer" })
+
+vim.keymap.set("n", "<leader>uR", function()
+  vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+  vim.notify("Config reloaded!")
+end, { desc = "Reload Neovim config" })

@@ -8,6 +8,21 @@
     ],
     "description": "PestPHP it block"
   },
+  "pest it validates": {
+    "prefix": "itv",
+    "body": [
+      "it('validates the data', function (\\$attribute, \\$value, \\$message) {",
+      "\tfactory([",
+      "\t\t\\$attribute => \\$value",
+      "\t])->assertInvalid([",
+      "\t\t\\$attribute => \\$message",
+      "\t]);",
+      "})->with([",
+      "\t'${1:name} is required' => ['$1', null, 'The $1 field is required.'],",
+      "]);"
+    ],
+    "description": "PestPHP it block"
+  },
   "assertJson": {
     "prefix": "assertJson",
     "body": [
