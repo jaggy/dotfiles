@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>tF", function()
 
   local function get_word_under_cursor()
     local word = vim.fn.expand("<cword>")
-    local valid_methods = { "__invoke", "index", "show", "create", "store", "edit", "update", "delete" }
+    local valid_methods = { "__invoke", "index", "show", "create", "store", "edit", "update", "destroy" }
 
     for _, method in ipairs(valid_methods) do
       if word == method then
@@ -60,8 +60,7 @@ vim.keymap.set("n", "<leader>tF", function()
       return
     end
 
-    local test_content = string.format(
-      [[<?php
+    local test_content = string.format([[<?php
 
 namespace Tests\Feature\%s;
 
@@ -79,9 +78,7 @@ function factory(Workspace $workspace, array $attributes = [])
         ...$attributes,
     ]);
 }
-]],
-      filename_without_ext
-    )
+]], filename_without_ext)
 
     vim.fn.writefile(vim.split(test_content, "\n"), test_file)
     vim.cmd("edit " .. test_file)
@@ -94,18 +91,18 @@ vim.keymap.set("n", "<leader>cN", function()
   local root = require("lazyvim.util").root.get()
   local relative_dir = vim.fn.fnamemodify(current_dir, ":." .. root)
   local default_path = relative_dir .. "/"
-  
+
   vim.ui.input({ prompt = "New file path: ", default = default_path }, function(filepath)
     if not filepath or filepath == "" then
       return
     end
-    
+
     local full_path = root .. "/" .. filepath
     local dir = vim.fn.fnamemodify(full_path, ":h")
-    
-    -- Create directory if it doesn't exist
+
+    -- Create directory if keyit doesn't exist
     vim.fn.mkdir(dir, "p")
-    
+
     -- Open the new file
     vim.cmd("edit " .. full_path)
     vim.notify("Created new file: " .. full_path)
