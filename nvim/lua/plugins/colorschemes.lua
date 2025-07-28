@@ -67,8 +67,18 @@ return {
             context_start_underline = false,
           },
         },
+        overridePalette = function(filter)
+          return {
+            dark2 = "#000000",
+            dark1 = "#000000",
+            background = "#000000",
+          }
+        end,
         override = function(c)
           return {
+            WinSeparator = { bg = "NONE", fg = "#000000" },
+            Folded = { bg = "NONE", fg = "#d0d7de" },
+            FoldColumn = { fg = "#080808" },
             Normal = { bg = "#000000" },
             NormalFloat = { bg = "#000000" },
             SignColumn = { bg = "#000000" },
@@ -77,8 +87,6 @@ return {
             GitSignsAdd = { bg = "#000000" },
             GitSignsChange = { bg = "#000000" },
             GitSignsDelete = { bg = "#000000" },
-            Folded = { bg = "NONE" },
-            FoldColumn = { bg = "#000000" },
           }
         end,
       })
