@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>tF", function()
 
     if vim.fn.filereadable(test_file) == 1 then
       vim.notify("Test file already exists: " .. test_file)
-      vim.cmd("edit " .. test_file)
+      vim.cmd("vsplit " .. test_file)
       return
     end
 
@@ -70,6 +70,7 @@ use Tests\Fixtures\ActingAs;
 uses(ActingAs\Humans\]] .. (math.random() < 0.5 and "Jaggy" or "Jazel") .. [[::class);
 
 it('has a valid factory', function () {
+    factory($this->huamns);
 });
 
 function factory(Workspace $workspace, array $attributes = [])
@@ -81,7 +82,7 @@ function factory(Workspace $workspace, array $attributes = [])
 ]], filename_without_ext)
 
     vim.fn.writefile(vim.split(test_content, "\n"), test_file)
-    vim.cmd("edit " .. test_file)
+    vim.cmd("vsplit " .. test_file)
     vim.notify("Created test file: " .. test_file)
   end)
 end, { desc = "Create Feature Test" })
