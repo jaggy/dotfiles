@@ -24,6 +24,19 @@ vim.keymap.set("n", "<leader>tF", function()
 
   local filename_without_ext = string.gsub(current_file, "%.php$", "")
 
+  -- Get the full path and extract controller subdirectory structure
+  local full_path = vim.fn.expand("%:p")
+  local root = require("lazyvim.util").root.get()
+  local relative_path = vim.fn.fnamemodify(full_path, ":." .. root)
+
+  -- Extract subdirectory from app/Http/Controllers/
+  local controller_subdir = ""
+  local pattern = "app/Http/Controllers/(.+)/" .. filename_without_ext .. "%.php$"
+  local match = string.match(relative_path, pattern)
+  if match then
+    controller_subdir = match .. "/"
+  end
+
   local function get_word_under_cursor()
     local word = vim.fn.expand("<cword>")
     local valid_methods = { "__invoke", "index", "show", "create", "store", "edit", "update", "destroy" }
@@ -48,8 +61,7 @@ vim.keymap.set("n", "<leader>tF", function()
       test_name = test_name .. "Test"
     end
 
-    local root = require("lazyvim.util").root.get()
-    local test_dir = root .. "/tests/Feature/" .. filename_without_ext
+    local test_dir = root .. "/tests/Feature/" .. controller_subdir .. filename_without_ext
     local test_file = test_dir .. "/" .. test_name .. ".php"
 
     vim.fn.mkdir(test_dir, "p")
@@ -60,9 +72,11 @@ vim.keymap.set("n", "<leader>tF", function()
       return
     end
 
+    -- Update namespace to include subdirectory
+    local namespace_path = controller_subdir:gsub("/", "\\")
     local test_content = string.format([[<?php
 
-namespace Tests\Feature\%s;
+namespace Tests\Feature\%s%s;
 
 use App\Models\Workspace;
 use Tests\Fixtures\ActingAs;
@@ -70,7 +84,7 @@ use Tests\Fixtures\ActingAs;
 uses(ActingAs\Humans\]] .. (math.random() < 0.5 and "Jaggy" or "Jazel") .. [[::class);
 
 it('has a valid factory', function () {
-    factory($this->huamns);
+    factory($this->humans);
 });
 
 function factory(Workspace $workspace, array $attributes = [])
@@ -79,7 +93,7 @@ function factory(Workspace $workspace, array $attributes = [])
         ...$attributes,
     ]);
 }
-]], filename_without_ext)
+]], namespace_path, filename_without_ext)
 
     vim.fn.writefile(vim.split(test_content, "\n"), test_file)
     vim.cmd("vsplit " .. test_file)
