@@ -31,5 +31,43 @@
       ");"
     ],
     "description": "Laravel assertJson with AssertableJson"
+  },
+  "feature test": {
+    "prefix": "ftest",
+    "body": [
+      "it('has a valid factory', function () {",
+      "\t${1:factory}(test()->humans);",
+      "});",
+      "",
+      "function $1(Workspace \\$workspace, array \\$attributes = [])",
+      "{",
+      "\treturn test()->postJson(route('$2'), [",
+      "\t\t...\\$attributes,",
+      "\t]);",
+      "}"
+    ],
+    "description": "Medley test template with factory function"
+  },
+  "channel feature test": {
+    "prefix": "ctest",
+    "body": [
+      "beforeEach(function () {",
+      "\ttest()->channel = Channel::factory()->for(test()->humans)->create();",
+      "});",
+      "",
+      "it('has a valid factory', function () {",
+      "\t${1:factory}(test()->humans, test()->channel)->assertOk();",
+      "});",
+      "",
+      "$0",
+      "",
+      "function $1(Workspace \\$workspace, Channel \\$channel, array \\$attributes = [])",
+      "{",
+      "\treturn test()->postJson(route('app.channels.$2', [\\$workspace, \\$channel]), [",
+      "\t\t...\\$attributes,",
+      "\t]);",
+      "}"
+    ],
+    "description": "Medley test template with factory function"
   }
 }

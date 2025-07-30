@@ -79,20 +79,11 @@ vim.keymap.set("n", "<leader>tF", function()
 namespace Tests\Feature\%s%s;
 
 use App\Models\Workspace;
+use App\Models\Channel;
 use Tests\Fixtures\ActingAs;
 
 uses(ActingAs\Humans\]] .. (math.random() < 0.5 and "Jaggy" or "Jazel") .. [[::class);
 
-it('has a valid factory', function () {
-    factory($this->humans);
-});
-
-function factory(Workspace $workspace, array $attributes = [])
-{
-    return test()->post(route(''), [
-        ...$attributes,
-    ]);
-}
 ]], namespace_path, filename_without_ext)
 
     vim.fn.writefile(vim.split(test_content, "\n"), test_file)
