@@ -10,10 +10,16 @@ unbind -T copy-mode-vi Enter
 #------------------------------------------
 # Split Movement
 #------------------------------------------
-bind-key j select-pane -D
-bind-key k select-pane -U
-bind-key h select-pane -L
-bind-key l select-pane -R
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+
+bind -r K resize-pane -U 5
+bind -r J resize-pane -D 5
+bind -r H resize-pane -L 5
+bind -r L resize-pane -R 5
+bind -n C-k clear-history
 
 unbind %
 bind-key "\\" split-window -h                     # bind | for v splits
@@ -52,3 +58,4 @@ bind M \
     unbind -T root MouseDrag1Border \;\
     bind -T root MouseDown1Pane select-pane -t= \;\
     display 'Mouse: OFF'
+

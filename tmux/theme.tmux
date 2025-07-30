@@ -1,46 +1,33 @@
-# The modes {
-setw -g clock-mode-colour colour135
-# setw -g mode-attr bold
-setw -g mode-fg colour196
-setw -g mode-bg colour238
-# }
+# Minimal theme: session left, windows center, git branch right
 
-# The panes {
-set -g pane-border-bg black
-set -g pane-border-fg black
-set -g pane-active-border-bg black
-set -g pane-active-border-fg colour51
-# }
+# Panes - minimal borders
+set -g pane-border-style fg=colour240
+set -g pane-active-border-style fg=colour250
 
-# The statusbar {
-set -g status-justify left
-set -g status-interval 2
+# Status bar
 set -g status-position bottom
-set -g status-bg "#005f5f"
-set -g status-fg white
-set -g status-left ''
-setw -g status-right ' #S '
-set -g window-status-separator ''
-set -g status-justify left
+set -g status-style bg=default,fg=default
+set -g status-interval 5
 
-setw -g window-status-current-attr bold
-setw -g window-status-current-fg white
-setw -g window-status-current-bg "#008282"
-setw -g window-status-current-format '  · #W  '
+# Session name on the left
+set -g status-left '#S '
+set -g status-left-length 20
 
-setw -g window-status-fg white
-setw -g window-status-bg "#005f5f"
-setw -g window-status-format '  #W  '
+# Git branch on the right
+set -g status-right '#(cd #{pane_current_path}; git branch --show-current 2>/dev/null)'
+set -g status-right-length 50
 
-setw -g window-status-attr none
-setw -g window-status-bell-fg colour255
-setw -g window-status-bell-bg colour1
-# }
+# Windows in center
+set -g status-justify centre
+set -g window-status-separator ' '
 
-# The messages {
-# set -g message-attr bold
-set -g message-fg colour232
-set -g message-bg yellow
-set -g message-command-fg blue
-set -g message-command-bg black
-# }
+# Inactive windows
+set -g window-status-format '  #W  '
+set -g window-status-style fg=colour240
+
+# Active window with asterisk
+set -g window-status-current-format '  * #W  '
+set -g window-status-current-style fg=default,bold
+
+# Messages
+set -g message-style bg=default,fg=colour196
