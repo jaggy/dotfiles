@@ -36,7 +36,7 @@
     "prefix": "ftest",
     "body": [
       "it('has a valid factory', function () {",
-      "\t${1:factory}(test()->humans);",
+      "\t${1:factory}(\\$this->humans);",
       "});",
       "",
       "function $1(Workspace \\$workspace, array \\$attributes = [])",
@@ -52,11 +52,11 @@
     "prefix": "ctest",
     "body": [
       "beforeEach(function () {",
-      "\ttest()->channel = Channel::factory()->for(test()->humans)->create();",
+      "\t\\$this->channel = Channel::factory()->for(\\$this->humans)->create();",
       "});",
       "",
       "it('has a valid factory', function () {",
-      "\t${1:factory}(test()->humans, test()->channel)->assertOk();",
+      "\t${1:factory}(\\$this->humans, \\$this->channel)->assertOk();",
       "});",
       "",
       "$0",
