@@ -119,3 +119,11 @@ vim.keymap.set("n", "<leader>uR", function()
   vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
   vim.notify("Config reloaded!")
 end, { desc = "Reload Neovim config" })
+
+-- Disable Alt+j and Alt+k move keymaps
+vim.keymap.del("n", "<A-j>")
+vim.keymap.del("n", "<A-k>")
+vim.keymap.del("i", "<A-j>")
+vim.keymap.del("i", "<A-k>")
+vim.keymap.del("v", "<A-j>")
+vim.keymap.del("v", "<A-k>")

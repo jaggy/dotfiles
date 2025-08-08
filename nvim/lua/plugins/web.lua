@@ -78,6 +78,12 @@ return {
     },
   },
 
+  -- PHP Blade syntax highlighting
+  {
+    "jwalton512/vim-blade",
+    ft = "blade",
+  },
+
   -- PHP folding configuration
   {
     "nvim-treesitter/nvim-treesitter",
@@ -87,14 +93,17 @@ return {
     end,
   },
 
-  -- Emmet support for HTML, CSS, and Vue
+  -- Emmet support for HTML, CSS, Vue, and Blade
   {
     "mattn/emmet-vim",
-    ft = { "html", "css", "vue", "javascript", "typescript" },
+    ft = { "html", "css", "vue", "blade", "javascript", "typescript" },
     config = function()
       vim.g.user_emmet_leader_key = "<C-y>"
       vim.g.user_emmet_settings = {
         vue = {
+          extends = "html",
+        },
+        blade = {
           extends = "html",
         },
         javascript = {
@@ -132,6 +141,7 @@ return {
       formatters_by_ft = {
         fish = {},
         php = { "pint" },
+        blade = { "blade-formatter" },
         vue = { "prettier" },
         typescript = { "prettier" },
         javascript = { "prettier" },

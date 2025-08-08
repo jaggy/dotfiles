@@ -56,7 +56,7 @@
       "});",
       "",
       "it('has a valid factory', function () {",
-      "\t${1:factory}(\\$this->humans, \\$this->channel)->assertOk();",
+      "\t${1:factory}(\\$this->humans, \\$this->channel)->assertSuccessful();",
       "});",
       "",
       "$0",
@@ -64,6 +64,30 @@
       "function $1(Workspace \\$workspace, Channel \\$channel, array \\$attributes = [])",
       "{",
       "\treturn test()->postJson(route('app.channels.$2', [\\$workspace, \\$channel]), [",
+      "\t\t...\\$attributes,",
+      "\t]);",
+      "}"
+    ],
+    "description": "Medley test template with factory function"
+  },
+
+  "space feature test": {
+    "prefix": "stest",
+    "body": [
+      "beforeEach(function () {",
+      "\t\\$this->channel = Channel::factory()->for(\\$this->humans)->create();",
+      "\t\\$this->${1:todo} = ${2:Todo}::factory()->for(\\$this->humans)->for(\\$this->channel)->create();",
+      "});",
+      "",
+      "it('has a valid factory', function () {",
+      "\t${3:factory}(\\$this->humans, \\$this->channel, \\$this->$1)->assertSuccessful();",
+      "});",
+      "",
+      "$0",
+      "",
+      "function $3(Workspace \\$workspace, Channel \\$channel, ${2:Todo} \\$$1, array \\$attributes = [])",
+      "{",
+      "\treturn test()->postJson(route('app.channels.$4', [\\$workspace, \\$channel, \\$$1]), [",
       "\t\t...\\$attributes,",
       "\t]);",
       "}"

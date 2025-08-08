@@ -116,3 +116,7 @@ export GPG_TTY=$(tty)
 export PNPM_HOME="/Users/jaggy/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+code () {
+  tmuxinator start $1
+}

@@ -1,8 +1,9 @@
 # Minimal theme: session left, windows center, git branch right
 
-# Panes - minimal borders
+# Panes - visible borders with padding
 set -g pane-border-style fg=colour240
 set -g pane-active-border-style fg=colour250
+set -g pane-border-format " "
 
 # Status bar
 set -g status-position bottom
