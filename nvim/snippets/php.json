@@ -32,66 +32,21 @@
     ],
     "description": "Laravel assertJson with AssertableJson"
   },
-  "feature test": {
-    "prefix": "ftest",
-    "body": [
-      "it('has a valid factory', function () {",
-      "\t${1:factory}(\\$this->humans);",
-      "});",
-      "",
-      "function $1(Workspace \\$workspace, array \\$attributes = [])",
-      "{",
-      "\treturn test()->postJson(route('$2'), [",
-      "\t\t...\\$attributes,",
-      "\t]);",
-      "}"
-    ],
-    "description": "Medley test template with factory function"
-  },
-  "channel feature test": {
-    "prefix": "ctest",
-    "body": [
-      "beforeEach(function () {",
-      "\t\\$this->channel = Channel::factory()->for(\\$this->humans)->create();",
-      "});",
-      "",
-      "it('has a valid factory', function () {",
-      "\t${1:factory}(\\$this->humans, \\$this->channel)->assertSuccessful();",
-      "});",
-      "",
-      "$0",
-      "",
-      "function $1(Workspace \\$workspace, Channel \\$channel, array \\$attributes = [])",
-      "{",
-      "\treturn test()->postJson(route('app.channels.$2', [\\$workspace, \\$channel]), [",
-      "\t\t...\\$attributes,",
-      "\t]);",
-      "}"
-    ],
-    "description": "Medley test template with factory function"
-  },
 
-  "space feature test": {
-    "prefix": "stest",
+  "php class": {
+    "prefix": "!php",
     "body": [
-      "beforeEach(function () {",
-      "\t\\$this->channel = Channel::factory()->for(\\$this->humans)->create();",
-      "\t\\$this->${1:todo} = ${2:Todo}::factory()->for(\\$this->humans)->for(\\$this->channel)->create();",
-      "});",
+      "<?php",
       "",
-      "it('has a valid factory', function () {",
-      "\t${3:factory}(\\$this->humans, \\$this->channel, \\$this->$1)->assertSuccessful();",
-      "});",
+      "declare(strict_types=1);",
       "",
-      "$0",
+      "namespace App;",
       "",
-      "function $3(Workspace \\$workspace, Channel \\$channel, ${2:Todo} \\$$1, array \\$attributes = [])",
+      "class ${TM_FILENAME_BASE}",
       "{",
-      "\treturn test()->postJson(route('app.channels.$4', [\\$workspace, \\$channel, \\$$1]), [",
-      "\t\t...\\$attributes,",
-      "\t]);",
+      "\t$0",
       "}"
     ],
-    "description": "Medley test template with factory function"
+    "description": "Create a new PHP class with strict typing and auto-resolved namespace"
   }
 }

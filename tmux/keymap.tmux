@@ -10,10 +10,10 @@ unbind -T copy-mode-vi Enter
 #------------------------------------------
 # Split Movement
 #------------------------------------------
-bind -r h select-pane -L
-bind -r j select-pane -D
-bind -r k select-pane -U
-bind -r l select-pane -R
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 bind -r K resize-pane -U 5
 bind -r J resize-pane -D 5

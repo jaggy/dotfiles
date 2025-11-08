@@ -1,0 +1,29 @@
+{
+  "title": "Left Control to Escape (tap) / Control (hold)",
+  "rules": [
+    {
+      "description": "Left Control: tap for Escape, hold for Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
