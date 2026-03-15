@@ -17,3 +17,4 @@ emacs.d/*
 !emacs.d/init.el
 !emacs.d/resources
 !emacs.d/snippets
+.env
