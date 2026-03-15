@@ -9,3 +9,4 @@ ln -s ~/.dotfiles/nvim .config/nvim
 ln -s ~/.dotfiles/git/gitconfig .gitignore
 ln -s ~/.dotfiles/tmux/tmux.conf .tmux.conf
 
+brew install switchaudio-osx
